@@ -13,16 +13,16 @@ class SessionsController extends Controller
     }
 
     public function store(){
-        if(auth()->attempt(request(['email','password']))==false){
+       // if(auth()->attempt(request(['email','password']))==false){
             return back()->withErrors([
                 'message'=>'El email o al Contraseña son Incorrectos, Intentelo nuevamente'
             ]);
-        }
+        //}
         return redirect()->to('/');
     }
     // CERRAR SESION
     public function destroy(){
-        auth()->logout();
+       // auth()->logout();
         return redirect()->to('/');
     }
 }

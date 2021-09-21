@@ -6,34 +6,24 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\Contracts\HasApiTokens;
 
-class User extends Authenticatable
-{
-    use HasFactory, Notifiable;
+class User extends Authenticatable {
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var string[]
      */
     protected $fillable = [
-        'tipodocumento_id',
-        'tipousuario_id',
-        'numero_identificacion',
-        'nombre',
-        'apellido',
-        'sexo',
-        'direccion',
-        'telefono',
-        'celular1',
-        'celular2',
+        'name',
         'email',
         'password',
-        'estado_usuario'
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should be hidden for serialization.
      *
      * @var array
      */
@@ -43,19 +33,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * The attributes that should be cast.
      *
      * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    function TipoIdentificacion(){
-        return $this->belongsTo(TipoIdentificacion::class);
-    }
-
-    function TipoUsuario(){
-        return $this->belongsTo(TipoUsuario::class);
-    }
 }

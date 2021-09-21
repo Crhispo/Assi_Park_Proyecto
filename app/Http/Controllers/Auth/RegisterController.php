@@ -26,6 +26,13 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    public function showRegistrationForm()
+    {
+        $tipoIdentificacion = TipoIdentificacion::all();
+        $tipoUsuario = TipoUsuario::all();
+        return view('auth.register', compact('tipoIdentificacion', 'tipoUsuario'));
+    }
+
     /**
      * Where to redirect users after registration.
      *
@@ -37,9 +44,9 @@ class RegisterController extends Controller
     {
         if (auth()->user()->tipousuario_id == 1) {
             return '/admin';
-        }elseif(auth()->user()->tipousuario_id == 2){
+        } elseif (auth()->user()->tipousuario_id == 2) {
             return '/residente';
-        }elseif(auth()->user()->tipousuario_id == 3){
+        } elseif (auth()->user()->tipousuario_id == 3) {
             return '/guarda';
         }
         return '/home';
@@ -78,7 +85,7 @@ class RegisterController extends Controller
             // 'password' => Hash::make($data['password']),
             // 'estado_usuario' => $data['estado']
 
-            'name' => ['zz', 'string', 'max:255'],
+            'nombre' => ['string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);

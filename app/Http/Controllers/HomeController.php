@@ -26,16 +26,18 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function admin(){
+    public function admin()
+    {
         return "Hola desde vista de admin";
     }
 
-    public function residente(){
+    public function residente()
+    {
         return "Hola desde vista de residente";
     }
 
-    public function guarda(){
+    public function guarda()
+    {
         return "Hola desde vista de guarda";
-        return view();
     }
 }
