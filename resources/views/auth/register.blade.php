@@ -33,7 +33,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Tipo Identificación') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="tipo_identificacion" id="tipo_identificacion">
+                                    <select class="form-select" name="tipo_identificacion" id="tipo_identificacion">
                                         <option value="" disabled selected>Seleccione su tipo de identificación</option>
                                         @foreach ($tipoIdentificacion as $tipoIdent)
                                             <option value="{{ $tipoIdent->id }}">
@@ -48,7 +48,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Tipo de usuario') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="tipo_usuario" id="tipo_usuario">
+                                    <select class="form-select" name="tipo_usuario" id="tipo_usuario">
                                         <option value="" disabled selected>Seleccione su tipo de usuario</option>
                                         @foreach ($tipoUsuario as $tipoUsu)
                                             <option value="{{ $tipoUsu->id }}">
@@ -96,7 +96,7 @@
                                 <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="sexo" id="sexo">
+                                    <select class="form-select" name="sexo" id="sexo">
                                         <option value="" disabled selected>Seleccione su sexo</option>
                                         <option value="0">Femenino</option>
                                         <option value="1">Masculino</option>
@@ -220,7 +220,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="estado" id="estado">
+                                    <select class="form-select" name="estado" id="estado">
                                         <option value="" disabled selected>Seleccione su estado</option>
                                         <option value="0">Activo</option>
                                         <option value="1">Desactivo</option>

@@ -36,5 +36,6 @@ class HomeController extends Controller
 
     public function guarda(){
         return "Hola desde vista de guarda";
+        return view();
     }
 }
