@@ -15,7 +15,16 @@ class CreateVisitantesTable extends Migration
     {
         Schema::create('visitantes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tipo_identificacion_id');
+            $table->unsignedInteger('NUMERO_DOCUMENTO')->unique();
+            $table->string('NOMBRE', 45);
+            $table->string('APELLIDO', 45);
+            $table->unsignedInteger('CELULAR1');
+            $table->unsignedInteger('CELULAR2')->nullable();
+            $table->boolean('ESTADO_VISITANTE')->default(1);
             $table->timestamps();
+            $table->foreign('tipo_identificacion_id')->references('id')->on('tipo_identificaciones');
+
         });
     }
 
