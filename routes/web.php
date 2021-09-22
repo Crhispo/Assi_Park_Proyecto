@@ -20,7 +20,6 @@ use App\Http\Controllers\Detalle_asignacionController;
   |
  */
 
-
 Route::get('Modificar', function () {
     return view('Modulo_Usuarios.modificar');
 });
@@ -86,4 +85,3 @@ Route::get('/guarda', [
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
