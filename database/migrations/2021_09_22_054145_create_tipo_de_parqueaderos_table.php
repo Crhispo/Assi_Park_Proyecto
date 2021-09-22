@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApartamentosTable extends Migration
+class CreateTipoDeParqueaderosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateApartamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartamentos', function (Blueprint $table) {
+        Schema::create('tipo_de_parqueaderos', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedSmallInteger('NUMERO_APTO');
-            $table->char('BLOQUE', 10);
-            $table->boolean('ESTADO_APTO')->default(1);
-            
+            $table->string('tipo_de_parqueadero',20);
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateApartamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartamentos');
+        Schema::dropIfExists('tipo_de_parqueaderos');
     }
 }

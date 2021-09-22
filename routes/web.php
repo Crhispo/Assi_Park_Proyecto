@@ -83,7 +83,7 @@ Route::get('/guarda', [
     HomeController::class, 'guarda'
 ])->name('guarda');
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

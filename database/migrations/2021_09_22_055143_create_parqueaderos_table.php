@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetalleAsignacionsTable extends Migration
+class CreateParqueaderosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateDetalleAsignacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_asignacions', function (Blueprint $table) {
+        Schema::create('parqueaderos', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('APARTAMENTO_ID_APARTAMENTO');
-            $table->tinyInteger('ID_VEHICULO');
-            $table->tinyInteger('NUMERO_PARQUEADERO');
-            $table->timestamp('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateDetalleAsignacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalle_asignacions');
+        Schema::dropIfExists('parqueaderos');
     }
 }
