@@ -15,7 +15,13 @@ class CreateParqueaderosTable extends Migration
     {
         Schema::create('parqueaderos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tipo_parqueadero_id');
+            $table->string('TAMAÑO', 20);
+            $table->string('DESCRIPCION', 255);
+            $table->boolean('ESTADO_PARQUEADERO')->default(1);
             $table->timestamps();
+            $table->foreign('tipo_parqueadero_id')->references('id')->on('tipo_de_parqueaderos');
+ 
         });
     }
 
