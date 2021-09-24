@@ -15,7 +15,7 @@ class CreateTipoIdentificacionesTable extends Migration
     {
         Schema::create('tipo_identificaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo de identificacion',20);
+            $table->string('nombre_tipo_identificacion',30);
             $table->timestamps();
         });
     }

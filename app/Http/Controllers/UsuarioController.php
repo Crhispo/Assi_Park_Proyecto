@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
 use App\Http\Requests\GuardarUsuarioRequest;
 use App\Http\Requests\ValidarActualizacionUsuarioRequest;
 use App\Http\Requests\ValidarInactivadoRequest;
+use App\Models\User;
 
 class UsuarioController extends Controller {
 
@@ -16,7 +16,7 @@ class UsuarioController extends Controller {
      */
     public function index($id = '') {
 
-        $_Usuario = new Usuario();
+        $_Usuario = new User();
         $Select = $_Usuario->GetUsuario($id);
 
         return view('Modulo_Usuarios.Dashboard_admin')->with('Select', $Select);
@@ -29,7 +29,7 @@ class UsuarioController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(GuardarUsuarioRequest $request) {
-        $_Usuario = new Usuario();
+        $_Usuario = new User();
         $Insert = $_Usuario->SobreCarga($request->all(), '');
         return view('Modulo_Usuarios.Dashboard_admin')->with('Insert', $Insert);
     }
@@ -42,7 +42,7 @@ class UsuarioController extends Controller {
      */
     public function show($id = '') {
 
-        $_Usuario = new Usuario();
+        $_Usuario = new User();
         $Select = $_Usuario->GetUsuario($id);
 
         return view('Modulo_Usuarios.Dashboard_admin')->with('Select', $Select);
@@ -57,7 +57,7 @@ class UsuarioController extends Controller {
      */
     public function update(ValidarActualizacionUsuarioRequest $request, $id) {
 
-        $_Usuario = new Usuario();
+        $_Usuario = new User();
 
         $Over = $_Usuario->GetUsuario($id);
 
@@ -73,7 +73,7 @@ class UsuarioController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function Disable(ValidarInactivadoRequest $request, $id) {
-        $_Usuario = new Usuario();
+        $_Usuario = new User();
         $Disable = $_Usuario->SobreCargaDisable($request->all(), $id);
 
         return redirect('/Tabla');

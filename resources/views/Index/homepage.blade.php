@@ -3,9 +3,9 @@
 
 <head>
     <title>Homepage</title>
-  
+
     <link rel="stylesheet" href="{{ asset('css/Styles_index.css') }}" defer">
-    
+
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -14,7 +14,7 @@
         <nav class="nav__hero">
             <div class="container nav__container">
                 <div class="logo">
-                   
+
                     <img src="{{ asset('Img/LOGO_FINAL_ASSIPARK.png') }}" class="Image-logo">
                 </div>
                 <div class="links">
@@ -22,7 +22,7 @@
                     <a href="#" class="link">Servicios</a>
                     <a href="#" class="link">Nosotros</a>
                     <a href="{{ route('login')}}" class="link  ingreso link--active" id="ingreso">Ingreso</a>
-                    
+
                 </div>
 
             </div>
@@ -62,7 +62,7 @@
                                 architecto voluptatibus voluptates consequatur quaerat qui iste autem.</p>
                             <a href="#" class="card__button">adipisicing elit. </a>
                         </div>
-                        
+
 
                     </div>
 
@@ -117,7 +117,7 @@
                 </div>
                 <div class="background">
                     <img src="{{ asset('Img/parking_IMG01.jpg') }}"  class="background__img">
-                    
+
 
                     <div class="background__text">
                         <h3 class="background__title">sit amet consectetur</h3>
@@ -163,7 +163,7 @@
                 <div class="testimony-container">
                     <div class="testimony__card">
                         <img src= "{{ asset('Img/Uso-de-parqueaderos-de-visitantes-en-propiedad-horizontal.jpg') }}" class="testimony__img">
-                        
+
                         <div class="testimony__copy">
                             <i class='bx bxl-google testimony__logo'></i>
                             <div class="testimony__info">
@@ -219,7 +219,7 @@
                     </div>
                 </div>
                 <div class="footer__copy">
-                    <p class="copyright">PARKING MANAGEMENT &copy;2021 
+                    <p class="copyright">PARKING MANAGEMENT &copy;2021
                         <BR>
                         Todos los derechos reservados</p>
                     <a href="#" class="politica__privacidad politica__privacidad--margin">Politica de Privacidad</a>

@@ -33,7 +33,7 @@ class HomeController extends Controller
 
     public function residente()
     {
-        return "Hola desde vista de residente";
+        return view('residente.index');
     }
 
     public function guarda()

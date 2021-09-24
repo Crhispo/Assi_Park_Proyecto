@@ -9,6 +9,8 @@ use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
+use Illuminate\Support\Facades\Auth;
+
 /*
   |--------------------------------------------------------------------------
   | Web Routes
@@ -82,6 +84,6 @@ Route::get('/guarda', [
     HomeController::class, 'guarda'
 ])->name('guarda');
 
-
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
