@@ -100,6 +100,6 @@ class ApartamentoController extends Controller
         //
         $variable = request();
         $apartamento=DB::update('update apartamento set ESTADO_APTO = '.$variable->{'ESTADO_APTO'}.' where ID_APARTAMENTO = '.$ID_APARTAMENTO);
-        return redirect('/apartamento');  
+        return redirect('/apartamento'); 
     }
 }

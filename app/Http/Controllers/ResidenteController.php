@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Residente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ResidenteController extends Controller
 {
@@ -64,10 +65,10 @@ class ResidenteController extends Controller
      * @param  \App\Models\Residente  $residente
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($NUMERO_IDENTIFICACION)
     {
         //
-        $residente=Residente::findOrFail($id);
+        $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
         return view('residente.edit', compact('residente'));
     }
 
@@ -78,13 +79,14 @@ class ResidenteController extends Controller
      * @param  \App\Models\Residente  $residente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $NUMERO_IDENTIFICACION)
     {
         $datosResidente = request()->except(['_token','_method']);
-        Residente::where('id','=',$id)->update($datosResidente);
+        Residente::where('NUMERO_IDENTIFICACION','=',$NUMERO_IDENTIFICACION)->update($datosResidente);
 
-        $residente=Residente::findOrFail($id);
-        return view('residente.edit', compact('residente'));
+        $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
+        //return view('residente.edit', compact('residente'));
+        return redirect('/residente');  
     }
 
     /**
@@ -93,8 +95,11 @@ class ResidenteController extends Controller
      * @param  \App\Models\Residente  $residente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Residente $residente)
+    public function destroy(Request $request, $NUMERO_IDENTIFICACION)
     {
         //
+        $variable = request();
+        $apartamento=DB::update('update residente set ESTADO_RESIDENTE = '.$variable->{'ESTADO_RESIDENTE'}.' where NUMERO_IDENTIFICACION = '.$NUMERO_IDENTIFICACION);
+        return redirect('/residente'); 
     }
 }

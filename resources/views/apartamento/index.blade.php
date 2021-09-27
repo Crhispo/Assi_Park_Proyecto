@@ -32,11 +32,11 @@
             <td>
             @switch($apartamento->{'ESTADO_APTO'})
                         @case(1)
-                        Activo
+                        Habitado
                         @break
 
                         @case(0)
-                        Inactivo
+                        Inhabitado
                         @break
 
                         @default

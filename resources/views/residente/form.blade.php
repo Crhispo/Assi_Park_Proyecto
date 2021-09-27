@@ -6,8 +6,8 @@ formulario que tendra datos en comun con create y edit
 </div>
 
 <div class="mb-3">
-    <label for="ID_IDENTIFICACION" class="form-label">tipo de identificacion:</label>
-    <select name="ID_IDENTIFICACION" id="ID_IDENTIFICACION" value="{{ isset($residente->ID_IDENTIFICACION)?$residente->ID_IDENTIFICACION:'' }}" class="form-control">
+    <label for="ID_TIPO_IDENTIFICACION" class="form-label">tipo de identificacion:</label>
+    <select name="ID_TIPO_IDENTIFICACION" id="ID_TIPO_IDENTIFICACION" value="{{ isset($residente->ID_TIPO_IDENTIFICACION)?$residente->ID_TIPO_IDENTIFICACION:'' }}" class="form-control">
         <option value="" selected>...</option>
         <option value="1">CC - Cedula de ciudadania</option>
         <option value="2">CE - Cedula de extranjeria</option>
