@@ -37,7 +37,7 @@ Route::delete('Usuario.{id}', [UsuarioController::class, 'disable']);
 Route::resource('apartamento', ApartamentoController::class);
 
 /* Rutas modulo residente */
-
+/*comentario de prueba*/
 Route::resource('residente', ResidenteController::class);
 
 //consultar
@@ -45,6 +45,7 @@ Route::get('/parqueadero', [ParqueaderoController::class, 'show']);
 Route::get('/vehiculo', [VehiculoController::class, 'show']);
 Route::get('/tipo', [tipo_parqueadero_vehiculoController::class, 'show']);
 Route::get('/asignacion', [Detalle_asignacionController::class, 'show']);
+
 
 //eliminar
 route::get('/vehiculo/delete/{id}', [VehiculoController::class, 'delete'])->name('eliminarvehiculo');
@@ -57,6 +58,7 @@ route::get('/vehiculo/form{id?}', [VehiculoController::class, 'form'])->name('ve
 route::get('/parqueadero/form{id?}', [ParqueaderoController::class, 'form'])->name('parqueadero.form');
 route::get('/tipo/form{id?}', [tipo_parqueadero_vehiculoController::class, 'form'])->name('tipo.form');
 route::get('/asignacion/form{id?}', [Detalle_asignacionController::class, 'form'])->name('asignacion.form');
+
 
 //guardar vehiculos
 route::post('/vehiculo/save', [VehiculoController::class, 'save'])->name('vehiculo.save');
