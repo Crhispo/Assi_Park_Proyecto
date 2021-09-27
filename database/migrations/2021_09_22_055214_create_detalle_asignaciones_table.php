@@ -15,11 +15,11 @@ class CreateDetalleAsignacionesTable extends Migration
     {
         Schema::create('detalle_asignaciones', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('apartamento_id');
+            $table->unsignedsmallInteger('apartamento_id');
             $table->foreignId('vehiculo_id');
             $table->foreignId('parqueadero_id');
             $table->timestamps();
-            $table->foreign('apartamento_id')->references('id')->on('apartamentos');
+            $table->foreign('apartamento_id')->references('ID_APARTAMENTO')->on('apartamento');
             $table->foreign('vehiculo_id')->references('id')->on('vehiculos');
             $table->foreign('parqueadero_id')->references('id')->on('parqueaderos');
 

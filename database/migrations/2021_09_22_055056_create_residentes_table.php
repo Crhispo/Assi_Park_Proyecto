@@ -13,23 +13,23 @@ class CreateResidentesTable extends Migration
      */
     public function up()
     {
-        Schema::create('residentes', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger('NUMERO_IDENTIFICACION')->unique();
-            $table->foreignId('tipo_identificacion_id');
+        Schema::create('residente', function (Blueprint $table) {
+            $table->unsignedInteger('NUMERO_IDENTIFICACION', );
+            $table->primary('NUMERO_IDENTIFICACION');
+            $table->unsignedTinyInteger('ID_TIPO_IDENTIFICACION');
             $table->string('NOMBRE', 45);
             $table->string('APELLIDO', 45);
-            $table->tinyInteger('SEXO');
+            $table->boolean('SEXO');
             $table->unsignedInteger('TELEFONO')->nullable();
             $table->unsignedInteger('CELULAR1');
             $table->unsignedInteger('CELULAR2')->nullable();
             $table->string('CORREO_ELECTRONICO', 255);
-            $table->foreignId('apartamento_id');
+            $table->unsignedsmallInteger('ID_APARTAMENTO');
             $table->boolean('ESTADO_RESIDENTE')->default(1);
             $table->timestamps();
-            $table->foreign('tipo_identificacion_id')->references('id')->on('tipo_identificaciones');
-            $table->foreign('apartamento_id')->references('id')->on('apartamentos');
 
+            $table->foreign('ID_TIPO_IDENTIFICACION')->references('ID_IDENTIFICACION')->on('tipo_identificacion');
+            $table->foreign('ID_APARTAMENTO')->references('ID_APARTAMENTO')->on('apartamento');
         });
     }
 
@@ -40,6 +40,6 @@ class CreateResidentesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('residentes');
+        Schema::dropIfExists('residente');
     }
 }

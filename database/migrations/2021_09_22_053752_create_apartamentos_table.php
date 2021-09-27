@@ -13,11 +13,12 @@ class CreateApartamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartamentos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('apartamento', function (Blueprint $table) {
+            $table->smallIncrements('ID_APARTAMENTO');
             $table->unsignedSmallInteger('NUMERO_APTO');
             $table->char('BLOQUE', 10);
             $table->boolean('ESTADO_APTO')->default(1);
+
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateApartamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartamentos');
+        Schema::dropIfExists('apartamento');
     }
 }

@@ -13,10 +13,9 @@ class CreateTipoUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_usuarios', function (Blueprint $table) {
-            $table->id();
-            $table->string('tipo de usuario',20);
-            $table->timestamps();
+        Schema::create('tipo_usuario', function (Blueprint $table) {
+            $table->tinyIncrements('ID_TIPO_USUARIO');
+            $table->string('TIPO_USUARIO',20);
         });
     }
 
@@ -27,6 +26,6 @@ class CreateTipoUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_usuarios');
+        Schema::dropIfExists('tipo_usuario');
     }
 }

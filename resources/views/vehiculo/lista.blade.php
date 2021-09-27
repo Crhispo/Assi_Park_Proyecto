@@ -1,6 +1,6 @@
 @extends('plantilla')
 @section('title','vehiculo')
-@section('Encabezado','Vehiculo')  
+@section('Encabezado','Vehiculo')
 @section('content')
 <br>
 <a href="{{route('vehiculo.form')}}" class="btn btn-primary">Nuevo vehiculo</a>
@@ -25,14 +25,14 @@
 </thead><tbody>
 @foreach($vehiculoList as $vehiculo)
 <tr>
-   
-    <td>{{$vehiculo->Numero_de_identificacion_propetario}}</td>
-    <td>{{$vehiculo->Marca}}</td>
-    <td>{{$vehiculo->Color}}</td>
-    <td>{{$vehiculo->Tipo_parqueadero}}</td>
-    <td>{{$vehiculo->Placa}}</td>
+
+    <td>{{$vehiculo->NUMERO_IDENTIFICACION}}</td>
+    <td>{{$vehiculo->marca_id}}</td>
+    <td>{{$vehiculo->color_id}}</td>
+    <td>{{$vehiculo->tipo_parqueadero_id}}</td>
+    <td>{{$vehiculo->placa}}</td>
     <td>
-        @switch($vehiculo->estado)
+        @switch($vehiculo->ESTADO_VEHICULO)
         @case(1)
         Activo
         @break
@@ -51,7 +51,7 @@
         <a href="{{route('eliminarvehiculo',['id'=>$vehiculo->id])}}" class="btn btn-danger">Eliminar</a>
     </td>
 </tr>
-@endforeach 
+@endforeach
 </tbody>
 </table>
 @section('js')
@@ -61,7 +61,7 @@
 <script>
     $(document).ready(function() {
     $('#vehiculo').DataTable(
-        
+
     );
 } );
 </script>

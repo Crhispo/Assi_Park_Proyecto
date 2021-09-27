@@ -13,10 +13,9 @@ class CreateTipoIdentificacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_identificaciones', function (Blueprint $table) {
-            $table->id();
-            $table->string('tipo de identificacion',20);
-            $table->timestamps();
+        Schema::create('tipo_identificacion', function (Blueprint $table) {
+            $table->tinyIncrements('ID_IDENTIFICACION');
+            $table->string('IDENTIFICACION',20);
         });
     }
 
@@ -27,6 +26,6 @@ class CreateTipoIdentificacionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_identificaciones');
+        Schema::dropIfExists('tipo_identificacion');
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\UsuarioController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResidenteController;
@@ -9,6 +8,9 @@ use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
   |--------------------------------------------------------------------------
   | Web Routes
@@ -63,6 +65,7 @@ route::post('/tipo/save', [tipo_parqueadero_vehiculoController::class, 'save'])-
 route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->name('asignacion.save');
 
 
+
 Route::get('/', function () {
     return view('Index.homepage');
 });
@@ -82,6 +85,6 @@ Route::get('/guarda', [
     HomeController::class, 'guarda'
 ])->name('guarda');
 
-
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

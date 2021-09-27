@@ -14,25 +14,27 @@ class CreateUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger('NUMERO_IDENTIFICACION')->unique();
-            $table->foreignId('tipo_usuario_id');
-            $table->foreignId('tipo_identificacion_id');
+        Schema::create('usuario', function (Blueprint $table) {
+            $table->unsignedInteger('NUMERO_IDENTIFICACION');
+            $table->primary('NUMERO_IDENTIFICACION');
+            $table->unsignedTinyInteger('ID_TIPO_USUARIO');
+            $table->unsignedTinyInteger('ID_TIPO_IDENTIFICACION');
             $table->string('NOMBRE', 45);
             $table->string('APELLIDO', 45);
-            $table->tinyInteger('SEXO');
-            $table->string('DIRRECION', 255);
+            $table->boolean('SEXO');
+            $table->string('DIRECCION', 255);
             $table->unsignedInteger('TELEFONO')->nullable();
             $table->unsignedInteger('CELULAR1');
             $table->unsignedInteger('CELULAR2')->nullable();
-            $table->string('CORREO_ELECTRONICO', 255);
-            $table->string('CONTRASEÑA', 45);
+            $table->string('Correo', 255)->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('CONTRASENA', 45);
+            $table->rememberToken();
             $table->boolean('ESTADO_USUARIO')->default(1);
-
             $table->timestamps();
-            $table->foreign('tipo_usuario_id')->references('id')->on('tipo_usuarios');
-            $table->foreign('tipo_identificacion_id')->references('id')->on('tipo_identificaciones');
+
+            $table->foreign('ID_TIPO_USUARIO')->references('ID_TIPO_USUARIO')->on('tipo_usuario');
+            $table->foreign('ID_TIPO_IDENTIFICACION')->references('ID_IDENTIFICACION')->on('tipo_identificacion');
 
 //$tabla->foreign()-References()->on('');
 
@@ -46,6 +48,6 @@ class CreateUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('usuario');
     }
 }

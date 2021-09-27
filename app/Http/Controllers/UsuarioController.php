@@ -14,7 +14,7 @@ class UsuarioController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = '') {
+    public function index($id = null) {
 
         $_Usuario = new Usuario();
         $Select = $_Usuario->GetUsuario($id);
@@ -40,7 +40,7 @@ class UsuarioController extends Controller {
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show($id = '') {
+    public function show($id = null) {
 
         $_Usuario = new Usuario();
         $Select = $_Usuario->GetUsuario($id);
