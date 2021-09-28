@@ -26,17 +26,35 @@
     <tbody>
         @foreach($apartamentos as $apartamento)
         <tr>
-            <td>{{ $apartamento->id}}</td>
+            <td>{{ $apartamento->ID_APARTAMENTO}}</td>
             <td>{{ $apartamento->NUMERO_APTO}}</td>
             <td>{{ $apartamento->BLOQUE}}</td>
-            <td>{{ $apartamento->ESTADO_APTO}}</td>
+            <td>
+            @switch($apartamento->{'ESTADO_APTO'})
+                        @case(1)
+                        Activo
+                        @break
+
+                        @case(0)
+                        Inactivo
+                        @break
+
+                        @default
+                        Erros
+                        @endswitch
+            </td>
             <td>
                 
-            <a class="btn btn-info" href="{{ url('/apartamento/'.$apartamento->id.'/edit') }}">
+            <a class="btn btn-info" href="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO.'/edit') }}">
                 Editar
                 </a>
-
-                <button class="btn btn-danger">Inhabilitar</button>
+                
+                <form action="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO) }}" method="post">
+                            @csrf
+                            {{ method_field('DELETE') }}
+                            <input hidden name="ESTADO_APTO" value="0"/>
+                            <input type="submit" onclick="return confirm('Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar">
+                        </form>    
             </td>
         </tr>
         @endforeach

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\UsuarioController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResidenteController;
@@ -10,6 +9,7 @@ use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
   |--------------------------------------------------------------------------
@@ -63,6 +63,7 @@ route::post('/vehiculo/save', [VehiculoController::class, 'save'])->name('vehicu
 route::post('/parqueadero/save', [ParqueaderoController::class, 'save'])->name('parqueadero.save');
 route::post('/tipo/save', [tipo_parqueadero_vehiculoController::class, 'save'])->name('tipo.save');
 route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->name('asignacion.save');
+
 
 
 Route::get('/', function () {

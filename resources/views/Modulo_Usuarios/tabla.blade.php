@@ -75,8 +75,11 @@
                         <form action="{{ url('Usuario.'.$value-> {'Numero del documento de identidad'})}}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
+
+                            
                             <input hidden name="Estado_Usuario" value="0"/>
                             <input type="submit" onclick="return confirm('Desea inhabilitar?')" value="Inhabilitar">
+
                         </form>
                     </td>
                 </tr>

@@ -13,10 +13,9 @@ class CreateTipoDeParqueaderosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_de_parqueaderos', function (Blueprint $table) {
-            $table->id();
-            $table->string('tipo_de_parqueadero',20);
-            $table->timestamps();
+        Schema::create('tipo_de_parqueadero_vehiculo', function (Blueprint $table) {
+            $table->tinyIncrements('ID_TIPO_PARQUEADERO_VEHICULO');
+            $table->string('TIPO_PARQUEADERO_VEHICULO',20);
         });
     }
 
@@ -27,6 +26,6 @@ class CreateTipoDeParqueaderosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_de_parqueaderos');
+        Schema::dropIfExists('tipo_de_parqueadero_vehiculo');
     }
 }

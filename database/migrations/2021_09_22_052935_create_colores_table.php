@@ -13,10 +13,9 @@ class CreateColoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('colores', function (Blueprint $table) {
-            $table->id();
-            $table->string('Color',30);
-            $table->timestamps();
+        Schema::create('Color', function (Blueprint $table) {
+            $table->tinyIncrements('ID_COLOR');
+            $table->string('COLOR',30);
         });
     }
 
@@ -27,6 +26,6 @@ class CreateColoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('colores');
+        Schema::dropIfExists('Color');
     }
 }

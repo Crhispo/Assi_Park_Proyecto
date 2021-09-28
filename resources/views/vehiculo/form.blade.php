@@ -1,17 +1,17 @@
 @extends('plantilla')
 @section('title',$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo')
-@section('Encabezado',$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo')    
+@section('Encabezado',$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo')
 
 @section('content')
-    
+
 <form class="form-horizontal" method="POST" action="{{route('vehiculo.save')}}">
-  @csrf  
+  @csrf
   <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
   <div class="form-group">
       <label class="control-label col-sm-2" for="Numero">Numero</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" name="Numero_de_identificacion_propetario" id="Numero_de_identificacion_propetario"
-        value="{{old('Numero_de_identificacion_propetario')? old('Numero_de_identificacion_propetario'): $vehiculo->Numero_de_identificacion_propetario}}">
+        <input type="number" class="form-control" name="Numero_de_identificacion_propietario" id="Numero_de_identificacion_propietario"
+        value="{{old('Numero_de_identificacion_propietario')? old('Numero_de_identificacion_propietario'): $vehiculo->Numero_de_identificacion_propietario}}">
       </div>
     </div>
     <div class="form-group">

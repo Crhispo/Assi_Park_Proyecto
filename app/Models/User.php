@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Notifications\Notifiable;
+<<<<<<< HEAD
+=======
+use Laravel\Sanctum\HasApiTokens;
+>>>>>>> 2c94ab5b62d9e4378c70c5db34d492ef57b54c8f
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+<<<<<<< HEAD
     /**
      * The attributes that are mass assignable.
      *
@@ -32,6 +37,11 @@ class User extends Authenticatable
         'password',
         'estado_usuario'
     ];
+=======
+
+    protected $table = 'usuario';
+
+>>>>>>> 2c94ab5b62d9e4378c70c5db34d492ef57b54c8f
 
     /**
      * The attributes that should be hidden for arrays.

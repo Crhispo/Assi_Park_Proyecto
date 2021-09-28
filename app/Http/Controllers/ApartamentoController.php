@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Apartamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApartamentoController extends Controller
 {
@@ -63,11 +64,12 @@ class ApartamentoController extends Controller
      * @param  \App\Models\Apartamento  $apartamento
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($ID_APARTAMENTO)
     {
         //
-        $apartamento=Apartamento::findOrFail($id);
+        $apartamento=Apartamento::findOrFail($ID_APARTAMENTO);
         return view('apartamento.edit', compact('apartamento'));
+
     }
 
     /**
@@ -77,14 +79,14 @@ class ApartamentoController extends Controller
      * @param  \App\Models\Apartamento  $apartamento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $ID_APARTAMENTO)
     {
-        
         $datosApartamento = request()->except(['_token','_method']);
-        Apartamento::where('id','=',$id)->update($datosApartamento);
+        Apartamento::where('ID_APARTAMENTO','=',$ID_APARTAMENTO)->update($datosApartamento);
 
-        $apartamento=Apartamento::findOrFail($id);
-        return view('apartamento.edit', compact('apartamento'));
+        $apartamento=Apartamento::findOrFail($ID_APARTAMENTO);
+        //return view('apartamento.edit', compact('apartamento')); 
+        return redirect('/apartamento');  
     }
 
     /**
@@ -93,8 +95,11 @@ class ApartamentoController extends Controller
      * @param  \App\Models\Apartamento  $apartamento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Apartamento $apartamento)
+    public function destroy(Request $request, $ID_APARTAMENTO)
     {
         //
+        $variable = request();
+        $apartamento=DB::update('update apartamento set ESTADO_APTO = '.$variable->{'ESTADO_APTO'}.' where ID_APARTAMENTO = '.$ID_APARTAMENTO);
+        return redirect('/apartamento');  
     }
 }
