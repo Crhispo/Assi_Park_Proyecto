@@ -47,11 +47,11 @@ class ResidenteController extends Controller
     public function store(Request $request)
     {
         //
-        
         $datosResidente = request()->except('_token','NUMERO_APTO','BLOQUE');
         $datosResidentex = request()->except('_token');
         
         $ID_APARTAMENTO = DB::select('select ID_APARTAMENTO from apartamento where NUMERO_APTO = '.$datosResidentex['NUMERO_APTO'].' AND BLOQUE = '.'"'.$datosResidentex['BLOQUE'].'"');
+
         $datosResidente['ID_APARTAMENTO']=$ID_APARTAMENTO[0]-> {'ID_APARTAMENTO'};
         
         Residente::insert($datosResidente);
@@ -79,9 +79,11 @@ class ResidenteController extends Controller
      */
     public function edit($NUMERO_IDENTIFICACION)
     {
-        //
+        $TiposId=TipoIdentificacion::all();
+        $NumeroApto=Numero_Apartamento::all();
+        $Bloque=Bloque::all();
         $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
-        return view('residente.edit', compact('residente'));
+        return view('residente.edit', compact('residente','TiposId','NumeroApto','Bloque'));
     }
 
     /**
@@ -93,12 +95,19 @@ class ResidenteController extends Controller
      */
     public function update(Request $request, $NUMERO_IDENTIFICACION)
     {
-        $datosResidente = request()->except(['_token','_method']);
+        $datosResidente = request()->except(['_token','_method','NUMERO_APTO','BLOQUE']);
+        $datosResidentex = request()->except(['_token','_method']);
+
+        //$datosResidente = request()->except('_token','NUMERO_APTO','BLOQUE');
+        //$datosResidentex = request()->except('_token');
+
+        $ID_APARTAMENTO = DB::select('select ID_APARTAMENTO from apartamento where NUMERO_APTO = '.$datosResidente['NUMERO_APTO'].' AND BLOQUE = '.'"'.$datosResidente['BLOQUE'].'"');
+
         Residente::where('NUMERO_IDENTIFICACION','=',$NUMERO_IDENTIFICACION)->update($datosResidente);
 
         $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
         //return view('residente.edit', compact('residente'));
-        return redirect('/residente');  
+        return redirect('/residente');
     }
 
     /**

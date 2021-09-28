@@ -9,9 +9,9 @@ formulario que tendra datos en comun con create y edit
     <label for="ID_TIPO_IDENTIFICACION" class="form-label">tipo de identificacion:</label>
     <select name="ID_TIPO_IDENTIFICACION" id="ID_TIPO_IDENTIFICACION" class="form-control">
         <option value="" selected>...</option>
-        @foreach($ID_TIPO_IDENTIFICACION as $ID_TIPO_IDENTIFICACION)
-        <option value="{{$ID_TIPO_IDENTIFICACION['ID_IDENTIFICACION']}}">
-            {{ $ID_TIPO_IDENTIFICACION['IDENTIFICACION']}}
+        @foreach($TiposId as $Tipo)
+        <option value="{{$Tipo['ID_IDENTIFICACION']}}">
+            {{ $Tipo['IDENTIFICACION']}}
         </option>
         @endforeach
     </select>
