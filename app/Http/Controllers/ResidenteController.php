@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bloque;
+use App\Models\Numero_Apartamento;
 use App\Models\Residente;
+use App\Models\TipoIdentificacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +19,7 @@ class ResidenteController extends Controller
     public function index()
     {
         //
-        $datos['residentes']=Residente::paginate(5);
+        $datos['residentes']=Residente::all();
         return view('residente.index',$datos);
     }
 
@@ -28,7 +31,11 @@ class ResidenteController extends Controller
     public function create()
     {
         //
-        return view('residente.create');
+        $ID_TIPO_IDENTIFICACION = TipoIdentificacion::all();
+        $NumeroApto = Numero_Apartamento::all();
+        $Bloque = Bloque::all();
+        
+        return view('residente.create',compact('ID_TIPO_IDENTIFICACION','NumeroApto','Bloque'));
     }
 
     /**
@@ -40,9 +47,14 @@ class ResidenteController extends Controller
     public function store(Request $request)
     {
         //
-        $datosResidente = request()->except('_token');
+        
+        $datosResidente = request()->except('_token','NUMERO_APTO','BLOQUE');
+        $datosResidentex = request()->except('_token');
+        
+        $ID_APARTAMENTO = DB::select('select ID_APARTAMENTO from apartamento where NUMERO_APTO = '.$datosResidentex['NUMERO_APTO'].' AND BLOQUE = '.'"'.$datosResidentex['BLOQUE'].'"');
+        $datosResidente['ID_APARTAMENTO']=$ID_APARTAMENTO[0]-> {'ID_APARTAMENTO'};
+        
         Residente::insert($datosResidente);
-
         //return response()->json($datosResidente);
         return redirect('/residente');
         

@@ -8,6 +8,8 @@ use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
+use App\Http\Controllers\NumeroAptoController;
+use App\Http\Controllers\BloqueController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +37,8 @@ Route::delete('Usuario.{id}', [UsuarioController::class, 'disable']);
 /* Rutas modulo apartamento */
 
 Route::resource('apartamento', ApartamentoController::class);
+Route::post('NumeroApto', [NumeroAptoController::class,'store']);
+Route::post('bloque', [BloqueController::class,'store']);
 
 /* Rutas modulo residente */
 
@@ -75,10 +79,10 @@ Route::get('/admin', [
     HomeController::class, 'admin'
 ])->name('admin');
 
-//ruta de la vista residente
-Route::get('/residente', [
-    HomeController::class, 'residente'
-])->name('residente');
+//ruta de la vista secretaria
+Route::get('/secretaria', [
+    HomeController::class, 'secretaria'
+])->name('secretaria');
 
 //ruta de la vista guarda
 Route::get('/guarda', [

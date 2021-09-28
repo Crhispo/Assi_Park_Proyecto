@@ -31,17 +31,51 @@
     @foreach($residentes as $residente)
         <tr>
             <td>{{ $residente->NUMERO_IDENTIFICACION}}</td>
-            <td>{{ $residente->ID_TIPO_IDENTIFICACION}}</td>
+            <td>
+                @switch($residente->{'ID_TIPO_IDENTIFICACION'})
+                            @case(1)
+                            Cedula de ciudadania
+                            @break
+
+                            @case(2)
+                            cedula de extranjeria
+                            @break
+
+                            @case(3)
+                            tarjeta de identidad
+                            @break
+
+                            @case(4)
+                            registro civil
+                            @break
+
+                            @default
+                            Erros
+                            @endswitch
+            </td>
             <td>{{ $residente->NOMBRE}}</td>
             <td>{{ $residente->APELLIDO}}</td>
-            <td>{{ $residente->SEXO}}</td>
+            <td>
+            @switch($residente->{'SEXO'})
+                        @case(1)
+                        Masculino
+                        @break
+
+                        @case(0)
+                        Femenino
+                        @break
+
+                        @default
+                        Erros
+                        @endswitch
+            </td>
             <td>{{ $residente->TELEFONO}}</td>
             <td>{{ $residente->CELULAR1}}</td>
             <td>{{ $residente->CELULAR2}}</td>
             <td>{{ $residente->CORREO_ELECTRONICO}}</td>
             <td>{{ $residente->ID_APARTAMENTO}}</td>
             <td>
-            @switch($apartamento->{'ESTADO_RESIDENTE'})
+            @switch($residente->{'ESTADO_RESIDENTE'})
                         @case(1)
                         Activo
                         @break

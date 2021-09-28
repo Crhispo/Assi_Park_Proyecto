@@ -15,7 +15,6 @@
 <table id="apartamentos" class="table table-striped shadow-lg mt-4" style="width:100%">
     <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">Id apartamento</th>
             <th scope="col">Numero apartamento</th>
             <th scope="col">bloque</th>
             <th scope="col">estado</th>
@@ -24,13 +23,14 @@
     </thead>
     
     <tbody>
-        @foreach($apartamentos as $apartamento)
+        
+        @foreach($apartamento as $apartamento)
         <tr>
-            <td>{{ $apartamento->ID_APARTAMENTO}}</td>
-            <td>{{ $apartamento->NUMERO_APTO}}</td>
-            <td>{{ $apartamento->BLOQUE}}</td>
+            <td>{{ $apartamento->{'NUMERO_APTO'} }}
+            </td>
+            <td>{{ $apartamento->{'BLOQUE'} }}</td>
             <td>
-            @switch($apartamento->{'ESTADO_APTO'})
+            @switch($apartamento->{'ESTADO_APTO'} )
                         @case(1)
                         Habitado
                         @break

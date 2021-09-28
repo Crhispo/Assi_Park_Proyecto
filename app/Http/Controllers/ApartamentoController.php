@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreApartamentoRequest;
 use App\Models\Apartamento;
+use App\Models\Bloque;
+use App\Models\Numero_Apartamento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +19,8 @@ class ApartamentoController extends Controller
     public function index()
     {
         //
-        $datos['apartamentos']=Apartamento::paginate(5);
-        return view('apartamento.index',$datos);
+        $apartamento=DB::select('Select numeroapartamento.NUMERO_APTO, bloque.BLOQUE, ESTADO_APTO, ID_APARTAMENTO from apartamento inner join bloque on apartamento.BLOQUE = bloque.id inner join numeroapartamento on apartamento.NUMERO_APTO = numeroapartamento.id');
+        return view('apartamento.index',compact('apartamento'));
     }
 
     /**
@@ -28,7 +31,9 @@ class ApartamentoController extends Controller
     public function create()
     {
         //
-        return view('apartamento.create');
+        $NumeroApto=Numero_Apartamento::all();
+        $Bloque=Bloque::all();
+        return view('apartamento.create',compact('NumeroApto','Bloque'));
     }
 
     /**
@@ -37,7 +42,7 @@ class ApartamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreApartamentoRequest $request)
     {
         //
         $datosApartamento = request()->except('_token');
