@@ -65,10 +65,10 @@ route::post('/tipo/save', [tipo_parqueadero_vehiculoController::class, 'save'])-
 route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->name('asignacion.save');
 
 
-
+//ruta LandingPage
 Route::get('/', function () {
     return view('Index.homepage');
-});
+})->name('homepage');
 
 //ruta de la vista administrador
 Route::get('/admin', [
@@ -88,3 +88,7 @@ Route::get('/guarda', [
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/registro', [
+    ResidenteController::class, 'guarda'
+])->name('guarda');

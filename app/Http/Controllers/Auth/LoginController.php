@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
-class LoginController extends Controller {
+class LoginController extends Controller
+{
     /*
       |--------------------------------------------------------------------------
       | Login Controller
@@ -18,14 +20,15 @@ class LoginController extends Controller {
       |
      */
 
-use AuthenticatesUsers;
+    use AuthenticatesUsers;
 
     /**
      * Get the login username to be used by the controller.
      *
      * @return string
      */
-    public function username() {
+    public function username()
+    {
         return 'numero_identificacion';
     }
 
@@ -36,15 +39,17 @@ use AuthenticatesUsers;
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    protected function redirectTo() {
-        if (auth()->user()->tipousuario_id == 1) {
+    protected function redirectTo()
+    {
+        if (auth()->user()->tipo_usuario_id == 1) {
             return '/admin';
-        } elseif (auth()->user()->tipousuario_id == 2) {
+        } elseif (auth()->user()->tipo_usuario_id == 2) {
             return '/residente';
-        } elseif (auth()->user()->tipousuario_id == 3) {
+        } elseif (auth()->user()->tipo_usuario_id == 3) {
             return '/guarda';
+        } else {
+            return '/home';
         }
-        return '/home';
     }
 
     /**
@@ -52,8 +57,8 @@ use AuthenticatesUsers;
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('guest')->except('logout');
     }
-
 }
