@@ -3,6 +3,7 @@
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApartamentoController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResidenteController;
 use App\Http\Controllers\ParqueaderoController;
@@ -64,14 +65,16 @@ route::post('/tipo/save', [tipo_parqueadero_vehiculoController::class, 'save'])-
 route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->name('asignacion.save');
 
 
+
 Route::get('/', function () {
-    return view('Index.homepage');
+    return view('welcome');
 });
+
 
 //ruta de la vista administrador
 Route::get('/admin', [
     HomeController::class, 'admin'
-])->name('admin');
+])->name('admin')->middleware(['password.confirm']);
 
 //ruta de la vista residente
 Route::get('/residente', [
@@ -84,6 +87,7 @@ Route::get('/guarda', [
 ])->name('guarda');
 
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/registrar', [RegisterController::class, 'showRegistrationForm']);
 

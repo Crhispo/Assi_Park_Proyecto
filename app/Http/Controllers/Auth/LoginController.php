@@ -6,26 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class LoginController extends Controller {
+class LoginController extends Controller
+{
     /*
-      |--------------------------------------------------------------------------
-      | Login Controller
-      |--------------------------------------------------------------------------
-      |
-      | This controller handles authenticating users for the application and
-      | redirecting them to your home screen. The controller uses a trait
-      | to conveniently provide its functionality to your applications.
-      |
-     */
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
 
-use AuthenticatesUsers;
-
+    use AuthenticatesUsers;
     /**
      * Get the login username to be used by the controller.
      *
      * @return string
      */
-    public function username() {
+    public function username()
+    {
         return 'numero_identificacion';
     }
 
@@ -35,8 +36,8 @@ use AuthenticatesUsers;
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-
-    protected function redirectTo() {
+    protected function redirectTo()
+    {
         if (auth()->user()->tipousuario_id == 1) {
             return '/admin';
         } elseif (auth()->user()->tipousuario_id == 2) {
@@ -46,14 +47,13 @@ use AuthenticatesUsers;
         }
         return '/home';
     }
-
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('guest')->except('logout');
     }
-
 }

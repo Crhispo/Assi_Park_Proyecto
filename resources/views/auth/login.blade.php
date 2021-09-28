@@ -32,7 +32,7 @@
                         </span>
                     @enderror
 
-                    <div class="form-group row" id="recordarme">
+                    <div class="form-group row">
                         <div class="col-md-6 offset-md-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember"
@@ -45,12 +45,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0" id="olvidar-pass">
-                        <div class="col-md-8 offset-md-4" id="btn-olvidar-pass">
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn btn-primary solid">
                                 {{ __('Iniciar Sesión') }}
                             </button>
-                            
 
                             @if (Route::has('password.request'))
                                 <a class="Forget_Pss" href="{{ route('password.request') }}">

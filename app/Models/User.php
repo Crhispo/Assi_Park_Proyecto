@@ -17,9 +17,19 @@ class User extends Authenticatable {
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'tipodocumento_id',
+        'tipousuario_id',
+        'numero_identificacion',
+        'nombre',
+        'apellido',
+        'sexo',
+        'direccion',
+        'telefono',
+        'celular1',
+        'celular2',
         'email',
         'password',
+        'estado_usuario'
     ];
 
     /**
@@ -40,4 +50,15 @@ class User extends Authenticatable {
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+function TipoIdentificacion()
+{
+    return $this->belongsTo(TipoIdentificacion::class);
 }
+
+function TipoUsuario()
+{
+    return $this->belongsTo(TipoUsuario::class);
+}
+}
+
