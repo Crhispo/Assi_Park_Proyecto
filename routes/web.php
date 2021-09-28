@@ -67,7 +67,7 @@ route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->
 
 Route::get('/', function () {
     return view('Index.homepage');
-});
+})->name('homepage');
 
 //ruta de la vista administrador
 Route::get('/admin', [
@@ -87,3 +87,5 @@ Route::get('/guarda', [
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
