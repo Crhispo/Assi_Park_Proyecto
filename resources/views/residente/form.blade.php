@@ -6,14 +6,16 @@ formulario que tendra datos en comun con create y edit
 </div>
 
 <div class="mb-3">
-    <label for="ID_IDENTIFICACION" class="form-label">tipo de identificacion:</label>
-    <select name="ID_IDENTIFICACION" id="ID_IDENTIFICACION" value="{{ isset($residente->ID_IDENTIFICACION)?$residente->ID_IDENTIFICACION:'' }}" class="form-control">
+    <label for="ID_TIPO_IDENTIFICACION" class="form-label">tipo de identificacion:</label>
+    <select name="ID_TIPO_IDENTIFICACION" id="ID_TIPO_IDENTIFICACION" class="form-control">
         <option value="" selected>...</option>
-        <option value="1">CC - Cedula de ciudadania</option>
-        <option value="2">CE - Cedula de extranjeria</option>
+        @foreach($TiposId as $Tipo)
+        <option value="{{$Tipo['ID_IDENTIFICACION']}}">
+            {{ $Tipo['IDENTIFICACION']}}
+        </option>
+        @endforeach
     </select>
 </div>
-    
     
 <div class="mb-3">
     <label for="NOMBRE" class="form-label">nombre:</label>
@@ -54,10 +56,34 @@ formulario que tendra datos en comun con create y edit
     <input type="email" name="CORREO_ELECTRONICO" maxlength="150" id="CORREO_ELECTRONICO" value="{{ isset($residente->CORREO_ELECTRONICO)?$residente->CORREO_ELECTRONICO:'' }}" class="form-control">
 </div>
 
+
+
+
+
 <div class="mb-3">
-    <label for="Apartamento" class="form-label">apartamento</label>
-    <input type="text" name="ID_APARTAMENTO" maxlength="5" id="ID_APARTAMENTO" value="{{ isset($residente->ID_APARTAMENTO)?$residente->ID_APARTAMENTO:'' }}" class="form-control">
-</div>    
+    <label for="NUMERO_APTO" class="form-label">Numero apartamento:</label>
+    <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($NumeroApto as $NumeroApto)
+        <option value="{{$NumeroApto['id']}}">
+            {{ $NumeroApto['NUMERO_APTO']}}
+        </option>
+        @endforeach
+    </select>
+</div>
+
+<div class="mb-3">
+    <label for="BLOQUE" class="form-label">Bloque de apartamento:</label>
+    <select name="BLOQUE" id="BLOQUE" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($Bloque as $Bloque)
+        <option value="{{$Bloque['id']}}">
+            {{ $Bloque['BLOQUE']}}
+        </option>
+        @endforeach
+    </select>
+</div>
+
 
     <input type="hidden" value="1" name="ESTADO_RESIDENTE">
 

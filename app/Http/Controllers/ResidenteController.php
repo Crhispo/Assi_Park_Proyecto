@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bloque;
+use App\Models\Numero_Apartamento;
 use App\Models\Residente;
+use App\Models\TipoIdentificacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ResidenteController extends Controller
 {
@@ -15,7 +19,7 @@ class ResidenteController extends Controller
     public function index()
     {
         //
-        $datos['residentes']=Residente::paginate(5);
+        $datos['residentes']=Residente::all();
         return view('residente.index',$datos);
     }
 
@@ -27,7 +31,11 @@ class ResidenteController extends Controller
     public function create()
     {
         //
-        return view('residente.create');
+        $ID_TIPO_IDENTIFICACION = TipoIdentificacion::all();
+        $NumeroApto = Numero_Apartamento::all();
+        $Bloque = Bloque::all();
+        
+        return view('residente.create',compact('ID_TIPO_IDENTIFICACION','NumeroApto','Bloque'));
     }
 
     /**
@@ -39,9 +47,14 @@ class ResidenteController extends Controller
     public function store(Request $request)
     {
         //
-        $datosResidente = request()->except('_token');
-        Residente::insert($datosResidente);
+        $datosResidente = request()->except('_token','NUMERO_APTO','BLOQUE');
+        $datosResidentex = request()->except('_token');
+        
+        $ID_APARTAMENTO = DB::select('select ID_APARTAMENTO from apartamento where NUMERO_APTO = '.$datosResidentex['NUMERO_APTO'].' AND BLOQUE = '.'"'.$datosResidentex['BLOQUE'].'"');
 
+        $datosResidente['ID_APARTAMENTO']=$ID_APARTAMENTO[0]-> {'ID_APARTAMENTO'};
+        
+        Residente::insert($datosResidente);
         //return response()->json($datosResidente);
         return redirect('/residente');
         
@@ -64,11 +77,13 @@ class ResidenteController extends Controller
      * @param  \App\Models\Residente  $residente
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($NUMERO_IDENTIFICACION)
     {
-        //
-        $residente=Residente::findOrFail($id);
-        return view('residente.edit', compact('residente'));
+        $TiposId=TipoIdentificacion::all();
+        $NumeroApto=Numero_Apartamento::all();
+        $Bloque=Bloque::all();
+        $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
+        return view('residente.edit', compact('residente','TiposId','NumeroApto','Bloque'));
     }
 
     /**
@@ -78,13 +93,21 @@ class ResidenteController extends Controller
      * @param  \App\Models\Residente  $residente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $NUMERO_IDENTIFICACION)
     {
-        $datosResidente = request()->except(['_token','_method']);
-        Residente::where('id','=',$id)->update($datosResidente);
+        $datosResidente = request()->except(['_token','_method','NUMERO_APTO','BLOQUE']);
+        $datosResidentex = request()->except(['_token','_method']);
 
-        $residente=Residente::findOrFail($id);
-        return view('residente.edit', compact('residente'));
+        //$datosResidente = request()->except('_token','NUMERO_APTO','BLOQUE');
+        //$datosResidentex = request()->except('_token');
+
+        $ID_APARTAMENTO = DB::select('select ID_APARTAMENTO from apartamento where NUMERO_APTO = '.$datosResidente['NUMERO_APTO'].' AND BLOQUE = '.'"'.$datosResidente['BLOQUE'].'"');
+
+        Residente::where('NUMERO_IDENTIFICACION','=',$NUMERO_IDENTIFICACION)->update($datosResidente);
+
+        $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
+        //return view('residente.edit', compact('residente'));
+        return redirect('/residente');
     }
 
     /**
@@ -93,8 +116,11 @@ class ResidenteController extends Controller
      * @param  \App\Models\Residente  $residente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Residente $residente)
+    public function destroy(Request $request, $NUMERO_IDENTIFICACION)
     {
         //
+        $variable = request();
+        $apartamento=DB::update('update residente set ESTADO_RESIDENTE = '.$variable->{'ESTADO_RESIDENTE'}.' where NUMERO_IDENTIFICACION = '.$NUMERO_IDENTIFICACION);
+        return redirect('/residente'); 
     }
 }

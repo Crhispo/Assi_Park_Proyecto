@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Residente extends Model
+class Numero_Apartamento extends Model
 {
     use HasFactory;
-    protected $table='residente';
-    protected $primaryKey = 'NUMERO_IDENTIFICACION';
-}
 
+    protected $table='numeroapartamento';
+}

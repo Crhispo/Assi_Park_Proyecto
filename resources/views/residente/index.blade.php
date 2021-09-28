@@ -31,21 +31,73 @@
     @foreach($residentes as $residente)
         <tr>
             <td>{{ $residente->NUMERO_IDENTIFICACION}}</td>
-            <td>{{ $residente->ID_IDENTIFICACION}}</td>
+            <td>
+                @switch($residente->{'ID_TIPO_IDENTIFICACION'})
+                            @case(1)
+                            Cedula de ciudadania
+                            @break
+
+                            @case(2)
+                            cedula de extranjeria
+                            @break
+
+                            @case(3)
+                            tarjeta de identidad
+                            @break
+
+                            @case(4)
+                            registro civil
+                            @break
+
+                            @default
+                            Erros
+                            @endswitch
+            </td>
             <td>{{ $residente->NOMBRE}}</td>
             <td>{{ $residente->APELLIDO}}</td>
-            <td>{{ $residente->SEXO}}</td>
+            <td>
+            @switch($residente->{'SEXO'})
+                        @case(1)
+                        Masculino
+                        @break
+
+                        @case(0)
+                        Femenino
+                        @break
+
+                        @default
+                        Erros
+                        @endswitch
+            </td>
             <td>{{ $residente->TELEFONO}}</td>
             <td>{{ $residente->CELULAR1}}</td>
             <td>{{ $residente->CELULAR2}}</td>
             <td>{{ $residente->CORREO_ELECTRONICO}}</td>
             <td>{{ $residente->ID_APARTAMENTO}}</td>
-            <td>{{ $residente->ESTADO_RESIDENTE}}</td>
             <td>
-                <a class="btn btn-info" href="{{ url('/residente/'.$residente->id.'/edit') }}">Editar</a>
+            @switch($residente->{'ESTADO_RESIDENTE'})
+                        @case(1)
+                        Activo
+                        @break
+
+                        @case(0)
+                        Inactivo
+                        @break
+
+                        @default
+                        Erros
+                        @endswitch
+            </td>
+            <td>
+                <a class="btn btn-info" href="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION.'/edit') }}">Editar</a>
 
 
-                <button class="btn btn-danger">Inhabilitar</button>
+                <form action="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION) }}" method="post">
+                            @csrf
+                            {{ method_field('DELETE') }}
+                            <input hidden name="ESTADO_RESIDENTE" value="0"/>
+                            <input type="submit" onclick="return confirm('Seguro que Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar">
+                        </form>   
             </td>
         </tr>
         @endforeach
