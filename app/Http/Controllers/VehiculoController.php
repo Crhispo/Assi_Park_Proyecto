@@ -53,12 +53,12 @@ class VehiculoController extends Controller
         if ($request->id > 0) {
             $vehiculo = Vehiculo::findOrFail($request->id);
         }
-        $vehiculo->NUMERO_IDENTIFICACION = $request->Numero_de_identificacion_propietario;
-        $vehiculo->marca_id = $request->Marca;
+        $vehiculo->NUMERO_IDENTIFICACION = $request->NUMERO_IDENTIFICACION;
+        $vehiculo->marca_id = $request->marca;
         $vehiculo->color_id = $request->Color;
-        $vehiculo->tipo_parqueadero_id = $request->Tipo_parqueadero;
-        $vehiculo->placa = $request->Placa;
-        $vehiculo->ESTADO_VEHICULO = $request->estado;
+        $vehiculo->tipo_parqueadero_id = $request->tipo;
+        $vehiculo->placa = $request->placa;
+        $vehiculo->ESTADO_VEHICULO = $request->ESTADO_VEHICULO;
         $vehiculo->save();
         return redirect('/vehiculo');
 
