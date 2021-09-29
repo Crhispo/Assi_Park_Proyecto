@@ -17,6 +17,7 @@ class BloqueController extends Controller
     {
         //
         $Bloque = Bloque::all();
+        //$Bloque = Bloque::all();
         return view('apartamento.create',compact('Bloque'));
     }
 
@@ -29,13 +30,13 @@ class BloqueController extends Controller
     public function store(Request $request)
     {
         //
-
+        
         $Bloque = request()->except('_token');
-
+        
         Bloque::insert($Bloque);
         //return response()->json($datosResidente);
         return redirect('/apartamento');
-
+        
     }
 
 

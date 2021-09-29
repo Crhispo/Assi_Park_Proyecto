@@ -1,4 +1,5 @@
-formulario que tendra datos en comun con create y edit
+
+<h2>{{ $modo }} residente</h2>
 
 <div class="mb-3">
     <label for="Id" class="form-label">Numero de identificacion:</label>
@@ -6,14 +7,16 @@ formulario que tendra datos en comun con create y edit
 </div>
 
 <div class="mb-3">
-    <label for="ID_IDENTIFICACION" class="form-label">tipo de identificacion:</label>
-    <select name="ID_IDENTIFICACION" id="ID_IDENTIFICACION" value="{{ isset($residente->ID_IDENTIFICACION)?$residente->ID_IDENTIFICACION:'' }}" class="form-control">
+    <label for="ID_TIPO_IDENTIFICACION" class="form-label">tipo de identificacion:</label>
+    <select name="ID_TIPO_IDENTIFICACION" id="ID_TIPO_IDENTIFICACION" class="form-control">
         <option value="" selected>...</option>
-        <option value="1">CC - Cedula de ciudadania</option>
-        <option value="2">CE - Cedula de extranjeria</option>
+        @foreach($TiposId as $Tipo)
+              <option value="{{ $Tipo['ID_IDENTIFICACION'] }}" @if(isset ($residente->{'ID_TIPO_IDENTIFICACION'})&&$residente->{'ID_TIPO_IDENTIFICACION'}=== $Tipo['ID_IDENTIFICACION']) selected='selected' @else ''  @endif>
+              {{ $Tipo['IDENTIFICACION'] }}    
+              </option>
+        @endforeach
     </select>
 </div>
-    
     
 <div class="mb-3">
     <label for="NOMBRE" class="form-label">nombre:</label>
@@ -27,12 +30,18 @@ formulario que tendra datos en comun con create y edit
 
 <div class="mb-3">
     <label for="Sexo" class="form-label">sexo:</label>
-    <select name="SEXO"  id="SEXO" value="{{ isset($residente->SEXO)?$residente->SEXO:'' }}" class="form-control">
+    <select name="SEXO"  id="SEXO" value="" class="form-control">
         <option value="" selected>...</option>
-        <option value="0">Femenino</option>
-        <option value="1">Masculino</option>
+              <option value="0" @if(isset($residente->{'SEXO'})&&$residente->{'SEXO'} === 0) selected='selected' @endif>
+                Femenino
+              </option>
+              <option value="1" @if(isset($residente->{'SEXO'})&&$residente->{'SEXO'} === 1) selected='selected' @endif>
+                Masculino
+              </option>
     </select>
 </div>
+
+
     
 <div class="mb-3">
     <label for="Telefono" class="form-label">telefono:</label>
@@ -54,13 +63,34 @@ formulario que tendra datos en comun con create y edit
     <input type="email" name="CORREO_ELECTRONICO" maxlength="150" id="CORREO_ELECTRONICO" value="{{ isset($residente->CORREO_ELECTRONICO)?$residente->CORREO_ELECTRONICO:'' }}" class="form-control">
 </div>
 
+
 <div class="mb-3">
-    <label for="Apartamento" class="form-label">apartamento</label>
-    <input type="text" name="ID_APARTAMENTO" maxlength="5" id="ID_APARTAMENTO" value="{{ isset($residente->ID_APARTAMENTO)?$residente->ID_APARTAMENTO:'' }}" class="form-control">
-</div>    
+    <label for="NUMERO_APTO" class="form-label">Numero apartamento:</label>
+    <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($NumeroApto as $NumeroApto)
+              <option value="{{ $NumeroApto['id'] }}" @if(isset ($datosapartamento[0]->{'NUMERO_APTO'})&&$datosapartamento[0]->{'NUMERO_APTO'}=== $NumeroApto['id']) selected='selected' @else ''  @endif>
+              {{ $NumeroApto['NUMERO_APTO'] }}    
+              </option>
+        @endforeach
+    </select>
+</div>
+
+<div class="mb-3">
+    <label for="BLOQUE" class="form-label">Bloque de apartamento:</label>
+    <select name="BLOQUE" id="BLOQUE" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($Bloque as $Bloque)
+              <option value="{{ $Bloque['id'] }}" @if(isset ($datosapartamento[0]->{'BLOQUE'})&&$datosapartamento[0]->{'BLOQUE'}=== $Bloque['id']) selected='selected' @else ''  @endif>
+              {{ $Bloque['BLOQUE'] }}    
+              </option>
+        @endforeach
+    </select>
+</div>
+
 
     <input type="hidden" value="1" name="ESTADO_RESIDENTE">
 
 
     <a href="/residente" class="btn btn-secondary" >cancelar</a>
-    <input type="submit" class="btn btn-primary" value="enviar datos">
+    <input type="submit" class="btn btn-primary" value="{{ $modo }} residente">

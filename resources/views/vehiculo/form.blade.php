@@ -10,12 +10,40 @@
   <div class="form-group">
       <label class="control-label col-sm-2" for="Numero">Numero Identificación Propietario</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" name="Numero_de_identificacion_propietario" id="Numero_de_identificacion_propietario"
-        value="{{old('Numero_de_identificacion_propietario')? old('Numero_de_identificacion_propietario'): $vehiculo->Numero_de_identificacion_propietario}}">
+        <input type="number" class="form-control" name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION"
+        value="{{old('NUMERO_IDENTIFICACION')? old('NUMERO_IDENTIFICACION'): $vehiculo->NUMERO_IDENTIFICACION}}">
       </div>
     </div>
+    <label for="marca" class="form-label">Marca:</label>
+    <select name="marca" id="marca" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($marca as $marca)
+        <option value="{{$marca['ID_MARCA']}}">
+            {{ $marca['MARCA']}}
+        </option>
+        @endforeach
+    </select>
+    <label for="Color" class="form-label">Color:</label>
+    <select name="Color" id="Color" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($color as $color)
+        <option value="{{$color['ID_COLOR']}}">
+            {{ $color['COLOR']}}
+        </option>
+        @endforeach
+    </select>
+  </select>
+  <label for="tipo" class="form-label">Tipo de vehiculo:</label>
+  <select name="tipo" id="tipo" class="form-control">
+      <option value="" selected>...</option>
+      @foreach($tipo as $tipo)
+      <option value="{{$tipo['ID_TIPO_PARQUEADERO_VEHICULO']}}">
+          {{ $tipo['TIPO_PARQUEADERO_VEHICULO']}}
+      </option>
+      @endforeach
+  </select>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="Marca">Marca</label>
+      <label class="control-label col-sm-2" for="placa">Placa</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" name="Marca" id="Marca" value="{{old('Marca')? old('Marca'):$vehiculo->Marca}}">
       </div>
@@ -43,7 +71,7 @@
       <label class="control-label col-sm-2" for="estado">Estado</label>
       <div class="col-sm-10">
       <!--<input type="number" class="form-control" name="" id="estado" value="{{old('estado')? old('estado'):$vehiculo->estado}}">-->
-      <select name="estado" id="estado" value="{{old('estado')? old('estado'):$vehiculo->estado}}">
+      <select name="ESTADO_VEHICULO" id="ESTADO_VEHICULO" value="{{old('ESTADO_VEHICULO')? old('ESTADO_VEHICULO'):$vehiculo->ESTADO_VEHICULO}}">
         <option selected="true" disabled="disabled">seleccione estado</option>
         <option value="1">activo</option>
         <option value="0" >inactivo</option>

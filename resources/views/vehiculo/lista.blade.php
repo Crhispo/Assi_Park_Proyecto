@@ -13,30 +13,32 @@
     <thead class="bg-primary text-white">
         <tr>
 
-            <th>Número identificación propetario</th>
-            <th>Marca</th>
-            <th>Color</th>
-            <th>Tipo de parqueadero</th>
-            <th>Placa</th>
-            <th>Estado</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($vehiculoList as $vehiculo)
-        <tr>
+    <th>Numero de identificación propetario</th>
+    <th>Marca</th>
+    <th>Color</th>
+    <th>Tipo parqueadero</th>
+    <th>Placa</th>
+    <th>Estado</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+</tr>
+</thead><tbody>
+    @php(var_dum($vehiculoList))
+        
+    @endphp
+@foreach($vehiculoList as $vehiculo)
+<tr>
 
-            <td>{{$vehiculo->NUMERO_IDENTIFICACION}}</td>
-            <td>{{$vehiculo->marca_id}}</td>
-            <td>{{$vehiculo->color_id}}</td>
-            <td>{{$vehiculo->tipo_parqueadero_id}}</td>
-            <td>{{$vehiculo->placa}}</td>
-            <td>
-                @switch($vehiculo->ESTADO_VEHICULO)
-                @case(1)
-                Activo
-                @break
+    <td>{{$vehiculo->NUMERO_IDENTIFICACION}}</td>
+    <td>{{$vehiculo->MARCA}}</td>
+    <td>{{$vehiculo->COLOR}}</td>
+    <td>{{$vehiculo->TIPO_PARQUEADERO_VEHICULO}}</td>
+    <td>{{$vehiculo->placa}}</td>
+    <td>
+        @switch($vehiculo->ESTADO_VEHICULO)
+        @case(1)
+        Activo
+        @break
 
                 @case(0)
                 Inactivo

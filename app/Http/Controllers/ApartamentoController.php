@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreApartamentoRequest;
 use App\Models\Apartamento;
+use App\Models\Bloque;
+use App\Models\Numero_Apartamento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ApartamentoController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +19,8 @@ class ApartamentoController extends Controller
     public function index()
     {
         //
-        $datos['apartamentos']=Apartamento::paginate(5);
-        return view('apartamento.index',$datos);
+        $apartamento=DB::select('Select numeroapartamento.NUMERO_APTO, bloque.BLOQUE, ESTADO_APTO, ID_APARTAMENTO from apartamento inner join bloque on apartamento.BLOQUE = bloque.id inner join numeroapartamento on apartamento.NUMERO_APTO = numeroapartamento.id');
+        return view('apartamento.index',compact('apartamento'));
     }
 
     /**
@@ -32,7 +31,9 @@ class ApartamentoController extends Controller
     public function create()
     {
         //
-        return view('apartamento.create');
+        $NumeroApto=Numero_Apartamento::all();
+        $Bloque=Bloque::all();
+        return view('apartamento.create',compact('NumeroApto','Bloque'));
     }
 
     /**
@@ -41,14 +42,14 @@ class ApartamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreApartamentoRequest $request)
     {
         //
         $datosApartamento = request()->except('_token');
         Apartamento::insert($datosApartamento);
 
         //return response()->json($datosApartamento);
-        return redirect('/apartamento');
+        return redirect('/apartamento')->with('mensaje','Apartamento agregado con éxito');
     }
 
     /**
@@ -71,8 +72,10 @@ class ApartamentoController extends Controller
     public function edit($ID_APARTAMENTO)
     {
         //
+        $NumeroApto=Numero_Apartamento::all();
+        $Bloque=Bloque::all();
         $apartamento=Apartamento::findOrFail($ID_APARTAMENTO);
-        return view('apartamento.edit', compact('apartamento'));
+        return view('apartamento.edit', compact('apartamento','NumeroApto','Bloque'));
 
     }
 
@@ -89,8 +92,8 @@ class ApartamentoController extends Controller
         Apartamento::where('ID_APARTAMENTO','=',$ID_APARTAMENTO)->update($datosApartamento);
 
         $apartamento=Apartamento::findOrFail($ID_APARTAMENTO);
-        //return view('apartamento.edit', compact('apartamento'));
-        return redirect('/apartamento');
+        //return view('apartamento.edit', compact('apartamento')); 
+        return redirect('/apartamento')->with('mensaje','Apartamento actualizado con éxito');  
     }
 
     /**
@@ -104,6 +107,6 @@ class ApartamentoController extends Controller
         //
         $variable = request();
         $apartamento=DB::update('update apartamento set ESTADO_APTO = '.$variable->{'ESTADO_APTO'}.' where ID_APARTAMENTO = '.$ID_APARTAMENTO);
-        return redirect('/apartamento');
+        return redirect('/apartamento')->with('mensaje','Cambio de estado de apartamento con éxito'); ; 
     }
 }
