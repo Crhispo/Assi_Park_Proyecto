@@ -49,7 +49,7 @@ class ApartamentoController extends Controller
         Apartamento::insert($datosApartamento);
 
         //return response()->json($datosApartamento);
-        return redirect('/apartamento');
+        return redirect('/apartamento')->with('mensaje','Apartamento agregado con éxito');
     }
 
     /**
@@ -72,8 +72,10 @@ class ApartamentoController extends Controller
     public function edit($ID_APARTAMENTO)
     {
         //
+        $NumeroApto=Numero_Apartamento::all();
+        $Bloque=Bloque::all();
         $apartamento=Apartamento::findOrFail($ID_APARTAMENTO);
-        return view('apartamento.edit', compact('apartamento'));
+        return view('apartamento.edit', compact('apartamento','NumeroApto','Bloque'));
 
     }
 
@@ -91,7 +93,7 @@ class ApartamentoController extends Controller
 
         $apartamento=Apartamento::findOrFail($ID_APARTAMENTO);
         //return view('apartamento.edit', compact('apartamento')); 
-        return redirect('/apartamento');  
+        return redirect('/apartamento')->with('mensaje','Apartamento actualizado con éxito');  
     }
 
     /**
@@ -105,6 +107,6 @@ class ApartamentoController extends Controller
         //
         $variable = request();
         $apartamento=DB::update('update apartamento set ESTADO_APTO = '.$variable->{'ESTADO_APTO'}.' where ID_APARTAMENTO = '.$ID_APARTAMENTO);
-        return redirect('/apartamento'); 
+        return redirect('/apartamento')->with('mensaje','Cambio de estado de apartamento con éxito'); ; 
     }
 }

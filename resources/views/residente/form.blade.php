@@ -1,4 +1,5 @@
-formulario que tendra datos en comun con create y edit
+
+<h2>{{ $modo }} residente</h2>
 
 <div class="mb-3">
     <label for="Id" class="form-label">Numero de identificacion:</label>
@@ -89,4 +90,4 @@ formulario que tendra datos en comun con create y edit
 
 
     <a href="/residente" class="btn btn-secondary" >cancelar</a>
-    <input type="submit" class="btn btn-primary" value="enviar datos">
+    <input type="submit" class="btn btn-primary" value="{{ $modo }} residente">

@@ -8,7 +8,10 @@
 
 @section('contenido')
 
-
+@if(Session::has('mensaje'))
+    {{ Session::get('mensaje') }}
+    <br >
+@endif
 
     <a href="{{ url('apartamento/create')}}" class="btn btn-primary">Registrar apartamentos</a>
 

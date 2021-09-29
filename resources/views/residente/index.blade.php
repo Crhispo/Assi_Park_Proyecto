@@ -7,6 +7,12 @@
 @endsection
 
 @section('contenido')
+
+@if(Session::has('mensaje'))
+    {{ Session::get('mensaje') }}
+@endif
+
+
     <a href="residente/create" class="btn btn-primary">Registrar residentes</a>
 
 <table id="apartamentos" class="table table-striped shadow-lg mt-4" style="width:100%">

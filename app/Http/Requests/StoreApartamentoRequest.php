@@ -28,7 +28,7 @@ class StoreApartamentoRequest extends FormRequest
 
             'NUMERO_APTO' => 'required',
             'Bloque' => 'required'
-            //llave concatenada
+            //llave concatenada 
         ];
     }
 }

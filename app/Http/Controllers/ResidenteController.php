@@ -31,11 +31,12 @@ class ResidenteController extends Controller
     public function create()
     {
         //
-        $ID_TIPO_IDENTIFICACION = TipoIdentificacion::all();
+        
+        $TiposId = TipoIdentificacion::all();
         $NumeroApto = Numero_Apartamento::all();
         $Bloque = Bloque::all();
         
-        return view('residente.create',compact('ID_TIPO_IDENTIFICACION','NumeroApto','Bloque'));
+        return view('residente.create',compact('TiposId','NumeroApto','Bloque'));
     }
 
     /**
@@ -56,7 +57,7 @@ class ResidenteController extends Controller
         
         Residente::insert($datosResidente);
         //return response()->json($datosResidente);
-        return redirect('/residente');
+        return redirect('/residente')->with('mensaje','Residente agregado con éxito');
         
     }
 
@@ -82,6 +83,7 @@ class ResidenteController extends Controller
         $TiposId=TipoIdentificacion::all();
         $NumeroApto=Numero_Apartamento::all();
         $Bloque=Bloque::all();
+        
         $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
         return view('residente.edit', compact('residente','TiposId','NumeroApto','Bloque'));
     }
@@ -107,7 +109,7 @@ class ResidenteController extends Controller
 
         $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
         //return view('residente.edit', compact('residente'));
-        return redirect('/residente');
+        return redirect('/residente')->with('mensaje','Residente actualizado con éxito');
     }
 
     /**
@@ -121,6 +123,6 @@ class ResidenteController extends Controller
         //
         $variable = request();
         $apartamento=DB::update('update residente set ESTADO_RESIDENTE = '.$variable->{'ESTADO_RESIDENTE'}.' where NUMERO_IDENTIFICACION = '.$NUMERO_IDENTIFICACION);
-        return redirect('/residente'); 
+        return redirect('/residente')->with('mensaje','Cambio de estado de residente con éxito'); 
     }
 }
