@@ -55,7 +55,7 @@
                 <form action="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO) }}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
-                            <input hidden name="ESTADO_APTO" value="0"/>
+                            <input hidden name="ESTADO_APTO" value="1"/>
                             <input type="submit" onclick="return confirm('Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar">
                         </form>    
             </td>

@@ -11,9 +11,9 @@
     <select name="ID_TIPO_IDENTIFICACION" id="ID_TIPO_IDENTIFICACION" class="form-control">
         <option value="" selected>...</option>
         @foreach($TiposId as $Tipo)
-        <option value="{{$Tipo['ID_IDENTIFICACION']}}">
-            {{ $Tipo['IDENTIFICACION']}}
-        </option>
+              <option value="{{ $Tipo['ID_IDENTIFICACION'] }}" @if(isset ($residente->{'ID_TIPO_IDENTIFICACION'})&&$residente->{'ID_TIPO_IDENTIFICACION'}=== $Tipo['ID_IDENTIFICACION']) selected='selected' @else ''  @endif>
+              {{ $Tipo['IDENTIFICACION'] }}    
+              </option>
         @endforeach
     </select>
 </div>
@@ -30,12 +30,18 @@
 
 <div class="mb-3">
     <label for="Sexo" class="form-label">sexo:</label>
-    <select name="SEXO"  id="SEXO" value="{{ isset($residente->SEXO)?$residente->SEXO:'' }}" class="form-control">
+    <select name="SEXO"  id="SEXO" value="" class="form-control">
         <option value="" selected>...</option>
-        <option value="0">Femenino</option>
-        <option value="1">Masculino</option>
+              <option value="0" @if(isset($residente->{'SEXO'})&&$residente->{'SEXO'} === 0) selected='selected' @endif>
+                Femenino
+              </option>
+              <option value="1" @if(isset($residente->{'SEXO'})&&$residente->{'SEXO'} === 1) selected='selected' @endif>
+                Masculino
+              </option>
     </select>
 </div>
+
+
     
 <div class="mb-3">
     <label for="Telefono" class="form-label">telefono:</label>
@@ -58,17 +64,14 @@
 </div>
 
 
-
-
-
 <div class="mb-3">
     <label for="NUMERO_APTO" class="form-label">Numero apartamento:</label>
     <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
         <option value="" selected>...</option>
         @foreach($NumeroApto as $NumeroApto)
-        <option value="{{$NumeroApto['id']}}">
-            {{ $NumeroApto['NUMERO_APTO']}}
-        </option>
+              <option value="{{ $NumeroApto['id'] }}" @if(isset ($datosapartamento[0]->{'NUMERO_APTO'})&&$datosapartamento[0]->{'NUMERO_APTO'}=== $NumeroApto['id']) selected='selected' @else ''  @endif>
+              {{ $NumeroApto['NUMERO_APTO'] }}    
+              </option>
         @endforeach
     </select>
 </div>
@@ -78,9 +81,9 @@
     <select name="BLOQUE" id="BLOQUE" class="form-control">
         <option value="" selected>...</option>
         @foreach($Bloque as $Bloque)
-        <option value="{{$Bloque['id']}}">
-            {{ $Bloque['BLOQUE']}}
-        </option>
+              <option value="{{ $Bloque['id'] }}" @if(isset ($datosapartamento[0]->{'BLOQUE'})&&$datosapartamento[0]->{'BLOQUE'}=== $Bloque['id']) selected='selected' @else ''  @endif>
+              {{ $Bloque['BLOQUE'] }}    
+              </option>
         @endforeach
     </select>
 </div>

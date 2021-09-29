@@ -27,7 +27,7 @@
             <th scope="col">celular 1</th>
             <th scope="col">celular 2</th>
             <th scope="col">correo electronico</th>
-            <th scope="col">id apartamento</th>
+            <th scope="col">Numero apartamento</th>
             <th scope="col">estado de residente</th>
             <th>acciones</th>
         </tr>
@@ -79,7 +79,7 @@
             <td>{{ $residente->CELULAR1}}</td>
             <td>{{ $residente->CELULAR2}}</td>
             <td>{{ $residente->CORREO_ELECTRONICO}}</td>
-            <td>{{ $residente->ID_APARTAMENTO}}</td>
+            <td>{{ $residente->apartamento}} </td>
             <td>
             @switch($residente->{'ESTADO_RESIDENTE'})
                         @case(1)

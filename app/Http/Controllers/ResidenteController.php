@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apartamento;
 use App\Models\Bloque;
 use App\Models\Numero_Apartamento;
 use App\Models\Residente;
@@ -19,8 +20,10 @@ class ResidenteController extends Controller
     public function index()
     {
         //
-        $datos['residentes']=Residente::all();
-        return view('residente.index',$datos);
+        $residentes=DB::select('select NUMERO_IDENTIFICACION,NUMERO_IDENTIFICACION,ID_TIPO_IDENTIFICACION,NOMBRE,APELLIDO,SEXO,TELEFONO,CELULAR1,CELULAR2,CORREO_ELECTRONICO, CONCAT(numeroapartamento.NUMERO_APTO," ",bloque.BLOQUE) as apartamento, ESTADO_RESIDENTE from residente inner join apartamento on residente.ID_APARTAMENTO = apartamento.ID_APARTAMENTO inner join numeroapartamento on apartamento.NUMERO_APTO = numeroapartamento.id inner join bloque on apartamento.BLOQUE = bloque.id');
+
+
+        return view('residente.index',compact('residentes'));
     }
 
     /**
@@ -31,12 +34,13 @@ class ResidenteController extends Controller
     public function create()
     {
         //
-        
+        $residente = Residente::all();
         $TiposId = TipoIdentificacion::all();
         $NumeroApto = Numero_Apartamento::all();
         $Bloque = Bloque::all();
         
-        return view('residente.create',compact('TiposId','NumeroApto','Bloque'));
+        
+        return view('residente.create',compact('residente','TiposId','NumeroApto','Bloque'));
     }
 
     /**
@@ -80,12 +84,15 @@ class ResidenteController extends Controller
      */
     public function edit($NUMERO_IDENTIFICACION)
     {
+        
         $TiposId=TipoIdentificacion::all();
         $NumeroApto=Numero_Apartamento::all();
         $Bloque=Bloque::all();
-        
         $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
-        return view('residente.edit', compact('residente','TiposId','NumeroApto','Bloque'));
+
+        $datosapartamento=DB::select('select apartamento.NUMERO_APTO, apartamento.BLOQUE from apartamento where ID_APARTAMENTO = '.$residente['ID_APARTAMENTO']);
+
+        return view('residente.edit', compact('residente','TiposId','NumeroApto','Bloque','datosapartamento'));
     }
 
     /**
@@ -103,9 +110,12 @@ class ResidenteController extends Controller
         //$datosResidente = request()->except('_token','NUMERO_APTO','BLOQUE');
         //$datosResidentex = request()->except('_token');
 
-        $ID_APARTAMENTO = DB::select('select ID_APARTAMENTO from apartamento where NUMERO_APTO = '.$datosResidente['NUMERO_APTO'].' AND BLOQUE = '.'"'.$datosResidente['BLOQUE'].'"');
+        $ID_APARTAMENTO = DB::select('select ID_APARTAMENTO from apartamento where NUMERO_APTO = '.$datosResidentex['NUMERO_APTO'].' AND BLOQUE = '.'"'.$datosResidentex['BLOQUE'].'"');
+
+        $datosResidente['ID_APARTAMENTO']=$ID_APARTAMENTO[0]-> {'ID_APARTAMENTO'};
 
         Residente::where('NUMERO_IDENTIFICACION','=',$NUMERO_IDENTIFICACION)->update($datosResidente);
+
 
         $residente=Residente::findOrFail($NUMERO_IDENTIFICACION);
         //return view('residente.edit', compact('residente'));

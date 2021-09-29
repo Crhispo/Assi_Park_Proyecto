@@ -1,5 +1,3 @@
-
-
 <form action="{{url('/apartamento')}}" method="post">
 @csrf
 
@@ -26,7 +24,7 @@
     <input type="submit" class="btn btn-primary" value="{{ $modo }} apartamento" tapindex="4">
 </form>
 
-    <input type="hidden" value="1" name="ESTADO_APTO">
+    <input type="hidden" value="0" name="ESTADO_APTO">
     
     <a href="/apartamento" class="btn btn-secondary" tapindex="3">cancelar</a>
     
