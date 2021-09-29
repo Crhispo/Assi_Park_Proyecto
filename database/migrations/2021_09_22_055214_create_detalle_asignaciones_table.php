@@ -18,6 +18,8 @@ class CreateDetalleAsignacionesTable extends Migration
             $table->unsignedsmallInteger('apartamento_id');
             $table->foreignId('vehiculo_id');
             $table->foreignId('parqueadero_id');
+            $table->dateTime('inicio');
+            $table->dateTime('fin');
             $table->timestamps();
             $table->foreign('apartamento_id')->references('ID_APARTAMENTO')->on('apartamento');
             $table->foreign('vehiculo_id')->references('id')->on('vehiculos');
