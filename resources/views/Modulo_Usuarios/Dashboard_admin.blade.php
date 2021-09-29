@@ -37,7 +37,7 @@
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Salida 
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Salida
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="Cierre_Sesion.php"><i class="icon ion-md-exit"></i>Cerrar Sesión</a>
@@ -73,9 +73,9 @@
                                     @php($Insert = '')
                                     @else
                                     @if($Insert == 1)
-                                    <span class="font-weight-bold text-dark">Registrado con exito.</span>  
+                                    <span class="font-weight-bold text-dark">Registrado con exito.</span>
                                     @elseif($Insert == 0)
-                                    <span class="font-weight-bold text-dark">"No" se registrado con exito.</span>  
+                                    <span class="font-weight-bold text-dark">"No" se registrado con exito.</span>
                                     @else
                                     @endif
                                     @endif
