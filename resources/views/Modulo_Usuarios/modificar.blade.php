@@ -2,7 +2,7 @@
 <button type="button" class="btn btn-outline-warning p-md-2" data-toggle="modal" data-target="#Modal1{{ $value-> {'Numero del documento de identidad'} }}"><i class="icon ion-md-create"></i></button>
 
 <!-- Modal -->
-<div id="Modal1{{ $value-> {'Numero del documento de identidad'} }}" class="modal fade text-dark" role="dialog">
+<div id="Modal1" class="modal fade text-dark" role="dialog">
     <div class="modal-dialog modal-lg" style="background-color:#FAE830;">
 
         <!-- Modal content-->
@@ -18,7 +18,7 @@
 
 
                 <div class="container">
-                    <form action="{{url('Usuario.'.$value->{'Numero del documento de identidad'})}}" method="post">
+                    <form action="{{url('Usuario.'.$value->{'NUMERO_IDENTIFICACION'})}}" method="post">
                         @csrf
                         {{ method_field('PUT') }}
                         <div class="form-row mb-2 text-dark">
@@ -30,7 +30,7 @@
                                 $SelectCE = '';
                                 $SelectTI = '';
                                 $SelectRC = '';
-                                switch($value->{'Tipo de identificacion'}){
+                                switch($_Usuario->{'Id_Tipo_Identificacion'}){
                                 case 'CC':
                                 $SelectCC = 'selected';
                                 break;
@@ -58,7 +58,7 @@
                             <div class="form-group col-md-7">
                                 <label class="font-weight-bold" >Número de cédula <span class="text-danger">*</span></label>
 
-                                <input type="number" class="form-control" name="Numero_Identificacion" value="{{ $value->{'Numero del documento de identidad'} }}" required="required">
+                                <input type="number" class="form-control" name="Numero_Identificacion" value="{{ $_Usuario->{'Numero_Identificacion'} }}" required="required">
                             </div>
 
                             <div class="form-check"> <label class="font-weight-bold">Tipo de usuario<span class="text-danger">*</span></label>

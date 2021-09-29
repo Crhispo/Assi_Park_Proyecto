@@ -53,11 +53,11 @@ $cad .= substr($charset, rand(0, 62), 1);
 
                             <div class="form-group col-md-6 text-dark">
                                 <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="Nombres" placeholder="Ingrese el nombre" required="required">
+                                <input type="text" class="form-control" name="Nombre" placeholder="Ingrese el nombre" required="required">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="Apellidos" placeholder="Ingrese el apellido" required="required">
+                                <input type="text" class="form-control" name="Apellido" placeholder="Ingrese el apellido" required="required">
                             </div>
                             <div class="form-check"> <label class="font-weight-bold">Sexo<span class="text-danger">*</span></label>
                                 <p><input type="radio" name="Sexo" value="0" id="Femenino"><label for="femenino">Femenino</label></p>
@@ -86,14 +86,14 @@ $cad .= substr($charset, rand(0, 62), 1);
                             </div>
                             <div class="form-group col-md-7">
                                 <label class="font-weight-bold">Correo electrónico <span class="text-danger">*</span></label>
-                                <input type="email" name="Correo_Electronico" class="form-control" placeholder="Ingrese el correo electrónico" required>
+                                <input type="email" name="Correo" class="form-control" placeholder="Ingrese el correo electrónico" required>
                             </div>
                         </div>
 
                         <div class="form-row mb-2 text-dark">
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
-                                <input type="text" name="Clave" class="form-control" value="{{$cad}}"  >
+                                <input type="text" name="CONTRASENA" class="form-control" value="{{$cad}}"  >
                             </div>
 
                         </div>

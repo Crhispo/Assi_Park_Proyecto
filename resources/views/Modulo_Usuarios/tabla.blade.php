@@ -34,16 +34,16 @@
                 @else
                 @foreach($Select as $value)
                 <tr>
-                    <td>{{ $value-> {'Numero del documento de identidad'} }}</td>
-                    <td>{{ $value-> {'Tipo de usuario'} }}</td>
-                    <td>{{ $value-> {'Nombres'} }}</td>
-                    <td>{{ $value-> {'Apellidos'} }}</td>
-                    <td>{{ $value-> {'Direccion'} }}</td>
-                    <td>{{ $value-> {'Telefono fijo'} }}</td>
-                    <td>{{ $value-> {'Numero de celular'} }}</td>
-                    <td>{{ $value-> {'Correo electronico'} }}</td>
+                    <td>{{ $value-> {'NUMERO_IDENTIFICACION'} }}</td>
+                    <td>{{ $value-> {'ID_TIPO_USUARIO'} }}</td>
+                    <td>{{ $value-> {'NOMBRE'} }}</td>
+                    <td>{{ $value-> {'APELLIDO'} }}</td>
+                    <td>{{ $value-> {'DIRECCION'} }}</td>
+                    <td>{{ $value-> {'TELEFONO'} }}</td>
+                    <td>{{ $value-> {'CELULAR1'} }}</td>
+                    <td>{{ $value-> {'Correo'} }}</td>
                     <td>
-                        @switch($value->{'Estado del usuario'})
+                        @switch($value->{'ESTADO_USUARIO'})
                         @case(1)
                         Activo
                         @break
@@ -59,14 +59,14 @@
 
                     <!------ BOTONES DE EDITAR Y ELIMINAR ------->
 
-                    <td> 
+                    <td>
 
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
                         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
                         <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap" rel="stylesheet">
 
 
-                        @include('Modulo_Usuarios.modificar') 
+                        @include('Modulo_Usuarios.modificar')
 
 
 
@@ -76,7 +76,7 @@
                             @csrf
                             {{ method_field('DELETE') }}
 
-                            
+
                             <input hidden name="Estado_Usuario" value="0"/>
                             <input type="submit" onclick="return confirm('Desea inhabilitar?')" value="Inhabilitar">
 

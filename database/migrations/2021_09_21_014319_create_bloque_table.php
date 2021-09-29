@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoIdentificacionesTable extends Migration
+class CreateBloqueTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateTipoIdentificacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_identificacion', function (Blueprint $table) {
-            $table->tinyIncrements('ID_IDENTIFICACION');
-            $table->string('IDENTIFICACION', 20);
+        Schema::create('bloque', function (Blueprint $table) {
+            $table->id();
+            $table->char('BLOQUE', 10);
+
+            $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ class CreateTipoIdentificacionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_identificacion');
+        Schema::dropIfExists('bloque');
     }
 }

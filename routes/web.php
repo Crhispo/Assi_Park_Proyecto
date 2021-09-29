@@ -75,10 +75,10 @@ Route::get('/admin', [
     HomeController::class, 'admin'
 ])->name('admin');
 
-//ruta de la vista secretaria
-Route::get('/secretaria', [
-    HomeController::class, 'secretaria'
-])->name('secretaria');
+//ruta de la vista residente
+Route::get('/Secretaria', [
+    HomeController::class, 'Secretaria'
+])->name('Secretaria');
 
 //ruta de la vista guarda
 Route::get('/guarda', [
@@ -89,6 +89,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('/registro', [
-//     ResidenteController::class, 'guarda'
-// ])->name('guarda');
+Route::get('/registro', [
+    ResidenteController::class, 'guarda'
+])->name('guarda');

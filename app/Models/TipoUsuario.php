@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class TipoUsuario extends Model
 {
     use HasFactory;
-    protected $table = 'tipo_usuarios';
+    protected $table = 'tipo_usuario';
 
     function user()
     {
         return $this->hasMany(User::class, 'id_tipo_usuario');
     }
+ 
 }
