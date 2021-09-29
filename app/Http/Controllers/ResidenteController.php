@@ -57,7 +57,7 @@ class ResidenteController extends Controller
         Residente::insert($datosResidente);
         //return response()->json($datosResidente);
         return redirect('/residente');
-        
+
     }
 
     /**

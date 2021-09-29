@@ -15,14 +15,14 @@ class CreateApartamentosTable extends Migration
     {
         Schema::create('apartamento', function (Blueprint $table) {
             $table->smallIncrements('ID_APARTAMENTO');
-            $table->unsignedBigInteger('NUMERO_APTO');
-            $table->unsignedBigInteger('BLOQUE');
+            $table->unsignedSmallInteger('NUMERO_APTO');
+            $table->char('BLOQUE', 10);
             $table->boolean('ESTADO_APTO')->default(1);
 
             $table->timestamps();
 
             $table->foreign('NUMERO_APTO')->references('id')->on('numeroapartamento');
-            $table->foreign('BLOQUE')->references('id')->on('bloque'); 
+            $table->foreign('BLOQUE')->references('id')->on('bloque');
         });
     }
 
