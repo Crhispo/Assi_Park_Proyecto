@@ -7,19 +7,20 @@ use App\Http\Requests\ValidarActualizacionUsuarioRequest;
 use App\Http\Requests\ValidarInactivadoRequest;
 use App\Models\User;
 
-class UsuarioController extends Controller {
-
+class UsuarioController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = null) {
-
-        $_Usuario = new User();
-        $Select = $_Usuario->GetUsuario($id);
-
-        return view('Modulo_Usuarios.Dashboard_admin')->with('Select', $Select);
+    public function index($id = null)
+    {
+        return view('Modulo_Usuarios.Dashboard_admin');
     }
 
     /**
@@ -28,7 +29,8 @@ class UsuarioController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GuardarUsuarioRequest $request) {
+    public function store(GuardarUsuarioRequest $request)
+    {
         $_Usuario = new User();
         $Insert = $_Usuario->SobreCarga($request->all(), '');
         return view('Modulo_Usuarios.Dashboard_admin')->with('Insert', $Insert);
@@ -40,7 +42,8 @@ class UsuarioController extends Controller {
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show($id = null) {
+    public function show($id = null)
+    {
 
         $_Usuario = new User();
         $Select = $_Usuario->GetUsuario($id);
@@ -55,7 +58,8 @@ class UsuarioController extends Controller {
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(ValidarActualizacionUsuarioRequest $request, $id) {
+    public function update(ValidarActualizacionUsuarioRequest $request, $id)
+    {
 
         $_Usuario = new User();
 
@@ -72,11 +76,11 @@ class UsuarioController extends Controller {
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function Disable(ValidarInactivadoRequest $request, $id) {
+    public function Disable(ValidarInactivadoRequest $request, $id)
+    {
         $_Usuario = new User();
         $Disable = $_Usuario->SobreCargaDisable($request->all(), $id);
 
         return redirect('/Tabla');
     }
-
 }

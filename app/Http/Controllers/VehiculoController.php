@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class VehiculoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //mostar
     function show()
     {
@@ -46,6 +50,6 @@ class VehiculoController extends Controller
         $vehiculo->ESTADO_VEHICULO = $request->estado;
         $vehiculo->save();
         return redirect('/vehiculo');
-        
+
     }
 }

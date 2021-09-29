@@ -25,10 +25,9 @@ class CreateUsuariosTable extends Migration
             $table->string('DIRECCION', 255);
             $table->unsignedInteger('TELEFONO')->nullable();
             $table->unsignedInteger('CELULAR1');
-            $table->unsignedInteger('CELULAR2')->nullable();
-            $table->string('Correo', 255)->unique();
+            $table->string('email', 255)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('CONTRASENA', 45);
+            $table->string('password', 100);
             $table->rememberToken();
             $table->boolean('ESTADO_USUARIO')->default(1);
             $table->timestamps();

@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class ApartamentoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -85,8 +89,8 @@ class ApartamentoController extends Controller
         Apartamento::where('ID_APARTAMENTO','=',$ID_APARTAMENTO)->update($datosApartamento);
 
         $apartamento=Apartamento::findOrFail($ID_APARTAMENTO);
-        //return view('apartamento.edit', compact('apartamento')); 
-        return redirect('/apartamento');  
+        //return view('apartamento.edit', compact('apartamento'));
+        return redirect('/apartamento');
     }
 
     /**
@@ -100,6 +104,6 @@ class ApartamentoController extends Controller
         //
         $variable = request();
         $apartamento=DB::update('update apartamento set ESTADO_APTO = '.$variable->{'ESTADO_APTO'}.' where ID_APARTAMENTO = '.$ID_APARTAMENTO);
-        return redirect('/apartamento');  
+        return redirect('/apartamento');
     }
 }

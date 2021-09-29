@@ -17,8 +17,6 @@
     <!--CDN Bootstrap CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{{ asset('css/login_app.css') }}" defer">
 </head>
 
 <body>
@@ -26,8 +24,8 @@
         <nav id="nabvar-menu" class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('Img/LOGO_FINAL_ASSIPARK.png') }}" alt="" width="89px"
-                        height="77px" class="d-inline-block align-text-top">
+                    <img src="{{ asset('Img/LOGO_FINAL_ASSIPARK.png') }}" alt="" width="89px" height="77px"
+                        class="d-inline-block align-text-top">
                     SI Parqueaderos
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -54,17 +52,18 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->nombre ." ". Auth::user()->apellido}}
+                                    {{ Auth::user()->nombre . ' ' . Auth::user()->apellido }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                             document.getElementById('logout-form').submit();">
+                                                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar Sesion') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
                                 </div>

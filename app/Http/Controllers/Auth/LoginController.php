@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use SweetAlert;
 
 class LoginController extends Controller
 {
@@ -41,14 +42,14 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        if (auth()->user()->tipo_usuario_id == 1) {
-            return '/admin';
-        } elseif (auth()->user()->tipo_usuario_id == 2) {
-            return '/residente';
-        } elseif (auth()->user()->tipo_usuario_id == 3) {
-            return '/guarda';
+        if (auth()->user()->ID_TIPO_USUARIO  == 1) {
+            return '/Usuario';
+        } elseif (auth()->user()->ID_TIPO_USUARIO  == 2) {
+            return '/vehiculo';
+        } elseif (auth()->user()->ID_TIPO_USUARIO  == 3) {
+            return '/vehiculo';
         } else {
-            return '/home';
+            return '/vehiculo';
         }
     }
 

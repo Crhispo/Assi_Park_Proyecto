@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ResidenteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +19,9 @@ class ResidenteController extends Controller
     public function index()
     {
         //
-        $datos['residentes']=Residente::paginate(5);
-        return view('residente.index',$datos);
+        $datos['residentes'] = Residente::paginate(5);
+        $residentes = Residente::all();
+        return view('residente.index', compact($datos, $residentes));
     }
 
     /**
@@ -44,7 +49,6 @@ class ResidenteController extends Controller
 
         //return response()->json($datosResidente);
         return redirect('/residente');
-        
     }
 
     /**
@@ -67,7 +71,7 @@ class ResidenteController extends Controller
     public function edit($id)
     {
         //
-        $residente=Residente::findOrFail($id);
+        $residente = Residente::findOrFail($id);
         return view('residente.edit', compact('residente'));
     }
 
@@ -80,10 +84,10 @@ class ResidenteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $datosResidente = request()->except(['_token','_method']);
-        Residente::where('id','=',$id)->update($datosResidente);
+        $datosResidente = request()->except(['_token', '_method']);
+        Residente::where('id', '=', $id)->update($datosResidente);
 
-        $residente=Residente::findOrFail($id);
+        $residente = Residente::findOrFail($id);
         return view('residente.edit', compact('residente'));
     }
 

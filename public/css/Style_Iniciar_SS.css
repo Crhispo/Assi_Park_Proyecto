@@ -36,6 +36,7 @@ input {
   text-decoration: none;
   color: #444;
   text-align: center;
+  margin-left: 79px;
 }
 .return_p{
 margin-right: 480px;
@@ -102,6 +103,7 @@ form.sign-in-form {
   background: none;
   outline: none;
   border: none;
+  border-radius: 55px;
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
@@ -127,9 +129,10 @@ form.sign-in-form {
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin-left: 12px;
   cursor: pointer;
   transition: 0.5s;
+  margin-bottom: 33px;
 }
 
 .btn:hover {

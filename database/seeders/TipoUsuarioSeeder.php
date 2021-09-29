@@ -16,7 +16,7 @@ class TipoUsuarioSeeder extends Seeder
     {
         $tiposUsuarios = [
             ['nombre_tipo_usuario' => 'Administrador'],
-            ['nombre_tipo_usuario' => 'Residente'],
+            ['nombre_tipo_usuario' => 'Secretaria'],
             ['nombre_tipo_usuario' => 'Guarda seguridad']
         ];
 

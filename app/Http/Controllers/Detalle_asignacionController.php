@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Detalle_asignacion;
 class Detalle_asignacionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //listar parqueadero
     function show(){
         $asignacionList=Detalle_asignacion::all();
@@ -20,7 +24,7 @@ class Detalle_asignacionController extends Controller
             //crear
             function form($id=null){
                 if($id==null){
-                    $asignacion=new Detalle_asignacion(); 
+                    $asignacion=new Detalle_asignacion();
                  }else{
                     $asignacion=Detalle_asignacion::findOrFail($id);
                  }

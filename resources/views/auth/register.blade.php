@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="contenedor">
+    <div class="container">
         <div class="forms-container">
             <div class="signin register">
                 <form method="POST" class="sign-in-form" action="{{ route('register') }}">
                     @csrf
                     <h2 class="title">Registro</h2>
-                    <div class="input-field">
-                        <i class="far fa-id-card"></i>
+                    <div class="input-field form-group">
+                        <label for="num_documento" class="form-label">Número documento</label>
                         <input id="num_documento" type="number"
                             class="form-control @error('numero_identificacion') is-invalid @enderror" name="num_documento"
                             value="{{ old('num_documento') }}" autocomplete="num_documento" autofocus
@@ -22,8 +22,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-id-card-alt"></i>
+                    <div class="input-field form-group">
+                        <label for="tipo_identificacion" class="form-label">Tipo identificación</label>
                         <select class="form-select @error('tipodocumento_id') is-invalid @enderror"
                             name="tipo_identificacion" id="tipo_identificacion">
                             <option value="" disabled selected>Seleccione su tipo de identificación</option>
@@ -41,8 +41,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-users"></i>
+                    <div class="input-field form-group">
+                        <label for="tipo_usuario" class="form-label">Tipo usuario</label>
                         <select class="form-select @error('tipousuario_id') is-invalid @enderror" name="tipo_usuario"
                             id="tipo_usuario">
                             <option value="" disabled selected>Seleccione su tipo de usuario</option>
@@ -60,8 +60,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-user"></i>
+                    <div class="input-field form-group">
+                        <label for="nombre" class="form-label">Nombre</label>
                         <input id="nombre" type="text" class="form-control @error('nombre') is-invalid @enderror"
                             name="nombre" value="{{ old('nombre') }}" autocomplete="nombre" placeholder="Nombre">
                     </div>
@@ -73,8 +73,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-user"></i>
+                    <div class="input-field form-group">
+                        <label for="apellido" class="form-label">Apellido</label>
                         <input id="apellido" type="text" class="form-control @error('apellido') is-invalid @enderror"
                             name="apellido" value="{{ old('apellido') }}" placeholder="Apellidos"
                             autocomplete="apellido">
@@ -87,8 +87,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-transgender-alt"></i>
+                    <div class="input-field form-group">
+                        <label for="sexo" class="form-label">Sexo</label>
                         <select class="form-select @error('sexo') is-invalid @enderror" name="sexo" id="sexo">
                             <option value="" disabled selected>Seleccione su sexo</option>
                             <option value="0">Femenino</option>
@@ -103,8 +103,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="far fa-compass"></i>
+                    <div class="input-field form-group">
+                        <label for="direccion" class="form-label">Dirección</label>
                         <input id="direccion" type="text" class="form-control @error('direccion') is-invalid @enderror"
                             name="direccion" value="{{ old('direccion') }}" autocomplete="direccion"
                             placeholder="Dirección">
@@ -117,8 +117,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-phone-alt"></i>
+                    <div class="input-field form-group">
+                        <label for="telefono" class="form-label">Teléfono</label>
                         <input id="telefono" type="text" class="form-control @error('telefono') is-invalid @enderror"
                             name="telefono" value="{{ old('telefono') }}" autocomplete="telefono" placeholder="Teléfono">
                     </div>
@@ -130,8 +130,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-mobile-alt"></i>
+                    <div class="input-field form-group">
+                        <label for="celular1" class="form-label">Celular</label>
                         <input id="celular1" type="text" class="form-control @error('celular1') is-invalid @enderror"
                             name="celular1" value="{{ old('celular1') }}" autocomplete="celular1"
                             placeholder="Celular 1">
@@ -144,22 +144,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-mobile-alt"></i>
-                        <input id="celular2" type="text" class="form-control @error('celular2') is-invalid @enderror"
-                            name="celular2" value="{{ old('celular2') }}" autocomplete="celular2"
-                            placeholder="Celular 2">
-                    </div>
-                    @error('celular2')
-                        <div class="col-12">
-                            <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </div>
-                        </div>
-                    @enderror
-
-                    <div class="input-field">
-                        <i class="fas fa-envelope"></i>
+                    <div class="input-field form-group">
+                        <label for="email" class="form-label">Correo</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                             name="email" value="{{ old('email') }}" autocomplete="email"
                             placeholder="Correo electrónico">
@@ -172,8 +158,8 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-key"></i>
+                    <div class="input-field form-group">
+                        <label for="password" class="form-label">Contraseña</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                             name="password" autocomplete="new-password" placeholder="Contraseña">
                     </div>
@@ -185,14 +171,14 @@
                         </div>
                     @enderror
 
-                    <div class="input-field">
-                        <i class="fas fa-key"></i>
+                    <div class="input-field form-group">
+                        <label for="password-confirm" class="form-label">Confirmar contraseña</label>
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
                             autocomplete="new-password" placeholder="Confirmar contraseña">
                     </div>
 
-                    <div class="input-field">
-                        <i class="fas fa-user"></i>
+                    <div class="input-field form-group">
+                        <label for="estado" class="form-label">Estado</label>
                         <select class="form-select @error('estado_usuario') is-invalid @enderror" name="estado" id="estado">
                             <option value="" disabled selected>Seleccione su estado</option>
                             <option value="0">Activo</option>
@@ -207,7 +193,7 @@
                         </div>
                     @enderror
 
-                    <div class="form-group row mb-0">
+                    <div class="form-group row mb-0 mt-3">
                         <div class="col-md-6 offset-md-4">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Registrarme') }}
@@ -217,11 +203,11 @@
                 </form>
             </div>
         </div>
+    </div>
 
-        <div class="panels-container">
-            <div class="panel left-panel">
-                {{-- <img src="img_Incio_Sesion\log.svg" class="image" alt="" /> --}}
-            </div>
+    <div class="panels-container">
+        <div class="panel left-panel">
+            {{-- <img src="img_Incio_Sesion\log.svg" class="image" alt="" /> --}}
         </div>
     </div>
 @endsection
