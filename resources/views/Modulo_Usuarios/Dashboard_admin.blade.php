@@ -119,19 +119,11 @@
                             <div class="container border-bottom">
                                 @if (!isset($Insert))
                                     @php($Insert = '')
-<<<<<<< HEAD
                                     @else
                                     @if($Insert == 1)
                                     <span class="font-weight-bold text-dark">Registrado con exito.</span>
                                     @elseif($Insert == 0)
                                     <span class="font-weight-bold text-dark">"No" se registrado con exito.</span>
-=======
-                                @else
-                                    @if ($Insert == 1)
-                                        <span class="font-weight-bold text-dark">Registrado con exito.</span>
-                                    @elseif($Insert == 0)
-                                        <span class="font-weight-bold text-dark">"No" se registrado con exito.</span>
->>>>>>> 80428444150404f43fab98ba5f8d2ad9f356cb99
                                     @else
                                     @endif
                                 @endif
