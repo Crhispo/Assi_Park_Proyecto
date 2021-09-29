@@ -89,5 +89,4 @@ Route::get('/guarda', [
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/registrar', [RegisterController::class, 'showRegistrationForm']);
 

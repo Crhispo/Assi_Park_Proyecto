@@ -10,8 +10,8 @@
   <div class="form-group">
       <label class="control-label col-sm-2" for="Numero">Numero</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" name="Numero_de_identificacion_propetario" id="Numero_de_identificacion_propetario"
-        value="{{old('Numero_de_identificacion_propetario')? old('Numero_de_identificacion_propetario'): $vehiculo->Numero_de_identificacion_propetario}}">
+        <input type="number" class="form-control" name="residente_id" id="residente_id"
+        value="{{old('residente_id')? old('residente_id'): $vehiculo->residente_id}}">
       </div>
     </div>
     <div class="form-group">

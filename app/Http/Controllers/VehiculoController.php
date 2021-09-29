@@ -28,11 +28,13 @@ return redirect('/vehiculo');
         return view('vehiculo/form',['vehiculo'=>$vehiculo]);
     }
     function save(Request $request){
+
+        
         $vehiculo=new Vehiculo();
         if ($request->id>0) {
             $vehiculo=Vehiculo::findOrFail($request->id);
         }
-    $vehiculo->Numero_de_identificacion_propetario=$request->Numero_de_identificacion_propetario;
+    $vehiculo->residente_id=$request->residente_id;
     $vehiculo->Marca=$request->Marca;
     $vehiculo->Color=$request->Color;
     $vehiculo->Tipo_parqueadero=$request->Tipo_parqueadero;

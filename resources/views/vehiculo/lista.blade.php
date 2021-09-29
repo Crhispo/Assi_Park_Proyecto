@@ -26,7 +26,7 @@
 @foreach($vehiculoList as $vehiculo)
 <tr>
    
-    <td>{{$vehiculo->Numero_de_identificacion_propetario}}</td>
+    <td>{{$vehiculo->residente_id}}</td>
     <td>{{$vehiculo->Marca}}</td>
     <td>{{$vehiculo->Color}}</td>
     <td>{{$vehiculo->Tipo_parqueadero}}</td>

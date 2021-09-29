@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Detalle_asignacion;
+
 class Detalle_asignacionController extends Controller
 {
+
     //listar parqueadero
     function show(){
         $asignacionList=Detalle_asignacion::all();
