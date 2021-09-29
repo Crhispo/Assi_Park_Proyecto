@@ -43,14 +43,14 @@ class RegisterController extends Controller
 
     protected function redirectTo()
     {
-        if (auth()->user()->tipo_usuario_id == 1) {
-            return '/admin';
-        } elseif (auth()->user()->tipo_usuario_id == 2) {
-            return '/residente';
-        } elseif (auth()->user()->tipo_usuario_id == 3) {
-            return '/guarda';
+        if (auth()->user()->ID_TIPO_USUARIO  == 1) {
+            return '/vehiculo';
+        } elseif (auth()->user()->ID_TIPO_USUARIO  == 2) {
+            return '/vehiculo';
+        } elseif (auth()->user()->ID_TIPO_USUARIO  == 3) {
+            return '/vehiculo';
         } else {
-            return '/home';
+            return '/vehiculo';
         }
     }
 
@@ -61,7 +61,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -73,22 +73,20 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'numero_identificacion' => ['unique:users', 'required', 'numeric', 'max:10', 'min:7'],
-            'tipodocumento_id' => ['required', 'nullable|regex:/^[0-9a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/i'],
-            'tipousuario_id' => ['required', 'nullable|regex:/^[0-9a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/i'],
-            'nombre' => ['required', 'string', 'max:50', 'min:2'],
-            'apellido' => ['required', 'string', 'max:50', 'min:2'],
-            'sexo' => ['required', 'nullable|regex:/^[0-9a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/i'],
+            'num_documento' => ['required', 'unique:usuario,NUMERO_IDENTIFICACION', 'numeric', 'min:7'],
+            'tipo_identificacion' => ['required', 'numeric'],
+            'tipo_usuario' => ['required', 'numeric'],
+            'nombre' => ['bail','required', 'string', 'max:50', 'min:2'],
+            'apellido' => ['bail', 'required', 'string', 'max:50', 'min:2'],
+            'sexo' => ['required', 'numeric'],
             'direccion' => ['required', 'string', 'max:70', 'min:5'],
-            'telefono' => ['required', 'numeric', 'min:10', 'max:10'],
-            'celular1' => ['required', 'numeric', 'min:10', 'max:10'],
-            'celular2' => ['required', 'numeric', 'min:10', 'max:10'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'telefono' => ['required', 'numeric', 'min:10'],
+            'celular1' => ['required', 'numeric', 'min:10'],
+            'email' => ['required', 'string', 'email','unique:usuario,email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'estado_usuario' => ['required']
+            'estado' => ['required', 'numeric']
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -99,15 +97,14 @@ class RegisterController extends Controller
     {
         return User::create([
             'numero_identificacion' => $data['num_documento'],
-            'tipo_usuario_id' => $data['tipo_usuario'],
-            'tipo_identificacion_id' => $data['tipo_identificacion'],
+            'id_tipo_usuario' => $data['tipo_usuario'],
+            'id_tipo_identificacion' => $data['tipo_identificacion'],
             'nombre' => $data['nombre'],
             'apellido' => $data['apellido'],
             'sexo' => $data['sexo'],
             'direccion' => $data['direccion'],
             'telefono' => $data['telefono'],
             'celular1' => $data['celular1'],
-            'celular2' => $data['celular2'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'estado_usuario' => $data['estado']

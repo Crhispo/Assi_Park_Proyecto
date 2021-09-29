@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class tipo_parqueaderos_vehiculos extends Model
 {
     use HasFactory;
+    
+    protected $table='tipo_de_parqueadero_vehiculo';
 }

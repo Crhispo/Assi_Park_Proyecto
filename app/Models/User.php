@@ -12,8 +12,28 @@ class User extends Authenticatable
     use HasFactory,
         Notifiable;
 
-
     protected $table = 'usuario';
+    protected $primaryKey = 'NUMERO_IDENTIFICACION';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'numero_identificacion',
+        'id_tipo_usuario',
+        'id_tipo_identificacion',
+        'nombre',
+        'apellido',
+        'sexo',
+        'direccion',
+        'telefono',
+        'celular1',
+        'email',
+        'password',
+        'estado_usuario'
+    ];
 
 
 
@@ -27,4 +47,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo(TipoUsuario::class);
     }
+
+
 }

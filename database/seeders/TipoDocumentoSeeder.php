@@ -15,12 +15,12 @@ class TipoDocumentoSeeder extends Seeder
     public function run()
     {
         $tiposIdentificaciones = [
-            ['nombre_tipo_identificacion' => 'Cédula de Ciudadanía'],
-            ['nombre_tipo_identificacion' => 'Tarjeta de Identidad'],
-            ['nombre_tipo_identificacion' => 'Registro Civil'],
-            ['nombre_tipo_identificacion' => 'Tarjeta de extranjería'],
-            ['nombre_tipo_identificacion' => 'Pasaporte'],
-            ['nombre_tipo_identificacion' => 'Tipo de documento extranjero']
+            ['identificacion' => 'Cédula de Ciudadanía'],
+            ['identificacion' => 'Tarjeta de Identidad'],
+            ['identificacion' => 'Registro Civil'],
+            ['identificacion' => 'Tarjeta de extranjería'],
+            ['identificacion' => 'Pasaporte'],
+            ['identificacion' => 'Tipo de documento extranjero']
         ];
 
         foreach ($tiposIdentificaciones as $tipoIdentificacion) {

@@ -120,37 +120,17 @@
               para el control vehicular y de visitantes, desarrollado con las mejores tecnologías garantizando calidad
               en nuestros servicios.</p>
             <p></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
         </div>
         <!-- End Col -->
-
       </div>
     </div>
   </section>
 
-
-
   <!-- ----------------------------------------------- -->
-
 
   <!-- Cool Fetatures Section Start -->
   <section id="features" class="section">
-
 
     <!-- Start Row -->
     <div class="row">
@@ -161,7 +141,6 @@
           </div>
         </div>
       </div>
-
     </div>
     <!-- End Row -->
     <!-- Start Row -->
@@ -171,7 +150,6 @@
         <!-- Start Fetatures -->
         <div class="feature-item featured-border1">
           <div class="feature-icon float-left">
-            
             <i class="lni lni-check-box"></i>
           </div>
           <div class="feature-info float-left">
@@ -231,25 +209,13 @@
         <!-- End Fetatures -->
       </div>
       <!-- End Col -->
-
-
     </div>
     <!-- End Col -->
-
-
     </div>
     <!-- End Row -->
     </div>
   </section>
   <!-- Cool Fetatures Section End -->
-
-
-
-
-
-
-
-
 
   <!-- Blog Section -->
   <section id="features" class="section">
@@ -261,12 +227,10 @@
             <div>
               <h2 class="section-title">Funcionalidades</h2>
               <div class="desc-text">
-
               </div>
             </div>
           </div>
         </div>
-
       </div>
       <!-- End Row -->
       <!-- Start Row -->
@@ -280,7 +244,6 @@
             </div>
             <div class="feature-info float-left">
               <p>Controlar la entrada y salida del parqueadero tanto para habitantes como para visitantes.</p>
-
             </div>
           </div>
           <!-- End Fetatures -->
@@ -296,7 +259,6 @@
             </div>
             <div class="feature-info float-left">
               <p>Facilitar la verificación de vehículos que se encuentran dentro del conjunto residencial.</p>
-
             </div>
           </div>
           <!-- End Fetatures -->
@@ -312,7 +274,6 @@
             </div>
             <div class="feature-info float-left">
               <p>Realizar consultas del número de parqueaderos disponibles.</p>
-
             </div>
           </div>
           <!-- End Fetatures -->
@@ -328,7 +289,6 @@
             </div>
             <div class="feature-info float-left">
               <p>Asignación de parqueaderos para los habitantes que cumplan con las condiciones.</p>
-
             </div>
           </div>
           <!-- End Fetatures -->
@@ -367,33 +327,12 @@
           <!-- End Fetatures -->
         </div>
         <!-- End Col -->
-
-
       </div>
       <!-- End Row -->
     </div>
   </section>
 
-
-
-
-
-
-
-
-
   <!-- blog Section End -->
-
-
-
-
-
-
-
-
-
-
-
 
   <section id="services" class="section">
     <div class="container">
@@ -415,7 +354,6 @@
             <p>Mayor confidencialidad e integridad con la información del sistema y respaldos de la información en la
               nube.
             </p>
-
           </div>
         </div>
         <!-- End Col -->
@@ -714,7 +652,7 @@
   <script src="{{ asset('js/form-validator.min.js') }}"></script>
   <script src="{{ asset('js/contact-form-script.js') }}"></script>
   <script src="{{ asset('js/main_ldpg.js') }}"></script>
-  
+
 
 </body>
 

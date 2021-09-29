@@ -10,6 +10,6 @@ class Bloque extends Model
     use HasFactory;
 
     protected $table='bloque';
-
+    
 
 }

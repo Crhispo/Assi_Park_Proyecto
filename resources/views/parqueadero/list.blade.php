@@ -13,9 +13,9 @@
 <table id="parqueadero" class="table table-striped table-bordered shadow-lg mt-4"style="width:100%">
   <thead class="bg-primary text-white">  
       <tr>
-    <th scope="col">Tipo_parqueadero</th>
-    <th scope="col">Tamano</th>
-    <th scope="col">Descripcion</th>
+    <th scope="col">Tipo de Parqueadero</th>
+    <th scope="col">Tamaño</th>
+    <th scope="col">Descripción</th>
     <th scope="col">Estado</th>
     <th>Editar</th>
     <th>Eliminar</th>
@@ -58,10 +58,32 @@
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function() {
-    $('#parqueadero').DataTable(
+    $('#parqueadero').DataTable({
+        language: {
+                "sProcessing": "Procesando...",
+                
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                "sInfo": "Mostrando registros del START al END de un total de TOTAL registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de MAX registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                }
+            }
+
+        });
         
-    );
-} );
+        });
+
 </script>
 @endsection
 @endsection

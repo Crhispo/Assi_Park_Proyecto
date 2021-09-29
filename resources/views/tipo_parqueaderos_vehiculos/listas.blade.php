@@ -7,13 +7,14 @@
 @endsection
 @section('content')
 <br>
-<a href="{{route('tipo.form')}}" class="btn btn-primary">Nuevo tipo_parqueadero</a>
+<a href="{{route('tipo.form')}}" class="btn btn-primary">Nuevo tipo parqueadero</a>
 
     
 <table id="tipo" class="table table-striped table-bordered shadow-lg mt-4"style="width:100%">
   <thead class="bg-primary text-white">  
       <tr>
-    <th scope="col">tipo_parqueaderos</th>
+    <th scope="col">t
+        Tipo parqueaderos</th>
     <th>Editar</th>
     <th>Eliminar</th>
 </tr>
