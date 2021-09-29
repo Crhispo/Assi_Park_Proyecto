@@ -15,7 +15,6 @@ class CreateNumeroapartamentoTable extends Migration
     {
         Schema::create('numeroapartamento', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedSmallInteger('NUMERO_APTO');
 
             $table->timestamps();
