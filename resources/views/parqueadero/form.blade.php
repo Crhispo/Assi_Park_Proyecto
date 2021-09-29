@@ -8,7 +8,7 @@
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueadero->id}}">
   
   <div class="form-group">
-      <label class="control-label col-sm-2" for="Tipo_parqueadero">Tipo_parqueadero</label>
+      <label class="control-label col-sm-2" for="Tipo_parqueadero">Tipo parqueadero</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" name="Tipo_parqueadero" id="Tipo_parqueadero" value="{{old('Tipo_parqueadero')? old('Tipo_parqueadero'):$parqueadero->Tipo_parqueadero}}">
     </div>
@@ -16,7 +16,7 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="Tamano">Tamano</label>
+      <label class="control-label col-sm-2" for="Tamano">Tamaño</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" name="Tamano" id="Tamano" value="{{old('Tamano')? old('Tamano'):$parqueadero->Tamano}}">
       </div>
@@ -24,7 +24,7 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="Descripcion">Descripcion</label>
+      <label class="control-label col-sm-2" for="Descripcion">Descripcin</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="Descripcion" id="Descripcion" value="{{old('Descripcion')? old('Descripcion'):$parqueadero->Descripcion}}">
       </div>

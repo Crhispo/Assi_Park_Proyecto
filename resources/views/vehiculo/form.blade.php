@@ -8,7 +8,7 @@
   @csrf
   <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
   <div class="form-group">
-      <label class="control-label col-sm-2" for="Numero">Numero</label>
+      <label class="control-label col-sm-2" for="Numero">Numero Identificación Propietario</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" name="Numero_de_identificacion_propietario" id="Numero_de_identificacion_propietario"
         value="{{old('Numero_de_identificacion_propietario')? old('Numero_de_identificacion_propietario'): $vehiculo->Numero_de_identificacion_propietario}}">
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="Tipo_parqueadero">Tipo_parqueadero</label>
+      <label class="control-label col-sm-2" for="Tipo_parqueadero">Tipo parqueadero</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" name="Tipo_parqueadero" id="Tipo_parqueadero" value="{{old('Tipo_parqueadero')? old('Tipo_parqueadero'):$vehiculo->Tipo_parqueadero}}">
       </div>
@@ -53,8 +53,9 @@
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-secondary">Guardar</button>
            <a href="/vehiculo" class="btn btn-secondary">Cancelar</a>
-   <button type="submit" class="btn btn-default">Submit</button>
+   
       </div>
     </div>
   </form>
