@@ -9,5 +9,5 @@ class Numero_Apartamento extends Model
 {
     use HasFactory;
 
-    protected $table = 'numeroapartamento';
+    protected $table='numeroapartamento';
 }

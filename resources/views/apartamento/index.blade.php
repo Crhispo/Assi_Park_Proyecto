@@ -8,14 +8,16 @@
 
 @section('contenido')
 
-
+@if(Session::has('mensaje'))
+    {{ Session::get('mensaje') }}
+    <br >
+@endif
 
     <a href="{{ url('apartamento/create')}}" class="btn btn-primary">Registrar apartamentos</a>
 
 <table id="apartamentos" class="table table-striped shadow-lg mt-4" style="width:100%">
     <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">Id apartamento</th>
             <th scope="col">Numero apartamento</th>
             <th scope="col">bloque</th>
             <th scope="col">estado</th>
@@ -24,19 +26,20 @@
     </thead>
     
     <tbody>
-        @foreach($apartamentos as $apartamento)
+        
+        @foreach($apartamento as $apartamento)
         <tr>
-            <td>{{ $apartamento->ID_APARTAMENTO}}</td>
-            <td>{{ $apartamento->NUMERO_APTO}}</td>
-            <td>{{ $apartamento->BLOQUE}}</td>
+            <td>{{ $apartamento->{'NUMERO_APTO'} }}
+            </td>
+            <td>{{ $apartamento->{'BLOQUE'} }}</td>
             <td>
-            @switch($apartamento->{'ESTADO_APTO'})
+            @switch($apartamento->{'ESTADO_APTO'} )
                         @case(1)
-                        Activo
+                        Habitado
                         @break
 
                         @case(0)
-                        Inactivo
+                        No habitado
                         @break
 
                         @default
@@ -52,7 +55,7 @@
                 <form action="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO) }}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
-                            <input hidden name="ESTADO_APTO" value="0"/>
+                            <input hidden name="ESTADO_APTO" value="1"/>
                             <input type="submit" onclick="return confirm('Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar">
                         </form>    
             </td>

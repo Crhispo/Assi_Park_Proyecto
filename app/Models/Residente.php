@@ -9,5 +9,6 @@ class Residente extends Model
 {
     use HasFactory;
     protected $table='residente';
+    protected $primaryKey = 'NUMERO_IDENTIFICACION';
 }
 

@@ -14,7 +14,7 @@ class CreateResidentesTable extends Migration
     public function up()
     {
         Schema::create('residente', function (Blueprint $table) {
-            $table->unsignedInteger('NUMERO_IDENTIFICACION', );
+            $table->unsignedInteger('NUMERO_IDENTIFICACION');
             $table->primary('NUMERO_IDENTIFICACION');
             $table->unsignedTinyInteger('ID_TIPO_IDENTIFICACION');
             $table->string('NOMBRE', 45);
