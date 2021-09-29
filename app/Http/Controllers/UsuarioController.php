@@ -6,21 +6,29 @@ use App\Http\Requests\GuardarUsuarioRequest;
 use App\Http\Requests\ValidarActualizacionUsuarioRequest;
 use App\Http\Requests\ValidarInactivadoRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
-class UsuarioController extends Controller {
+class UsuarioController extends Controller
+{
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = null) {
-
-        $_Usuario = new User();
-        $Select = $_Usuario->GetUsuario($id);
-
-        return view('Modulo_Usuarios.Dashboard_admin')->with('Select', $Select);
+    public function index()
+    {
+        $_Usuario = User::all();
+        return view('Modulo_Usuarios.Dashboard_admin')->with('Select', $_Usuario);
     }
+
+
+    public function create()
+    {
+        return view('Modulo_Usuarios.Dashboard_admin');
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -28,10 +36,14 @@ class UsuarioController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GuardarUsuarioRequest $request) {
-        $_Usuario = new User();
-        $Insert = $_Usuario->SobreCarga($request->all(), '');
-        return view('Modulo_Usuarios.Dashboard_admin')->with('Insert', $Insert);
+
+
+    public function store(Request $request)
+    {
+        $_Usuario = request()->except('_token');
+        $Insert = User::insert($_Usuario);
+        var_dump($_Usuario, $Insert);
+        //return view('Modulo_Usuarios.Dashboard_admin')->with('Insert', $Insert);
     }
 
     /**
@@ -40,12 +52,25 @@ class UsuarioController extends Controller {
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show($id = null) {
 
-        $_Usuario = new User();
-        $Select = $_Usuario->GetUsuario($id);
 
-        return view('Modulo_Usuarios.Dashboard_admin')->with('Select', $Select);
+    public function show()
+    {
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Residente  $residente
+     * @return \Illuminate\Http\Response
+     */
+
+
+    public function edit($NUMERO_IDENTIFICACION)
+    {
+
+        $_Usuario = User::findOrFail($NUMERO_IDENTIFICACION);
+        return view('Modulo_Usuarios.modificar', compact('_Usuario'));
     }
 
     /**
@@ -55,14 +80,14 @@ class UsuarioController extends Controller {
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(ValidarActualizacionUsuarioRequest $request, $id) {
 
-        $_Usuario = new User();
 
-        $Over = $_Usuario->GetUsuario($id);
+    public function update(ValidarActualizacionUsuarioRequest $request, $NUMERO_IDENTIFICACION)
+    {
+        $_Usuario = request()->except(['_token', '_method']);
+        User::where('NUMERO_IDENTIFICACION', "=", $NUMERO_IDENTIFICACION)->update($_Usuario);
 
-        $Update = $_Usuario->SobreCarga($request->except(['_token', '_method']), $id);
-
+        User::findOrFail($NUMERO_IDENTIFICACION);
         return redirect('/Tabla');
     }
 
@@ -72,11 +97,10 @@ class UsuarioController extends Controller {
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function Disable(ValidarInactivadoRequest $request, $id) {
-        $_Usuario = new User();
-        $Disable = $_Usuario->SobreCargaDisable($request->all(), $id);
-
+    public function Disable(ValidarInactivadoRequest $request, $NUMERO_IDENTIFICACION)
+    {
+        $_Usuario = request();
+        $Disable_Usuario = DB::update('update apartamento set ESTADO_USUARIO = ' . $_Usuario->{'ESTADO_USUARIO'} . ' where NUMERO_IDENTIFICACION = ' . $NUMERO_IDENTIFICACION);
         return redirect('/Tabla');
     }
-
 }

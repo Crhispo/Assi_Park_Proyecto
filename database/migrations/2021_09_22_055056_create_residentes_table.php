@@ -16,7 +16,7 @@ class CreateResidentesTable extends Migration
         Schema::create('residente', function (Blueprint $table) {
             $table->unsignedInteger('NUMERO_IDENTIFICACION', );
             $table->primary('NUMERO_IDENTIFICACION');
-            $table->foreignId('ID_TIPO_IDENTIFICACION');
+            $table->unsignedTinyInteger('ID_TIPO_IDENTIFICACION');
             $table->string('NOMBRE', 45);
             $table->string('APELLIDO', 45);
             $table->boolean('SEXO');
@@ -28,7 +28,7 @@ class CreateResidentesTable extends Migration
             $table->boolean('ESTADO_RESIDENTE')->default(1);
             $table->timestamps();
 
-            $table->foreign('ID_TIPO_IDENTIFICACION')->references('id')->on('tipo_identificaciones');
+            $table->foreign('ID_TIPO_IDENTIFICACION')->references('ID_IDENTIFICACION')->on('tipo_identificacion');
             $table->foreign('ID_APARTAMENTO')->references('ID_APARTAMENTO')->on('apartamento');
         });
     }

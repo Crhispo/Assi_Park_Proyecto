@@ -76,9 +76,9 @@ Route::get('/admin', [
 ])->name('admin');
 
 //ruta de la vista residente
-Route::get('/residente', [
-    HomeController::class, 'residente'
-])->name('residente');
+Route::get('/Secretaria', [
+    HomeController::class, 'Secretaria'
+])->name('Secretaria');
 
 //ruta de la vista guarda
 Route::get('/guarda', [

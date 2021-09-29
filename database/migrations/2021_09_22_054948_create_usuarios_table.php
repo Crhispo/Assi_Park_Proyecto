@@ -17,12 +17,12 @@ class CreateUsuariosTable extends Migration
         Schema::create('usuario', function (Blueprint $table) {
             $table->unsignedInteger('NUMERO_IDENTIFICACION');
             $table->primary('NUMERO_IDENTIFICACION');
-            $table->foreignId('ID_TIPO_USUARIO');
-            $table->foreignId('ID_TIPO_IDENTIFICACION');
+            $table->unsignedTinyInteger('ID_TIPO_USUARIO');
+            $table->unsignedTinyInteger('ID_TIPO_IDENTIFICACION');
             $table->string('NOMBRE', 45);
             $table->string('APELLIDO', 45);
             $table->boolean('SEXO');
-            $table->string('DIRECCION', 255);
+            $table->string('DIRECCION', 255)->nullable();
             $table->unsignedInteger('TELEFONO')->nullable();
             $table->unsignedInteger('CELULAR1');
             $table->unsignedInteger('CELULAR2')->nullable();
@@ -33,10 +33,10 @@ class CreateUsuariosTable extends Migration
             $table->boolean('ESTADO_USUARIO')->default(1);
             $table->timestamps();
 
-            $table->foreign('ID_TIPO_USUARIO')->references('id')->on('tipo_usuarios');
-            $table->foreign('ID_TIPO_IDENTIFICACION')->references('id')->on('tipo_identificaciones');
+            $table->foreign('ID_TIPO_USUARIO')->references('ID_TIPO_USUARIO')->on('tipo_usuario');
+            $table->foreign('ID_TIPO_IDENTIFICACION')->references('ID_IDENTIFICACION')->on('tipo_identificacion');
 
-//$tabla->foreign()-References()->on('');
+            //$tabla->foreign()-References()->on('');
 
         });
     }

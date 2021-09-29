@@ -22,18 +22,18 @@ class GuardarUsuarioRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'Id_Tipo_Identificacion' => 'required',
-            'Numero_Identificacion' => 'required|unique:usuario,Numero_Identificacion',
-            'Id_Tipo_Usuario' => 'required',
-            'Nombres' => 'required',
-            'Apellidos' => 'required',
-            'Sexo' => 'required',
-            'Direccion' => 'nullable',
-            'Telefono' => 'nullable',
-            'Celular1' => 'required',
-            'Celular2' => 'nullable',
-            'Correo_Electronico' => 'required|email',
-            'Clave' => 'required',
+            'ID_TIPO_IDENTIFICACION' => 'required',
+            'NUMERO_IDENTIFICACION' => 'required|unique:usuario,NUMERO_IDENTIFICACION',
+            'ID_TIPO_USUARIO' => 'required',
+            'NOMBRE' => 'required',
+            'APELLIDO' => 'required',
+            'SEXO' => 'required',
+            'DIRECCION' => 'nullable',
+            'TELEFONO' => 'nullable',
+            'CELULAR1' => 'required',
+            'CELULAR2' => 'nullable',
+            'Correo' => 'required|email',
+            'CONTRASENA' => 'required',
         ];
     }
 
