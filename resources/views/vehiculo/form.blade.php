@@ -14,24 +14,34 @@
         value="{{old('Numero_de_identificacion_propietario')? old('Numero_de_identificacion_propietario'): $vehiculo->Numero_de_identificacion_propietario}}">
       </div>
     </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Marca">Marca</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="Marca" id="Marca" value="{{old('Marca')? old('Marca'):$vehiculo->Marca}}">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Color">Color</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="Color" id="Color" value="{{old('Color')? old('Color'):$vehiculo->Color}}">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Tipo_parqueadero">Tipo_parqueadero</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="Tipo_parqueadero" id="Tipo_parqueadero" value="{{old('Tipo_parqueadero')? old('Tipo_parqueadero'):$vehiculo->Tipo_parqueadero}}">
-      </div>
-    </div>
+    <label for="marca" class="form-label">Marca:</label>
+    <select name="marca" id="marca" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($marca as $marca)
+        <option value="{{$marca['ID_MARCA']}}">
+            {{ $marca['MARCA']}}
+        </option>
+        @endforeach
+    </select>
+    <label for="Color" class="form-label">Color:</label>
+    <select name="Color" id="Color" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($color as $color)
+        <option value="{{$color['ID_COLOR']}}">
+            {{ $color['COLOR']}}
+        </option>
+        @endforeach
+    </select>
+  </select>
+  <label for="Color" class="form-label">Tipo de vehiculo:</label>
+  <select name="Color" id="Color" class="form-control">
+      <option value="" selected>...</option>
+      @foreach($tipo as $tipo)
+      <option value="{{$color['ID_TIPO_PARQUEADERO_VEHICULO']}}">
+          {{ $tipo['TIPO_PARQUEADERO_VEHICULO']}}
+      </option>
+      @endforeach
+  </select>
     <div class="form-group">
       <label class="control-label col-sm-2" for="Placa">Placa</label>
       <div class="col-sm-10">

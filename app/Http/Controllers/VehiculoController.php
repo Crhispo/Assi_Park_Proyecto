@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
 use Illuminate\Http\Request;
+use App\Models\color;
+use App\Models\marca;
+use App\Models\tipo_parqueaderos_vehiculos;
+use Illuminate\Support\Facades\DB;
 
 class VehiculoController extends Controller
 {
@@ -14,8 +18,11 @@ class VehiculoController extends Controller
     //mostar
     function show()
     {
-        $vehiculoList = Vehiculo::all();
-        return view('vehiculo/lista', ['vehiculoList' => $vehiculoList]);
+        $vehiculoList=DB::select('select id,NUMERO_IDENTIFICACION,Marca.MARCA, Color.COLOR, tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO, placa,ESTADO_VEHICULO
+       from vehiculos inner join Marca on vehiculos.marca_id=Marca.ID_MARCA
+       inner join Color on vehiculos.color_id=Color.ID_COLOR
+       inner join tipo_de_parqueadero_vehiculo on vehiculos.tipo_parqueadero_id=tipo_de_parqueadero_vehiculo.ID_TIPO_PARQUEADERO_VEHICULO');
+        return view('vehiculo/lista', compact('vehiculoList'));
     }
     //eliminar
     function delete($id)
@@ -28,12 +35,16 @@ class VehiculoController extends Controller
     //crear
     function form($id = null)
     {
+
+        $marca=marca::all();
+        $color=Color::all();
+        $tipo=tipo_parqueaderos_vehiculos::all();
         if ($id == null) {
             $vehiculo = new Vehiculo();
         } else {
             $vehiculo = Vehiculo::findOrFail($id);
         }
-        return view('vehiculo/form', ['vehiculo' => $vehiculo]);
+        return view('vehiculo/form', compact('marca','color','tipo','vehiculo'));
     }
     function save(Request $request)
     {

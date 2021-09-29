@@ -23,13 +23,16 @@
     <th>Eliminar</th>
 </tr>
 </thead><tbody>
+    @php(var_dum($vehiculoList))
+        
+    @endphp
 @foreach($vehiculoList as $vehiculo)
 <tr>
 
     <td>{{$vehiculo->NUMERO_IDENTIFICACION}}</td>
-    <td>{{$vehiculo->marca_id}}</td>
-    <td>{{$vehiculo->color_id}}</td>
-    <td>{{$vehiculo->tipo_parqueadero_id}}</td>
+    <td>{{$vehiculo->MARCA}}</td>
+    <td>{{$vehiculo->COLOR}}</td>
+    <td>{{$vehiculo->TIPO_PARQUEADERO_VEHICULO}}</td>
     <td>{{$vehiculo->placa}}</td>
     <td>
         @switch($vehiculo->ESTADO_VEHICULO)
