@@ -23,13 +23,14 @@
                     @enderror
 
                     <div class="input-field form-group">
+                      
                         <label for="tipo_identificacion" class="form-label">Tipo identificación</label>
                         <select class="form-select @error('tipodocumento_id') is-invalid @enderror"
                             name="tipo_identificacion" id="tipo_identificacion">
                             <option value="" disabled selected>Seleccione su tipo de identificación</option>
                             @foreach ($tipoIdentificacion as $tipoIdent)
-                                <option value="{{ $tipoIdent->id }}">
-                                    {{ $tipoIdent->nombre_tipo_identificacion }}</option>
+                                <option value="{{ $tipoIdent->ID_IDENTIFICACION }}">
+                                    {{ $tipoIdent->IDENTIFICACION}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -47,8 +48,8 @@
                             id="tipo_usuario">
                             <option value="" disabled selected>Seleccione su tipo de usuario</option>
                             @foreach ($tipoUsuario as $tipoUsu)
-                                <option value="{{ $tipoUsu->id }}">
-                                    {{ $tipoUsu->nombre_tipo_usuario }}</option>
+                                <option value="{{ $tipoUsu->ID_TIPO_USUARIO }}">
+                                    {{ $tipoUsu->TIPO_USUARIO }}</option>
                             @endforeach
                         </select>
                     </div>

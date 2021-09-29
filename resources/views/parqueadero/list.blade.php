@@ -13,9 +13,9 @@
 <table id="parqueadero" class="table table-striped table-bordered shadow-lg mt-4"style="width:100%">
   <thead class="bg-primary text-white">  
       <tr>
-    <th scope="col">Tipo_parqueadero</th>
-    <th scope="col">Tamano</th>
-    <th scope="col">Descripcion</th>
+    <th scope="col">Tipo Parqueaderos</th>
+    <th scope="col">Tamaño</th>
+    <th scope="col">Descripción</th>
     <th scope="col">Estado</th>
     <th>Editar</th>
     <th>Eliminar</th>

@@ -46,7 +46,7 @@ class UsuarioController extends Controller
         $_Usuario = request()->except('_token');
         $Insert = User::insert($_Usuario);
         var_dump($_Usuario, $Insert);
-        //return view('Modulo_Usuarios.Dashboard_admin')->with('Insert', $Insert);
+        return view('Modulo_Usuarios.Dashboard_admin')->with('Insert', $Insert);
     }
 
     /**
