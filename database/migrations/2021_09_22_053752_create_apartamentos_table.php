@@ -17,7 +17,7 @@ class CreateApartamentosTable extends Migration
             $table->smallIncrements('ID_APARTAMENTO');
             $table->unsignedBigInteger('NUMERO_APTO');
             $table->unsignedBigInteger('BLOQUE');
-            $table->boolean('ESTADO_APTO')->default(1);
+            $table->boolean('ESTADO_APTO')->default(0);
 
             $table->timestamps();
 

@@ -7,7 +7,7 @@
 @csrf
     <div class="mb-3">
         <label for="NUMERO_APTO" class="form-label">Numero de apartamento</label>
-        <input type="number" name="NUMERO_APTO" maxlength="150" id="NUMERO_APTO" class="form-control" value="" tapindex="1">
+        <input type="number" name="NUMERO_APTO" maxlength="150" id="NUMERO_APTO" class="form-control" value="" tapindex="1" required>
         <input type="submit" class="btn btn-primary" value="Registrar apartamento" tapindex="4">
     </div>
 
@@ -17,7 +17,7 @@
 @csrf
     <div class="mb-3">
         <label for="BLOQUE" class="form-label">Bloque</label>
-        <input type="text" name="BLOQUE" maxlength="5" id="BLOQUE" class="form-control" value="" tapindex="2">
+        <input type="text" name="BLOQUE" maxlength="5" id="BLOQUE" class="form-control" value="" tapindex="2" required>
         <input type="submit" class="btn btn-primary" value="Registrar bloque" tapindex="4">
     </div>
 </form>

@@ -39,7 +39,7 @@
                         @break
 
                         @case(0)
-                        Inhabitado
+                        No habitado
                         @break
 
                         @default
