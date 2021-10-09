@@ -7,8 +7,9 @@ $cad .= substr($charset, rand(0, 62), 1);
 @endphp
 
 <!----- BOTON QUE LLAMA AL MODAL DE REGISTRO------>
+@if(Auth::user()->ID_TIPO_USUARIO == 1)
 <button type="button" class="btn btn-outline-success p-md-2" data-toggle="modal" data-target="#Modal"><i class="icon ion-md-add"></i></button>
-
+@endif
 <!-- Modal -->
 <div id="Modal" class="modal fade text-dark" role="dialog">
     <div class="modal-dialog modal-lg" style="background-color: #4ec500;">

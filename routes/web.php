@@ -30,7 +30,7 @@ Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index'
 Route::post('Usuario.store', [UsuarioController::class, 'store']);
 Route::get('/Tabla', [UsuarioController::class, 'show']);
 Route::put('Usuario.{id}', [UsuarioController::class, 'update'])->name('Usuario');
-Route::delete('Usuario.{id}', [UsuarioController::class, 'disable']);
+Route::delete('Usuario.{id}', [UsuarioController::class, 'Disable']);
 
 /* Rutas modulo apartamento */
 

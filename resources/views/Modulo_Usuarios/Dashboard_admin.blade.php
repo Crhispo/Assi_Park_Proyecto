@@ -9,7 +9,26 @@
     <title>Administrador</title>
 </head>
 
-<body>
+            <div class="w-100">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Salida
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="Cierre_Sesion.php"><i class="icon ion-md-exit"></i>Cerrar Sesión</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
 
     <!---------SIDEBAR---------->
 
@@ -100,11 +119,11 @@
                             <div class="container border-bottom">
                                 @if (!isset($Insert))
                                     @php($Insert = '')
-                                @else
-                                    @if ($Insert == 1)
-                                        <span class="font-weight-bold text-dark">Registrado con exito.</span>
+                                    @else
+                                    @if($Insert == 1)
+                                    <span class="font-weight-bold text-dark">Registrado con exito.</span>
                                     @elseif($Insert == 0)
-                                        <span class="font-weight-bold text-dark">"No" se registrado con exito.</span>
+                                    <span class="font-weight-bold text-dark">"No" se registrado con exito.</span>
                                     @else
                                     @endif
                                 @endif

@@ -8,7 +8,7 @@
   @csrf
   <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
   <div class="form-group">
-      <label class="control-label col-sm-2" for="Numero">Numero</label>
+      <label class="control-label col-sm-2" for="Numero">Numero Identificación Propietario</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION"
         value="{{old('NUMERO_IDENTIFICACION')? old('NUMERO_IDENTIFICACION'): $vehiculo->NUMERO_IDENTIFICACION}}">
@@ -45,7 +45,25 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="placa">Placa</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
+        <input type="number" class="form-control" name="Marca" id="Marca" value="{{old('Marca')? old('Marca'):$vehiculo->Marca}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Color">Color</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" name="Color" id="Color" value="{{old('Color')? old('Color'):$vehiculo->Color}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Tipo_parqueadero">Tipo parqueadero</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" name="Tipo_parqueadero" id="Tipo_parqueadero" value="{{old('Tipo_parqueadero')? old('Tipo_parqueadero'):$vehiculo->Tipo_parqueadero}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Placa">Placa</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="Placa" id="Placa" value="{{old('Placa')? old('Placa'):$vehiculo->Placa}}">
       </div>
     </div>
 
@@ -63,8 +81,9 @@
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-secondary">Guardar</button>
            <a href="/vehiculo" class="btn btn-secondary">Cancelar</a>
-   <button type="submit" class="btn btn-default">Submit</button>
+   
       </div>
     </div>
   </form>

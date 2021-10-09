@@ -10,7 +10,7 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="tipo_parqueaderos">tipo_parqueaderos</label>
+      <label class="control-label col-sm-2" for="tipo_parqueaderos">tipo parqueaderos</label>
       <div class="col-sm-10">
         <input type="number" class="form-control" name="tipo_parqueaderos" id="tipo" value="{{old('tipo')? old('tipo'):$tipo->tipo}}">
       </div>

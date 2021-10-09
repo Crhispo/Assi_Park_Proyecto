@@ -1,6 +1,6 @@
 @extends('plantilla')
-@section('title',$asignacion->id?'Actualizar asignacion de vehiculo':'Nuevo asignacion')
-@section('Encabezado',$asignacion->id?'Actualizar asignacion de vehiculo':'Nuevo asignacion')    
+@section('title',$asignacion->id?'Actualizar asignacion de vehiculo':'Nueva asignación')
+@section('Encabezado',$asignacion->id?'Actualizar asignacion de vehiculo':'Nueva asignación')
 
 @section('content')
     
@@ -30,14 +30,16 @@
       <div class="col-sm-10">
         <input type="datetime-local" class="form-control" name="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" id="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" value="{{old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO')? old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO'):$asignacion->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO}}">
       </div>
-    </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-           <a href="/vehiculo" class="btn btn-secondary">Cancelar</a>
-   <button type="submit" class="btn btn-default">Submit</button>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-secondary">Guardar</button>
+          <a href="/vehiculo" class="btn btn-secondary">Cancelar</a>
+
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
+</div>
 
 @endsection

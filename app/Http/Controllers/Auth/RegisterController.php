@@ -44,7 +44,7 @@ class RegisterController extends Controller
     protected function redirectTo()
     {
         if (auth()->user()->ID_TIPO_USUARIO  == 1) {
-            return '/Usuario';
+            return '/vehiculo';
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 2) {
             return '/vehiculo';
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 3) {
@@ -61,7 +61,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -73,22 +73,20 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'numero_identificacion' => ['unique:usuario,NUMERO_IDENTIFICACION', 'numeric', 'max:10', 'min:7'],
-            // 'tipodocumento_id' => ['required', 'nullable|regex:/^[0-9a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/i'],
-            // 'tipousuario_id' => ['required', 'nullable|regex:/^[0-9a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/i'],
-            // 'nombre' => ['required', 'string', 'max:50', 'min:2'],
-            // 'apellido' => ['required', 'string', 'max:50', 'min:2'],
-            // // 'sexo' => ['required', 'nullable|regex:/^[0-9a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/i'],
-            // 'direccion' => ['required', 'string', 'max:70', 'min:5'],
-            // 'telefono' => ['required', 'numeric', 'min:10', 'max:10'],
-            // 'celular1' => ['required', 'numeric', 'min:10', 'max:10'],
-            // 'celular2' => ['required', 'numeric', 'min:10', 'max:10'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'num_documento' => ['required', 'unique:usuario,NUMERO_IDENTIFICACION', 'numeric', 'min:7'],
+            'tipo_identificacion' => ['required', 'numeric'],
+            'tipo_usuario' => ['required', 'numeric'],
+            'nombre' => ['bail','required', 'string', 'max:50', 'min:2'],
+            'apellido' => ['bail', 'required', 'string', 'max:50', 'min:2'],
+            'sexo' => ['required', 'numeric'],
+            'direccion' => ['required', 'string', 'max:70', 'min:5'],
+            'telefono' => ['required', 'numeric', 'min:10'],
+            'celular1' => ['required', 'numeric', 'min:10'],
+            'email' => ['required', 'string', 'email','unique:usuario,email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            // 'estado_usuario' => ['required']
+            'estado' => ['required', 'numeric']
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *

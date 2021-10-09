@@ -16,8 +16,8 @@
                 </tr>
             </thead>
             <tbody>
-                @if(!isset($Select))
-                @php($Select = '')
+                @if(!isset($_Usuario))
+                @php($_Usuario = '')
                 <tr>
                     <th></th>
                     <th></th>
@@ -32,18 +32,18 @@
                     <th></th>
                 </tr>
                 @else
-                @foreach($Select as $value)
+                @foreach($_Usuario as $_Usuario)
                 <tr>
-                    <td>{{ $value-> {'NUMERO_IDENTIFICACION'} }}</td>
-                    <td>{{ $value-> {'ID_TIPO_USUARIO'} }}</td>
-                    <td>{{ $value-> {'NOMBRE'} }}</td>
-                    <td>{{ $value-> {'APELLIDO'} }}</td>
-                    <td>{{ $value-> {'DIRECCION'} }}</td>
-                    <td>{{ $value-> {'TELEFONO'} }}</td>
-                    <td>{{ $value-> {'CELULAR1'} }}</td>
-                    <td>{{ $value-> {'Correo'} }}</td>
+                    <td>{{ $_Usuario-> {'NUMERO_IDENTIFICACION'} }}</td>
+                    <td>{{ $_Usuario-> {'ID_TIPO_USUARIO'} }}</td>
+                    <td>{{ $_Usuario-> {'NOMBRE'} }}</td>
+                    <td>{{ $_Usuario-> {'APELLIDO'} }}</td>
+                    <td>{{ $_Usuario-> {'DIRECCION'} }}</td>
+                    <td>{{ $_Usuario-> {'TELEFONO'} }}</td>
+                    <td>{{ $_Usuario-> {'CELULAR1'} }}</td>
+                    <td>{{ $_Usuario-> {'Correo'} }}</td>
                     <td>
-                        @switch($value->{'ESTADO_USUARIO'})
+                        @switch($_Usuario->{'ESTADO_USUARIO'})
                         @case(1)
                         Activo
                         @break
@@ -72,12 +72,12 @@
 
                     </td>
                     <td>
-                        <form action="{{ url('Usuario.'.$value-> {'Numero del documento de identidad'})}}" method="post">
+                        <form action="{{ url('Usuario.'.$_Usuario-> {'NUMERO_IDENTIFICACION'} )}}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
 
 
-                            <input hidden name="Estado_Usuario" value="0"/>
+                            <input hidden name="ESTADO_USUARIO" value="0"/>
                             <input type="submit" onclick="return confirm('Desea inhabilitar?')" value="Inhabilitar">
 
                         </form>

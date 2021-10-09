@@ -23,7 +23,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $_Usuario = User::all();
-        return view('Modulo_Usuarios.Dashboard_admin')->with('Select', $_Usuario);
+        return view('Modulo_Usuarios.Dashboard_admin', compact('_Usuario'));
     }
 
 
@@ -44,9 +44,8 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $_Usuario = request()->except('_token');
-        $Insert = User::insert($_Usuario);
-        var_dump($_Usuario, $Insert);
-        return view('Modulo_Usuarios.Dashboard_admin')->with('Insert', $Insert);
+        User::insert($_Usuario);
+        return redirect('Usuario');
     }
 
     /**
@@ -57,24 +56,13 @@ class UsuarioController extends Controller
      */
 
 
-    public function show()
+    public function show($NUMERO_IDENTIFICACION = null)
     {
+        $_UsuarioU = user::where('NUMERO_IDENTIFICACION','=',$NUMERO_IDENTIFICACION)->firstOrFail();
+        return view('Modulo_Usuarios.Dashboard_admin', compact('_UsuarioU'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Residente  $residente
-     * @return \Illuminate\Http\Response
-     */
 
-
-    public function edit($NUMERO_IDENTIFICACION)
-    {
-
-        $_Usuario = User::findOrFail($NUMERO_IDENTIFICACION);
-        return view('Modulo_Usuarios.modificar', compact('_Usuario'));
-    }
 
     /**
      * Update the specified resource in storage.
@@ -85,13 +73,12 @@ class UsuarioController extends Controller
      */
 
 
-    public function update(ValidarActualizacionUsuarioRequest $request, $NUMERO_IDENTIFICACION)
+    public function update(ValidarActualizacionUsuarioRequest $request, $NUMERO_IDENTIFICACION= null)
     {
         $_Usuario = request()->except(['_token', '_method']);
         User::where('NUMERO_IDENTIFICACION', "=", $NUMERO_IDENTIFICACION)->update($_Usuario);
-
-        User::findOrFail($NUMERO_IDENTIFICACION);
-        return redirect('/Tabla');
+        var_dump($_Usuario);
+        //return view('Modulo_Usuarios.Dashboard_admin');
     }
 
     /**
@@ -103,7 +90,8 @@ class UsuarioController extends Controller
     public function Disable(ValidarInactivadoRequest $request, $NUMERO_IDENTIFICACION)
     {
         $_Usuario = request();
-        $Disable_Usuario = DB::update('update apartamento set ESTADO_USUARIO = ' . $_Usuario->{'ESTADO_USUARIO'} . ' where NUMERO_IDENTIFICACION = ' . $NUMERO_IDENTIFICACION);
+        var_dump($_Usuario);
+        $Disable_Usuario = DB::update('update usuario set ESTADO_USUARIO = ' . $_Usuario->{'ESTADO_USUARIO'} . ' where NUMERO_IDENTIFICACION = ' . $NUMERO_IDENTIFICACION);
         return redirect('/Tabla');
     }
 }
