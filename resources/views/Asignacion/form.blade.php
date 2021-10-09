@@ -6,18 +6,19 @@
     
 <form class="form-horizontal" method="POST" action="{{route('asignacion.save')}}">
   @csrf  
-  
-    <div class="mb-3">
-      <label for="NUMERO_APTO" class="form-label">Numero apartamento:</label>
-      <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
-          <option value="" selected>...</option>
-          @foreach($vehiculo as $vehiculo)
-                <option value="{{ $NumeroApto['id'] }}" >
-                {{ $vehiculo['NUMERO_APTO'] }}    
-                </option>
-          @endforeach
-      </select>
-  </div>
+  <input type="hidden" name="id" value="{{old('id')? old('id'):$asignacion->id}}">
+  <div class="mb-3">
+    <label for="NUMERO_APTO" class="form-label">Numero apartamento:</label>
+    <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($NumeroApto as $NumeroApto)
+              <option value="{{ $NumeroApto['apartamento_id'] }}" >
+              {{ $NumeroApto['NUMERO_APTO'] }} ,"BLOQUE"  
+              {{ $NumeroApto['BLOQUE'] }}   
+              </option>
+        @endforeach
+    </select>
+</div>
  
     <div class="form-group">
       <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion</label>

@@ -7,13 +7,16 @@
 <form class="form-horizontal" method="POST" action="{{route('vehiculo.save')}}">
   @csrf
   <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
-  <div class="form-group">
-      <label class="control-label col-sm-2" for="Numero">Numero Identificación Propietario</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION"
-        value="{{old('NUMERO_IDENTIFICACION')? old('NUMERO_IDENTIFICACION'): $vehiculo->NUMERO_IDENTIFICACION}}">
-      </div>
-    </div>
+
+    <label for="NUMERO_IDENTIFICACION" class="form-label">Numero Identificación Propietario</label>
+    <select name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION" class="form-control">
+        <option value="" selected>...</option>
+        @foreach($residente as $residente)
+        <option value="{{$residente['NUMERO_IDENTIFICACION']}}">
+            {{ $residente['NUMERO_IDENTIFICACION']}}
+        </option>
+        @endforeach
+    </select>
     <label for="marca" class="form-label">Marca:</label>
     <select name="marca" id="marca" class="form-control">
         <option value="" selected>...</option>
@@ -42,28 +45,11 @@
       </option>
       @endforeach
   </select>
+ 
     <div class="form-group">
       <label class="control-label col-sm-2" for="placa">Placa</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" name="Marca" id="Marca" value="{{old('Marca')? old('Marca'):$vehiculo->Marca}}">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Color">Color</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="Color" id="Color" value="{{old('Color')? old('Color'):$vehiculo->Color}}">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Tipo_parqueadero">Tipo parqueadero</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" name="Tipo_parqueadero" id="Tipo_parqueadero" value="{{old('Tipo_parqueadero')? old('Tipo_parqueadero'):$vehiculo->Tipo_parqueadero}}">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Placa">Placa</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" name="Placa" id="Placa" value="{{old('Placa')? old('Placa'):$vehiculo->Placa}}">
+        <input type="text" class="form-control" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
       </div>
     </div>
 

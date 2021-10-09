@@ -8,7 +8,9 @@
 <link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
 
 @endsection
-
+<a href="#" class="d-noned d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+<i class="fas fa-print fa-sm text-white-50"></i>imprimir
+</a>
 <table id="vehiculo" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
     <thead class="bg-primary text-white">
         <tr>
