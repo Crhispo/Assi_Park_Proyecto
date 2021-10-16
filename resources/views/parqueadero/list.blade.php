@@ -24,10 +24,10 @@
 <tbody>
 @foreach($parqueaderoList as $parqueadero)
 <tr>
-    <td>{{$parqueadero->Tipo_parqueadero}}</td>
-    <td>{{$parqueadero->Tamano}}</td>
-    <td>{{$parqueadero->Descripcion}}</td>
-    <td> @switch($parqueadero->Estado)
+    <td>{{$parqueadero->TIPO_PARQUEADERO_VEHICULO}}</td>
+    <td>{{$parqueadero->TAMAÑO}}</td>
+    <td>{{$parqueadero->DESCRIPCION}}</td>
+    <td> @switch($parqueadero->ESTADO_PARQUEADERO)
         @case(1)
         Activo
         @break

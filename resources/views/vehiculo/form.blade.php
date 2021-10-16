@@ -12,8 +12,10 @@
     <select name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION" class="form-control">
         <option value="" selected>...</option>
         @foreach($residente as $residente)
-        <option value="{{$residente['NUMERO_IDENTIFICACION']}}">
-            {{ $residente['NUMERO_IDENTIFICACION']}}
+        <option value="{{$residente->NUMERO_IDENTIFICACION}}"
+          {{$vehiculo->NUMERO_IDENTIFICACION === $residente->NUMERO_IDENTIFICACION ? 'selected' : ''}}
+          >
+            {{ $residente->NUMERO_IDENTIFICACION}}
         </option>
         @endforeach
     </select>
@@ -21,8 +23,10 @@
     <select name="marca" id="marca" class="form-control">
         <option value="" selected>...</option>
         @foreach($marca as $marca)
-        <option value="{{$marca['ID_MARCA']}}">
-            {{ $marca['MARCA']}}
+        <option value="{{$marca->ID_MARCA}}"
+          {{$vehiculo->marca_id === $marca->ID_MARCA ? 'selected' : ''}}
+          >
+            {{ $marca->MARCA}}
         </option>
         @endforeach
     </select>
@@ -30,8 +34,11 @@
     <select name="Color" id="Color" class="form-control">
         <option value="" selected>...</option>
         @foreach($color as $color)
-        <option value="{{$color['ID_COLOR']}}">
-            {{ $color['COLOR']}}
+        <option value="{{$color->ID_COLOR}}"
+          
+          {{$vehiculo->color_id === $color->ID_COLOR ? 'selected' : ''}}
+          >
+            {{ $color->COLOR}}
         </option>
         @endforeach
     </select>
@@ -40,8 +47,11 @@
   <select name="tipo" id="tipo" class="form-control">
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
-      <option value="{{$tipo['ID_TIPO_PARQUEADERO_VEHICULO']}}">
-          {{ $tipo['TIPO_PARQUEADERO_VEHICULO']}}
+      <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}"
+        {{$vehiculo->tipo_parqueadero_id === $tipo->ID_TIPO_PARQUEADERO_VEHICULO}}
+                  {{ $tipo->TIPO_PARQUEADERO_VEHICULO ? 'selected' : ''}}
+>
+          {{$tipo->TIPO_PARQUEADERO_VEHICULO}}
       </option>
       @endforeach
   </select>
