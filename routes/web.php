@@ -26,23 +26,23 @@ Route::get('Modificar', function () {
     return view('Modulo_Usuarios.modificar');
 });
 
-Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
+Route::get('Usuario', [UsuarioController::class, 'index']);
 Route::post('Usuario.store', [UsuarioController::class, 'store']);
 Route::get('/Tabla', [UsuarioController::class, 'show']);
 Route::put('Usuario.{id}', [UsuarioController::class, 'update'])->name('Usuario');
-Route::delete('Usuario.{id}', [UsuarioController::class, 'Disable']);
+Route::delete('Usuario.{id}', [UsuarioController::class, 'disable']);
 
 /* Rutas modulo apartamento */
 
-Route::resource('/apartamento', ApartamentoController::class);
+Route::resource('apartamento', ApartamentoController::class);
 
 /* Rutas modulo residente */
 
-Route::resource('/residente', ResidenteController::class);
+Route::resource('residente', ResidenteController::class);
 
 //consultar
-Route::get('/parqueadero', [ParqueaderoController::class, 'show'])->name('parqueadero.show');
-Route::get('/vehiculo', [VehiculoController::class, 'show'])->name('vehiculo.show');
+Route::get('/parqueadero', [ParqueaderoController::class, 'show']);
+Route::get('/vehiculo', [VehiculoController::class, 'show']);
 Route::get('/tipo', [tipo_parqueadero_vehiculoController::class, 'show']);
 Route::get('/asignacion', [Detalle_asignacionController::class, 'show']);
 
@@ -65,10 +65,10 @@ route::post('/tipo/save', [tipo_parqueadero_vehiculoController::class, 'save'])-
 route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->name('asignacion.save');
 
 
-//ruta LandingPage
+
 Route::get('/', function () {
     return view('Index.homepage');
-})->name('homepage');
+});
 
 //ruta de la vista administrador
 Route::get('/admin', [
@@ -76,9 +76,9 @@ Route::get('/admin', [
 ])->name('admin');
 
 //ruta de la vista residente
-Route::get('/Secretaria', [
-    HomeController::class, 'Secretaria'
-])->name('Secretaria');
+Route::get('/residente', [
+    HomeController::class, 'residente'
+])->name('residente');
 
 //ruta de la vista guarda
 Route::get('/guarda', [
@@ -89,5 +89,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/*montiel*/
-
+Route::get('Index01', function () {
+    return view('DASHBOARD_ASSIPARK.index');
+});
