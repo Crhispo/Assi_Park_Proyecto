@@ -65,11 +65,6 @@ route::post('/tipo/save', [tipo_parqueadero_vehiculoController::class, 'save'])-
 route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->name('asignacion.save');
 
 
-
-Route::get('/', function () {
-    return view('Index.homepage');
-});
-
 //ruta de la vista administrador
 Route::get('/admin', [
     HomeController::class, 'admin'
@@ -85,10 +80,13 @@ Route::get('/guarda', [
     HomeController::class, 'guarda'
 ])->name('guarda');
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('Index01', function () {
-    return view('DASHBOARD_ASSIPARK.index');
-});
+Route::get('/', function ()
+{
+    return view('Index.homepage');
+}
+)->name('homepage');
