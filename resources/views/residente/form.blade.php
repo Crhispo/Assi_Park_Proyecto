@@ -1,9 +1,21 @@
 
+@if(count($errors)>0)
+
+<div class="alert alert-danger" role="alert">
+    <ul>
+        @foreach($errors->all() as $error)
+             <li>{{$error}}</li>
+            @endforeach
+    </ul>
+</div>
+
+@endif
+
 <h2>{{ $modo }} residente</h2>
 
 <div class="mb-3">
     <label for="Id" class="form-label">Numero de identificacion:</label>
-    <input type="text" name="NUMERO_IDENTIFICACION" value="{{  isset($residente->NUMERO_IDENTIFICACION)?$residente->NUMERO_IDENTIFICACION:'' }}" id="NUMERO_IDENTIFICACION" maxlength="10" class="form-control">
+    <input type="text" name="NUMERO_IDENTIFICACION" value="{{  isset($residente->NUMERO_IDENTIFICACION)?$residente->NUMERO_IDENTIFICACION:old('NUMERO_IDENTIFICACION') }}" id="NUMERO_IDENTIFICACION" maxlength="10" class="form-control">
 </div>
 
 <div class="mb-3">
@@ -20,12 +32,12 @@
     
 <div class="mb-3">
     <label for="NOMBRE" class="form-label">nombre:</label>
-    <input type="text" name="NOMBRE" maxlength="45" id="NOMBRE" value="{{ isset($residente->NOMBRE)?$residente->NOMBRE:'' }}" class="form-control" >
+    <input type="text" name="NOMBRE" maxlength="45" id="NOMBRE" value="{{ isset($residente->NOMBRE)?$residente->NOMBRE:old('NOMBRE') }}" class="form-control" >
 </div>
 
 <div class="mb-3">
     <label for="APELLIDO" class="form-label">apellido:</label>
-    <input type="text" name="APELLIDO" maxlength="45" id="APELLIDO" value="{{ isset($residente->APELLIDO)?$residente->APELLIDO:'' }}" class="form-control">
+    <input type="text" name="APELLIDO" maxlength="45" id="APELLIDO" value="{{ isset($residente->APELLIDO)?$residente->APELLIDO:old('APELLIDO') }}" class="form-control">
 </div>
 
 <div class="mb-3">
@@ -45,22 +57,22 @@
     
 <div class="mb-3">
     <label for="Telefono" class="form-label">telefono:</label>
-    <input type="tel" name="TELEFONO" maxlength="9" id="TELEFONO" value="{{ isset($residente->TELEFONO)?$residente->TELEFONO:'' }}" class="form-control">
+    <input type="tel" name="TELEFONO" maxlength="9" id="TELEFONO" value="{{ isset($residente->TELEFONO)?$residente->TELEFONO:old('TELEFONO') }}" class="form-control">
 </div>
 
 <div class="mb-3">
     <label for="Celular1" class="form-label">celular1</label>
-    <input type="tel" name="CELULAR1" maxlength="10" id="CELULAR1" value="{{ isset($residente->CELULAR1)?$residente->CELULAR1:'' }}" class="form-control">
+    <input type="tel" name="CELULAR1" maxlength="10" id="CELULAR1" value="{{ isset($residente->CELULAR1)?$residente->CELULAR1:old('CELULAR1')  }}" class="form-control">
 </div>
 
 <div class="mb-3">
     <label for="Celular2" class="form-label">celular2</label>
-    <input type="tel" name="CELULAR2" maxlength="10" id="CELULAR2" value="{{ isset($residente->CELULAR2)?$residente->CELULAR2:'' }}" class="form-control"> 
+    <input type="tel" name="CELULAR2" maxlength="10" id="CELULAR2" value="{{ isset($residente->CELULAR2)?$residente->CELULAR2:old('CELULAR2') }}" class="form-control"> 
 </div>
 
 <div class="mb-3">
     <label for="Correo" class="form-label">correo electronico</label>
-    <input type="email" name="CORREO_ELECTRONICO" maxlength="150" id="CORREO_ELECTRONICO" value="{{ isset($residente->CORREO_ELECTRONICO)?$residente->CORREO_ELECTRONICO:'' }}" class="form-control">
+    <input type="email" name="CORREO_ELECTRONICO" maxlength="150" id="CORREO_ELECTRONICO" value="{{ isset($residente->CORREO_ELECTRONICO)?$residente->CORREO_ELECTRONICO:old('CORREO_ELECTRONICO') }}" class="form-control">
 </div>
 
 

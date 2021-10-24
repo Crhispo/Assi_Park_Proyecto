@@ -1,6 +1,19 @@
 <form action="{{url('/apartamento')}}" method="post">
 @csrf
 
+@if(count($errors)>0)
+
+<div class="alert alert-danger" role="alert">
+    <ul>
+        
+    </ul>
+        @foreach($errors->all() as $error)
+             <li>{{$error}}</li>
+            @endforeach
+</div>
+
+@endif
+
 <label for="NUMERO_APTO" class="form-label">Numero de apartamento</label>
     <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
         <option value="" selected>...</option>

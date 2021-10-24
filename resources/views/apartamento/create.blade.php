@@ -21,5 +21,6 @@
         <input type="submit" class="btn btn-primary" value="Registrar bloque" tapindex="4">
     </div>
 </form>
+
 @include('apartamento.form',['modo'=>'Registrar'])
 
