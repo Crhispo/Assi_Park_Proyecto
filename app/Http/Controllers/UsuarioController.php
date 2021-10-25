@@ -41,7 +41,7 @@ class UsuarioController extends Controller
      */
 
 
-    public function store(Request $request)
+    public function store(GuardarUsuarioRequest $request)
     {
         $_Usuario = request()->except('_token');
         User::insert($_Usuario);
@@ -73,12 +73,12 @@ class UsuarioController extends Controller
      */
 
 
-    public function update(ValidarActualizacionUsuarioRequest $request, $NUMERO_IDENTIFICACION= null)
+    public function update(ValidarActualizacionUsuarioRequest $request, $NUMERO_IDENTIFICACION)
     {
-        $_Usuario = request()->except(['_token', '_method']);
-        User::where('NUMERO_IDENTIFICACION', "=", $NUMERO_IDENTIFICACION)->update($_Usuario);
-        var_dump($_Usuario);
-        //return view('Modulo_Usuarios.Dashboard_admin');
+        $_UsuarioD = request()->except(['_token', '_method']);
+        $Final = '';
+        $Final = User::where('NUMERO_IDENTIFICACION', "=", $NUMERO_IDENTIFICACION)->update($_Usuario);
+        return view('Modulo_Usuarios.Usuario', compact('Final','_UsuarioD'));
     }
 
     /**

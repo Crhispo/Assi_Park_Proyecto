@@ -17,7 +17,7 @@
                 <!------ FORMULARIO ------->
 
                 <div class="container">
-                    <form action="Usuario.store" method="post" class="panel form-element-padding">
+                    <form action="Usuario/{{ $_Usuario-> {'NUMERO_IDENTIFICACION'} }}" method="post" class="panel form-element-padding">
                         <div class="col-md-12 padding-0">
                             <div class="col-md-8">
                                 <div class="panel form-element-padding">
@@ -139,14 +139,14 @@
                                                     </div>
                                                     <div class="form-group col-md-7">
                                                         <label class="font-weight-bold">Correo electrónico <span class="text-danger">*</span></label>
-                                                        <input type="email" name="Correo_Electronico" class="form-control" value="{{ $_Usuario-> {'Correo'} }}" placeholder="Ingrese el correo electrónico">
+                                                        <input type="email" name="email" class="form-control" value="{{ $_Usuario-> {'email'} }}" placeholder="Ingrese el correo electrónico">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-row mb-2 text-dark">
                                                     <div class="form-group col-md-6">
                                                         <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
-                                                        <input type="text" name="Clave" class="form-control" placeholder="Ingrese su contraseña" value="">
+                                                        <input type="text" name="password" class="form-control" placeholder="Ingrese su contraseña" value="">
                                                     </div>
 
                                                 </div>

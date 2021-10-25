@@ -47,6 +47,15 @@
                 <div class="panel-body">
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
+                        @php
+                        $Final = '';
+                        if(!isset($_UsuarioD)){
+                            $_UsuarioD = '';
+                        }
+                            var_dump($Final);
+                            var_dump($_UsuarioD);
+                        @endphp
+
                         <p class="animated fadeInDown">
                             Admin <span class="fa-angle-right fa"></span> Usuarios
                         </p>
@@ -149,6 +158,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <!-- end: content -->
 
         <!-- start: right menu -->
@@ -164,10 +174,6 @@
 
 
         <!-- plugins -->
-
-
-
-
         <script src="asset/js/plugins/moment.min.js"></script>
         <script src="asset/js/plugins/jquery.datatables.min.js"></script>
         <script src="asset/js/plugins/datatables.bootstrap.min.js"></script>

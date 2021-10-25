@@ -1,8 +1,6 @@
-@extends('layouts.PlantillaBase');
+@extends('layouts.PlantillaBase')
 
 @section('css')
-
-<link href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
 @endsection
 
@@ -13,26 +11,42 @@
 @endif
 
 
-    <a href="residente/create" class="btn btn-primary">Registrar residentes</a>
-
-<table id="apartamentos" class="table table-striped shadow-lg mt-4" style="width:100%">
+<!-- start: Content -->
+<div id="content">
+    <div class="panel box-shadow-none content-header">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <h3 class="animated fadeInLeft">Data Tables</h3>
+                <p class="animated fadeInDown">
+                    Table <span class="fa-angle-right fa"></span> Data Tables
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 top-20 padding-0">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3>Data Tables</h3>
+                    <a href="residente/create" class="btn btn-primary">Registrar residentes</a>
+                </div>
+                <div class="panel-body">
+                    <div class="responsive-table">
+<table id="apartamentos" class="table table-striped shadow-lg mt-4" >
     <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">numero de identificacion</th>
-            <th scope="col">tipo de identificacion</th>
-            <th scope="col">nombre</th>
-            <th scope="col">apellido</th>
-            <th scope="col">sexo</th>
-            <th scope="col">telefono</th>
-            <th scope="col">celular 1</th>
-            <th scope="col">celular 2</th>
-            <th scope="col">correo electronico</th>
-            <th scope="col">Numero apartamento</th>
-            <th scope="col">estado de residente</th>
+            <th>numero de identificacion</th>
+            <th>tipo de identificacion</th>
+            <th>nombre</th>
+            <th >apellido</th>
+            <th>celular 1</th>
+            <th >correo electronico</th>
+            <th >Numero apartamento</th>
+            <th>estado de residente</th>
             <th>acciones</th>
         </tr>
     </thead>
-    
+
     <tbody>
     @foreach($residentes as $residente)
         <tr>
@@ -61,23 +75,7 @@
             </td>
             <td>{{ $residente->NOMBRE}}</td>
             <td>{{ $residente->APELLIDO}}</td>
-            <td>
-            @switch($residente->{'SEXO'})
-                        @case(1)
-                        Masculino
-                        @break
-
-                        @case(0)
-                        Femenino
-                        @break
-
-                        @default
-                        Erros
-                        @endswitch
-            </td>
-            <td>{{ $residente->TELEFONO}}</td>
             <td>{{ $residente->CELULAR1}}</td>
-            <td>{{ $residente->CELULAR2}}</td>
             <td>{{ $residente->CORREO_ELECTRONICO}}</td>
             <td>{{ $residente->apartamento}} </td>
             <td>
@@ -103,27 +101,21 @@
                             {{ method_field('DELETE') }}
                             <input hidden name="ESTADO_RESIDENTE" value="0"/>
                             <input type="submit" onclick="return confirm('Seguro que Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar">
-                        </form>   
+                        </form>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
-
-
-
-
-
-
-
-
-
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end: content -->
 
 @section('js')
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap5.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -132,6 +124,5 @@
     });
 } );
 </script>
-
 
 @endsection

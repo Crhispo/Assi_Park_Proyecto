@@ -52,13 +52,25 @@
             </ul>
 
         <ul class="nav navbar-nav navbar-right user-nav">
-            <li class="user-name"><span>{{ Auth::user()->NOMBRE }} {{ Auth::user()->APELLIDO }} | @if (Auth::user()->ID_TIPO_USUARIO == 1)
+            <li class="user-name"><span>
+
+                    @if(!isset(Auth::user()->NOMBRE) && !isset(Auth::user()->APELLIDO))
+                        Nulo |
+                    @else
+                        {{ Auth::user()->NOMBRE }} {{ Auth::user()->APELLIDO }} |
+                    @endif
+
+                    @if(!isset(Auth::user()->ID_TIPO_USUARIO))
+                        Nulo
+                    @else
+                @if (Auth::user()->ID_TIPO_USUARIO == 1)
               <strong>Administador</strong>
           @elseif (Auth::user()->ID_TIPO_USUARIO == 2)
               <strong>Secretaria</strong>
           @else
               <strong>Guarda seguridad</strong>
           @endif</span></li>
+          @endif
               <li class="dropdown avatar-dropdown">
                <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                <ul class="dropdown-menu user-dropdown">

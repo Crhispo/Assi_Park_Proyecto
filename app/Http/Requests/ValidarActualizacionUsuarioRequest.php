@@ -32,8 +32,8 @@ class ValidarActualizacionUsuarioRequest extends FormRequest {
             'Telefono' => 'nullable',
             'Celular1' => 'required',
             'Celular2' => 'nullable',
-            'Correo_Electronico' => 'required|email',
-            'Clave' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ];
     }
 

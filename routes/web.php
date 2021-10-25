@@ -8,6 +8,7 @@ use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,14 +23,12 @@ use Illuminate\Support\Facades\Route;
   |
  */
 
-Route::get('Modificar', function () {
-    return view('Modulo_Usuarios.modificar');
-});
+
 
 Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 Route::post('Usuario.store', [UsuarioController::class, 'store']);
 Route::get('/Tabla', [UsuarioController::class, 'show']);
-Route::put('Usuario.{id}', [UsuarioController::class, 'update'])->name('Usuario');
+Route::put('Usuario/{id}', [UsuarioController::class, 'update'])->name('Usuario.update');
 Route::delete('Usuario.{id}', [UsuarioController::class, 'disable']);
 
 /* Rutas modulo apartamento */
@@ -96,7 +95,7 @@ Route::get('/Organization', function ()
 {
     return view('Plantilla_recursos.Organization');
 }
-)->name('homepage');
+)->name('Organization');
 
 Route::get('/redirecion', [
     HomeController::class, 'redirecion'
