@@ -41,10 +41,10 @@ Route::resource('apartamento', ApartamentoController::class);
 Route::resource('residente', ResidenteController::class);
 
 //consultar
-Route::get('/parqueadero', [ParqueaderoController::class, 'show']);
-Route::get('/vehiculo', [VehiculoController::class, 'show']);
-Route::get('/tipo', [tipo_parqueadero_vehiculoController::class, 'show']);
-Route::get('/asignacion', [Detalle_asignacionController::class, 'show']);
+Route::get('/parqueadero', [ParqueaderoController::class, 'show'])->name('parqueadero.show');
+Route::get('/vehiculo', [VehiculoController::class, 'show'])->name('vehiculo.show');
+Route::get('/tipo', [tipo_parqueadero_vehiculoController::class, 'show'])->name('tipo.show');
+Route::get('/asignacion', [Detalle_asignacionController::class, 'show'])->name('asignacion.show');
 
 //eliminar
 route::get('/vehiculo/delete/{id}', [VehiculoController::class, 'delete'])->name('eliminarvehiculo');
