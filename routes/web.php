@@ -26,7 +26,7 @@ Route::get('Modificar', function () {
     return view('Modulo_Usuarios.modificar');
 });
 
-Route::get('Usuario', [UsuarioController::class, 'index']);
+Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 Route::post('Usuario.store', [UsuarioController::class, 'store']);
 Route::get('/Tabla', [UsuarioController::class, 'show']);
 Route::put('Usuario.{id}', [UsuarioController::class, 'update'])->name('Usuario');
@@ -90,3 +90,9 @@ Route::get('/', function ()
     return view('Index.homepage');
 }
 )->name('homepage');
+
+Route::get('/indexprueba', function ()
+{
+    return view('DASHBOARD_ASSIPARK.index');
+}
+)->name('index01');
