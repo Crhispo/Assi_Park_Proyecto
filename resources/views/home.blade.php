@@ -17,7 +17,7 @@
 <center>
                     {{ __('¡Has iniciado sesión!') }}
                     <br>
-                    <a href="/vehiculo" ><button class="btn btn-info">Iniciar</button></a>
+                    <a href="/redirecion" ><button class="btn btn-info">Iniciar</button></a>
                 </center>
                 </div>
             </div>

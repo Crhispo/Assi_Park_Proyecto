@@ -28,16 +28,29 @@ class HomeController extends Controller
 
     public function admin()
     {
-        return "Hola desde vista de admin";
+        return view('Dashboards.Dashboard_admin');
     }
 
-    public function residente()
+    public function secretaria()
     {
-        return view('residente.index');
+        return view('Dashboards.Dashboard_secretaria');
     }
 
     public function guarda()
     {
-        return "Hola desde vista de guarda";
+        return view('Dashboards.Dashboard_guarda');
+    }
+
+    public function redirecion()
+    {
+        if (auth()->user()->ID_TIPO_USUARIO  == 1) {
+            return redirect('/admin');
+        } elseif (auth()->user()->ID_TIPO_USUARIO  == 2) {
+            return redirect('/secretatia');
+        } elseif (auth()->user()->ID_TIPO_USUARIO  == 3) {
+            return redirect('/guarda');
+        } else {
+            return redirect('/');
+        }
     }
 }

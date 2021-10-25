@@ -1,3 +1,4 @@
+
 @extends('plantilla')
 @section('title',$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo')
 @section('Encabezado',$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo')
@@ -35,7 +36,7 @@
         <option value="" selected>...</option>
         @foreach($color as $color)
         <option value="{{$color->ID_COLOR}}"
-          
+
           {{$vehiculo->color_id === $color->ID_COLOR ? 'selected' : ''}}
           >
             {{ $color->COLOR}}
@@ -48,18 +49,17 @@
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
       <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}"
-        {{$vehiculo->tipo_parqueadero_id === $tipo->ID_TIPO_PARQUEADERO_VEHICULO}}
-                  {{ $tipo->TIPO_PARQUEADERO_VEHICULO ? 'selected' : ''}}
+        {{$vehiculo->tipo_parqueadero_id === $tipo->ID_TIPO_PARQUEADERO_VEHICULO ? 'selected' : ''}}
 >
           {{$tipo->TIPO_PARQUEADERO_VEHICULO}}
       </option>
       @endforeach
   </select>
- 
+
     <div class="form-group">
       <label class="control-label col-sm-2" for="placa">Placa</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
+        <input type="text" class="form-control  border-bottom" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
       </div>
     </div>
 
@@ -79,7 +79,7 @@
       <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-secondary">Guardar</button>
            <a href="/vehiculo" class="btn btn-secondary">Cancelar</a>
-   
+
       </div>
     </div>
   </form>

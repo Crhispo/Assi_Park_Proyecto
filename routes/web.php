@@ -40,6 +40,7 @@ Route::resource('apartamento', ApartamentoController::class);
 
 Route::resource('residente', ResidenteController::class);
 
+
 //consultar
 Route::get('/parqueadero', [ParqueaderoController::class, 'show'])->name('parqueadero.show');
 Route::get('/vehiculo', [VehiculoController::class, 'show'])->name('vehiculo.show');
@@ -71,7 +72,7 @@ Route::get('/admin', [
 ])->name('admin');
 
 //ruta de la vista residente
-Route::get('/residente', [
+Route::get('/secretatia', [
     HomeController::class, 'residente'
 ])->name('residente');
 
@@ -91,8 +92,12 @@ Route::get('/', function ()
 }
 )->name('homepage');
 
-Route::get('/indexprueba', function ()
+Route::get('/Organization', function ()
 {
-    return view('DASHBOARD_ASSIPARK.index');
+    return view('Plantilla_recursos.Organization');
 }
-)->name('index01');
+)->name('homepage');
+
+Route::get('/redirecion', [
+    HomeController::class, 'redirecion'
+])->name('redirecion');
