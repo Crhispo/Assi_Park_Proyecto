@@ -23,13 +23,13 @@ class UsuarioController extends Controller
     public function index()
     {
         $_Usuario = User::all();
-        return view('Modulo_Usuarios.Dashboard_admin', compact('_Usuario'));
+        return view('Modulo_Usuarios.Usuario', compact('_Usuario'));
     }
 
 
     public function create()
     {
-        return view('Modulo_Usuarios.Dashboard_admin');
+        return view('Modulo_Usuarios.Usuario');
     }
 
 
@@ -59,7 +59,7 @@ class UsuarioController extends Controller
     public function show($NUMERO_IDENTIFICACION = null)
     {
         $_UsuarioU = user::where('NUMERO_IDENTIFICACION','=',$NUMERO_IDENTIFICACION)->firstOrFail();
-        return view('Modulo_Usuarios.Dashboard_admin', compact('_UsuarioU'));
+        return view('Modulo_Usuarios.Usuario', compact('_UsuarioU'));
     }
 
 

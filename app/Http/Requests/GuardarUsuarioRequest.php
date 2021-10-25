@@ -32,8 +32,8 @@ class GuardarUsuarioRequest extends FormRequest {
             'TELEFONO' => 'nullable',
             'CELULAR1' => 'required',
             'CELULAR2' => 'nullable',
-            'Correo' => 'required|email',
-            'CONTRASENA' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ];
     }
 

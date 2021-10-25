@@ -1,4 +1,3 @@
-
 <div id="left-menu">
     <div class="sub-left-menu scroll">
       <ul class="nav nav-list">
@@ -23,7 +22,7 @@
 
           <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-user icons" style="font-size:1em;"></span> Usuarios <span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
-              <li><a href="datatables.html">Data Tables</a></li>
+              <li><a href="/Usuario">Gestionar Usuarios</a></li>
               <li><a href="handsontable.html">handsontable</a></li>
               <li><a href="tablestatic.html">Static</a></li>
             </ul>
