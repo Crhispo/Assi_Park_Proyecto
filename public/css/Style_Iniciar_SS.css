@@ -38,6 +38,16 @@ input {
   text-align: center;
   margin-left: 79px;
 }
+.icon-eye{
+position: absolute;
+right: 10px;
+cursor: pointer;
+
+}
+.icon-eye:hover{
+ color:#4481eb;
+  
+  }
 .return_p{
 margin-right: 480px;
 margin-top: -140px;

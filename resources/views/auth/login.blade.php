@@ -2,6 +2,7 @@
 
 <head>
     @section('css')
+    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/Style_Iniciar_SS.css') }}" />
     @endsection
     <title>Iniciar sesión</title>
@@ -37,7 +38,7 @@
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Contraseña" @error('password') is-invalid @enderror" name="password"
-                        autocomplete="current-password" id="password" />
+                        autocomplete="current-password" id="password" /><span class="icon-eye"><i class="fas fa-eye-slash"></i></span>
                 </div>
 
                 @error('password')
@@ -115,4 +116,5 @@
 @endsection
 @section('js')
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/eye.js') }}"></script>
 @endsection
