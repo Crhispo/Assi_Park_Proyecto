@@ -32,7 +32,7 @@
           <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-car-side" style="font-size:20px;"></i></i>&nbsp;&nbsp; Vehiculos<span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
               <li><a href="/vehiculo">Gestionar vehiculos</a></li>
-              <li><a href="handsontable.html">handsontable</a></li>
+              <li><a href="{{route('vehiculo.form')}}">Registrar</a></li>
               <li><a href="tablestatic.html">Static</a></li>
             </ul>
           </li>

@@ -7,6 +7,31 @@
 @endsection
 @section('content')
 <br>
+<!-- start: Header -->
+@include('menus.Header')
+<!-- end: Header -->
+
+ <!-- start:Left Menu -->
+ @include('menus.menu_admin')
+ <!-- end: Left Menu -->
+
+
+<!-- start: Content -->
+<div id="content">
+    <div class="panel box-shadow-none content-header">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
+
+               
+                
+
+                <p class="animated fadeInDown">
+                    Admin <span class="fa-angle-right fa"></span> Vehiculos
+                </p>
+            </div>
+        </div>
+    </div>
 <a href="{{route('parqueadero.form')}}" class="btn btn-primary">Nuevo parqueadero</a>
 
     

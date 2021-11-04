@@ -66,7 +66,10 @@
                                   </div>
                                 </div>
                                 <div class="panel-body text-center">
-                                  <h1>120</h1>
+                                  <h1>
+                                    
+                                    {{$cantidadveh[0]->vehiculos}}
+                                  </h1>
                                   <p></p>
                                   <hr/>
                                 </div>
@@ -85,7 +88,11 @@
                                   </div>
                                 </div>
                                 <div class="panel-body text-center">
-                                  <h1>511</h1>
+                                  <h1>
+511
+                              
+                                  </h1>
+                                  </h1>
                                   <p></p>
                                   <hr/>
                                 </div>

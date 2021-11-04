@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,9 @@ class HomeController extends Controller
 
     public function admin()
     {
-        return view('Dashboards.Dashboard_admin');
+        $prueba=1234;
+        $cantidadveh=DB::select('select VehiculosTotales() as vehiculos');
+        return view('Dashboards.Dashboard_admin', compact('cantidadveh','prueba'));
     }
 
     public function secretaria()

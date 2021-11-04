@@ -71,7 +71,7 @@
 
         <!-- custom -->
         <script src="asset/js/main.js"></script>
-        <script src="js/Usuarios/Contenidos.js"></script>
+        
         <!-- end: javascript -->
 
 </body>

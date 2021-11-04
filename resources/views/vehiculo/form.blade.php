@@ -1,10 +1,31 @@
-
 @extends('plantilla')
 @section('title',$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo')
 @section('Encabezado',$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo')
 
+
 @section('content')
 
+<!-- start: Header -->
+@include('menus.Header')
+<!-- end: Header -->
+
+ <!-- start:Left Menu -->
+ @include('menus.menu_admin')
+ <!-- end: Left Menu -->
+ <div class="panel box-shadow-none content-header">
+  <div class="panel-body">
+      <div class="col-md-12">
+          <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
+
+         
+          
+
+          <p class="animated fadeInDown">
+              Admin <span class="fa-angle-right fa"></span> Vehiculos
+          </p>
+      </div>
+  </div>
+</div>
 <form class="form-horizontal" method="POST" action="{{route('vehiculo.save')}}">
   @csrf
   <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
@@ -66,7 +87,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="estado">Estado</label>
       <div class="col-sm-10">
-      <!--<input type="number" class="form-control" name="" id="estado" value="{{old('estado')? old('estado'):$vehiculo->estado}}">-->
+     
       <select name="ESTADO_VEHICULO" id="ESTADO_VEHICULO" value="{{old('ESTADO_VEHICULO')? old('ESTADO_VEHICULO'):$vehiculo->ESTADO_VEHICULO}}">
         <option selected="true" disabled="disabled">seleccione estado</option>
         <option value="1">activo</option>
@@ -83,5 +104,5 @@
       </div>
     </div>
   </form>
-
+ 
 @endsection

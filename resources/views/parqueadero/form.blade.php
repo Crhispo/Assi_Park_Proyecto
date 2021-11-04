@@ -3,6 +3,27 @@
 @section('Encabezado',$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero')    
 
 @section('content')
+<!-- start: Header -->
+@include('menus.Header')
+<!-- end: Header -->
+
+ <!-- start:Left Menu -->
+ @include('menus.menu_admin')
+ <!-- end: Left Menu -->
+ <div class="panel box-shadow-none content-header">
+  <div class="panel-body">
+      <div class="col-md-12">
+          <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
+
+         
+          
+
+          <p class="animated fadeInDown">
+              Admin <span class="fa-angle-right fa"></span> Vehiculos
+          </p>
+      </div>
+  </div>
+</div>
 <form class="form-horizontal" method="POST" action="{{route('parqueadero.save')}}">
   @csrf  
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueadero->id}}">

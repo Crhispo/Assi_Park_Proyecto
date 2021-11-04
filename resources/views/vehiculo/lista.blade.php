@@ -25,20 +25,11 @@
             <div class="col-md-12">
                 <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
 
-                <a href="#" class="d-noned d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                    <i class="fas fa-print fa-sm text-white-50"></i>imprimir
-                    </a>
-                @php
-                $Final = '';
-                if(!isset($_UsuarioD)){
-                    $_UsuarioD = '';
-                }
-                    var_dump($Final);
-                    var_dump($_UsuarioD);
-                @endphp
+               
+                
 
                 <p class="animated fadeInDown">
-                    Admin <span class="fa-angle-right fa"></span> Usuarios
+                    Admin <span class="fa-angle-right fa"></span> Vehiculos
                 </p>
             </div>
         </div>
