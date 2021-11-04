@@ -89,8 +89,8 @@
                                 </div>
                                 <div class="panel-body text-center">
                                   <h1>
-511
-                              
+                                    
+                                    {{$cantidadres[0]->residente}}
                                   </h1>
                                   </h1>
                                   <p></p>

@@ -29,9 +29,9 @@ class HomeController extends Controller
 
     public function admin()
     {
-        $prueba=1234;
+        $cantidadres=DB::select('select ResidentesTotales() as residente');
         $cantidadveh=DB::select('select VehiculosTotales() as vehiculos');
-        return view('Dashboards.Dashboard_admin', compact('cantidadveh','prueba'));
+        return view('Dashboards.Dashboard_admin', compact('cantidadveh','cantidadres'));
     }
 
     public function secretaria()

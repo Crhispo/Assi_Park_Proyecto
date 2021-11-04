@@ -47,14 +47,7 @@
                 <div class="panel-body">
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
-                        @php
-                        $Final = '';
-                        if(!isset($_UsuarioD)){
-                            $_UsuarioD = '';
-                        }
-                            var_dump($Final);
-                            var_dump($_UsuarioD);
-                        @endphp
+                        
 
                         <p class="animated fadeInDown">
                             Admin <span class="fa-angle-right fa"></span> Usuarios

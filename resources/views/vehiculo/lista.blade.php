@@ -12,7 +12,7 @@
 <!-- start: Header -->
 @include('menus.Header')
 <!-- end: Header -->
-
+<div class="container-fluid mimin-wrapper">
  <!-- start:Left Menu -->
  @include('menus.menu_admin')
  <!-- end: Left Menu -->
@@ -35,16 +35,18 @@
         </div>
     </div>
     <div class="col-md-12 top-20 padding-0">
+        
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3>Usuarios</h3>
-                    <a href="{{route('vehiculo.form')}}" class="btn btn-primary">Nuevo vehiculo</a>
+                    <h3>Vehiculos</h3>
+                    
                 </div>
+                
                 <div class="panel-body">
                     <div class="responsive-table">
-                        <table id="vehiculo" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
-                            <thead class="bg-primary text-white">
+                        <table id="vehiculo" class="table table-striped table-bordered" width="100%" cellspacing="0">
+                            <thead >
                                 <tr>
 
                             <th>Numero de identificación propetario</th>
@@ -57,9 +59,7 @@
                             <th>Eliminar</th>
                         </tr>
                         </thead><tbody>
-                            @php(var_dum($vehiculoList))
-
-                            @endphp
+                            
                         @foreach($vehiculoList as $vehiculo)
                         <tr>
 
@@ -96,8 +96,12 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 <!-- end: content -->
+<!-- start: right menu -->
+@include('menus.menu_derecha')
+<!-- end: right menu -->
+
 @section('js')
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
@@ -132,5 +136,6 @@
         });
     });
 </script>
+</div>
 @endsection
 @endsection

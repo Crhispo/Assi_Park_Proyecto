@@ -10,6 +10,7 @@
  <!-- start:Left Menu -->
  @include('menus.menu_admin')
  <!-- end: Left Menu -->
+ <div id="content">
  <div class="panel box-shadow-none content-header">
   <div class="panel-body">
       <div class="col-md-12">
@@ -19,7 +20,7 @@
           
 
           <p class="animated fadeInDown">
-              Admin <span class="fa-angle-right fa"></span> Vehiculos
+              Admin <span class="fa-angle-right fa"></span> parqueaderos
           </p>
       </div>
   </div>
@@ -39,42 +40,35 @@
       </option>
       @endforeach
   </select>
-<br>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="TAMAÑO">Tamaño</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueadero->TAMAÑO}}">
-      </div>
-    </div>
+<!-- start:tamaño -->
+      <label class="form-label" for="TAMAÑO">Tamaño</label>
+      <br>
+      <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueadero->TAMAÑO}}">
+<!-- end: tamaño -->
+<!-- start:descripcion -->
+      <label class="form-label" for="DESCRIPCION">Descripcin</label>
+      <br>
+      <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueadero->DESCRIPCION}}">
+<!-- end: descripcion -->
+<!-- start:estado -->
 
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="DESCRIPCION">Descripcin</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueadero->DESCRIPCION}}">
-      </div>
-    </div>
-
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Estado">Estado</label>
-      <div class="col-sm-10">
-
-      <select name="Estado" id="Estado" value="{{old('Estado')? old('Estado'):$parqueadero->Estado}}">
+      <label class="form-label" for="Estado">Estado</label>
+      <br>
+      <select name="Estado" class="form-control" id="Estado" value="{{old('Estado')? old('Estado'):$parqueadero->Estado}}">
         <option selected="true" disabled="disabled">seleccione estado</option>
         <option value="1">activo</option>
         <option value="0" >inactivo</option>
       </select>
-    </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-             <a href="/parqueadero" class="btn btn-secondary">Cancelar</a>
- <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
+    
+<!-- end: estado -->
+<!-- start:botones -->
+<button type="submit" class="btn btn-secondary">Guardar</button>
+<button class="btn btn-secondary"><a href="/parqueadero"  style=" color: inherit;text-decoration: none;">Cancelar</a></button>
+<!-- end: botones-->
+  </div>
 </form>
-
+ <!-- start: right menu -->
+ @include('menus.menu_derecha')
+ <!-- end: right menu -->
 @endsection

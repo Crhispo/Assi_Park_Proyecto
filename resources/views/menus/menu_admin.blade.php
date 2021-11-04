@@ -7,12 +7,10 @@
             <p class="animated fadeInRight">Sat,October 1st 2029</p>
           </li>
           <li class="active ripple">
-            <a class="tree-toggle nav-header"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
+            <a href="/admin" ><span class="icon-home icons" style="font-size:1em;"></span> Inicio
               <span class="fa-angle-right fa right-arrow text-right"></span>
             </a>
             <ul class="nav nav-list tree">
-                <li><a href="dashboard-v1.html">Dashboard v.1</a></li>
-                <li><a href="dashboard-v2.html">Dashboard v.2</a></li>
             </ul>
           </li>
 
@@ -23,8 +21,7 @@
           <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-user icons" style="font-size:1em;"></span> Usuarios <span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
               <li><a href="/Usuario">Gestionar Usuarios</a></li>
-              <li><a href="handsontable.html">handsontable</a></li>
-              <li><a href="tablestatic.html">Static</a></li>
+
             </ul>
           </li>
 
@@ -33,7 +30,7 @@
             <ul class="nav nav-list tree">
               <li><a href="/vehiculo">Gestionar vehiculos</a></li>
               <li><a href="{{route('vehiculo.form')}}">Registrar</a></li>
-              <li><a href="tablestatic.html">Static</a></li>
+
             </ul>
           </li>
           <li class="ripple"><a class="tree-toggle nav-header"><i class="lar la-building" style="font-size:20px;"></i>&nbsp;&nbsp; Apartamentos <span class="fa-angle-right fa right-arrow text-right"></span> </a>
@@ -45,9 +42,8 @@
           </li>
           <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-parking" style="font-size:20px;"></i>&nbsp;&nbsp; Parqueadero <span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
-              <li><a href="datatables.html">Data Tables</a></li>
-              <li><a href="handsontable.html">handsontable</a></li>
-              <li><a href="tablestatic.html">Static</a></li>
+              <li><a href="/parqueadero">Gestionar parqueaderos</a></li>
+              <li><a href="{{route('parqueadero.form')}}">Registrar</a></li>
             </ul>
           </li>
 

@@ -12,6 +12,7 @@
  <!-- start:Left Menu -->
  @include('menus.menu_admin')
  <!-- end: Left Menu -->
+ <div id="content">
  <div class="panel box-shadow-none content-header">
   <div class="panel-body">
       <div class="col-md-12">
@@ -77,32 +78,30 @@
       @endforeach
   </select>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="placa">Placa</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control  border-bottom" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="estado">Estado</label>
-      <div class="col-sm-10">
-     
-      <select name="ESTADO_VEHICULO" id="ESTADO_VEHICULO" value="{{old('ESTADO_VEHICULO')? old('ESTADO_VEHICULO'):$vehiculo->ESTADO_VEHICULO}}">
+    <!-- start:placa -->
+      <label class="form-label" for="placa">Placa</label>
+      <br>
+      <input type="text" class="form-control" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
+<!-- end: placa -->
+   <!-- start:estado -->
+      <label class="form-label" for="estado">Estado</label>
+        <br>
+        <select name="ESTADO_VEHICULO" class="form-control"  id="ESTADO_VEHICULO" value="{{old('ESTADO_VEHICULO')? old('ESTADO_VEHICULO'):$vehiculo->ESTADO_VEHICULO}}">
         <option selected="true" disabled="disabled">seleccione estado</option>
         <option value="1">activo</option>
         <option value="0" >inactivo</option>
       </select>
-    </div>
-    </div>
+    <!-- end: estado -->
+    
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+    
+      <!-- start:botones -->
       <button type="submit" class="btn btn-secondary">Guardar</button>
-           <a href="/vehiculo" class="btn btn-secondary">Cancelar</a>
-
-      </div>
-    </div>
+      <button class="btn btn-secondary"><a href="/vehiculo" style=" color: inherit;text-decoration: none;" >Cancelar</a></button>
+<!-- end: botones -->
+  </div>
   </form>
- 
+ <!-- start: right menu -->
+@include('menus.menu_derecha')
+<!-- end: right menu -->
 @endsection
