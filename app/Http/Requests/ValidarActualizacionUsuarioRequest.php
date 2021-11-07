@@ -33,7 +33,7 @@ class ValidarActualizacionUsuarioRequest extends FormRequest {
             'Celular1' => 'required',
             'Celular2' => 'nullable',
             'email' => 'required|email',
-            'password' => 'required',
+            'password' => 'nullable',
         ];
     }
 

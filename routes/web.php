@@ -23,11 +23,12 @@ use Illuminate\Support\Facades\Route;
   |
  */
 
-
+Route::get('users', function () {
+    return view('Modulo_Usuarios.registro_usuario');
+});
 
 Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
-Route::post('Usuario.store', [UsuarioController::class, 'store']);
-Route::get('/Tabla', [UsuarioController::class, 'show']);
+Route::post('Usuario.store', [UsuarioController::class, 'store'])->name('usuario.store');
 Route::put('Usuario/{id}', [UsuarioController::class, 'update'])->name('Usuario.update');
 Route::delete('Usuario.{id}', [UsuarioController::class, 'disable']);
 
