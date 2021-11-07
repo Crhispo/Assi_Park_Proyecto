@@ -209,7 +209,7 @@
                                   </div>
                                 </div>
                                 <div class="panel-body text-center">
-                                  <h1>511</h1>
+                                  <h1>578</h1>
                                   <p></p>
                                   <hr/>
                                 </div>

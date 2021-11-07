@@ -8,6 +8,7 @@ use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
+use App\Http\Controllers\EventoController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -54,10 +55,10 @@ route::get('/tipo/delete/{id}', [tipo_parqueadero_vehiculoController::class, 'de
 route::get('/asignacion/delete/{id}', [Detalle_asignacionController::class, 'delete'])->name('eliminarasignacion');
 
 //ver la vista para crear vehiculos
-route::get('/vehiculo/form{id?}', [VehiculoController::class, 'form'])->name('vehiculo.form');
-route::get('/parqueadero/form{id?}', [ParqueaderoController::class, 'form'])->name('parqueadero.form');
+route::get('/vehiculoform{id?}', [VehiculoController::class, 'form'])->name('vehiculo.form');
+route::get('/parqueaderoform{id?}', [ParqueaderoController::class, 'form'])->name('parqueadero.form');
 route::get('/tipo/form{id?}', [tipo_parqueadero_vehiculoController::class, 'form'])->name('tipo.form');
-route::get('/asignacion/form{id?}', [Detalle_asignacionController::class, 'form'])->name('asignacion.form');
+route::get('/asignacionform{id?}', [Detalle_asignacionController::class, 'form'])->name('asignacion.form');
 
 //guardar vehiculos
 route::post('/vehiculo/save', [VehiculoController::class, 'save'])->name('vehiculo.save');
@@ -101,3 +102,14 @@ Route::get('/Organization', function ()
 Route::get('/redirecion', [
     HomeController::class, 'redirecion'
 ])->name('redirecion');
+
+
+Route::post('/evento/agragar', [EventoController::class, 'store'])->name('evento');
+
+Route::get('/evento/mostrar', [EventoController::class, 'show']);
+
+Route::post('/evento/editar/{id}', [EventoController::class, 'edit']);
+
+Route::post('/evento/borrar/{id}', [EventoController::class, 'destroy']);
+
+Route::post('/evento/actualizar/{evento}', [EventoController::class, 'update']);

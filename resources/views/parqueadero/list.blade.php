@@ -7,12 +7,46 @@
 @endsection
 @section('content')
 <br>
-<a href="{{route('parqueadero.form')}}" class="btn btn-primary">Nuevo parqueadero</a>
+<!-- start: Header -->
+@include('menus.Header')
+<!-- end: Header -->
+<div class="container-fluid mimin-wrapper">
+ <!-- start:Left Menu -->
+ @include('menus.menu_admin')
+ <!-- end: Left Menu -->
 
-    
-<table id="parqueadero" class="table table-striped table-bordered shadow-lg mt-4"style="width:100%">
-  <thead class="bg-primary text-white">  
-      <tr>
+
+<!-- start: Content -->
+<div id="content">
+    <div class="panel box-shadow-none content-header">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
+
+               
+                
+
+                <p class="animated fadeInDown">
+                    Admin <span class="fa-angle-right fa"></span> parqueadero
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 top-20 padding-0">
+        
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3>Parqueadero</h3>
+                    
+                </div>
+                
+                <div class="panel-body">
+                    <div class="responsive-table">
+                        <table id="parqueadero" class="table table-striped table-bordered" width="100%" cellspacing="0">
+                            <thead >
+                                <tr>
     <th scope="col">Tipo de Parqueadero</th>
     <th scope="col">Tamaño</th>
     <th scope="col">Descripción</th>
@@ -49,8 +83,16 @@
 @endforeach
 </tbody>
 </table>
-
-
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end: content -->
+<!-- start: right menu -->
+@include('menus.menu_derecha')
+<!-- end: right menu -->
 
 @section('js')
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -85,5 +127,6 @@
         });
 
 </script>
+</div>
 @endsection
 @endsection
