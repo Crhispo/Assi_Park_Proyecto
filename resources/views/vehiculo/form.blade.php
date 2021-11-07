@@ -27,6 +27,13 @@
       </div>
   </div>
 </div>
+<div class="col-md-12">
+  <div class="panel">
+      <div class="panel-heading">
+        <h3>{{$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo'}}</h3>
+                    
+                </div>
+                <br>
 <form class="form-horizontal" method="POST" action="{{route('vehiculo.save')}}">
   @csrf
   <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
@@ -99,9 +106,14 @@
       <button type="submit" class="btn btn-secondary">Guardar</button>
       <button class="btn btn-secondary"><a href="/vehiculo" style=" color: inherit;text-decoration: none;" >Cancelar</a></button>
 <!-- end: botones -->
-  </div>
+  <br>
+  <br>
   </form>
+</div>
+</div>
+
  <!-- start: right menu -->
 @include('menus.menu_derecha')
 <!-- end: right menu -->
 @endsection
+

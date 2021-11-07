@@ -25,6 +25,12 @@
       </div>
   </div>
 </div>
+<div class="col-md-12">
+  <div class="panel">
+      <div class="panel-heading">
+        <h3>{{$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero'}}</h3>
+                    
+                </div>
 <form class="form-horizontal" method="POST" action="{{route('parqueadero.save')}}">
   @csrf  
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueadero->id}}">
@@ -66,8 +72,11 @@
 <button type="submit" class="btn btn-secondary">Guardar</button>
 <button class="btn btn-secondary"><a href="/parqueadero"  style=" color: inherit;text-decoration: none;">Cancelar</a></button>
 <!-- end: botones-->
-  </div>
-</form>
+ <br>
+ <br>
+</form> 
+</div>
+</div>
  <!-- start: right menu -->
  @include('menus.menu_derecha')
  <!-- end: right menu -->

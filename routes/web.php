@@ -8,6 +8,7 @@ use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
+use App\Http\Controllers\EventoController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -100,3 +101,14 @@ Route::get('/Organization', function ()
 Route::get('/redirecion', [
     HomeController::class, 'redirecion'
 ])->name('redirecion');
+
+
+Route::post('/evento/agragar', [EventoController::class, 'store'])->name('evento');
+
+Route::get('/evento/mostrar', [EventoController::class, 'show']);
+
+Route::post('/evento/editar/{id}', [EventoController::class, 'edit']);
+
+Route::post('/evento/borrar/{id}', [EventoController::class, 'destroy']);
+
+Route::post('/evento/actualizar/{evento}', [EventoController::class, 'update']);
