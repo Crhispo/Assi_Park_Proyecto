@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <form action="Usuario.update" method="post" class="form-element">
+    <form action="Usuarioupdate" method="post" class="form-element">
         <div class="col-md-12 padding-0">
             <div class="col-md-8">
                 <div class="panel form-element-padding">

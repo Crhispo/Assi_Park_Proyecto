@@ -43,10 +43,8 @@ class UsuarioController extends Controller
      */
 
 
-    public function store(GuardarUsuarioRequest $request)
+    public function store(Request $request)
     {
-
-
         User::create([
             'ID_TIPO_IDENTIFICACION' => $request['tipo_identificacion'],
             'NUMERO_IDENTIFICACION' => $request['NUMERO_IDENTIFICACION'],
@@ -60,6 +58,7 @@ class UsuarioController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
+        return redirect('/Usuarioform');
     }
 
     /**
@@ -89,12 +88,24 @@ class UsuarioController extends Controller
      */
 
 
-    public function update(ValidarActualizacionUsuarioRequest $request, $NUMERO_IDENTIFICACION)
+    public function update(Request $request)
     {
-        $_UsuarioD = request()->except(['_token', '_method']);
-        $Final = '';
-        $Final = User::where('NUMERO_IDENTIFICACION', "=", $NUMERO_IDENTIFICACION)->update($_UsuarioD);
-        return view('Modulo_Usuarios.Usuario', compact('Final', '_UsuarioD'));
+        $_UsuarioD = [
+            'ID_TIPO_IDENTIFICACION' => $request['tipo_identificacion'],
+            'NUMERO_IDENTIFICACION' => $request['NUMERO_IDENTIFICACION'],
+            'ID_TIPO_USUARIO' => $request['tipo_usuario'],
+            'NOMBRE' => $request['nombre'],
+            'APELLIDO' => $request['apellido'],
+            'SEXO' => $request['sexo'],
+            'DIRECCION' => $request['direccion'],
+            'TELEFONO' => $request['telefono'],
+            'CELULAR1' => $request['celular1'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ];
+        var_dump($_UsuarioD);
+        DB::update($_UsuarioD);
+        return redirect('/Usuario');
     }
 
     /**

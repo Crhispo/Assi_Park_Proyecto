@@ -29,7 +29,7 @@ Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index'
 route::get('Usuarioform', [UsuarioController::class, 'formcreate'])->name('usuario.formcreate');
 Route::post('Usuariostore', [UsuarioController::class, 'store'])->name('usuario.store');
 Route::get('Usuarioedit{id}', [UsuarioController::class, 'formedit'])->name('usuario.formedit');
-Route::put('Usuarioupdate{id}', [UsuarioController::class, 'update'])->name('Usuario.update');
+Route::put('Usuarioupdate', [UsuarioController::class, 'update'])->name('Usuario.update');
 Route::delete('Usuariodisable{id}', [UsuarioController::class, 'Disable'])->name('Usuario.Disable');
 
  /* Rutas Visitante */
