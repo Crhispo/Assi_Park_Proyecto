@@ -12,9 +12,9 @@
     <div class="panel box-shadow-none content-header">
         <div class="panel-body">
             <div class="col-md-12">
-                <h3 class="animated fadeInLeft">Data Tables</h3>
+                <h3 class="animated fadeInLeft">Modulo Residente</h3>
                 <p class="animated fadeInDown">
-                    Table <span class="fa-angle-right fa"></span> Data Tables
+                    Menu <span class="fa-angle-right fa"></span> Residentes
                 </p>
             </div>
         </div>
