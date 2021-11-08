@@ -19,7 +19,7 @@ class VehiculoController extends Controller
     //mostar
     function show()
     {
-        $vehiculoList=DB::select('select id,residente.NUMERO_IDENTIFICACION,Marca.MARCA, Color.COLOR, tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO, placa,ESTADO_VEHICULO
+        $vehiculoList = DB::select('select id,residente.NUMERO_IDENTIFICACION,Marca.MARCA, Color.COLOR, tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO, placa,ESTADO_VEHICULO
        from vehiculos inner join Marca on vehiculos.marca_id=Marca.ID_MARCA
        inner join residente on vehiculos.NUMERO_IDENTIFICACION=residente.NUMERO_IDENTIFICACION
        inner join Color on vehiculos.color_id=Color.ID_COLOR
@@ -37,18 +37,18 @@ class VehiculoController extends Controller
     //crear
     function form($id = null)
     {
-
-        $marca=marca::all();
-        $color=Color::all();
-        $residente=Residente::all();
-        $tipo=tipo_parqueaderos_vehiculos::all();
+        $marca = marca::all();
+        $color = Color::all();
+        $residente = Residente::all();
+        $tipo = tipo_parqueaderos_vehiculos::all();
         if ($id == null) {
             $vehiculo = new Vehiculo();
         } else {
             $vehiculo = Vehiculo::findOrFail($id);
         }
-        return view('vehiculo/form', compact('marca','residente','color','tipo','vehiculo'));
+        return view('vehiculo/form', compact('marca', 'residente', 'color', 'tipo', 'vehiculo'));
     }
+
     function save(Request $request)
     {
 
@@ -64,7 +64,5 @@ class VehiculoController extends Controller
         $vehiculo->ESTADO_VEHICULO = $request->ESTADO_VEHICULO;
         $vehiculo->save();
         return redirect('/vehiculo');
-
     }
-
 }

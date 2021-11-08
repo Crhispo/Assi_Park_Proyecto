@@ -14,14 +14,10 @@
             </ul>
           </li>
 
-
-
-
-
           <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-user icons" style="font-size:1em;"></span> Usuarios <span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
               <li><a href="/Usuario">Gestionar Usuarios</a></li>
-
+              <li><a href="/Usuarioform">Registrar Usuarios</a></li>
             </ul>
           </li>
 
