@@ -24,13 +24,7 @@
     @include('sweet::alert')
     <h1 class="bg-primary text-white text-center"></h1>
 
-    <!-- start: Header -->
-    @include('menus.Header')
-    <!-- end: Header -->
-
-    <!-- start:Left Menu -->
-    @include('menus.menu_admin')
-    <!-- end: Left Menu -->
+ 
 
 
 

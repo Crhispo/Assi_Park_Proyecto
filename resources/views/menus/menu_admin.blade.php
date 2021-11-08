@@ -36,6 +36,13 @@
               <li><a href="tablestatic.html">Static</a></li>
             </ul>
           </li>
+          <li class="ripple"><a class="tree-toggle nav-header"><i class="lar la-building" style="font-size:20px;"></i>&nbsp;&nbsp; Residentes <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+            <ul class="nav nav-list tree">
+              <li><a href="/residente">Gestionar residentes</a></li>
+              <li><a href="residente/create">Registrar</a></li>
+
+            </ul>
+          </li>
           <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-parking" style="font-size:20px;"></i>&nbsp;&nbsp; Parqueadero <span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
               <li><a href="/parqueadero">Gestionar parqueaderos</a></li>
