@@ -121,5 +121,5 @@
     <!-- start: right menu -->
     @include('menus.menu_derecha')
     <!-- end: right menu -->
-
+    
 @endsection

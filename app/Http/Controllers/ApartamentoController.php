@@ -47,11 +47,11 @@ class ApartamentoController extends Controller
         //
 
         $campos=[
-            'NumeroApto'=>'required',
+            'NUMERO_APTO'=>'required', 
             'Bloque'=>'required'
         ];
         $mensaje=[
-            'NumeroApto.required'=>'El Numero de apartamento es requerido',
+            'NUMERO_APTO.required'=>'El Numero de apartamento es requerido',
             'Bloque.required'=>'El Bloque es requerido'
         ];
     

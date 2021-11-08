@@ -42,13 +42,31 @@ Route::put('Visitanteupdate{id}', [VisitanteController::class, 'update'])->name(
 Route::delete('Visitantedisable{id}', [VisitanteController::class, 'Disable'])->name('Visitante.Disable');
 
 /* Rutas modulo apartamento */
-
 Route::resource('apartamento', ApartamentoController::class);
+
+/*
+Route::get('apartamento', [ApartamentoController::class, 'index'])->name('Apartamento.index');
+Route::get('apartamento/create', [ApartamentoController::class, 'create'])->name('apartamento.create');
+Route::post('apartamento', [ApartamentoController::class, 'store'])->name('apartamento.store');
+Route::get('apartamento/{apartamento}/edit', [ApartamentoController::class, 'edit'])->name('apartamento.edit');
+Route::PUT('apartamento/{apartamento}', [ApartamentoController::class, 'update']);
+Route::delete('apartamento/{apartamento}', [ResidenteController::class, 'destroy']);
+*/
+
+Route::post('NumeroApto', [NumeroAptoController::class,'store']);
+Route::post('bloque', [BloqueController::class,'store']);
 
 /* Rutas modulo residente */
 
 Route::resource('residente', ResidenteController::class);
-
+/*
+Route::get('residente', [ResidenteController::class, 'index'])->name('Apartamento.index');
+Route::get('residente/create', [ResidenteController::class, 'create'])->name('apartamento.create');
+Route::post('residente', [ResidenteController::class, 'store'])->name('apartamento.store');
+Route::get('residente/{apartamento}/edit', [ResidenteController::class, 'edit'])->name('apartamento.edit');
+Route::PUT('residente/{apartamento}', [ResidenteController::class, 'update']);
+Route::delete('residente/{apartamento}', [ResidenteController::class, 'destroy']);
+*/
 
 //consultar
 Route::get('/parqueadero', [ParqueaderoController::class, 'show'])->name('parqueadero.show');

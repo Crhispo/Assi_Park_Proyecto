@@ -2,7 +2,7 @@
 
 <form class="form-horizontal" action="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION)}}" method="POST">
 @csrf
-{{ method_field('PATCH')}}
+{{ method_field('PUT')}}
 @include('residente.form',['modo'=>'Editar'])
 
 </form>
