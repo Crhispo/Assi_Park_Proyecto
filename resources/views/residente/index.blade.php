@@ -6,10 +6,6 @@
 
 @section('contenido')
 
-@if(Session::has('mensaje'))
-    {{ Session::get('mensaje') }}
-@endif
-
 
 <!-- start: Content -->
 <div id="content">
@@ -27,7 +23,16 @@
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3>Data Tables</h3>
+                    <br>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        @if(Session::has('mensaje'))
+                            {{ Session::get('mensaje') }}
+                        @endif
+
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     <a href="residente/create" class="btn btn-primary">Registrar residentes</a>
                 </div>
                 <div class="panel-body">
