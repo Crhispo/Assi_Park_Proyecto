@@ -1,10 +1,19 @@
-@extends('layouts.PlantillaBase')
-
+@extends('plantilla')
+@section('title','Apartamento')
+@section('Encabezado','Apartamento')
+@section('content')
 @section('css')
+<link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
 
 @endsection
 
-@section('contenido')
+<!-- start: Header -->
+@include('menus.Header')
+<!-- end: Header -->
+    <!-- start:Left Menu -->
+    @include('menus.menu_admin')
+    <!-- end: Left Menu -->
+<!-- start: Content -->
 
 
     <!-- start: Content -->
@@ -95,13 +104,45 @@
 </div>
 </div>
 
-@endsection
 
+<!-- end: content -->
+    <!-- start: right menu -->
+    @include('menus.menu_derecha')
+    <!-- end: right menu -->
 @section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    
+<script>
+    $(document).ready(function() {
+        $('#apartamentos').DataTable({
 
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('#apartamentos').DataTable();
+
+
+            language: {
+                "sProcessing": "Procesando...",
+
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                "sInfo": "Mostrando registros del START al END de un total de TOTAL registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de MAX registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                }
+            }
+
+        });
     });
-  </script>
+</script>
+@endsection
 @endsection
