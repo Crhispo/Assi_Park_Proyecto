@@ -21,6 +21,13 @@
             </ul>
           </li>
 
+          <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-user icons" style="font-size:1em;"></span> Visitantes <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+            <ul class="nav nav-list tree">
+              <li><a href="/Visitante">Gestionar visitantes</a></li>
+              <li><a href="/Visitanteform">Registrar Visitantes</a></li>
+            </ul>
+          </li>
+
 
           <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-car-side" style="font-size:20px;"></i></i>&nbsp;&nbsp; Vehiculos<span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
@@ -34,6 +41,13 @@
               <li><a href="datatables.html">Data Tables</a></li>
               <li><a href="handsontable.html">handsontable</a></li>
               <li><a href="tablestatic.html">Static</a></li>
+            </ul>
+          </li>
+          <li class="ripple"><a class="tree-toggle nav-header"><i class="lar la-building" style="font-size:20px;"></i>&nbsp;&nbsp; Residentes <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+            <ul class="nav nav-list tree">
+              <li><a href="/residente">Gestionar residentes</a></li>
+              <li><a href="residente/create">Registrar</a></li>
+
             </ul>
           </li>
           <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-parking" style="font-size:20px;"></i>&nbsp;&nbsp; Parqueadero <span class="fa-angle-right fa right-arrow text-right"></span> </a>

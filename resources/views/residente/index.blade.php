@@ -1,20 +1,28 @@
-@extends('layouts.PlantillaBase')
-
+@extends('plantilla')
+@section('title','Residente')
+@section('Encabezado','Residente')
+@section('content')
 @section('css')
+<link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
 
 @endsection
 
-@section('contenido')
 
 
+<!-- start: Header -->
+@include('menus.Header')
+<!-- end: Header -->
+    <!-- start:Left Menu -->
+    @include('menus.menu_admin')
+    <!-- end: Left Menu -->
 <!-- start: Content -->
 <div id="content">
     <div class="panel box-shadow-none content-header">
         <div class="panel-body">
             <div class="col-md-12">
-                <h3 class="animated fadeInLeft">Modulo Residente</h3>
+                <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
                 <p class="animated fadeInDown">
-                    Menu <span class="fa-angle-right fa"></span> Residentes
+                    Administador <span class="fa-angle-right fa"></span> Residente
                 </p>
             </div>
         </div>
@@ -24,31 +32,23 @@
             <div class="panel">
                 <div class="panel-heading">
                     <br>
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                        @if(Session::has('mensaje'))
-                            {{ Session::get('mensaje') }}
-                        @endif
-
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <a href="residente/create" class="btn btn-primary">Registrar residentes</a>
+                    <h3>Residente</h3>
                 </div>
                 <div class="panel-body">
                     <div class="responsive-table">
 <table id="apartamentos" class="table table-striped shadow-lg mt-4" >
     <thead class="bg-primary text-white">
         <tr>
-            <th>numero de identificacion</th>
-            <th>tipo de identificacion</th>
-            <th>nombre</th>
-            <th >apellido</th>
-            <th>celular 1</th>
-            <th >correo electronico</th>
+            <th>Numero de identificacion</th>
+            <th>Tipo de identificacion</th>
+            <th>Nombre</th>
+            <th >Apellido</th>
+            <th>Celular 1</th>
+            <th >Correo electronico</th>
             <th >Numero apartamento</th>
             <th>estado de residente</th>
-            <th>acciones</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
     </thead>
 
@@ -98,14 +98,14 @@
                         @endswitch
             </td>
             <td>
-                <a class="btn btn-info" href="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION.'/edit') }}">Editar</a>
-
-
+                <a class="btn btn-info" style="margin-top: 8px;" href="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION.'/edit') }}">Editar</a>
+            </td>
+            <td>
                 <form action="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION) }}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
-                            <input hidden name="ESTADO_RESIDENTE" value="0"/>
-                            <input type="submit" onclick="return confirm('Seguro que Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar">
+                            <input hidden name="ESTADO_RESIDENTE" value="0" />
+                            <input type="submit" onclick="return confirm('Seguro que Desea inhabilitar?')" style="margin-top: 8px;" class="btn btn-danger" value="Inhabilitar">
                         </form>
             </td>
         </tr>
@@ -119,15 +119,43 @@
 </div>
 </div>
 <!-- end: content -->
-
+    <!-- start: right menu -->
+    @include('menus.menu_derecha')
+    <!-- end: right menu -->
 @section('js')
-
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    
 <script>
     $(document).ready(function() {
-    $('#apartamentos').DataTable({
-        "lenghtMenu": [[5,10,50,-1], [5, 10, 50, "All"]]
-    });
-} );
-</script>
+        $('#apartamentos').DataTable({
 
+
+
+            language: {
+                "sProcessing": "Procesando...",
+
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                "sInfo": "Mostrando registros del START al END de un total de TOTAL registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de MAX registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                }
+            }
+
+        });
+    });
+</script>
+@endsection
 @endsection

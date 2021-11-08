@@ -8,7 +8,7 @@
     <meta name="author" content="Crhistian">
     <meta name="keyword" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Usuario</title>
+    <title>Visitante</title>
 
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -19,9 +19,7 @@
     <link rel="stylesheet" type="text/css" href="asset/css/plugins/datatables.bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css" />
 
-
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
 
     <link href="asset/css/style.css" rel="stylesheet">
     <!-- end: Css -->
