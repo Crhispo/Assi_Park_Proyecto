@@ -5,7 +5,7 @@
 
 <form action="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO)}}" method="POST">
 @csrf
-{{ method_field('PATCH') }}
+{{ method_field('PUT') }}
 @include('apartamento.form',['modo'=>'Editar'])
 
 </form>
