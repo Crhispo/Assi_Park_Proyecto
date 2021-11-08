@@ -21,6 +21,13 @@
             </ul>
           </li>
 
+          <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-user icons" style="font-size:1em;"></span> Visitantes <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+            <ul class="nav nav-list tree">
+              <li><a href="/Visitante">Gestionar visitantes</a></li>
+              <li><a href="/Visitanteform">Registrar Visitantes</a></li>
+            </ul>
+          </li>
+
 
           <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-car-side" style="font-size:20px;"></i></i>&nbsp;&nbsp; Vehiculos<span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">

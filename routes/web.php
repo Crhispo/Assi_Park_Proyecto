@@ -9,7 +9,7 @@ use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
 use App\Http\Controllers\EventoController;
-use App\Models\User;
+use App\Http\Controllers\VisitanteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,12 +24,22 @@ use Illuminate\Support\Facades\Route;
   |
  */
 
+ /* Rutas Usuario */
 Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 route::get('Usuarioform', [UsuarioController::class, 'formcreate'])->name('usuario.formcreate');
 Route::post('Usuariostore', [UsuarioController::class, 'store'])->name('usuario.store');
 Route::get('Usuarioedit{id}', [UsuarioController::class, 'formedit'])->name('usuario.formedit');
 Route::put('Usuarioupdate{id}', [UsuarioController::class, 'update'])->name('Usuario.update');
 Route::delete('Usuariodisable{id}', [UsuarioController::class, 'Disable'])->name('Usuario.Disable');
+
+ /* Rutas Visitante */
+
+ Route::get('Visitante', [VisitanteController::class, 'index'])->name('Visitante.index');
+route::get('Visitanteform', [VisitanteController::class, 'formcreate'])->name('Visitante.formcreate');
+Route::post('Visitantestore', [VisitanteController::class, 'store'])->name('Visitante.store');
+Route::get('Visitanteedit{id}', [VisitanteController::class, 'formedit'])->name('Visitante.formedit');
+Route::put('Visitanteupdate{id}', [VisitanteController::class, 'update'])->name('Visitante.update');
+Route::delete('Visitantedisable{id}', [VisitanteController::class, 'Disable'])->name('Visitante.Disable');
 
 /* Rutas modulo apartamento */
 

@@ -34,7 +34,7 @@
                                 $SelectCE = '';
                                 $SelectTI = '';
                                 $SelectRC = '';
-                                switch($Usuario-> {'ID_TIPO_USUARIO'}){
+                                switch($Usuario-> {'ID_TIPO_IDENTTFICACION'}){
                                 case '1':
                                 $SelectCC = 'selected';
                                 break;
