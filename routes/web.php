@@ -43,7 +43,7 @@ Route::delete('Visitantedisable{id}', [VisitanteController::class, 'Disable'])->
 
 /* Rutas modulo apartamento */
 
-Route::resource('apartamento', ApartamentoController::class);
+Route::get('apartamentocrear', [ApartamentoController::class, 'create'])->name('apartamento.create');
 
 /* Rutas modulo residente */
 

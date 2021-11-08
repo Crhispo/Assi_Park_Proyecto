@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3>Usuarios</h3>
+                        <h3>Visitantes</h3>
                         <a href="/Visitanteform" class="btn btn-outline-success p-md-2">Registrar Visitantes</a>
                     </div>
                     <div class="panel-body">
