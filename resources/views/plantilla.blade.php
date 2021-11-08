@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     @yield('css')
     <!-- start: Css -->
   <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -24,20 +24,13 @@
 <body id="mimin" class="dashboard">
     <!---------SIDEBAR---------->
 
-
-            
-
         <!-----------NAVBAR------------>
-
-
-
-            
                 @yield('Encabezado','Vehiculo')
                 @yield('content')
-            
+
             @yield('js')
             <!-- start: right menu -->
-      
+
         <!-- end: right menu -->
 
 
@@ -49,16 +42,13 @@
 
 
         <!-- plugins -->
-
         <script src="asset/js/plugins/moment.min.js"></script>
         <script src="asset/js/plugins/jquery.datatables.min.js"></script>
         <script src="asset/js/plugins/datatables.bootstrap.min.js"></script>
         <script src="asset/js/plugins/jquery.nicescroll.js"></script>
-
-
         <!-- custom -->
         <script src="asset/js/main.js"></script>
-        
+
         <!-- end: javascript -->
 
 </body>

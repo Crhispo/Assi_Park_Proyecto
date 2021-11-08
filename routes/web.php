@@ -24,14 +24,12 @@ use Illuminate\Support\Facades\Route;
   |
  */
 
-Route::get('users', function () {
-    return view('Modulo_Usuarios.registro_usuario');
-});
-
 Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
-Route::post('Usuario.store', [UsuarioController::class, 'store'])->name('usuario.store');
-Route::put('Usuario/{id}', [UsuarioController::class, 'update'])->name('Usuario.update');
-Route::delete('Usuario.{id}', [UsuarioController::class, 'disable']);
+route::get('Usuarioform', [UsuarioController::class, 'formcreate'])->name('usuario.formcreate');
+Route::post('Usuariostore', [UsuarioController::class, 'store'])->name('usuario.store');
+Route::get('Usuarioedit{id}', [UsuarioController::class, 'formedit'])->name('usuario.formedit');
+Route::put('Usuarioupdate{id}', [UsuarioController::class, 'update'])->name('Usuario.update');
+Route::delete('Usuariodisable{id}', [UsuarioController::class, 'Disable'])->name('Usuario.Disable');
 
 /* Rutas modulo apartamento */
 
@@ -68,40 +66,24 @@ route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->
 
 
 //ruta de la vista administrador
-Route::get('/admin', [
-    HomeController::class, 'admin'
-])->name('admin');
+Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
 
 //ruta de la vista residente
-Route::get('/secretatia', [
-    HomeController::class, 'residente'
-])->name('residente');
+Route::get('/secretaria', [HomeController::class, 'secretaria'])->name('residente');
 
 //ruta de la vista guarda
-Route::get('/guarda', [
-    HomeController::class, 'guarda'
-])->name('guarda');
+Route::get('/guarda', [HomeController::class, 'guarda'])->name('guarda');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', function ()
-{
-    return view('Index.homepage');
-}
-)->name('homepage');
+Route::get('/', function () {return view('Index.homepage');})->name('homepage');
 
-Route::get('/Organization', function ()
-{
-    return view('Plantilla_recursos.Organization');
-}
-)->name('Organization');
+Route::get('/Organization', function () {return view('Plantilla_recursos.Organization');})->name('Organization');
 
-Route::get('/redirecion', [
-    HomeController::class, 'redirecion'
-])->name('redirecion');
+Route::get('/redirecion', [HomeController::class, 'redirecion'])->name('redirecion');
 
 
 Route::post('/evento/agragar', [EventoController::class, 'store'])->name('evento');
