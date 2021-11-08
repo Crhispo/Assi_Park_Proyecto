@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
                 <p class="animated fadeInDown">
-                    Administador <span class="fa-angle-right fa"></span> Residente
+                    Administador <span class="fa-angle-right fa"></span> Residente 
                 </p>
             </div>
         </div>
