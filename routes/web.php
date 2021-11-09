@@ -50,8 +50,8 @@ Route::delete('Visitantedisable{id}', [VisitanteController::class, 'Disable'])->
 Route::get('apartamento', [ApartamentoController::class, 'index'])->name('Apartamento.index');
 Route::get('apartamentocreate', [ApartamentoController::class, 'create'])->name('apartamento.create');
 Route::post('apartamento', [ApartamentoController::class, 'store'])->name('apartamento.store');
-Route::get('apartamento{apartamento}/edit', [ApartamentoController::class, 'edit'])->name('apartamento.edit');
-Route::PUT('apartamento/{apartamento}', [ApartamentoController::class, 'update']);
+Route::get('apartamento{apartamento}edit', [ApartamentoController::class, 'edit'])->name('apartamento.edit');
+Route::PUT('apartamento{apartamento}', [ApartamentoController::class, 'update']);
 Route::delete('apartamento{apartamento}', [ApartamentoController::class, 'destroy']);
 
 
@@ -65,8 +65,8 @@ Route::post('bloque', [BloqueController::class,'store']);
 Route::get('residente', [ResidenteController::class, 'index'])->name('Apartamento.index');
 Route::get('residentecreate', [ResidenteController::class, 'create'])->name('apartamento.create');
 Route::post('residenteform', [ResidenteController::class, 'store'])->name('apartamento.store');;
-Route::get('residente{residente}/edit', [ResidenteController::class, 'edit'])->name('apartamento.edit');
-Route::PUT('residente/{residente}', [ResidenteController::class, 'update']);
+Route::get('residente{residente}edit', [ResidenteController::class, 'edit'])->name('apartamento.edit');
+Route::PUT('residente{residente}', [ResidenteController::class, 'update']);
 Route::delete('residente{residente}', [ResidenteController::class, 'destroy']);
 
 
