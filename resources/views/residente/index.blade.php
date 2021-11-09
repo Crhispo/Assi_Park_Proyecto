@@ -33,7 +33,7 @@
                 <div class="panel-heading">
                     <br>
                     <h3>Residente</h3>
-                    <a href="{{ url('residente/create')}}" class="btn btn-primary">Registrar residente</a>
+                    <a href="{{ url('residentecreate')}}" class="btn btn-primary">Registrar residente</a>
                 </div>
                 <div class="panel-body">
                     <div class="responsive-table">

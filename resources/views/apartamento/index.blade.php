@@ -34,7 +34,7 @@
                 <div class="panel-heading">
                     <br>
                     
-                    <a href="{{ url('apartamento/create')}}" class="btn btn-primary">Registrar apartamentos</a>
+                    <a href="{{ url('apartamentocreate')}}" class="btn btn-primary">Registrar apartamentos</a>
 
                     <div class="alert alert-success alert-dismissible" role="alert">
                     @if(Session::has('mensaje'))

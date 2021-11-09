@@ -1,14 +1,7 @@
-@extends('plantilla')
-@section('title','Residente')
-@section('Encabezado','Residente')
-@section('content')
 
-<!-- start: Header -->
-@include('menus.Header')
-<!-- end: Header -->
-    <!-- start:Left Menu -->
-    @include('menus.menu_admin')
-    <!-- end: Left Menu -->
+
+<h2>{{ $modo }} residente</h2>
+<div id="content">
 @if(count($errors)>0)
 
 <div class="alert alert-danger" role="alert">
@@ -20,9 +13,6 @@
 </div>
 
 @endif
-
-<h2>{{ $modo }} residente</h2>
-<div id="content">
 <div class="mb-3">
     <label for="Id" class="form-label">Numero de identificacion:</label>
     <input type="text" name="NUMERO_IDENTIFICACION" value="{{  isset($residente->NUMERO_IDENTIFICACION)?$residente->NUMERO_IDENTIFICACION:'' }}" id="NUMERO_IDENTIFICACION" maxlength="10" class="form-control">
@@ -117,9 +107,6 @@
     <a href="/residente" class="btn btn-secondary" >cancelar</a>
     <input type="submit" class="btn btn-primary" value="{{ $modo }} residente">
 </div>
-    <!-- end: content -->
-    <!-- start: right menu -->
-    @include('menus.menu_derecha')
-    <!-- end: right menu -->
     
-@endsection
+
+

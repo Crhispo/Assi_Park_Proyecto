@@ -54,14 +54,14 @@ class ResidenteController extends Controller
         //
 
         $campos=[
-            'NUMERO_IDENTIFICACION'=>'required|Integer|max:10|unique',
+            'NUMERO_IDENTIFICACION'=>'required|Integer|unique',
             'ID_TIPO_IDENTIFICACION'=>'required',
             'NOMBRE'=>'required|String|max:45',
             'APELLIDO'=>'required|String|max:45',
             'SEXO'=>'required',
-            'TELEFONO'=>'Integer|max:9',
-            'CELULAR1'=>'required|Integer|max:9',
-            'CELULAR2'=>'Integer|max:9',
+            'TELEFONO'=>'Integer|',
+            'CELULAR1'=>'required|Integer',
+            'CELULAR2'=>'Integer',
             'CORREO_ELECTRONICO'=>'required|String|max:100',
             'NUMERO_APTO'=>'required',
             'BLOQUE'=>'required'
