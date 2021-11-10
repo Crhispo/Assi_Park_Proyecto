@@ -9,7 +9,7 @@
     @yield('css')
     <!-- start: Css -->
   <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
-
+  <link rel="shortcut icon" href="img/2prin.png" type="image/png">
   <!-- plugins -->
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css" />

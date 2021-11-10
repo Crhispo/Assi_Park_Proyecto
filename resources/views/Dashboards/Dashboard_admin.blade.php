@@ -18,8 +18,7 @@
       <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
       <link rel="stylesheet" type="text/css" href="asset/css/plugins/fullcalendar.min.css"/>
 
-      <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
+      <link rel="shortcut icon" href="img/2prin.png" type="image/png">
 	<link href="asset/css/style.css" rel="stylesheet">
 	<!-- end: Css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
@@ -110,12 +109,39 @@ var baseURL= {!! json_encode(url('/')) !!}
                                 <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
                                     <!-- <h2></h2> -->
                                     <p>Aqui podra observar la organizacion de los parqueaderos por apartamentos y bloque de todo el conjunto residencial.</p>
+                                    <table id="Tabla_consulta" class="table table-striped table-bordered" width="10%" cellspacing="0">
+                                      <thead>
+                                          <tr>
+                                             <th>A</th> 
+                                             <th>B</th> 
+                                             <th>C</th> 
+                                             <th>D</th> 
+                                             <th>F</th> 
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                        @foreach ( $parqueadero as $parking ) 
+                                           @php
+                                            $total=$parking->{'id'} % 5;
 
+                                           @endphp
+                                           
+                                            <td>
+                          @include('Asignacion.form')
+                                            </td>
+                                            @if ($total==0)
+                                            <tr></tr>
+                                            @endif
+
+                                        @endforeach
+                                      </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <iframe src="/Organization" frameborder="0" allowfullscreen style="width: 908px; height:478px;margin-left: -230px;overflow-x:hidden;"></iframe>
+
+                    
 
                       <div class="col-md-12">
                           <div class="panel box-v4">

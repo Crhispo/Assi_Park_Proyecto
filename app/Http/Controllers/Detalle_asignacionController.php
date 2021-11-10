@@ -34,7 +34,7 @@ class Detalle_asignacionController extends Controller
         return redirect('/asignacion');
             }
             //crear
-            function form($id=null){
+    function form($id=null){
                 $NumeroApto=Apartamento::all();
                 $vehiculo=Vehiculo::all();
                 $parqueadero=Parqueadero::all();
@@ -52,11 +52,11 @@ class Detalle_asignacionController extends Controller
                     $asignacion=Detalle_asignacion::findOrFail($request->id);
                 }
             $asignacion->apartamento_id=$request->NUMERO_APTO;
-            $asignacion->vehiculo_id=$request->d;
-            $asignacion->parqueadero_id=$request->park;
-            $asignacion->inicio=$request->e;
-            $asignacion->fin=$request->y;
+            $asignacion->vehiculo_id=$request->Vehiculo;
+            $asignacion->parqueadero_id=$request->parqueadero;
+            $asignacion->inicio=$request->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO;
+            $asignacion->fin=$request->FECHA_FIN_DE_ASIGNACION_PARQUEADERO;
             $asignacion->save();
-                return redirect('/asignacion');
+                return redirect('/admin');
             }
 }
