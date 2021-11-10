@@ -104,7 +104,7 @@ class UsuarioController extends Controller
             'password' => Hash::make($request['password']),
         ];
         var_dump($_UsuarioD);
-        DB::update($_UsuarioD);
+        DB::update('update usuario'.$_UsuarioD);
         return redirect('/Usuario');
     }
 
