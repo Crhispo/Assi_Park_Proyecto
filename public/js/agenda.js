@@ -7,10 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
       initialView: 'dayGridMonth',
       locale:"es",
       displayEventTime:false,
+      views: {
+        listDay: { buttonText: 'list day' },
+        listWeek: { buttonText: 'list week' },
+        listMonth: { buttonText: 'list month' }
+      },
       headerToolbar:{
           left:'prev,next today',
           center:'title',
-          right:'dayGridMonth'
+          right:'dayGridMonth,listWeek'
       },
 
 events:"http://localhost:8000/evento/mostrar",
