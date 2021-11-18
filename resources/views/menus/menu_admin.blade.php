@@ -39,7 +39,7 @@
           <li class="ripple"><a class="tree-toggle nav-header"><i class="lar la-building" style="font-size:20px;"></i>&nbsp;&nbsp; Apartamentos <span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
               <li><a href="/apartamento">Gestionar apartamento</a></li>
-              <li><a href="apartamento/create">Registrar</a></li>
+              <li><a href="apartamentocreate">Registrar</a></li>
             </ul>
           </li>
           <li class="ripple"><a class="tree-toggle nav-header"><i class="lar la-building" style="font-size:20px;"></i>&nbsp;&nbsp; Residentes <span class="fa-angle-right fa right-arrow text-right"></span> </a>
