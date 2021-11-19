@@ -12,134 +12,131 @@
 <!-- start: Header -->
 @include('menus.Header')
 <!-- end: Header -->
+<div class="container-fluid mimin-wrapper">
+    <!-- start:Left Menu -->
+    @include('menus.menu_admin')
+    <!-- end: Left Menu -->
 
- <!-- start:Left Menu -->
- @include('menus.menu_admin')
- <!-- end: Left Menu -->
+
+    <!-- start: Content -->
+    <div id="content">
+        <div class="panel box-shadow-none content-header">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
 
 
-<!-- start: Content -->
-<div id="content">
-    <div class="panel box-shadow-none content-header">
-        <div class="panel-body">
-            <div class="col-md-12">
-                <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
 
-                <a href="#" class="d-noned d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                    <i class="fas fa-print fa-sm text-white-50"></i>imprimir
-                    </a>
-                @php
-                $Final = '';
-                if(!isset($_UsuarioD)){
-                    $_UsuarioD = '';
-                }
-                    var_dump($Final);
-                    var_dump($_UsuarioD);
-                @endphp
 
-                <p class="animated fadeInDown">
-                    Admin <span class="fa-angle-right fa"></span> Usuarios
-                </p>
+                    <p class="animated fadeInDown">
+                        Admin <span class="fa-angle-right fa"></span> Vehiculos
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-12 top-20 padding-0">
-        <div class="col-md-12">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3>Usuarios</h3>
-                    <a href="{{route('vehiculo.form')}}" class="btn btn-primary">Nuevo vehiculo</a>
-                </div>
-                <div class="panel-body">
-                    <div class="responsive-table">
-                        <table id="vehiculo" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
-                            <thead class="bg-primary text-white">
-                                <tr>
+        <div class="col-md-12 top-20 padding-0">
 
-                            <th>Numero de identificación propetario</th>
-                            <th>Marca</th>
-                            <th>Color</th>
-                            <th>Tipo parqueadero</th>
-                            <th>Placa</th>
-                            <th>Estado</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-                        </tr>
-                        </thead><tbody>
-                            @php(var_dum($vehiculoList))
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3>Vehiculos</h3>
 
-                            @endphp
-                        @foreach($vehiculoList as $vehiculo)
-                        <tr>
+                    </div>
 
-                            <td>{{$vehiculo->NUMERO_IDENTIFICACION}}</td>
-                            <td>{{$vehiculo->MARCA}}</td>
-                            <td>{{$vehiculo->COLOR}}</td>
-                            <td>{{$vehiculo->TIPO_PARQUEADERO_VEHICULO}}</td>
-                            <td>{{$vehiculo->placa}}</td>
-                            <td>
-                                @switch($vehiculo->ESTADO_VEHICULO)
-                                @case(1)
-                                Activo
-                                @break
+                    <div class="panel-body">
+                        <div class="responsive-table">
+                            <table id="vehiculo" class="table table-striped table-bordered" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
 
-                                        @case(0)
-                                        Inactivo
-                                        @break
+                                        <th>Numero de identificación propetario</th>
+                                        <th>Marca</th>
+                                        <th>Color</th>
+                                        <th>Tipo parqueadero</th>
+                                        <th>Placa</th>
+                                        <th>Estado</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                        @default
-                                        Erros
-                                        @endswitch</td>
-                                    <td>
-                                        <a href="{{route('vehiculo.form',['id'=>$vehiculo->id])}}" class="btn btn-warning">Editar</a>
-                                    </td>
-                                    <td>
-                                        <a href="{{route('eliminarvehiculo',['id'=>$vehiculo->id])}}" class="btn btn-danger">Eliminar</a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                    @foreach($vehiculoList as $vehiculo)
+                                    <tr>
+
+                                        <td>{{$vehiculo->NUMERO_IDENTIFICACION}}</td>
+                                        <td>{{$vehiculo->MARCA}}</td>
+                                        <td>{{$vehiculo->COLOR}}</td>
+                                        <td>{{$vehiculo->TIPO_PARQUEADERO_VEHICULO}}</td>
+                                        <td>{{$vehiculo->placa}}</td>
+                                        <td>
+                                            @switch($vehiculo->ESTADO_VEHICULO)
+                                            @case(1)
+                                            Activo
+                                            @break
+
+                                            @case(0)
+                                            Inactivo
+                                            @break
+
+                                            @default
+                                            Erros
+                                            @endswitch</td>
+                                        <td>
+                                            <a href="{{route('vehiculo.form',['id'=>$vehiculo->id])}}" class="btn btn-warning">Editar</a>
+                                        </td>
+                                        <td>
+                                            <a href="{{route('eliminarvehiculo',['id'=>$vehiculo->id])}}" class="btn btn-danger">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- end: content -->
-@section('js')
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#vehiculo').DataTable({
+    <!-- end: content -->
+    <!-- start: right menu -->
+    @include('menus.menu_derecha')
+    <!-- end: right menu -->
+
+    @section('js')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#vehiculo').DataTable({
 
 
 
-            language: {
-                "sProcessing": "Procesando...",
+                language: {
+                    "sProcessing": "Procesando...",
 
-                "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla =(",
-                "sInfo": "Mostrando registros del START al END de un total de TOTAL registros",
-                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                "sInfoFiltered": "(filtrado de un total de MAX registros)",
-                "sInfoPostFix": "",
-                "sSearch": "Buscar:",
-                "sUrl": "",
-                "sInfoThousands": ",",
-                "sLoadingRecords": "Cargando...",
-                "oPaginate": {
-                    "sFirst": "Primero",
-                    "sLast": "Último",
-                    "sNext": "Siguiente",
-                    "sPrevious": "Anterior"
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                    "sInfo": "Mostrando registros del START al END de un total de TOTAL registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de MAX registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    }
                 }
-            }
 
+            });
         });
-    });
-</script>
+    </script>
+</div>
 @endsection
 @endsection

@@ -18,17 +18,17 @@
       <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
       <link rel="stylesheet" type="text/css" href="asset/css/plugins/fullcalendar.min.css"/>
 
-      <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
+      <link rel="shortcut icon" href="img/2prin.png" type="image/png">
 	<link href="asset/css/style.css" rel="stylesheet">
 	<!-- end: Css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script>
 
+<script type="text/javascript">
+var baseURL= {!! json_encode(url('/')) !!}
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+</script>
   </head>
 
  <body id="mimin" class="dashboard">
@@ -66,7 +66,10 @@
                                   </div>
                                 </div>
                                 <div class="panel-body text-center">
-                                  <h1>120</h1>
+                                  <h1>
+                                    
+                                    {{$cantidadveh[0]->vehiculos}}
+                                  </h1>
                                   <p></p>
                                   <hr/>
                                 </div>
@@ -85,7 +88,11 @@
                                   </div>
                                 </div>
                                 <div class="panel-body text-center">
-                                  <h1>511</h1>
+                                  <h1>
+                                    
+                                    {{$cantidadres[0]->residente}}
+                                  </h1>
+                                  </h1>
                                   <p></p>
                                   <hr/>
                                 </div>
@@ -102,29 +109,114 @@
                                 <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
                                     <!-- <h2></h2> -->
                                     <p>Aqui podra observar la organizacion de los parqueaderos por apartamentos y bloque de todo el conjunto residencial.</p>
+                                    <table id="Tabla_consulta" class="table table-striped table-bordered" width="10%" cellspacing="0">
+                                      <thead>
+                                          <tr>
+                                             <th>A</th> 
+                                             <th>B</th> 
+                                             <th>C</th> 
+                                             <th>D</th> 
+                                             <th>F</th> 
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                        @foreach ( $parqueadero as $parking ) 
+                                           @php
+                                            $total=$parking->{'id'} % 5;
 
+                                           @endphp
+                                           
+                                            <td>
+                          @include('Asignacion.form')
+                                            </td>
+                                            @if ($total==0)
+                                            <tr></tr>
+                                            @endif
+
+                                        @endforeach
+                                      </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <iframe src="/Organization" frameborder="0" allowfullscreen style="width: 908px; height:478px;margin-left: -230px;overflow-x:hidden;"></iframe>
+
+                    
 
                       <div class="col-md-12">
                           <div class="panel box-v4">
                               <div class="panel-heading bg-white border-none">
                                 <h4><span class="icon-notebook icons"></span> Agenda</h4>
                               </div>
-                              <div class="panel-body padding-0">
+                              <div class="panel-body padding-0" id="h">
                                   <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
                                       <h2> ¡Administrador Revise los proximos eventos!</h2>
                                       <p>Aqui podra revisar cuales son los proximos parqueaderos a vencer su tiempo limite.</p>
                                       <b><span class="icon-clock icons"></span> Hoy a las 15:00</b>
                                       <br>
                                       <br>
-                                  </div>
-                                  <div class="calendar">
+                                  
+                                  <div id="agenda">
 
                                   </div>
+                                
+                                
+                                <!-- Button trigger modal -->
+                                
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">Evento</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form action="" method="POST" id="form">
+                                          @csrf                                           
+                                         <div class="form-group d-none" style="display:none">
+                                           <label for="id">ID</label>
+                                           <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
+                                           <small id="helpId" class="form-text text-muted">Help text</small>
+                                         </div>     
+
+                                          <div class="form-group">
+                                            <label for="title">Titulo</label>
+                                            <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Escribe el titulo del evento">
+                                            <small id="helpId" class="form-text text-muted">Help text</small>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="descripcion">Descripcion</label>
+                                            <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                                          </div>
+
+                                          <div class="form-group d-none " style="display:none">
+                                            <label for="start">Start</label>
+                                            <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
+                                            <small id="helpId" class="form-text text-muted">Help text</small>
+                                          </div>
+
+                                          <div class="form-group d-none" style="display:none">
+                                            <label for="end">End</label>
+                                            <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
+                                            <small id="helpId" class="form-text text-muted">Help text</small>
+                                          </div>
+                                        </form>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button>
+                                        <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button>
+                                        <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                               </div>
                           </div>
                       </div>
@@ -229,23 +321,7 @@
                         </div>
                       </div>
 
-                      <div class="col-md-12 padding-0">
-                        <div class="panel bg-light-blue">
-                          <div class="panel-body text-white">
-                             <p class="animated fadeInUp quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit Ut wisi..."</p>
-                              <div class="col-md-12 padding-0">
-                                <div class="text-left col-md-7 col-xs-12 col-sm-7 padding-0">
-                                  <span class="fa fa-twitter fa-2x"></span>
-                                  <span>22 May, 2015 via mobile</span>
-                                </div>
-                                <div style="padding-top:8px;" class="text-right col-md-5 col-xs-12 col-sm-5 padding-0">
-                                  <span class="fa fa-retweet"></span> 2000
-                                  <span class="fa fa-star"></span> 3000
-                                </div>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
+
                   </div>
               </div>
 
@@ -417,8 +493,11 @@
 
 
 <!-- custom -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{asset('js/agenda.js')}}" defer></script>
 <script src="asset/js/main.js"></script>
 <script src="asset/js/gadgets.js"></script>
+
   </body>
 </html>
 

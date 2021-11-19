@@ -45,6 +45,18 @@ class ApartamentoController extends Controller
     public function store(StoreApartamentoRequest $request)
     {
         //
+
+        $campos=[
+            'NUMERO_APTO'=>'required', 
+            'Bloque'=>'required'
+        ];
+        $mensaje=[
+            'NUMERO_APTO.required'=>'El Numero de apartamento es requerido',
+            'Bloque.required'=>'El Bloque es requerido'
+        ];
+    
+        $this->validate($request, $campos, $mensaje);
+
         $datosApartamento = request()->except('_token');
         Apartamento::insert($datosApartamento);
 

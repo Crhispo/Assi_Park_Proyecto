@@ -52,6 +52,30 @@ class ResidenteController extends Controller
     public function store(Request $request)
     {
         //
+
+        $campos=[
+            'NUMERO_IDENTIFICACION'=>'required|Integer|unique',
+            'ID_TIPO_IDENTIFICACION'=>'required',
+            'NOMBRE'=>'required|String|max:45',
+            'APELLIDO'=>'required|String|max:45',
+            'SEXO'=>'required',
+            'TELEFONO'=>'Integer|',
+            'CELULAR1'=>'required|Integer',
+            'CELULAR2'=>'Integer',
+            'CORREO_ELECTRONICO'=>'required|String|max:100',
+            'NUMERO_APTO'=>'required',
+            'BLOQUE'=>'required'
+        ];
+        $mensaje=[
+            'required'=>'El :attribute es requerido',
+            'unique'=>'El :attribute ya existe',
+            'Integer'=> 'El :attribute debe ser numerico',
+            
+        ];
+    
+        $this->validate($request, $campos, $mensaje);
+
+
         $datosResidente = request()->except('_token','NUMERO_APTO','BLOQUE');
         $datosResidentex = request()->except('_token');
         

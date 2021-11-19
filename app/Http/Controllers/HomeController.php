@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parqueadero;
+use App\Models\Apartamento;
+use App\Models\Vehiculo;
+use App\Models\Detalle_asignacion;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -26,9 +32,21 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function admin()
+    public function admin($id=null)
     {
-        return view('Dashboards.Dashboard_admin');
+        $parqueadero=Parqueadero::all();
+        $cantidadres=DB::select('select ResidentesTotales() as residente');
+        $cantidadveh=DB::select('select VehiculosTotales() as vehiculos');
+        $NumeroApto=Apartamento::all();
+        $vehiculo=Vehiculo::all();
+        $parqueadero=Parqueadero::all();
+        if($id==null){
+            $asignacion=new Detalle_asignacion();
+         }else{
+            $asignacion=Detalle_asignacion::findOrFail($id);
+         }
+        return view('Dashboards.Dashboard_admin', compact('cantidadveh','cantidadres','parqueadero','vehiculo','NumeroApto','asignacion'));
+
     }
 
     public function secretaria()
@@ -53,4 +71,6 @@ class HomeController extends Controller
             return redirect('/');
         }
     }
+
+
 }

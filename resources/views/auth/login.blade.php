@@ -1,4 +1,4 @@
-@extends('layouts.PlantillaBase')
+@extends('layouts.PlantillaBaselogin')
 
 <head>
     @section('css')

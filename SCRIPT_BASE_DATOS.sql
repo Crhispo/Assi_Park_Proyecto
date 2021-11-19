@@ -1,25 +1,38 @@
 USE si_parqueaderos;
 
-/*================ TIPOS DE DOCUMENTOS ==================*/
-INSERT INTO tipo_identificaciones(id, nombre_tipo_identificacion, created_at, updated_at)
-VALUES(NULL, 'Cédula de Ciudadanía', NOW(), NOW());
-INSERT INTO tipo_identificaciones(id, nombre_tipo_identificacion, created_at, updated_at)
-VALUES(NULL, 'Tarjeta de Identidad', NOW(), NOW());
-INSERT INTO tipo_identificaciones(id, nombre_tipo_identificacion, created_at, updated_at)
-VALUES(NULL, 'Registro Civil', NOW(), NOW());
-INSERT INTO tipo_identificaciones(id, nombre_tipo_identificacion, created_at, updated_at)
-VALUES(NULL, 'Tarjeta de extranjería', NOW(), NOW());
-INSERT INTO tipo_identificaciones(id, nombre_tipo_identificacion, created_at, updated_at)
-VALUES(NULL, 'Tarjeta de extranjería ', NOW(), NOW());
-INSERT INTO tipo_identificaciones(id, nombre_tipo_identificacion, created_at, updated_at)
-VALUES(NULL, 'Pasaporte', NOW(), NOW());
-INSERT INTO tipo_identificaciones(id, nombre_tipo_identificacion, created_at, updated_at)
-VALUES(NULL, 'Tipo de documento extranjero', NOW(), NOW());
+/* Insert en la BD */
 
-/* ================= TIPOS DE USUARIOS ===============*/
-INSERT INTO tipo_usuarios(id, nombre_tipo_usuario, created_at,  updated_at)
-VALUES(NULL,  'Administrador', NULL, NOW());
-INSERT INTO tipo_usuarios(id, nombre_tipo_usuario, created_at,  updated_at)
-VALUES(NULL,  'Residente', NOW(), NOW());
-INSERT INTO tipo_usuarios(id, nombre_tipo_usuario, created_at,  updated_at)
-VALUES(NULL,  'Guarda seguridad', NOW(), NOW());
+/* Insert de los tipos de usuarios */
+INSERT INTO tipo_usuario (TIPO_USUARIO) VALUES ('Administrador');
+INSERT INTO tipo_usuario (TIPO_USUARIO) VALUES ('Secretaria');
+INSERT INTO tipo_usuario (TIPO_USUARIO) VALUES ('Guardia de seguridad');
+
+/* Insert de los tipos de identificacion */
+
+INSERT INTO tipo_identificacion (IDENTIFICACION) VALUES ('CC');
+INSERT INTO tipo_identificacion (IDENTIFICACION) VALUES ('CE');
+INSERT INTO tipo_identificacion (IDENTIFICACION) VALUES ('TI');
+INSERT INTO tipo_identificacion (IDENTIFICACION) VALUES ('RC');
+
+/* Funciones contadoras */
+
+DELIMITER $$
+CREATE FUNCTION VehiculosTotales()
+RETURNS INT
+BEGIN
+RETURN (SELECT COUNT(ID) FROM vehiculos WHERE ESTADO_VEHICULO=1);
+END $$
+DELIMITER ;
+
+SELECT VehiculosTotales();
+
+
+DELIMITER $$
+CREATE FUNCTION ResidentesTotales()
+RETURNS INT
+BEGIN
+RETURN (SELECT COUNT(NUMERO_IDENTIFICACION) FROM residente WHERE ESTADO_RESIDENTE=1);
+END $$
+DELIMITER ;
+
+SELECT  ResidentesTotales();

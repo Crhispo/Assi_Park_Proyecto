@@ -7,6 +7,7 @@ use App\Http\Requests\ValidarActualizacionUsuarioRequest;
 use App\Http\Requests\ValidarInactivadoRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -27,9 +28,10 @@ class UsuarioController extends Controller
     }
 
 
-    public function create()
+    public function formcreate()
     {
-        return view('Modulo_Usuarios.Usuario');
+
+        return view('Modulo_Usuarios.registro_usuario');
     }
 
 
@@ -43,9 +45,20 @@ class UsuarioController extends Controller
 
     public function store(Request $request)
     {
-        $_Usuario = request()->except('_token');
-        User::insert($_Usuario);
-        return redirect('Usuario');
+        User::create([
+            'ID_TIPO_IDENTIFICACION' => $request['tipo_identificacion'],
+            'NUMERO_IDENTIFICACION' => $request['NUMERO_IDENTIFICACION'],
+            'ID_TIPO_USUARIO' => $request['tipo_usuario'],
+            'NOMBRE' => $request['nombre'],
+            'APELLIDO' => $request['apellido'],
+            'SEXO' => $request['sexo'],
+            'DIRECCION' => $request['direccion'],
+            'TELEFONO' => $request['telefono'],
+            'CELULAR1' => $request['celular1'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect('/Usuarioform');
     }
 
     /**
@@ -56,10 +69,12 @@ class UsuarioController extends Controller
      */
 
 
-    public function show($NUMERO_IDENTIFICACION = null)
+    public function formedit($NUMERO_IDENTIFICACION)
     {
-        $_UsuarioU = user::where('NUMERO_IDENTIFICACION','=',$NUMERO_IDENTIFICACION)->firstOrFail();
-        return view('Modulo_Usuarios.Usuario', compact('_UsuarioU'));
+        if($NUMERO_IDENTIFICACION != null){
+            $Usuario = user::where('NUMERO_IDENTIFICACION', '=', $NUMERO_IDENTIFICACION)->firstOrFail();
+        }
+        return view('Modulo_Usuarios.modificar', compact('Usuario'));
     }
 
 
@@ -73,12 +88,24 @@ class UsuarioController extends Controller
      */
 
 
-    public function update(ValidarActualizacionUsuarioRequest $request, $NUMERO_IDENTIFICACION= null)
+    public function update(Request $request)
     {
-        $_Usuario = request()->except(['_token', '_method']);
-        User::where('NUMERO_IDENTIFICACION', "=", $NUMERO_IDENTIFICACION)->update($_Usuario);
-        var_dump($_Usuario);
-        //return view('Modulo_Usuarios.Dashboard_admin');
+        $_UsuarioD = [
+            'ID_TIPO_IDENTIFICACION' => $request['tipo_identificacion'],
+            'NUMERO_IDENTIFICACION' => $request['NUMERO_IDENTIFICACION'],
+            'ID_TIPO_USUARIO' => $request['tipo_usuario'],
+            'NOMBRE' => $request['nombre'],
+            'APELLIDO' => $request['apellido'],
+            'SEXO' => $request['sexo'],
+            'DIRECCION' => $request['direccion'],
+            'TELEFONO' => $request['telefono'],
+            'CELULAR1' => $request['celular1'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ];
+        var_dump($_UsuarioD);
+        DB::update('update usuario'.$_UsuarioD);
+        return redirect('/Usuario');
     }
 
     /**
@@ -87,11 +114,11 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function Disable(ValidarInactivadoRequest $request, $NUMERO_IDENTIFICACION)
+    public function Disable(Request $request, $NUMERO_IDENTIFICACION)
     {
-        $_Usuario = request();
-        var_dump($_Usuario);
-        $Disable_Usuario = DB::update('update usuario set ESTADO_USUARIO = ' . $_Usuario->{'ESTADO_USUARIO'} . ' where NUMERO_IDENTIFICACION = ' . $NUMERO_IDENTIFICACION);
-        return redirect('/Tabla');
+        $_Usuario = User::all();
+        $Usuario = $request;
+        $Disable_Usuario = DB::update('update usuario set ESTADO_USUARIO = ' . $Usuario->{'ESTADO_USUARIO'} . ' where NUMERO_IDENTIFICACION = ' . $NUMERO_IDENTIFICACION);
+        return redirect('/Usuario');
     }
 }
