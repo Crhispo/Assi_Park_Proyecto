@@ -54,7 +54,7 @@ class ResidenteController extends Controller
         //
 
         $campos=[
-            'NUMERO_IDENTIFICACION'=>'required|Integer|unique',
+            'NUMERO_IDENTIFICACION'=>'required|Integer', /*|unique*/
             'ID_TIPO_IDENTIFICACION'=>'required',
             'NOMBRE'=>'required|String|max:45',
             'APELLIDO'=>'required|String|max:45',
@@ -68,7 +68,7 @@ class ResidenteController extends Controller
         ];
         $mensaje=[
             'required'=>'El :attribute es requerido',
-            'unique'=>'El :attribute ya existe',
+            /*'unique'=>'El :attribute ya existe',*/
             'Integer'=> 'El :attribute debe ser numerico',
             
         ];
