@@ -126,7 +126,7 @@ var baseURL= {!! json_encode(url('/')) !!}
 
                                            @endphp
                                            
-                                            <td>
+                                            <td style="padding: 0px !important;">
                           @include('Asignacion.form')
                                             </td>
                                             @if ($total==0)
@@ -136,6 +136,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                         @endforeach
                                       </tbody>
                                     </table>
+                                    <br><br>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +169,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                          @endphp
                                          
                                           <td style="padding: 0px !important;" >
-                        @include('visita.visita')
+                        @include('visita.Visita')
                                           </td>
                                           @if ($total==0)
                                           <tr></tr>

@@ -12,7 +12,7 @@
     
 <table id="tipo" class="table table-striped table-bordered shadow-lg mt-4"style="width:100%">
   <thead class="bg-primary text-white">  
-      <tr>
+      <tr style="background-color:#2196f3">
     <th scope="col">t
         Tipo parqueaderos</th>
     <th>Editar</th>

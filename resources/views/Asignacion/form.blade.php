@@ -1,6 +1,6 @@
 
     
-<button type="button" style="padding: 5%" class="btn btn-outline-warning p-md-10" data-toggle="modal" data-target="{{'#deleteModal'. $parking->{'id'} }}">{{ $parking->{'id'} }}</button>
+<button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px" data-toggle="modal" data-target="{{'#deleteModal'. $parking->{'id'} }}">{{ $parking->{'id'} }}</button>
 <div class="modal fade" id="{{'deleteModal'. $parking->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
                                                   <div class="modal-dialog" role="document">
                                                       <div class="modal-content">

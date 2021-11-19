@@ -39,7 +39,7 @@
                     <div class="responsive-table">
 <table id="apartamentos" class="table table-striped shadow-lg mt-4" >
     <thead class="bg-primary text-white">
-        <tr>
+        <tr style="background-color:#2196f3">
             <th>Numero de identificacion</th>
             <th>Tipo de identificacion</th>
             <th>Nombre</th>

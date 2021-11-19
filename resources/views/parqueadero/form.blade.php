@@ -32,10 +32,10 @@
             <a class="btn btn-info" id="div-btn1" href="/parqueadero" style="display: none;">Residente</a>
             <a class="btn btn-info" id="div-btn1" href="/parqueaderoVform" >Visitante</a>
         </center>
-
-<div id="content">
-<div class="col-md-12">
-  <div class="panel">
+<br>
+        <div class="col-md-12 padding-0" style="text-align:center; position: relative;">
+            <div class="col-md-8">
+  <div class="panel" >
       <div class="panel-heading">
         <h3>{{$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero'}}</h3>
                     
@@ -45,8 +45,8 @@
   @csrf  
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueadero->id}}">
   <div class="mb-3">
-  <label for="tipo" class="form-label">Tipo de vehiculo:</label>
-  <select name="tipo" id="tipo" class="form-control">
+  <label for="tipo" class="form-label ">Tipo de vehiculo:</label>
+  <select name="tipo" id="tipo" class="form-control ">
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
       <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}"
@@ -85,6 +85,8 @@
 </div>
 </div>
 </div>
+ </div>
+ 
  <!-- start: right menu -->
  @include('menus.menu_derecha')
  <!-- end: right menu -->
