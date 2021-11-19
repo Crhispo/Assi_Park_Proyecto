@@ -118,6 +118,8 @@ Route::get('/secretaria', [HomeController::class, 'secretaria'])->name('resident
 //ruta de la vista guarda
 Route::get('/guarda', [HomeController::class, 'guarda'])->name('guarda');
 
+//Ruta para probar PDF
+Route::get('/pdf','PDFController@PDF')->name('descargarPDF');
 
 Auth::routes();
 

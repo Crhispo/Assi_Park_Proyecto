@@ -355,7 +355,8 @@ var baseURL= {!! json_encode(url('/')) !!}
                           </div>
                           <div class="panel-footer bg-white border-none">
                               <center>
-                                <input type="button" value="Descargar como PDF" class="btn btn-danger box-shadow-none"/>
+                                <a class="btn btn-danger box-shadow-none" href="{{Route('descargarPDF')}}">Descargar como PDF</a>
+                                
                               </center>
                           </div>
                         </div>
