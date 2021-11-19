@@ -28,8 +28,8 @@
                     <div class="panel-body">
                         <div class="responsive-table">
                             <table id="Tabla_consulta" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
+                                <thead class="bg-primary text-white">
+                                    <tr style="background-color:#2196f3">
                                         <th>Documento de identidad</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>

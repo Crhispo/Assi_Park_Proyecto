@@ -1,5 +1,6 @@
-
+@if (1==1)
     
+@endif
 <button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px" data-toggle="modal" data-target="{{'#deleteModal'. $parking->{'id'} }}">{{ $parking->{'id'} }}</button>
 <div class="modal fade" id="{{'deleteModal'. $parking->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
                                                   <div class="modal-dialog" role="document">
@@ -36,7 +37,7 @@
                                                               </select>
                                                           </div>
                                                           <div class="mb-3">
-                                                            <label for="parqueadero" class="form-label">Parqueadero:</label>
+                                                            <label for="parqueadero" class="form-label">Visita:</label>
                                                             <select name="parqueadero" id="parqueadero" class="form-control">
                                                                 <option value="" selected>...</option>
                                                                 @foreach($parqueadero as $parqueadero)
@@ -46,6 +47,7 @@
                                                                 @endforeach
                                                             </select>
                                                         </div>
+                                                        
                                                              
                                                                 <div class="form-group">
                                                                   <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion</label>
