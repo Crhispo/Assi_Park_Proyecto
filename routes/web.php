@@ -81,6 +81,8 @@ Route::get('/guarda', [
     HomeController::class, 'guarda'
 ])->name('guarda');
 
+//Ruta para probar PDF
+Route::get('/pdf','PDFController@PDF')->name('descargarPDF');
 
 Auth::routes();
 
