@@ -65,4 +65,11 @@ class VehiculoController extends Controller
         $vehiculo->save();
         return redirect('/vehiculo');
     }
+    public function Disable(Request $request, $id)
+    {
+        $vehiculo = Vehiculo::all();
+        $vehiculos = $request;
+        $Disable_Usuario = DB::update('update vehiculos set ESTADO_VEHICULO = ' . $vehiculos->{'ESTADO_VEHICULO'} . ' where id = ' . $id);
+        return redirect('/vehiculo');
+    }
 }

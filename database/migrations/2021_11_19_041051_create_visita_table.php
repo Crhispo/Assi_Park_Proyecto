@@ -27,7 +27,7 @@ class CreateVisitaTable extends Migration
             $table->foreign('ID_APARTAMENTO')->references('ID_APARTAMENTO')->on('apartamento');
             $table->foreign('ID_VISITANTE')->references('ID_VISITANTE')->on('visitante');
             $table->foreign('ID_VEHICULO')->references('id')->on('vehiculos');
-            $table->foreign('NUMERO_PARQUEADERO')->references('id')->on('parqueaderos');
+            $table->foreign('NUMERO_PARQUEADERO')->references('id')->on('parqueadero_visitas');
             $table->foreign('USUARIO_NUMERO_IDENTIFICACION')->references('NUMERO_IDENTIFICACION')->on('usuario');
         });
     }

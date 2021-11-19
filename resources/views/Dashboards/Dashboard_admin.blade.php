@@ -141,7 +141,48 @@ var baseURL= {!! json_encode(url('/')) !!}
                         </div>
                     </div>
 
-                    
+                    <div class="col-md-12">
+                      <div class="panel box-v4">
+                          <div class="panel-heading bg-white border-none">
+                            <h4><span class="icon-notebook icons"></span> Organización Parqueadero visitante</h4>
+                          </div>
+                          <div class="panel-body padding-0">
+                              <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
+                                  <!-- <h2></h2> -->
+                                  <p>Aqui podra observar la organizacion de los parqueaderos de los visitantes del conjunto residencial.</p>
+                                  <table id="Tabla_consulta" class="table table-striped table-bordered" width="10%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                           <th>A</th> 
+                                           <th>B</th> 
+                                           <th>C</th> 
+                                           <th>D</th> 
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      @foreach ( $parqueaderoV as $parking ) 
+                                         @php
+                                          $total=$parking->{'id'} % 4;
+
+                                         @endphp
+                                         
+                                          <td style="padding: 0px !important;" >
+                        @include('visita.visita')
+                                          </td>
+                                          @if ($total==0)
+                                          <tr></tr>
+                                          @endif
+
+                                      @endforeach
+                                    </tbody>
+                                  </table>
+                                  <br>
+                                  <br>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
                       <div class="col-md-12">
                           <div class="panel box-v4">
@@ -228,7 +269,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                               <img src="asset/img/bg2.jpg" class="box-v2-cover img-responsive"/>
                               <div class="box-v2-detail">
                                 <img src="asset/img/avatar.jpg" class="img-responsive"/>
-                                <h4>{{ Auth::user()->NOMBRE }} {{ Auth::user()->APELLIDO }}</h4>
+                                <!--<h4>{/*{ Auth::user()->NOMBRE }*/} {/*{ Auth::user()->APELLIDO }*/}</h4>-->
                               </div>
                             </div>
 
@@ -314,7 +355,8 @@ var baseURL= {!! json_encode(url('/')) !!}
                           </div>
                           <div class="panel-footer bg-white border-none">
                               <center>
-                                <input type="button" value="Descargar como PDF" class="btn btn-danger box-shadow-none"/>
+                                <a class="btn btn-danger box-shadow-none" href="{{Route('descargarPDF')}}">Descargar como PDF</a>
+                                
                               </center>
                           </div>
                         </div>

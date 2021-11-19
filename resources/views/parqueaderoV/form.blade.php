@@ -1,6 +1,6 @@
 @extends('plantilla')
-@section('title',$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero')
-@section('Encabezado',$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero')    
+@section('title',$parqueaderoV->id?'Actualizar parqueadero Visitante':'Nuevo parqueadero Visitante')
+@section('Encabezado',$parqueaderoV->id?'Actualizar parqueadero Visitante':'Nuevo parqueadero Visitante')    
 
 @section('content')
 
@@ -23,34 +23,34 @@
          
 
           <p class="animated fadeInDown">
-              Admin <span class="fa-angle-right fa"></span> parqueaderos
+              Admin <span class="fa-angle-right fa"></span> Parqueaderos Visitante
           </p>
       </div>
   </div>
 </div>
- <center>
-            <a class="btn btn-info" id="div-btn1" href="/parqueadero" style="display: none;">Residente</a>
-            <a class="btn btn-info" id="div-btn1" href="/parqueaderoVform" >Visitante</a>
-        </center>
 
+ <center>
+            <a class="btn btn-info" id="div-btn1" href="/parqueaderoform" >Residente</a>
+            <a class="btn btn-info" id="div-btn1" href="/parqueaderoV" style="display: none;">Visitante</a>
+        </center>
 <div id="content">
 <div class="col-md-12">
   <div class="panel">
       <div class="panel-heading">
-        <h3>{{$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero'}}</h3>
+        <h3>{{$parqueaderoV->id?'Actualizar parqueadero Visitante':'Nuevo parqueadero Visitante'}}</h3>
                     
                 </div>
                 
-<form class="form-horizontal" method="POST" action="{{route('parqueadero.save')}}">
+<form class="form-horizontal" method="POST" action="{{route('parqueaderoV.save')}}">
   @csrf  
-  <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueadero->id}}">
+  <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueaderoV->id}}">
   <div class="mb-3">
   <label for="tipo" class="form-label">Tipo de vehiculo:</label>
   <select name="tipo" id="tipo" class="form-control">
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
       <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}"
-   {{        $parqueadero->tipo_parqueadero_id === $tipo->ID_TIPO_PARQUEADERO_VEHICULO ? 'selected' : ''}}
+   {{        $parqueaderoV->tipo_parqueadero_id === $tipo->ID_TIPO_PARQUEADERO_VEHICULO ? 'selected' : ''}}
       >
           {{ $tipo->TIPO_PARQUEADERO_VEHICULO}}
       </option>
@@ -61,14 +61,14 @@
 <div class="mb-3">
       <label class="form-label" for="TAMAÑO">Tamaño</label>
       <br>
-      <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueadero->TAMAÑO}}">
+      <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueaderoV->TAMAÑO}}">
 </div>
       <!-- end: tamaño -->
 <!-- start:descripcion -->
 <div class="mb-3">
       <label class="form-label" for="DESCRIPCION">Descripcin</label>
       <br>
-      <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueadero->DESCRIPCION}}">
+      <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueaderoV->DESCRIPCION}}">
 </div>
       <!-- end: descripcion -->
 <!-- start:estado -->
@@ -77,7 +77,7 @@
 <!-- end: estado -->
 <!-- start:botones -->
 <button type="submit" class="btn btn-secondary">Guardar</button>
-<button class="btn btn-secondary"><a href="/parqueadero"  style=" color: inherit;text-decoration: none;">Cancelar</a></button>
+<button class="btn btn-secondary"><a href="/parqueaderov"  style=" color: inherit;text-decoration: none;">Cancelar</a></button>
 <!-- end: botones-->
  <br>
  <br>
