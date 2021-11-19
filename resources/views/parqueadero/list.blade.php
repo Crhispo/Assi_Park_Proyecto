@@ -44,7 +44,11 @@
                     <div class="responsive-table">
                         <table id="parqueadero" class="table table-striped shadow-lg mt-4" >
                             <thead class="bg-primary text-white">
+<<<<<<< HEAD
                                 <tr style="background-color:#2196f3">
+=======
+                                <tr>
+>>>>>>> 6be48429ad6838813bd87c3bf2bd17fa83a1d954
     <th>Numero de parqueadero</th>
     <th >Tipo de Parqueadero</th>
     <th>Tamaño</th>
