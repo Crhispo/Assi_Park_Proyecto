@@ -23,20 +23,20 @@
             <div class="col-md-12">
                 <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
                 <p class="animated fadeInDown">
-                    Admin <span class="fa-angle-right fa"></span> parqueadero
+                    Admin <span class="fa-angle-right fa"></span> parqueadero Visitante
                 </p>
             </div>
         </div>
     </div>
     <center>
-    <a class="btn btn-info" id="div-btn1" href="/parqueadero" style="display: none;">Residente</a>
-    <a class="btn btn-info" id="div-btn1" href="/parqueaderoV" >Visitante</a>
-</center>
+        <a class="btn btn-info" id="div-btn1" href="/parqueadero">Residente</a>
+        <a class="btn btn-info" id="div-btn2" href="/parqueaderoV" style="display: none;">Visitante</a>
+    </center>
     <div class="col-md-12 top-20 padding-0">
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3>Parqueadero</h3>
+                    <h3>Parqueadero Visitante</h3>
                     
                 </div>
                 
@@ -55,7 +55,7 @@
 </tr>
 </thead>
 <tbody>
-@foreach($parqueaderoList as $parqueadero)
+@foreach($parqueaderoVList as $parqueadero)
 <tr>
     <td>{{$parqueadero->id}}</td>
     <td>{{$parqueadero->TIPO_PARQUEADERO_VEHICULO}}</td>
@@ -74,7 +74,7 @@
         Erros
         @endswitch</td>
     <td>
-        <a href="{{route('parqueadero.form',['id'=>$parqueadero->id])}}" class="btn btn-info" style="margin-top: 8px;">Editar</a>
+        <a href="{{route('parqueaderoV.form',['id'=>$parqueadero->id])}}" class="btn btn-info" style="margin-top: 8px;">Editar</a>
     </td>
     <td>
 
@@ -138,8 +138,10 @@
 @include('menus.menu_derecha')
 <!-- end: right menu -->
 
-@section('js')
+@section('js')<script>
 
+    document.getElementById("div-btn2").disabled = true;
+  </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>

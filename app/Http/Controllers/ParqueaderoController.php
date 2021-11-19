@@ -52,4 +52,11 @@ class ParqueaderoController extends Controller
         $parqueadero->save();
         return redirect('/parqueadero');
     }
+    public function Disable(Request $request, $id)
+    {
+        $parqueadero = Parqueadero::all();
+        $parqueaderos = $request;
+        $Disable_Usuario = DB::update('update parqueaderos set ESTADO_PARQUEADERO = ' . $parqueaderos->{'ESTADO_PARQUEADERO'} . ' where id = ' . $id);
+        return redirect('/parqueadero');
+    }
 }

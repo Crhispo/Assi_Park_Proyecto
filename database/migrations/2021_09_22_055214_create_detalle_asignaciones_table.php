@@ -14,7 +14,7 @@ class CreateDetalleAsignacionesTable extends Migration
     public function up()
     {
         Schema::create('detalle_asignaciones', function (Blueprint $table) {
-            $table->id();
+            
             $table->unsignedsmallInteger('apartamento_id');
             $table->foreignId('vehiculo_id');
             $table->foreignId('parqueadero_id');

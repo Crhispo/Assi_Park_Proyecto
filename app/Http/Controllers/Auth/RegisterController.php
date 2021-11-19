@@ -61,7 +61,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -96,15 +96,15 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'numero_identificacion' => $data['num_documento'],
-            'id_tipo_usuario' => $data['tipo_usuario'],
-            'id_tipo_identificacion' => $data['tipo_identificacion'],
-            'nombre' => $data['nombre'],
-            'apellido' => $data['apellido'],
-            'sexo' => $data['sexo'],
-            'direccion' => $data['direccion'],
-            'telefono' => $data['telefono'],
-            'celular1' => $data['celular1'],
+            'numero_identificacion' => $data['NUMERO_IDENTIFICACION'],
+            'id_tipo_usuario' => $data['ID_TIPO_USUARIO'],
+            'id_tipo_identificacion' => $data['ID_TIPO_IDENTIFICACION'],
+            'nombre' => $data['NOMBRE'],
+            'apellido' => $data['APELLIDO'],
+            'sexo' => $data['SEXO'],
+            'direccion' => $data['DIRECCION'],
+            'telefono' => $data['TELEFONO'],
+            'celular1' => $data['CELULAR1'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'estado_usuario' => $data['estado']
