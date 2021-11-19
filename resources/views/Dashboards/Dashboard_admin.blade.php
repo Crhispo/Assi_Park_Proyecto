@@ -169,11 +169,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                          @endphp
                                          
                                           <td style="padding: 0px !important;" >
-<<<<<<< HEAD
                         @include('visita.Visita')
-=======
-                        @include('visita.visita')
->>>>>>> 6be48429ad6838813bd87c3bf2bd17fa83a1d954
                                           </td>
                                           @if ($total==0)
                                           <tr></tr>

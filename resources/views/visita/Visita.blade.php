@@ -37,11 +37,7 @@
                                                               </select>
                                                           </div>
                                                           <div class="mb-3">
-<<<<<<< HEAD
                                                             <label for="parqueadero" class="form-label">Visita:</label>
-=======
-                                                            <label for="parqueadero" class="form-label">Parqueadero:</label>
->>>>>>> 6be48429ad6838813bd87c3bf2bd17fa83a1d954
                                                             <select name="parqueadero" id="parqueadero" class="form-control">
                                                                 <option value="" selected>...</option>
                                                                 @foreach($parqueadero as $parqueadero)
@@ -51,10 +47,7 @@
                                                                 @endforeach
                                                             </select>
                                                         </div>
-<<<<<<< HEAD
                                                         
-=======
->>>>>>> 6be48429ad6838813bd87c3bf2bd17fa83a1d954
                                                              
                                                                 <div class="form-group">
                                                                   <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion</label>

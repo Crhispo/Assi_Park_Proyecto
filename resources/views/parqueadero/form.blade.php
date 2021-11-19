@@ -32,17 +32,10 @@
             <a class="btn btn-info" id="div-btn1" href="/parqueadero" style="display: none;">Residente</a>
             <a class="btn btn-info" id="div-btn1" href="/parqueaderoVform" >Visitante</a>
         </center>
-<<<<<<< HEAD
 <br>
         <div class="col-md-12 padding-0" style="text-align:center; position: relative;">
             <div class="col-md-8">
   <div class="panel" >
-=======
-
-<div id="content">
-<div class="col-md-12">
-  <div class="panel">
->>>>>>> 6be48429ad6838813bd87c3bf2bd17fa83a1d954
       <div class="panel-heading">
         <h3>{{$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero'}}</h3>
                     
