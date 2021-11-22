@@ -34,12 +34,21 @@
                 <h3>{{$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo'}}</h3>
 
             </div>
+            @if(count($errors)>0)
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                                @endforeach
+                            </ul>   
+                        </div>
+                    @endif
             <br>
             <form class="form-horizontal" method="POST" action="{{route('vehiculo.save')}}">
                 @csrf
                 <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
 
-                <label for="NUMERO_IDENTIFICACION" class="form-label">Numero Identificación Propietario</label>
+                <label for="NUMERO_IDENTIFICACION" class="form-label">Numero Identificación Propietario <span class="text-danger">*</span></label>
                 <select name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION" class="form-control">
                     <option value="" selected>...</option>
                     @foreach($residente as $residente)
@@ -48,7 +57,7 @@
                     </option>
                     @endforeach
                 </select>
-                <label for="marca" class="form-label">Marca:</label>
+                <label for="marca" class="form-label">Marca: <span class="text-danger">*</span></label>
                 <select name="marca" id="marca" class="form-control">
                     <option value="" selected>...</option>
                     @foreach($marca as $marca)
@@ -57,7 +66,7 @@
                     </option>
                     @endforeach
                 </select>
-                <label for="Color" class="form-label">Color:</label>
+                <label for="Color" class="form-label">Color: <span class="text-danger">*</span></label>
                 <select name="Color" id="Color" class="form-control">
                     <option value="" selected>...</option>
                     @foreach($color as $color)
@@ -67,7 +76,7 @@
                     @endforeach
                 </select>
                 </select>
-                <label for="tipo" class="form-label">Tipo de vehiculo:</label>
+                <label for="tipo" class="form-label">Tipo de vehiculo: <span class="text-danger">*</span></label>
                 <select name="tipo" id="tipo" class="form-control">
                     <option value="" selected>...</option>
                     @foreach($tipo as $tipo)
@@ -78,7 +87,7 @@
                 </select>
 
                 <!-- start:placa -->
-                <label class="form-label" for="placa">Placa</label>
+                <label class="form-label" for="placa">Placa <span class="text-danger">*</span></label>
                 <br>
                 <input type="text" class="form-control" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
                 <!-- end: placa -->

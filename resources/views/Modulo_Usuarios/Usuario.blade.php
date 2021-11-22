@@ -47,7 +47,7 @@
                                     @foreach($_Usuario as $_Usuario)
                                     <tr>
                                         <td>{{ $_Usuario-> {'NUMERO_IDENTIFICACION'} }}</td>
-                                        <td>{{ $_Usuario-> {'ID_TIPO_USUARIO'} }}</td>
+                                        <td>{{ $_Usuario-> {'TIPO_USUARIO'} }}</td>
                                         <td>{{ $_Usuario-> {'NOMBRE'} }}</td>
                                         <td>{{ $_Usuario-> {'APELLIDO'} }}</td>
                                         <td>{{ $_Usuario-> {'DIRECCION'} }}</td>

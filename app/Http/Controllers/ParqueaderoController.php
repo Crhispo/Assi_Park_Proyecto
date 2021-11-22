@@ -50,7 +50,22 @@ class ParqueaderoController extends Controller
         $parqueadero->DESCRIPCION = $request->DESCRIPCION;
         $parqueadero->ESTADO_PARQUEADERO = $request->Estado;
         $parqueadero->save();
-        return redirect('/parqueadero');
+
+        $campos=[
+            'tipo_parqueadero_id'=>'required', /*|unique*/
+            'TAMAÑO'=>'required',
+            'DESCRIPCION'=>'required|String'
+        ];
+        $mensaje=[
+            'required'=>'El :attribute es requerido',
+            /*'unique'=>'El :attribute ya existe',*/
+            'String'=>' El :attribute debe ser solo texto'
+        ];
+    
+        $this->validate($request, $campos, $mensaje);
+
+
+        return redirect('/parqueadero')->with('mensaje','Parqueadero agregado con éxito');
     }
     public function Disable(Request $request, $id)
     {

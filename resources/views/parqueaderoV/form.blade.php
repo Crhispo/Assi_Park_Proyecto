@@ -46,7 +46,7 @@
   @csrf  
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueaderoV->id}}">
   <div class="mb-3">
-  <label for="tipo" class="form-label">Tipo de vehiculo:</label>
+  <label for="tipo" class="form-label">Tipo de vehiculo: <span class="text-danger">*</span></label>
   <select name="tipo" id="tipo" class="form-control">
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
@@ -60,14 +60,14 @@
   </div>
 <!-- start:tamaño -->
 <div class="mb-3">
-      <label class="form-label" for="TAMAÑO">Tamaño</label>
+      <label class="form-label" for="TAMAÑO">Tamaño <span class="text-danger">*</span></label>
       <br>
       <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueaderoV->TAMAÑO}}">
 </div>
       <!-- end: tamaño -->
 <!-- start:descripcion -->
 <div class="mb-3">
-      <label class="form-label" for="DESCRIPCION">Descripcin</label>
+      <label class="form-label" for="DESCRIPCION">Descripción <span class="text-danger">*</span></label>
       <br>
       <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueaderoV->DESCRIPCION}}">
 </div>

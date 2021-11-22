@@ -32,7 +32,7 @@ $ocupado=$parkingV->OCUPADO;
                                                               @csrf  
                                                               <input type="hidden" name="id" value="{{old('id')? old('id'):$asignacion->id}}">
                                                               <div class="mb-3">
-                                                                <label for="NUMERO_APTO" class="form-label">Numero apartamento:</label>
+                                                                <label for="NUMERO_APTO" class="form-label">Numero apartamento: <span class="text-danger">*</span></label>
                                                                 <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
                                                                     <option value="" selected>...</option>
                                                                     @foreach($NumeroApto as $NumeroApto)
@@ -44,7 +44,7 @@ $ocupado=$parkingV->OCUPADO;
                                                                 </select>
                                                             </div>
                                                             <div class="mb-3">
-                                                              <label for="Vehiculo" class="form-label">Vehiculo:</label>
+                                                              <label for="Vehiculo" class="form-label">Vehiculo: <span class="text-danger">*</span></label>
                                                               <select name="Vehiculo" id="Vehiculo" class="form-control">
                                                                   <option value="" selected>...</option>
                                                                   @foreach($vehiculo as $vehiculo)
@@ -55,7 +55,7 @@ $ocupado=$parkingV->OCUPADO;
                                                               </select>
                                                           </div>
                                                           <div class="mb-3">
-                                                            <label for="parqueadero" class="form-label">Visita:</label>
+                                                            <label for="parqueadero" class="form-label">Visita: <span class="text-danger">*</span></label>
                                                             <select name="parqueadero" id="parqueadero" class="form-control">
                                                                 <option value="" selected>...</option>
                                                                 @foreach($parqueadero as $parqueadero)
@@ -68,13 +68,13 @@ $ocupado=$parkingV->OCUPADO;
                                                         
                                                              
                                                                 <div class="form-group">
-                                                                  <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion</label>
+                                                                  <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion <span class="text-danger">*</span></label>
                                                                   <div class="col-sm-10">
                                                                     <input type="datetime-local" class="form-control" name="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" id="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" value="{{old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO')? old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO'):$asignacion->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO}}">
                                                                   </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                  <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Finalizacio de asignacion</label>
+                                                                  <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Finalizacio de asignacion <span class="text-danger">*</span></label>
                                                                   <div class="col-sm-10">
                                                                     <input type="datetime-local" class="form-control" name="FECHA_FIN_DE_ASIGNACION_PARQUEADERO" id="FECHA_FIN_DE_ASIGNACION_PARQUEADERO" value="{{old('FECHA_FIN_DE_ASIGNACION_PARQUEADERO')? old('FECHA_FIN_DE_ASIGNACION_PARQUEADERO'):$asignacion->FECHA_FIN_DE_ASIGNACION_PARQUEADERO}}">
                                                                   </div>
