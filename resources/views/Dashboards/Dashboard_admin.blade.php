@@ -61,7 +61,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                   </div>
                                   <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                      <h4>
-                                     <span class="icon-user icons icon text-right"></span>
+                                     <span class="icon-basket-loaded icons icon text-right"></span>
                                      </h4>
                                   </div>
                                 </div>
@@ -83,7 +83,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                   </div>
                                   <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                      <h4>
-                                     <span class="icon-basket-loaded icons icon text-right"></span>
+                                     <span class="icon-user icons icon text-right" ></span>
                                      </h4>
                                   </div>
                                 </div>
