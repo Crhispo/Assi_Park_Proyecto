@@ -44,7 +44,7 @@ Route::delete('Usuariodisable{id}', [UsuarioController::class, 'Disable'])->name
 route::get('Visitanteform', [VisitanteController::class, 'formcreate'])->name('Visitante.formcreate');
 Route::post('Visitantestore', [VisitanteController::class, 'store'])->name('Visitante.store');
 Route::get('Visitanteedit{id}', [VisitanteController::class, 'formedit'])->name('Visitante.formedit');
-Route::put('Visitanteupdate{id}', [VisitanteController::class, 'update'])->name('Visitante.update');
+Route::put('Visitanteupdate', [VisitanteController::class, 'update'])->name('Visitante.update');
 Route::delete('Visitantedisable{id}', [VisitanteController::class, 'Disable'])->name('Visitante.Disable');
 
 /* Rutas modulo apartamento */
@@ -72,7 +72,7 @@ Route::post('residenteform', [ResidenteController::class, 'store'])->name('apart
 Route::get('residente{residente}edit', [ResidenteController::class, 'edit'])->name('apartamento.edit');
 Route::PUT('residente{residente}', [ResidenteController::class, 'update']);
 Route::delete('residente{residente}', [ResidenteController::class, 'destroy']);
- 
+
 //parqueadero visita
 Route::get('/parqueaderoV', [ParqueaderoVisitaController::class, 'show'])->name('parqueaderoV.show');
 route::get('/parqueaderoVform{id?}', [ParqueaderoVisitaController::class, 'form'])->name('parqueaderoV.form');

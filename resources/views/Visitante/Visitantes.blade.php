@@ -83,7 +83,7 @@
                                                             <h4 class="modal-title" id="deleteModalLabel"> Cuadro de confirmación </h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{ url('Usuariodisable'.$_Visitante-> {'ID_VISITANTE'} )}}" method="post">
+                                                            <form action="{{ url('Visitantedisable'.$_Visitante-> {'ID_VISITANTE'} )}}" method="post">
                                                                 @csrf
                                                                 {{ method_field('DELETE') }}
                                                                 <div class="form-group">
@@ -103,8 +103,8 @@
                                                                 }
                                                                 @endphp
 
-                                                                <input type="radio" name="ESTADO_USUARIO" value="1" id="Activo" {{ $CheckA }} /><label for="Activo">Activar</label>
-                                                                <input type="radio" name="ESTADO_USUARIO" value="0" id="Inactivo" {{ $CheckI }} /><label for="Inactivo">Inhabilitar</label>
+                                                                <input type="radio" name="ESTADO_VISITANTE" value="1" id="Activo" {{ $CheckA }} /><label for="Activo">Activar</label>
+                                                                <input type="radio" name="ESTADO_VISITANTE" value="0" id="Inactivo" {{ $CheckI }} /><label for="Inactivo">Inhabilitar</label>
 
                                                         </div>
                                                         <div class="modal-footer">
