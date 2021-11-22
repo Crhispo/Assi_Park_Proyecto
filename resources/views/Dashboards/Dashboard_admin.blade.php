@@ -25,10 +25,10 @@
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var baseURL= {!! json_encode(url('/')) !!}
 
-</script>
+</script> -->
   </head>
 
  <body id="mimin" class="dashboard">
@@ -280,7 +280,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                       <div class="col-md-12 padding-0">
                         <div class="panel box-v3">
                           <div class="panel-heading bg-white border-none">
-                            <h4>Reporte</h4>
+                            <h4>Reportes</h4>
                           </div>
                           <div class="panel-body">
 
@@ -356,9 +356,18 @@ var baseURL= {!! json_encode(url('/')) !!}
                           </div>
                           <div class="panel-footer bg-white border-none">
                               <center>
-                                <a class="btn btn-danger box-shadow-none" href="{{Route('descargarPDF')}}">Descargar como PDF</a>
-                                
+                              <a href="{{route('descargarPDFUsuario')}}" target="_blank" class="btn btn-danger box-shadow-none" >Reporte Usuarios</a><br>
+                                <a href="{{route('descargarPDFVehiculo')}}" target="_blank" class="btn btn-danger box-shadow-none" >Reporte Vehiculos</a><br>
+                                <a href="{{route('descargarPDFApartamentos')}}" target="_blank" class="btn btn-danger box-shadow-none" >Reporte Apartamentos</a>
                               </center>
+
+
+
+
+
+
+
+
                           </div>
                         </div>
                       </div>

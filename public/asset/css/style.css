@@ -1091,6 +1091,7 @@ ul li a:focus {
     color: #fff !important;
     border: none !important;
     background-color: #FF6656 !important;
+    margin-bottom: 5px;
   }
 
   .btn-warning,
