@@ -51,12 +51,12 @@ class VisitanteController extends Controller
         ]);
         
                 $campos=[
-                    'ID_TIPO_IDENTIFICACION'=>'required', 
+                    'tipo_identificacion'=>'required', 
                     'NUMERO_DOCUMENTO'=>'required|Integer',
-                    'NOMBRE'=>'required|String|max:45',
-                    'APELLIDO'=>'required|String|max:45',
-                    'CELULAR1'=>'required|Integer',
-                    'CELULAR2'=>'Integer'
+                    'nombre'=>'required|String|max:45',
+                    'apellido'=>'required|String|max:45',
+                    'celular1'=>'required|Integer',
+                    'celular2'=>''
                 ];
                 $mensaje=[
                     'required'=>'El :attribute es requerido',
@@ -66,7 +66,7 @@ class VisitanteController extends Controller
             
                 $this->validate($request, $campos, $mensaje);
 
-                return redirect('/Visitante')->with('mensaje','Usuario registrado con éxito');
+                return redirect('/Visitante')->with('mensaje','Visitante registrado con éxito');
         
     }
 

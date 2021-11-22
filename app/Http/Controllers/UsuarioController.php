@@ -60,15 +60,15 @@ class UsuarioController extends Controller
         ]);
 
         $campos=[
-            'ID_TIPO_IDENTIFICACION'=>'required',
+            'tipo_identificacion'=>'required',
             'NUMERO_IDENTIFICACION'=>'required', /*|unique*/
-            'ID_TIPO_USUARIO'=>'required',
-            'NOMBRE'=>'required|String|max:45',
-            'APELLIDO'=>'required|String|max:45',
-            'SEXO'=>'required',
-            'DIRECCION'=>'',
-            'TELEFONO'=>'Integer',
-            'CELULAR1'=>'required|Integer',
+            'tipo_usuario'=>'required',
+            'nombre'=>'required|String|max:45',
+            'apellido'=>'required|String|max:45',
+            'sexo'=>'required',
+            'direccion'=>'',
+            'telefono'=>'Integer',
+            'celular1'=>'required|Integer',
             'email'=>'required'
         ];
         $mensaje=[
