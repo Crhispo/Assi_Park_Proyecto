@@ -23,7 +23,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $_Usuario = User::all();
+        $_Usuario = DB::select('SELECT NUMERO_IDENTIFICACION, TIPO_USUARIO, NOMBRE, APELLIDO, DIRECCION, TELEFONO, CELULAR1, email, ESTADO_USUARIO FROM usuario JOIN tipo_usuario ON usuario.ID_TIPO_USUARIO = tipo_usuario.ID_TIPO_USUARIO');
         return view('Modulo_Usuarios.Usuario', compact('_Usuario'));
     }
 
@@ -58,7 +58,7 @@ class UsuarioController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
-        return redirect('/Usuarioform');
+        return redirect('/Usuario');
     }
 
     /**
@@ -71,7 +71,7 @@ class UsuarioController extends Controller
 
     public function formedit($NUMERO_IDENTIFICACION)
     {
-        if($NUMERO_IDENTIFICACION != null){
+        if ($NUMERO_IDENTIFICACION != null) {
             $Usuario = user::where('NUMERO_IDENTIFICACION', '=', $NUMERO_IDENTIFICACION)->firstOrFail();
         }
         return view('Modulo_Usuarios.modificar', compact('Usuario'));
@@ -103,8 +103,7 @@ class UsuarioController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ];
-        var_dump($_UsuarioD);
-        DB::update('update usuario'.$_UsuarioD);
+        User::where('NUMERO_IDENTIFICACION', '=', $request['ID'])->update($_UsuarioD);
         return redirect('/Usuario');
     }
 
@@ -116,9 +115,8 @@ class UsuarioController extends Controller
      */
     public function Disable(Request $request, $NUMERO_IDENTIFICACION)
     {
-        $_Usuario = User::all();
         $Usuario = $request;
-        $Disable_Usuario = DB::update('update usuario set ESTADO_USUARIO = ' . $Usuario->{'ESTADO_USUARIO'} . ' where NUMERO_IDENTIFICACION = ' . $NUMERO_IDENTIFICACION);
+        DB::update('update usuario set ESTADO_USUARIO = ' . $Usuario->{'ESTADO_USUARIO'} . ' where NUMERO_IDENTIFICACION = ' . $NUMERO_IDENTIFICACION);
         return redirect('/Usuario');
     }
 }
