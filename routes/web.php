@@ -105,8 +105,10 @@ Route::get('/secretaria', [HomeController::class, 'secretaria'])->name('resident
 Route::get('/guarda', [HomeController::class, 'guarda'])->name('guarda');
 
 //Ruta para probar PDF
-Route::get('/pdf','PDFController@PDF')->name('descargarPDF');
-
+// Route::get('/pdf','PDFController@PDF')->name('descargarPDF');
+Route::get('/pdfUsuario','App\Http\Controllers\PDFController@PDFusuarios')->name('descargarPDFUsuario');
+Route::get('/pdfVehiculo','App\Http\Controllers\PDFController@PDFVehiculos')->name('descargarPDFVehiculo');
+Route::get('/pdfApartamentos','App\Http\Controllers\PDFController@PDFapartamentos')->name('descargarPDFApartamentos');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
