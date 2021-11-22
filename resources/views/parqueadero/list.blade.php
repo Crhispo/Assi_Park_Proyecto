@@ -50,8 +50,9 @@
     <th>Tamaño</th>
     <th>Descripción</th>
     <th>Estado</th>
+    <th>Disponible</th>
     <th>Editar</th>
-    <th>Eliminar</th>
+    <th>Inactivar</th>
 </tr>
 </thead>
 <tbody>
@@ -73,6 +74,18 @@
         @default
         Erros
         @endswitch</td>
+        <td> @switch($parqueadero->OCUPADO)
+            @case(1)
+            Ocupado
+            @break
+    
+            @case(0)
+            Desocupado
+            @break
+    
+            @default
+            Erros
+            @endswitch</td>
     <td>
         <a href="{{route('parqueadero.form',['id'=>$parqueadero->id])}}" class="btn btn-info" style="margin-top: 8px;">Editar</a>
     </td>

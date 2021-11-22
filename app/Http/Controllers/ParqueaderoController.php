@@ -16,7 +16,7 @@ class ParqueaderoController extends Controller
     //listar parqueadero
     function show()
     {
-        $parqueaderoList = DB::select('select id,tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO,TAMAÑO,DESCRIPCION,ESTADO_PARQUEADERO
+        $parqueaderoList = DB::select('select id,tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO,TAMAÑO,DESCRIPCION,ESTADO_PARQUEADERO,OCUPADO
         from parqueaderos inner join tipo_de_parqueadero_vehiculo on parqueaderos.tipo_parqueadero_id=tipo_de_parqueadero_vehiculo.ID_TIPO_PARQUEADERO_VEHICULO');
         return view('parqueadero/list', compact('parqueaderoList'));
     }
@@ -49,21 +49,22 @@ class ParqueaderoController extends Controller
         $parqueadero->TAMAÑO = $request->TAMAÑO;
         $parqueadero->DESCRIPCION = $request->DESCRIPCION;
         $parqueadero->ESTADO_PARQUEADERO = $request->Estado;
+        
         $parqueadero->save();
 
-        $campos=[
-            'tipo_parqueadero_id'=>'required', /*|unique*/
+        /*$campos=[
+            'tipo_parqueadero_id'=>'required', |unique
             'TAMAÑO'=>'required',
             'DESCRIPCION'=>'required|String'
         ];
         $mensaje=[
             'required'=>'El :attribute es requerido',
-            /*'unique'=>'El :attribute ya existe',*/
+            /*'unique'=>'El :attribute ya existe',
             'String'=>' El :attribute debe ser solo texto'
         ];
     
         $this->validate($request, $campos, $mensaje);
-
+*/
 
         return redirect('/parqueadero')->with('mensaje','Parqueadero agregado con éxito');
     }

@@ -14,13 +14,13 @@ $ocupado=$parkingV->OCUPADO;
        <button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px; background-color:#27C24C; color:white" data-toggle="modal" data-target="{{'#ocupado'. $parkingV->{'id'} }}"> <i class="fa fa-car"></i></button>
        <div id="{{'ocupado'. $parkingV->{'id'} }}"class="modal">
         <div class="modal-contenido" style="background-color:#2196f3; color:white;
-        width:300px;
+        width:400px;
         padding: 10px 20px;
         margin: 20% auto;
         position: relative">
           <h2>Este espacio del parqueadero esta ocupado</h2>
           
-          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
+          <CEnter><button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button></CEnter>
         </div>  
       </div>
        @else
@@ -105,13 +105,13 @@ $ocupado=$parkingV->OCUPADO;
 
 <div id="{{'miModal'. $parkingV->{'id'} }}"class="modal">
   <div class="modal-contenido" style="background-color:#2196f3; color:white;
-  width:300px;
+  width:400px;
   padding: 10px 20px;
   margin: 20% auto;
   position: relative">
     <h2>Este espacio del parqueadero esta inactivo</h2>
     
-    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
+    <CEnter><button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button></CEnter>
   </div>  
 </div>
 @endif

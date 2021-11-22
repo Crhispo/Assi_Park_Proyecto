@@ -21,7 +21,7 @@ $ocupado=$parking->OCUPADO;
         position: relative">
           <h2>Este espacio del parqueadero esta ocupado</h2>
           
-          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
+          <CEnter><button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button></CEnter>
         </div>  
       </div>
        @else
@@ -113,7 +113,7 @@ $ocupado=$parking->OCUPADO;
   position: relative">
     <h2>Este espacio del parqueadero esta inactivo</h2>
     
-    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
+    <CEnter><button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button></CEnter>
   </div>  
 </div>
 @endif

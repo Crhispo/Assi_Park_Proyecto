@@ -162,8 +162,6 @@
       @foreach($aptos as $Apartamento)
     <tr>
       <th scope="row">{{$Apartamento->ID_APARTAMENTO}}</th>
-      <!-- <td>{{$user->ID_TIPO_USUARIO}}</td>
-      <td>{{$user->ID_TIPO_IDENTIFICACION}}</td> -->
       <td>{{$Apartamento->NUMERO_APTO }}</td>
       <td>{{$Apartamento->BLOQUE }}</td>
       

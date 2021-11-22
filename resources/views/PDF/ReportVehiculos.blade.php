@@ -163,13 +163,9 @@
       @foreach($vehicl as $Vehiculo)
     <tr>
       <th scope="row">{{$Vehiculo->id }}</th>
-      <!-- <td>{{$user->ID_TIPO_USUARIO}}</td>
-      <td>{{$user->ID_TIPO_IDENTIFICACION}}</td> -->
-      <td>{{$Vehiculo->NOMBRE}}</td>
-      <td>{{$Vehiculo->APELLIDO}}</td>
-      <td>{{$Vehiculo->DIRECCION}}</td>
-      <td>{{$Vehiculo->TELEFONO}}</td>
-      <td>{{$Vehiculo->CELULAR1}}</td>
+      <td>{{$Vehiculo->NUMERO_IDENTIFICACION}}</td>
+      <td>{{$Vehiculo->marca_id}}</td>
+      <td>{{$Vehiculo->placa}}</td>
     </tr>
     @endforeach
    

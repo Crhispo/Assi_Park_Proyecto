@@ -109,6 +109,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                 <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
                                     <!-- <h2></h2> -->
                                     <p>Aqui podra observar la organizacion de los parqueaderos por apartamentos y bloque de todo el conjunto residencial.</p>
+                                    
                                     <table id="Tabla_consulta" class="table table-striped table-bordered" width="10%" cellspacing="0">
                                       <thead>
                                           <tr>
@@ -164,14 +165,14 @@ var baseURL= {!! json_encode(url('/')) !!}
                                     <tbody>
                                       @foreach ( $parqueaderoV as $parkingV ) 
                                          @php
-                                          $total=$parkingV->{'id'} % 4;
+                                          $total1=$parkingV->{'id'} % 4;
 
                                          @endphp
                                          
                                           <td style="padding: 0px !important;" >
                         @include('visita.Visita')
                                           </td>
-                                          @if ($total==0)
+                                          @if ($total1==0)
                                           <tr></tr>
                                           @endif
 

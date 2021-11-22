@@ -64,8 +64,8 @@ class VehiculoController extends Controller
         $vehiculo->ESTADO_VEHICULO = $request->ESTADO_VEHICULO;
         $vehiculo->save();
 
-        $campos=[
-            'NUMERO_IDENTIFICACION'=>'required|Integer', /*|unique*/
+        /*$campos=[
+            'NUMERO_IDENTIFICACION'=>'required|Integer', |unique
             'marca_id'=>'required',
             'color_id'=>'required',
             'tipo_parqueadero_id'=>'required',
@@ -73,12 +73,12 @@ class VehiculoController extends Controller
         ];
         $mensaje=[
             'required'=>'El :attribute es requerido',
-            /*'unique'=>'El :attribute ya existe',*/
+            'unique'=>'El :attribute ya existe',
             'Integer'=> 'El :attribute debe ser numerico'
         ];
     
         $this->validate($request, $campos, $mensaje);
-
+*/
 
         return redirect('/vehiculo')->with('mensaje','Vehiculo registrado con éxito');
     }
