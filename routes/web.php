@@ -11,7 +11,11 @@ use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
 use App\Http\Controllers\EventoController;
+use App\Http\Controllers\ParqueaderoVisitaController;
 use App\Http\Controllers\VisitanteController;
+use App\Models\Parqueadero;
+use App\Models\parqueadero_visita;
+use App\Models\visita;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,7 +44,7 @@ Route::delete('Usuariodisable{id}', [UsuarioController::class, 'Disable'])->name
 route::get('Visitanteform', [VisitanteController::class, 'formcreate'])->name('Visitante.formcreate');
 Route::post('Visitantestore', [VisitanteController::class, 'store'])->name('Visitante.store');
 Route::get('Visitanteedit{id}', [VisitanteController::class, 'formedit'])->name('Visitante.formedit');
-Route::put('Visitanteupdate{id}', [VisitanteController::class, 'update'])->name('Visitante.update');
+Route::put('Visitanteupdate', [VisitanteController::class, 'update'])->name('Visitante.update');
 Route::delete('Visitantedisable{id}', [VisitanteController::class, 'Disable'])->name('Visitante.Disable');
 
 /* Rutas modulo apartamento */
@@ -69,6 +73,15 @@ Route::get('residente{residente}edit', [ResidenteController::class, 'edit'])->na
 Route::PUT('residente{residente}', [ResidenteController::class, 'update']);
 Route::delete('residente{residente}', [ResidenteController::class, 'destroy']);
 
+//parqueadero visita
+Route::get('/parqueaderoV', [ParqueaderoVisitaController::class, 'show'])->name('parqueaderoV.show');
+route::get('/parqueaderoVform{id?}', [ParqueaderoVisitaController::class, 'form'])->name('parqueaderoV.form');
+route::post('/parqueaderoV/save', [ParqueaderoVisitaController::class, 'save'])->name('parqueaderoV.save');
+
+//visita
+Route::get('/visita', [visita::class, 'show'])->name('visita.show');
+route::get('/visitaform{id?}', [visita::class, 'form'])->name('visita.form');
+route::post('/visita/save', [visita::class, 'save'])->name('visita.save');
 
 //consultar
 Route::get('/parqueadero', [ParqueaderoController::class, 'show'])->name('parqueadero.show');
@@ -81,7 +94,8 @@ route::get('/vehiculo/delete/{id}', [VehiculoController::class, 'delete'])->name
 route::get('/parqueadero/delete/{id}', [ParqueaderoController::class, 'delete'])->name('eliminarparqueadero');
 route::get('/tipo/delete/{id}', [tipo_parqueadero_vehiculoController::class, 'delete'])->name('eliminartipo');
 route::get('/asignacion/delete/{id}', [Detalle_asignacionController::class, 'delete'])->name('eliminarasignacion');
-
+Route::delete('Parqueaderodisable{id}', [ParqueaderoController::class, 'Disable'])->name('Parqueadero.Disable');
+Route::delete('Vehiculodisable{id}', [VehiculoController::class, 'Disable'])->name('Usuario.Disable');
 //ver la vista para crear vehiculos
 route::get('/vehiculoform{id?}', [VehiculoController::class, 'form'])->name('vehiculo.form');
 route::get('/parqueaderoform{id?}', [ParqueaderoController::class, 'form'])->name('parqueadero.form');

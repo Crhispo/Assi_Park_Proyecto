@@ -28,8 +28,8 @@
                     <div class="panel-body">
                         <div class="responsive-table">
                             <table id="Tabla_consulta" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
+                                <thead class="bg-primary text-white">
+                                    <tr style="background-color:#2196f3">
                                         <th>documento de identidad</th>
                                         <th>Tipo de usuario</th>
                                         <th>Nombre</th>
@@ -47,7 +47,7 @@
                                     @foreach($_Usuario as $_Usuario)
                                     <tr>
                                         <td>{{ $_Usuario-> {'NUMERO_IDENTIFICACION'} }}</td>
-                                        <td>{{ $_Usuario-> {'ID_TIPO_USUARIO'} }}</td>
+                                        <td>{{ $_Usuario-> {'TIPO_USUARIO'} }}</td>
                                         <td>{{ $_Usuario-> {'NOMBRE'} }}</td>
                                         <td>{{ $_Usuario-> {'APELLIDO'} }}</td>
                                         <td>{{ $_Usuario-> {'DIRECCION'} }}</td>

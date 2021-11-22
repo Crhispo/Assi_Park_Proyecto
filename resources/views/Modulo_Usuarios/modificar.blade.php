@@ -61,6 +61,7 @@
                                 <label class="font-weight-bold">Número de cédula <span class="text-danger">*</span></label>
 
                                 <input type="number" class="form-control" name="NUMERO_IDENTIFICACION" value="{{ $Usuario->{'NUMERO_IDENTIFICACION'} }}" placeholder="Ingresa el número de cédula" required="required">
+                                <input hidden="hidden" name="ID" value="{{ $Usuario->{'NUMERO_IDENTIFICACION'} }}" >
                             </div>
                             <div class="form-check"> <label class="font-weight-bold">Tipo de usuario<span class="text-danger">*</span></label>
 

@@ -6,7 +6,7 @@ use App\Models\Parqueadero;
 use App\Models\Apartamento;
 use App\Models\Vehiculo;
 use App\Models\Detalle_asignacion;
-
+use App\Models\parqueadero_visita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,13 +39,13 @@ class HomeController extends Controller
         $cantidadveh=DB::select('select VehiculosTotales() as vehiculos');
         $NumeroApto=Apartamento::all();
         $vehiculo=Vehiculo::all();
-        $parqueadero=Parqueadero::all();
+        $parqueaderoV=parqueadero_visita::all();
         if($id==null){
             $asignacion=new Detalle_asignacion();
          }else{
             $asignacion=Detalle_asignacion::findOrFail($id);
          }
-        return view('Dashboards.Dashboard_admin', compact('cantidadveh','cantidadres','parqueadero','vehiculo','NumeroApto','asignacion'));
+        return view('Dashboards.Dashboard_admin', compact('cantidadveh','cantidadres','parqueadero','parqueaderoV','vehiculo','NumeroApto','asignacion'));
 
     }
 

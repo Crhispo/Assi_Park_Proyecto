@@ -3,6 +3,9 @@
 @section('Encabezado',$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero')    
 
 @section('content')
+
+
+
 <!-- start: Header -->
 @include('menus.Header')
 <!-- end: Header -->
@@ -17,7 +20,7 @@
           <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
 
          
-          
+         
 
           <p class="animated fadeInDown">
               Admin <span class="fa-angle-right fa"></span> parqueaderos
@@ -25,18 +28,33 @@
       </div>
   </div>
 </div>
-<div class="col-md-12">
-  <div class="panel">
+ <center>
+            <a class="btn btn-info" id="div-btn1" href="/parqueadero" style="display: none;">Residente</a>
+            <a class="btn btn-info" id="div-btn1" href="/parqueaderoVform" >Visitante</a>
+        </center>
+<br>
+        <div class="col-md-12 padding-0" style="text-align:center; position: relative;">
+            <div class="col-md-8">
+  <div class="panel" >
       <div class="panel-heading">
         <h3>{{$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero'}}</h3>
                     
                 </div>
+                @if(count($errors)>0)
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                                @endforeach
+                            </ul>   
+                        </div>
+                    @endif
 <form class="form-horizontal" method="POST" action="{{route('parqueadero.save')}}">
   @csrf  
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueadero->id}}">
-  
-  <label for="tipo" class="form-label">Tipo de vehiculo:</label>
-  <select name="tipo" id="tipo" class="form-control">
+  <div class="mb-3">
+  <label for="tipo" class="form-label ">Tipo de vehiculo: <span class="text-danger">*</span></label>
+  <select name="tipo" id="tipo" class="form-control ">
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
       <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}"
@@ -46,27 +64,24 @@
       </option>
       @endforeach
   </select>
-
+  </div>
 <!-- start:tamaño -->
-      <label class="form-label" for="TAMAÑO">Tamaño</label>
+<div class="mb-3">
+      <label class="form-label" for="TAMAÑO">Tamaño<span class="text-danger">*</span></label>
       <br>
       <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueadero->TAMAÑO}}">
-<!-- end: tamaño -->
+</div>
+      <!-- end: tamaño -->
 <!-- start:descripcion -->
-      <label class="form-label" for="DESCRIPCION">Descripcin</label>
+<div class="mb-3">
+      <label class="form-label" for="DESCRIPCION">Descripción<span class="text-danger">*</span></label>
       <br>
       <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueadero->DESCRIPCION}}">
-<!-- end: descripcion -->
+</div>
+      <!-- end: descripcion -->
 <!-- start:estado -->
 
-      <label class="form-label" for="Estado">Estado</label>
-      <br>
-      <select name="Estado" class="form-control" id="Estado" value="{{old('Estado')? old('Estado'):$parqueadero->Estado}}">
-        <option selected="true" disabled="disabled">seleccione estado</option>
-        <option value="1">activo</option>
-        <option value="0" >inactivo</option>
-      </select>
-    
+<input type="hidden" value="{{old('Estado')? old('Estado'):1}}" id="Estado" name="Estado">
 <!-- end: estado -->
 <!-- start:botones -->
 <button type="submit" class="btn btn-secondary">Guardar</button>
@@ -77,6 +92,12 @@
 </form> 
 </div>
 </div>
+</div>
+<<<<<<< HEAD
+ </div>
+ 
+=======
+>>>>>>> 6be48429ad6838813bd87c3bf2bd17fa83a1d954
  <!-- start: right menu -->
  @include('menus.menu_derecha')
  <!-- end: right menu -->

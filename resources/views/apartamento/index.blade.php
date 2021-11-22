@@ -33,29 +33,29 @@
             <div class="panel">
                 <div class="panel-heading">
                     <br>
-                    
+                    <h3>Apartamentos</h3>
                     <a href="{{ url('apartamentocreate')}}" class="btn btn-primary">Registrar apartamentos</a>
-
+                    <!--
                     <div class="alert alert-success alert-dismissible" role="alert">
-                    @if(Session::has('mensaje'))
-                        {{ Session::get('mensaje') }}
-                    @endif
-
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                        @if(Session::has('mensaje'))
+                            {{ Session::get('mensaje') }}
+                        @endif
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-
                 </div>
+                    -->
                 <div class="panel-body">
                     <div class="responsive-table">
 <table id="apartamentos" class="table table-striped shadow-lg mt-4" >
     <thead class="bg-primary text-white">
         <tr>
             <th scope="col">Numero apartamento</th>
-            <th scope="col">bloque</th>
-            <th scope="col">estado</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Bloque</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Inhabilitar</th>
         </tr>
     </thead>
 
@@ -81,17 +81,18 @@
                         @endswitch
             </td>
             <td>
-
-            <a class="btn btn-info" href="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO.'/edit') }}">
-                Editar
-                </a>
-
+                <a class="btn btn-info" href="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO.'/edit') }}"><i class="icon ion-md-create"></i> Editar</a>
+            </td>
+            <td>
                 <form action="{{ url('/apartamento/'.$apartamento->ID_APARTAMENTO) }}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
                             <input hidden name="ESTADO_APTO" value="1"/>
-                            <input type="submit" onclick="return confirm('Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar">
-                        </form>
+                            <input type="submit" onclick="return confirm('Desea inhabilitar?')" class="btn btn-danger" value="Inhabilitar" >
+                            
+                </form>
+                
+                
             </td>
         </tr>
         @endforeach

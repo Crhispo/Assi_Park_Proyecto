@@ -17,7 +17,7 @@
                     </div>
                   </div>
                 </div>
-                <form action="Visitantestore" method="post" class="form-element">
+                <form action="Visitanteupdate" method="post" class="form-element">
                   <div class="col-md-12 padding-0">
                     <div class="col-md-8">
                       <div class="panel form-element-padding">
@@ -63,6 +63,7 @@
                                   <label class="font-weight-bold">Número de cédula <span class="text-danger">*</span></label>
 
                                   <input type="number" class="form-control" name="NUMERO_DOCUMENTO" value="{{ $Visitante->{'NUMERO_DOCUMENTO'} }}" placeholder="Ingresa el número de cédula" required="required">
+                                  <input hidden="hidden" name="ID" value="{{ $Visitante->{'ID_VISITANTE'} }}">
                               </div>
                               <div class="form-group col-md-6 text-dark">
                                   <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>

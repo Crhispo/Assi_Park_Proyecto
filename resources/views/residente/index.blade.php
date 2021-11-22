@@ -32,22 +32,22 @@
             <div class="panel">
                 <div class="panel-heading">
                     <br>
-                    <h3>Residente</h3>
+                    <h3>Residentes</h3>
                     <a href="{{ url('residentecreate')}}" class="btn btn-primary">Registrar residente</a>
                 </div>
                 <div class="panel-body">
                     <div class="responsive-table">
 <table id="apartamentos" class="table table-striped shadow-lg mt-4" >
     <thead class="bg-primary text-white">
-        <tr>
+        <tr style="background-color:#2196f3">
             <th>Numero de identificacion</th>
             <th>Tipo de identificacion</th>
             <th>Nombre</th>
-            <th >Apellido</th>
-            <th>Celular 1</th>
-            <th >Correo electronico</th>
-            <th >Numero apartamento</th>
-            <th>estado de residente</th>
+            <th>Apellido</th>
+            <th>Celular</th>
+            <th>Correo electronico</th>
+            <th>Apartamento</th>
+            <th>Estado</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
@@ -99,7 +99,7 @@
                         @endswitch
             </td>
             <td>
-                <a class="btn btn-info" style="margin-top: 8px;" href="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION.'/edit') }}">Editar</a>
+                <a class="btn btn-info" style="margin-top: 8px;" href="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION.'/edit') }}"><i class="icon ion-md-create"></i> Editar</a>
             </td>
             <td>
                 <form action="{{ url('/residente/'.$residente->NUMERO_IDENTIFICACION) }}" method="post">
