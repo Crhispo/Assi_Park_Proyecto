@@ -162,9 +162,9 @@ var baseURL= {!! json_encode(url('/')) !!}
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @foreach ( $parqueaderoV as $parking ) 
+                                      @foreach ( $parqueaderoV as $parkingV ) 
                                          @php
-                                          $total=$parking->{'id'} % 4;
+                                          $total=$parkingV->{'id'} % 4;
 
                                          @endphp
                                          

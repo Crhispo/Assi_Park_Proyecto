@@ -1,13 +1,31 @@
-@if (1==1)
-    
+
+@php
+    $estado=$parkingV->ESTADO_PARQUEADERO;
+$ocupado=$parkingV->OCUPADO;
+@endphp
+
+@if ($estado == 1)
+<button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px; background-color:green" data-toggle="modal" data-target="{{'#deleteModal'. $parkingV->{'id'} }}">                                
+       @if ($ocupado == 1)
+           <span class="icon-basket-loaded icons icon text-right"></span>
+       @else
+           {{ $parkingV->{'id'} }}
+       @endif
+  
+      
+      
+      </button>
+  
+
+@else
+<button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px; background-color:red;" data-toggle="modal" data-target="{{'#deleteModal'. $parkingV->{'id'} }}">{{ $parkingV->{'id'} }}</button>
 @endif
-<button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px" data-toggle="modal" data-target="{{'#deleteModal'. $parking->{'id'} }}">{{ $parking->{'id'} }}</button>
-<div class="modal fade" id="{{'deleteModal'. $parking->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+<div class="modal fade" id="{{'deleteModal'. $parkingV->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
                                                   <div class="modal-dialog" role="document">
                                                       <div class="modal-content">
                                                           <div class="modal-header">
   
-                                                              <h4 class="modal-title" id="deleteModalLabel"> Cuadro de confirmación </h4>
+                                                              <h4 class="modal-title" id="deleteModalLabel"> Visita </h4>
                                                           </div>
                                                           <div class="modal-body">
                                                             <form class="form-horizontal" method="POST" action="{{route('asignacion.save')}}">
