@@ -117,7 +117,7 @@
               </li>
 
 
-              <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-car-side" style="font-size:20px;"></i></i>&nbsp;&nbsp; Vehiculos<span class="fa-angle-right fa right-arrow text-right"></span> </a>
+              <li class="ripple"><a class="tree-toggle nav-header"><i class="las la-car-side" style="font-size:20px;"></i></i>&nbsp;&nbsp; Vehículos<span class="fa-angle-right fa right-arrow text-right"></span> </a>
                 <ul class="nav nav-list tree">
                   <li><a href="datatables.html">Data Tables</a></li>
                   <li><a href="handsontable.html">handsontable</a></li>
@@ -156,7 +156,7 @@
               <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-note icons" style="font-size:1em;"></span>Reportes  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
                 <ul class="nav nav-list tree">
 
-                  <li><a href="invoice-v1.html">Vehiculos</a></li>
+                  <li><a href="invoice-v1.html">Vehículos</a></li>
                 </ul>
               </li>
 
@@ -181,7 +181,7 @@
                               <div class="panel box-v1">
                                 <div class="panel-heading bg-white border-none">
                                   <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Numero de Vehiculos</h4>
+                                    <h4 class="text-left">Número de Vehículos</h4>
                                   </div>
                                   <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                      <h4>
@@ -279,7 +279,7 @@
                                   <span class="icon-folder icons" style="font-size:2em;"></span>
                               </div>
                               <div class="media-body">
-                                <h5 class="media-heading">Apartamentos con Vehiculo</h5>
+                                <h5 class="media-heading">Apartamentos con Vehículo</h5>
                                   <div class="progress progress-mini">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
                                       <span class="sr-only">20% Complete</span>
@@ -293,7 +293,7 @@
                                   <span class="icon-pie-chart icons" style="font-size:2em;"></span>
                               </div>
                               <div class="media-body">
-                                <h5 class="media-heading">Numero de apartamentos vacios</h5>
+                                <h5 class="media-heading">Número de apartamentos vacios</h5>
                                   <div class="progress progress-mini">
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100" style="width: 19%;">
                                       <span class="sr-only">60% Complete</span>

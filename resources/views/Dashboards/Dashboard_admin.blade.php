@@ -57,7 +57,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                               <div class="panel box-v1">
                                 <div class="panel-heading bg-white border-none">
                                   <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Numero de Vehiculos</h4>
+                                    <h4 class="text-left">Número de Vehículos</h4>
                                   </div>
                                   <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                      <h4>
@@ -289,7 +289,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                   <span class="icon-folder icons" style="font-size:2em;"></span>
                               </div>
                               <div class="media-body">
-                                <h5 class="media-heading">Apartamentos con Vehiculo</h5>
+                                <h5 class="media-heading">Apartamentos con Vehículo</h5>
                                   <div class="progress progress-mini">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
                                       <span class="sr-only">20% Complete</span>
@@ -303,7 +303,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                                   <span class="icon-pie-chart icons" style="font-size:2em;"></span>
                               </div>
                               <div class="media-body">
-                                <h5 class="media-heading">Numero de apartamentos vacios</h5>
+                                <h5 class="media-heading">Número de apartamentos vacios</h5>
                                   <div class="progress progress-mini">
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100" style="width: 19%;">
                                       <span class="sr-only">60% Complete</span>
@@ -357,7 +357,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                           <div class="panel-footer bg-white border-none">
                               <center>
                               <a href="{{route('descargarPDFUsuario')}}" target="_blank" class="btn btn-danger box-shadow-none" >Reporte Usuarios</a><br>
-                                <a href="{{route('descargarPDFVehiculo')}}" target="_blank" class="btn btn-danger box-shadow-none" >Reporte Vehiculos</a><br>
+                                <a href="{{route('descargarPDFVehiculo')}}" target="_blank" class="btn btn-danger box-shadow-none" >Reporte Vehículos</a><br>
                                 <a href="{{route('descargarPDFApartamentos')}}" target="_blank" class="btn btn-danger box-shadow-none" >Reporte Apartamentos</a>
                               </center>
 

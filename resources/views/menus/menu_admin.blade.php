@@ -1,3 +1,7 @@
+
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css"/>
+
 <div id="left-menu">
     <div class="sub-left-menu scroll">
       <ul class="nav nav-list">
@@ -62,7 +66,7 @@
 
           <li class="ripple">
             <a class="tree-toggle nav-header">
-              <span class="icon-chart icons" style="font-size:1em;"></span> Estadisticas
+              <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas
               <span class="fa-angle-right fa right-arrow text-right"></span>
             </a>
             <ul class="nav nav-list tree">
@@ -73,7 +77,7 @@
           <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-note icons" style="font-size:1em;"></span>Reportes  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
             <ul class="nav nav-list tree">
 
-              <li><a href="invoice-v1.html">Vehiculos</a></li>
+              <li><a href="invoice-v1.html">Vehículos</a></li>
             </ul>
           </li>
 
