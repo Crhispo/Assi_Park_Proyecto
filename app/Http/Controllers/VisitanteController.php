@@ -51,6 +51,23 @@ class VisitanteController extends Controller
             'CELULAR1' => $request['celular1'],
             'CELULAR2' => $request['celular1'],
         ]);
+        /*
+                $campos=[
+                    'ID_TIPO_IDENTIFICACION'=>'required', 
+                    'NUMERO_DOCUMENTO'=>'required|Integer',
+                    'NOMBRE'=>'required|String|max:45',
+                    'APELLIDO'=>'required|String|max:45',
+                    'CELULAR1'=>'required|Integer',
+                    'CELULAR2'=>'Integer'
+                ];
+                $mensaje=[
+                    'required'=>'El :attribute es requerido',
+                    'Integer'=> 'El :attribute debe ser numerico',
+                    'String'=>' El :attribute debe ser solo texto'
+                ];
+            
+                $this->validate($request, $campos, $mensaje);
+        */
     }
 
     /**

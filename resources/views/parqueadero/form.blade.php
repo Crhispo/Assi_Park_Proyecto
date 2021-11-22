@@ -40,18 +40,21 @@
         <h3>{{$parqueadero->id?'Actualizar parqueadero':'Nuevo parqueadero'}}</h3>
                     
                 </div>
-                
+                @if(count($errors)>0)
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                                @endforeach
+                            </ul>   
+                        </div>
+                    @endif
 <form class="form-horizontal" method="POST" action="{{route('parqueadero.save')}}">
   @csrf  
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueadero->id}}">
   <div class="mb-3">
-<<<<<<< HEAD
-  <label for="tipo" class="form-label ">Tipo de vehiculo:</label>
+  <label for="tipo" class="form-label ">Tipo de vehiculo: <span class="text-danger">*</span></label>
   <select name="tipo" id="tipo" class="form-control ">
-=======
-  <label for="tipo" class="form-label">Tipo de vehiculo:</label>
-  <select name="tipo" id="tipo" class="form-control">
->>>>>>> 6be48429ad6838813bd87c3bf2bd17fa83a1d954
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
       <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}"
@@ -64,14 +67,14 @@
   </div>
 <!-- start:tamaño -->
 <div class="mb-3">
-      <label class="form-label" for="TAMAÑO">Tamaño</label>
+      <label class="form-label" for="TAMAÑO">Tamaño<span class="text-danger">*</span></label>
       <br>
       <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueadero->TAMAÑO}}">
 </div>
       <!-- end: tamaño -->
 <!-- start:descripcion -->
 <div class="mb-3">
-      <label class="form-label" for="DESCRIPCION">Descripcin</label>
+      <label class="form-label" for="DESCRIPCION">Descripción<span class="text-danger">*</span></label>
       <br>
       <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueadero->DESCRIPCION}}">
 </div>

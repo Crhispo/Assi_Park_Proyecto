@@ -32,9 +32,18 @@ for ($i = 0; $i < 4; $i++) { $cad .=substr($charset, rand(0, 62), 1); }
                         </div>
                         <div class="panel-body" style="padding-bottom:30px;">
                           <div class="col-md-12">
+                          @if(count($errors)>0)
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                                </ul>   
+                            </div>
+                            @endif
                               <div class="form-group">
                                   @csrf
-                                  <label class="font-weight-bold">Tipo de documento</label>
+                                  <label class="font-weight-bold">Tipo de documento <span class="text-danger">*</span></label>
                                   <select name="tipo_identificacion" class="form-control-plaintext">
                                       <option value="1">CC</option>
                                       <option value="2">CE</option>

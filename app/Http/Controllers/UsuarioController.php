@@ -58,7 +58,29 @@ class UsuarioController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
-        return redirect('/Usuarioform');
+
+        $campos=[
+            'ID_TIPO_IDENTIFICACION'=>'required',
+            'NUMERO_IDENTIFICACION'=>'required', /*|unique*/
+            'ID_TIPO_USUARIO'=>'required',
+            'NOMBRE'=>'required|String|max:45',
+            'APELLIDO'=>'required|String|max:45',
+            'SEXO'=>'required',
+            'DIRECCION'=>'',
+            'TELEFONO'=>'Integer',
+            'CELULAR1'=>'required|Integer',
+            'email'=>'required'
+        ];
+        $mensaje=[
+            'required'=>'El :attribute es requerido',
+            /*'unique'=>'El :attribute ya existe',*/
+            'Integer'=> 'El :attribute debe ser numerico',
+            'String'=>' El :attribute debe ser solo texto'
+        ];
+        $this->validate($request, $campos, $mensaje);
+
+
+        return redirect('/Usuarioform')->with('mensaje','Usuario registrado con éxito');
     }
 
     /**

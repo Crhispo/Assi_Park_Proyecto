@@ -59,7 +59,7 @@ class ResidenteController extends Controller
             'NOMBRE'=>'required|String|max:45',
             'APELLIDO'=>'required|String|max:45',
             'SEXO'=>'required',
-            'TELEFONO'=>'Integer|',
+            'TELEFONO'=>'Integer',
             'CELULAR1'=>'required|Integer',
             'CELULAR2'=>'Integer',
             'CORREO_ELECTRONICO'=>'required|String|max:100',
@@ -70,7 +70,7 @@ class ResidenteController extends Controller
             'required'=>'El :attribute es requerido',
             /*'unique'=>'El :attribute ya existe',*/
             'Integer'=> 'El :attribute debe ser numerico',
-            
+            'String'=>' El :attribute debe ser solo texto'
         ];
     
         $this->validate($request, $campos, $mensaje);
