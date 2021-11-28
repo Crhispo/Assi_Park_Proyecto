@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResidenteController;
 use App\Http\Controllers\NumeroAptoController;
 use App\Http\Controllers\BloqueController;
+use App\Http\Controllers\datosController;
 use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
@@ -30,6 +31,7 @@ use Illuminate\Support\Facades\Route;
   |
  */
 
+Route::get('/Datos', [datosController::class, 'admin'])->name('admin');
  /* Rutas Usuario */
 Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 route::get('Usuarioform', [UsuarioController::class, 'formcreate'])->name('usuario.formcreate');

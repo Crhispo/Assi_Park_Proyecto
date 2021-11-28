@@ -87,6 +87,12 @@ $ocupado=$parking->OCUPADO;
                   
                         <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">
+                            @php
+                            $ya=$parking->id;
+                                DB::table('parqueaderos')
+            ->where('id',$ya)
+            ->update(['OCUPADO' => 1]);
+                            @endphp
                             <button type="submit" class="btn btn-secondary">Guardar</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
                   

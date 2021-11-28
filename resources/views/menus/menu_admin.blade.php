@@ -62,25 +62,21 @@
       </li>
 
 
-
+      
 
 
       <li class="ripple">
-        <a class="tree-toggle nav-header">
+        <a  href="/Datos">
           <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas
           <span class="fa-angle-right fa right-arrow text-right"></span>
         </a>
-        <ul class="nav nav-list tree">
-          <li><a href="chartjs.html">ChartJs</a></li>
-
-        </ul>
       </li>
       <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-note icons" style="font-size:1em;"></span>Reportes <span class="fa-angle-right fa right-arrow text-right"></span> </a>
         <ul class="nav nav-list tree">
-        <li><a href="invoice-v1.html">Usuarios</a></li>
-        <li><a href="invoice-v1.html">Vehículos</a></li>
-        <li><a href="invoice-v1.html">Parqueadero</a></li>
-          <li><a href="invoice-v1.html">Apartamentos</a></li>
+        <li><a href="{{route('descargarPDFUsuario')}}" target="_blank">Reporte Usuarios</a></li>
+        <li><a href="{{route('descargarPDFVisitantes')}}" target="_blank">Reporte Visitantes</a></li>
+        <li><a href="{{route('descargarPDFVehiculo')}}" target="_blank">Reporte Vehículos</a></li>
+          <li><a href="{{route('descargarPDFApartamentos')}}" target="_blank">Reporte Apartamentos</a></li>
           
           
         </ul>
