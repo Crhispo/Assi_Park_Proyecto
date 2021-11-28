@@ -20,6 +20,7 @@
 
       <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
+      <link rel="shortcut icon" href="img/2prin.png" type="image/png">
 	<link href="asset/css/style.css" rel="stylesheet">
 	<!-- end: Css -->
 

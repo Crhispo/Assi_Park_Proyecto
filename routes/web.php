@@ -118,9 +118,11 @@ Route::get('/secretaria', [HomeController::class, 'secretaria'])->name('resident
 //ruta de la vista guarda
 Route::get('/guarda', [HomeController::class, 'guarda'])->name('guarda');
 
-//Ruta para probar PDF
+//Ruta para Reportes PDF
 // Route::get('/pdf','PDFController@PDF')->name('descargarPDF');
 Route::get('/pdfUsuario','App\Http\Controllers\PDFController@PDFusuarios')->name('descargarPDFUsuario');
+Route::get('/pdfVisitante','App\Http\Controllers\PDFController@PDFusuariosVisitantes')->name('descargarPDFVisitantes');
+
 Route::get('/pdfVehiculo','App\Http\Controllers\PDFController@PDFVehiculos')->name('descargarPDFVehiculo');
 Route::get('/pdfApartamentos','App\Http\Controllers\PDFController@PDFapartamentos')->name('descargarPDFApartamentos');
 Auth::routes();
@@ -143,3 +145,6 @@ Route::post('/evento/editar/{id}', [EventoController::class, 'edit']);
 Route::post('/evento/borrar/{id}', [EventoController::class, 'destroy']);
 
 Route::post('/evento/actualizar/{evento}', [EventoController::class, 'update']);
+
+
+Route::get('/CambioContrasena/reset', function () {return view('Auth.passwords.emailChange');})->name('CambioContrasena');

@@ -136,7 +136,7 @@
 		<tr>
 			<td class="logo_factura">
 				<div>
-					<!-- <img src="public\Img\LOGO_FINAL_ASSIPARK.png" type="image/png"> -->
+				 <img src="public\Img\LOGO_FINAL_ASSIPARK.png" type="image/png"> 
 				</div>
 			</td>
 			<td class="info_empresa">

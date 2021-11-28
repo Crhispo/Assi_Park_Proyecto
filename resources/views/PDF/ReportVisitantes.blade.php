@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Reporte de Apartamentos</title>
+    <title>Reporte de Visitantes</title>
 </head>
 <body>
   <style>
@@ -141,7 +141,7 @@
 			</td>
 			<td class="info_empresa">
 				<div>
-					<span class="h2">REPORTE DE LOS APARTAMENTOS</span><br>
+					<span class="h2">REPORTE DE VISITANTES</span><br>
 					
 				</div>
 			</td>
@@ -153,30 +153,26 @@
     <table  id="factura_detalle">
   <thead>
     <tr>
-      <th scope="col">N°Apto/Bloque</th>
-      <th scope="col" class="textleft">Documento Visitante</th>
-	  <th scope="col" class="textleft">Nombre </th>
-	  <th scope="col" class="textleft">Apellido</th>
-	  <th scope="col" class="textleft">Celular</th>
-	  <th scope="col" class="textleft">Fecha Entrada</th>
-	  <th scope="col" class="textleft">Fecha Salida</th>
+      <th scope="col">ID</th>
+      <!-- <th scope="col">Tipo Usuario</th>
+      <th scope="col">Documento</th> -->
+      <th scope="col" class="textleft">Nombre</th>
+      <th scope="col" class="textleft">Apellido</th>
+  
+     
+      <th scope="col" class="textleft">Celular</th>
+      <th scope="col" class="textleft">Fecha Ingreso</th>
     </tr>
   </thead>
   <tbody>
-      @foreach($aptos as $Apartamento)
+      @foreach($visita as $Visitante)
     <tr>
-      <th scope="row">{{$Apartamento->apartamento}}</th>
-
-      <td>{{$Apartamento->NUMERO_DOCUMENTO }}</td>
-	  <td>{{$Apartamento->NOMBRE }}</td>
-	  <td>{{$Apartamento->APELLIDO }}</td>
-	  <td>{{$Apartamento->CELULAR1 }}</td>
-	  <td>{{$Apartamento->FECHA_HORA_INICIO_VISITA}}</td>
-	  <td>{{$Apartamento->FECHA_HORA_FIN_VISITA}}</td>
-      
+      <th scope="row">{{$Visitante->ID_VISITANTE }}</th>
+      <td>{{$Visitante->NOMBRE}}</td>
+      <td>{{$Visitante->APELLIDO}}</td>
+      <td>{{$Visitante->CELULAR1}}</td>
+      <td>{{$Visitante->created_at}}</td>
     </tr>
-
-
     @endforeach
    
   </tbody>
