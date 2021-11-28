@@ -108,7 +108,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                             <div class="panel-body padding-0">
                                 <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
                                     <!-- <h2></h2> -->
-                                    <p>Aqui podra observar la organizacion de los parqueaderos por apartamentos y bloque de todo el conjunto residencial.</p>
+                                    <p>Aquí podrá observar la organización de los parqueaderos por apartamentos y bloque de todo el conjunto residencial.</p>
                                     
                                     <table id="Tabla_consulta" class="table table-striped table-bordered" width="10%" cellspacing="0">
                                       <thead>
@@ -151,7 +151,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                           <div class="panel-body padding-0">
                               <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
                                   <!-- <h2></h2> -->
-                                  <p>Aqui podra observar la organizacion de los parqueaderos de los visitantes del conjunto residencial.</p>
+                                  <p>Aquí podrá observar la organización de los parqueaderos de los visitantes del conjunto residencial.</p>
                                   <table id="Tabla_consulta" class="table table-striped table-bordered" width="10%" cellspacing="0">
                                     <thead>
                                         <tr>
