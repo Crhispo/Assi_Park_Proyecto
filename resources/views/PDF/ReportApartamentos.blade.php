@@ -141,7 +141,7 @@
 			</td>
 			<td class="info_empresa">
 				<div>
-					<span class="h2">REPORTE DE APARTAMENTOS</span><br>
+					<span class="h2">REPORTE DE LOS APARTAMENTOS</span><br>
 					
 				</div>
 			</td>
