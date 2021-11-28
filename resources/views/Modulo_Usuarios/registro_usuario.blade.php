@@ -5,7 +5,7 @@
 @php
 $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 $cad = '';
-for ($i = 0; $i < 4; $i++) { $cad .=substr($charset, rand(0, 62), 1); }
+for ($i = 0; $i < 9; $i++) { $cad .=substr($charset, rand(0, 62), 1); }
 
 @endphp
 
@@ -22,7 +22,7 @@ for ($i = 0; $i < 4; $i++) { $cad .=substr($charset, rand(0, 62), 1); }
                     </div>
                   </div>
                 </div>
-        
+
                 <form action="Usuariostore" method="post" class="form-element">
                   <div class="col-md-12 padding-0">
                     <div class="col-md-8">
@@ -38,7 +38,7 @@ for ($i = 0; $i < 4; $i++) { $cad .=substr($charset, rand(0, 62), 1); }
                                 @foreach($errors->all() as $error)
                                     <li>{{$error}}</li>
                                 @endforeach
-                                </ul>   
+                                </ul>
                             </div>
                             @endif
                               <div class="form-group">
@@ -118,7 +118,7 @@ for ($i = 0; $i < 4; $i++) { $cad .=substr($charset, rand(0, 62), 1); }
                     </div>
                   </div>
                 </form>
-            
+
                 <!-- end: content -->
 
 @endsection

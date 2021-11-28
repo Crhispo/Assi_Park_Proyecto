@@ -136,7 +136,7 @@
 		<tr>
 			<td class="logo_factura">
 				<div>
-					<!-- <img src="public\Img\LOGO_FINAL_ASSIPARK.png" type="image/png"> -->
+				 <img src="public\Img\LOGO_FINAL_ASSIPARK.png" type="image/png"> 
 				</div>
 			</td>
 			<td class="info_empresa">
@@ -163,12 +163,9 @@
       @foreach($vehicl as $Vehiculo)
     <tr>
       <th scope="row">{{$Vehiculo->id }}</th>
-      <!-- <td>{{$user->ID_TIPO_USUARIO}}</td>
-      <td>{{$user->ID_TIPO_IDENTIFICACION}}</td> -->
       <td>{{$Vehiculo->NUMERO_IDENTIFICACION}}</td>
       <td>{{$Vehiculo->marca_id}}</td>
       <td>{{$Vehiculo->placa}}</td>
-      
     </tr>
     @endforeach
    

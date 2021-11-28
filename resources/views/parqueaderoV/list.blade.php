@@ -50,18 +50,19 @@
     <th>Tamaño</th>
     <th>Descripción</th>
     <th>Estado</th>
+    <th>Disponible</th>
     <th>Editar</th>
-    <th>Eliminar</th>
+    <th>Inactivar</th>
 </tr>
 </thead>
 <tbody>
-@foreach($parqueaderoVList as $parqueadero)
+@foreach($parqueaderoVList as $parqueaderoV)
 <tr>
-    <td>{{$parqueadero->id}}</td>
-    <td>{{$parqueadero->TIPO_PARQUEADERO_VEHICULO}}</td>
-    <td>{{$parqueadero->TAMAÑO}}</td>
-    <td>{{$parqueadero->DESCRIPCION}}</td>
-    <td> @switch($parqueadero->ESTADO_PARQUEADERO)
+    <td>{{$parqueaderoV->id}}</td>
+    <td>{{$parqueaderoV->TIPO_PARQUEADERO_VEHICULO}}</td>
+    <td>{{$parqueaderoV->TAMAÑO}}</td>
+    <td>{{$parqueaderoV->DESCRIPCION}}</td>
+    <td> @switch($parqueaderoV->ESTADO_PARQUEADERO)
         @case(1)
         Activo
         @break
@@ -73,13 +74,26 @@
         @default
         Erros
         @endswitch</td>
+      
+        <td> @switch($parqueaderoV->OCUPADO)
+            @case(1)
+            Ocupado
+            @break
+    
+            @case(0)
+            Desocupado
+            @break
+    
+            @default
+            Erros
+            @endswitch</td>
     <td>
-        <a href="{{route('parqueaderoV.form',['id'=>$parqueadero->id])}}" class="btn btn-info" style="margin-top: 8px;">Editar</a>
+        <a href="{{route('parqueaderoV.form',['id'=>$parqueaderoV->id])}}" class="btn btn-info" style="margin-top: 8px;">Editar</a>
     </td>
     <td>
 
-        <button type="button" class="btn btn-danger" style="margin-top: 8px;"   data-toggle="modal" data-target="{{'#deleteModal'. $parqueadero->{'id'} }}">Inhabilitar</button>
-        <div class="modal fade" id="{{'deleteModal'. $parqueadero->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+        <button type="button" class="btn btn-danger" style="margin-top: 8px;"   data-toggle="modal" data-target="{{'#deleteModal'. $parqueaderoV->{'id'} }}">Inhabilitar</button>
+        <div class="modal fade" id="{{'deleteModal'. $parqueaderoV->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -87,7 +101,7 @@
                         <h4 class="modal-title" id="deleteModalLabel"> Cuadro de confirmación </h4>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ url('Parqueaderodisable'.$parqueadero-> {'id'} )}}" method="post">
+                        <form action="{{ url('Parqueaderodisable'.$parqueaderoV-> {'id'} )}}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
                             <div class="form-group">
@@ -97,7 +111,7 @@
                             @php
                             $CheckA = '';
                             $CheckI = '';
-                            switch($parqueadero->{'ESTADO_PARQUEADERO'}){
+                            switch($parqueaderoV->{'ESTADO_PARQUEADERO'}){
                             case '1':
                             $CheckA = 'checked';
                             break;
@@ -121,7 +135,7 @@
         </div>
     </td>
     <!--<td>
-        <a href="{{route('eliminarparqueadero',['id'=>$parqueadero->id])}}" class="btn btn-danger">Eliminar</a>
+        <a href="{/*{route('eliminarparqueadero',['id'=>$parqueaderov->id])}*/}" class="btn btn-danger">Eliminar</a>
     </td>-->
 </tr>
 @endforeach

@@ -9,9 +9,12 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class UsuarioController extends Controller
 {
+    public $token;
     public function __construct()
     {
         //$this->middleware('auth');
@@ -44,8 +47,8 @@ class UsuarioController extends Controller
 
 
     public function store(Request $request)
-    {
-        User::create([
+    { $Usu=$request->all();
+       User::create([
             'ID_TIPO_IDENTIFICACION' => $request['tipo_identificacion'],
             'NUMERO_IDENTIFICACION' => $request['NUMERO_IDENTIFICACION'],
             'ID_TIPO_USUARIO' => $request['tipo_usuario'],
@@ -79,8 +82,20 @@ class UsuarioController extends Controller
         ];
         $this->validate($request, $campos, $mensaje);
 
+      
+       
+       
+        
 
+        
+
+
+        mail::send('Email.BienvenidaUsuario',$Usu,function($message) use ($Usu){
+
+            $message->to($Usu['email'],$Usu['nombre'],$Usu['NUMERO_IDENTIFICACION'],$Usu['password'])->subject('Bienvenido a ASSIPARK');
+        });
         return redirect('/Usuario')->with('mensaje','Usuario registrado con éxito');
+
     }
 
     /**

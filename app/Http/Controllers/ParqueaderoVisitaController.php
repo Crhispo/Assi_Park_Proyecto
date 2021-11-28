@@ -16,7 +16,7 @@ class ParqueaderoVisitaController extends Controller
     //listar parqueadero
     function show()
     {
-        $parqueaderoVList = DB::select('select id,tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO,TAMAÑO,DESCRIPCION,ESTADO_PARQUEADERO
+        $parqueaderoVList = DB::select('select id,tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO,TAMAÑO,DESCRIPCION,ESTADO_PARQUEADERO,OCUPADO
         from parqueadero_visitas inner join tipo_de_parqueadero_vehiculo on parqueadero_visitas.tipo_parqueadero_id=tipo_de_parqueadero_vehiculo.ID_TIPO_PARQUEADERO_VEHICULO');
         return view('parqueaderoV/list', compact('parqueaderoVList'));
     }
