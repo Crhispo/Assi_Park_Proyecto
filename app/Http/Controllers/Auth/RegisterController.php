@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 
+
 class RegisterController extends Controller
 {
     /*
@@ -111,12 +112,25 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'estado_usuario' => $data['estado']
         ]);
+        Mail::send('Email.BienvenidaUsuario',$data,function($message)use ($data){
 
-
-     
-
-        
-
-
+            $message->to($data['email'],$data['nombre'])->subject('Bienvenido a ASSIPARK');
+        });
     }
 }
+/*<div class="swal-modal" role="dialog" aria-modal="true"><div class="swal-icon swal-icon--error">
+    <div class="swal-icon--error__x-mark">
+      <span class="swal-icon--error__line swal-icon--error__line--left"></span>
+      <span class="swal-icon--error__line swal-icon--error__line--right"></span>
+    </div>
+  </div><div class="swal-title" style="">Error</div><div class="swal-text" style="">El usuario no se encuentra registrado. Puedes crear una cuenta es gratis!!</div><div class="swal-footer"><div class="swal-button-container">
+
+    <button class="swal-button swal-button--confirm">OK</button>
+
+    <div class="swal-button__loader">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+  </div></div></div>*/ 

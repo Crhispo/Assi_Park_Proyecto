@@ -34,14 +34,23 @@
                 <h3>{{$vehiculo->id?'Actualizar vehiculo':'Nuevo vehiculo'}}</h3>
 
             </div>
-            @if(count($errors)>0)
-                        <div class="alert alert-danger" role="alert">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                <li>{{$error}}</li>
-                                @endforeach
-                            </ul>   
-                        </div>
+            @if($errors->any())
+            <div class="swal-modal" role="dialog" aria-modal="true"><div class="swal-icon swal-icon--error">
+                <div class="swal-icon--error__x-mark">
+                  <span class="swal-icon--error__line swal-icon--error__line--left"></span>
+                  <span class="swal-icon--error__line swal-icon--error__line--right"></span>
+                </div>
+              </div><div class="swal-title" style="">Error</div><div class="swal-text" style="">Error al registrar el usuario confirmar los datos</div><div class="swal-footer"><div class="swal-button-container">
+            
+                <button class="swal-button swal-button--confirm">OK</button>
+            
+                <div class="swal-button__loader">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+            
+              </div></div></div>
                     @endif
             <br>
             <form class="form-horizontal" method="POST" action="{{route('vehiculo.save')}}">

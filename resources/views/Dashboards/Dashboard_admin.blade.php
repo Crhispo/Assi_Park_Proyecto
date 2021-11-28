@@ -204,6 +204,48 @@ var baseURL= {!! json_encode(url('/')) !!}
 
                     </div>
 
+                    <div class="col-md-12">
+                      <div class="panel box-v4">
+                          <div class="panel-heading bg-white border-none">
+                            <h4><span class="icon-notebook icons"></span> Organización Parqueadero visitante</h4>
+                          </div>
+                          <div class="panel-body padding-0">
+                              <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
+                                  <!-- <h2></h2> -->
+                                  <p>Aquí podrá observar la organización de los parqueaderos de los visitantes del conjunto residencial.</p>
+                                  <table id="Tabla_consulta" class="table table-striped table-bordered" width="10%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                           <th>A</th> 
+                                           <th>B</th> 
+                                           <th>C</th> 
+                                           <th>D</th> 
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      @foreach ( $parqueaderoV as $parkingV ) 
+                                         @php
+                                          $total1=$parkingV->{'id'} % 4;
+
+                                         @endphp
+                                         
+                                          <td style="padding: 0px !important;" >
+                        @include('visita.Visita')
+                                          </td>
+                                          @if ($total1==0)
+                                          <tr></tr>
+                                          @endif
+
+                                      @endforeach
+                                    </tbody>
+                                  </table>
+                                  <br>
+                                  <br>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
                     <!-- Button trigger modal -->
 
