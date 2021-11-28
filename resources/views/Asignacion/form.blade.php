@@ -54,8 +54,9 @@ $ocupado=$parking->OCUPADO;
                           @endforeach
                       </select>
                   </div>
+                  <br>
                   <div class="mb-3">
-                    <label for="Vehiculo" class="form-label">Vehiculo:</label>
+                    <label for="Vehiculo" class="form-label">Vehiculo:</label> <a href="{{route('vehiculo.form')}}" class="btn btn-light btn-sm">+</a>
                     <select name="Vehiculo" id="Vehiculo" class="form-control">
                         <option value="" selected>...</option>
                         @foreach($vehiculo as $vehiculo)
@@ -65,18 +66,13 @@ $ocupado=$parking->OCUPADO;
                         @endforeach
                     </select>
                 </div>
+                <br>
                 <div class="mb-3">
                   <label for="parqueadero" class="form-label">Parqueadero:</label>
-                  <select name="parqueadero" id="parqueadero" class="form-control">
-                      <option value="" selected>...</option>
-                      @foreach($parqueadero as $parqueadero)
-                            <option value="{{ $parqueadero['id'] }}" >
-                            {{ $parqueadero['id'] }}
-                            </option>
-                      @endforeach
-                  </select>
+                  <br>
+              <input type="text" name="parqueadero" id="parqueadero" class="form-control"  style="background-color: white" placeholder="{{$parking->id}}"  value="{{old('parqueadero')? old('parqueadero'):$asignacion->parqueadero}}">
               </div>
-                   
+                   <br>
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion</label>
                         <div class="col-sm-10">

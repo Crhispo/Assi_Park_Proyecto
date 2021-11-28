@@ -35,6 +35,7 @@
 
             </div>
             @if($errors->any())
+            
             <div class="swal-modal" role="dialog" aria-modal="true"><div class="swal-icon swal-icon--error">
                 <div class="swal-icon--error__x-mark">
                   <span class="swal-icon--error__line swal-icon--error__line--left"></span>
@@ -51,6 +52,7 @@
                 </div>
             
               </div></div></div>
+            
                     @endif
             <br>
             <form class="form-horizontal" method="POST" action="{{route('vehiculo.save')}}">
@@ -58,7 +60,7 @@
                 <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
 
                 <label for="NUMERO_IDENTIFICACION" class="form-label">Numero Identificación Propietario <span class="text-danger">*</span></label>
-                <select name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION" class="form-control">
+                <select name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION" class="form-control" required>
                     <option value="" selected>...</option>
                     @foreach($residente as $residente)
                     <option value="{{$residente->NUMERO_IDENTIFICACION}}" {{$vehiculo->NUMERO_IDENTIFICACION === $residente->NUMERO_IDENTIFICACION ? 'selected' : ''}}>
@@ -67,7 +69,7 @@
                     @endforeach
                 </select>
                 <label for="marca" class="form-label">Marca: <span class="text-danger">*</span></label>
-                <select name="marca" id="marca" class="form-control">
+                <select name="marca" id="marca" class="form-control" required>
                     <option value="" selected>...</option>
                     @foreach($marca as $marca)
                     <option value="{{$marca->ID_MARCA}}" {{$vehiculo->marca_id === $marca->ID_MARCA ? 'selected' : ''}}>
@@ -76,7 +78,7 @@
                     @endforeach
                 </select>
                 <label for="Color" class="form-label">Color: <span class="text-danger">*</span></label>
-                <select name="Color" id="Color" class="form-control">
+                <select name="Color" id="Color" class="form-control" required>
                     <option value="" selected>...</option>
                     @foreach($color as $color)
                     <option value="{{$color->ID_COLOR}}" {{$vehiculo->color_id === $color->ID_COLOR ? 'selected' : ''}}>
@@ -86,7 +88,7 @@
                 </select>
                 </select>
                 <label for="tipo" class="form-label">Tipo de vehiculo: <span class="text-danger">*</span></label>
-                <select name="tipo" id="tipo" class="form-control">
+                <select name="tipo" id="tipo" class="form-control" required>
                     <option value="" selected>...</option>
                     @foreach($tipo as $tipo)
                     <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}" {{$vehiculo->tipo_parqueadero_id === $tipo->ID_TIPO_PARQUEADERO_VEHICULO ? 'selected' : ''}}>
@@ -98,7 +100,7 @@
                 <!-- start:placa -->
                 <label class="form-label" for="placa">Placa <span class="text-danger">*</span></label>
                 <br>
-                <input type="text" class="form-control" name="placa" id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
+                <input type="text" class="form-control" name="placa" required id="placa" value="{{old('placa')? old('placa'):$vehiculo->placa}}">
                 <!-- end: placa -->
                 <!-- start:estado -->
                 <label class="form-label" for="estado">Estado</label>
@@ -113,7 +115,7 @@
 
 
                 <!-- start:botones -->
-                <button type="submit" class="btn btn-secondary">Guardar</button>
+                <button type="submit" class="btn btn-secondary" >Guardar</button>
                 <button class="btn btn-secondary"><a href="/vehiculo" style=" color: inherit;text-decoration: none;">Cancelar</a></button>
                 <!-- end: botones -->
                 <br>
