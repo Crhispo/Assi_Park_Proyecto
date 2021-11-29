@@ -328,7 +328,18 @@ var baseURL= {!! json_encode(url('/')) !!}
                   <center>
                     <a href="{{route('descargarPDFUsuario')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Usuarios</a><br>
                     <a href="{{route('descargarPDFVisitantes')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Visitantes</a>
+                    <a href="{{route('descargarPDFResidentes')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Residentes</a>
+
+
                     <a href="{{route('descargarPDFVehiculo')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Vehículos</a><br>
+                    <a href="{{route('descargarPDFVehiculoResidente')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Vehículos de Residentes</a><br>
+                    <a href="{{route('descargarPDFVehiculoVisitante')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Vehículos de Visitantes</a><br>
+
+                    <a href="{{route('descargarPDFParqueaderosLibres')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Parqueaderos Libres</a>
+                    <a href="{{route('descargarPDFParqueaderosOcupados')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Parqueaderos Ocupados</a>
+
+
+
                     <a href="{{route('descargarPDFApartamentos')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Apartamentos</a>
                     
                   </center>

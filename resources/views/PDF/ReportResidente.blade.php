@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Reporte de Vehiculos</title>
+    <title>Reporte de Residentes</title>
 </head>
 <body>
 <style>
@@ -137,12 +137,12 @@
   </style>
 
 
- 
+  <!-- <img class="anulada" src="public\Img\LOGO_FINAL_ASSIPARK.png" alt="Anulada"> -->
     <div id="page_pdf">
 	<table id="factura_head">
       <tr>
     
-        <h1>REPORTE DE VEHÍCULOS</h1>
+        <h1>REPORTE DE RESIDENTES</h1>
 
       </tr>
     </table>
@@ -152,18 +152,26 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col" class="textleft">Identificación</th>
-      <th scope="col" class="textleft">Marca</th>
-      <th scope="col" class="textleft">Placa</th>
+    
+      <th scope="col" class="textleft">Nombre</th>
+      <th scope="col" class="textleft">Apellido</th>
+      <th scope="col" class="textleft">Dirección</th>
+      <th scope="col" class="textleft">Teléfono</th>
+      <th scope="col" class="textleft">Celular</th>
+      
     </tr>
   </thead>
   <tbody>
-      @foreach($vehicl as $Vehiculo)
+      @foreach($residnte as $Residente)
     <tr>
-      <th scope="row">{{$Vehiculo->id }}</th>
-      <td>{{$Vehiculo->NUMERO_IDENTIFICACION}}</td>
-      <td>{{$Vehiculo->marca_id}}</td>
-      <td>{{$Vehiculo->placa}}</td>
+      <th scope="row">{{$Residente->NUMERO_IDENTIFICACION }}</th>
+ 
+      <td>{{$Residente->NOMBRE}}</td>
+      <td>{{$Residente->APELLIDO}}</td>
+      <td>{{$Residente->DIRECCION}}</td>
+      <td>{{$Residente->TELEFONO}}</td>
+      <td>{{$Residente->CELULAR1}}</td>
+   
     </tr>
     @endforeach
    
