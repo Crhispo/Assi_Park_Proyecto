@@ -36,7 +36,7 @@ $ocupado=$parking->OCUPADO;
             <div class="modal-content">
                 <div class="modal-header">
 
-                    <h4 class="modal-title" id="deleteModalLabel"> Cuadro de confirmación </h4>
+                    <h4 class="modal-title" id="deleteModalLabel"> Asignación </h4>
                 </div>
                 <div class="modal-body">
                   <form class="form-horizontal" method="POST" action="{{route('asignacion.save')}}">
@@ -47,36 +47,33 @@ $ocupado=$parking->OCUPADO;
                       <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
                           <option value="" selected>...</option>
                           @foreach($NumeroApto as $NumeroApto)
-                                <option value="{{ $NumeroApto['ID_APARTAMENTO'] }}" >
-                                {{ $NumeroApto['NUMERO_APTO'] }} ,"BLOQUE"  
-                                {{ $NumeroApto['BLOQUE'] }}   
+                                <option value="{{ $NumeroApto->ID_APARTAMENTO }}" >
+                                  Apartamento:
+                                {{ $NumeroApto ->NUMERO_APTO }} , Bloque: 
+                                {{ $NumeroApto->BLOQUE }}   
                                 </option>
                           @endforeach
                       </select>
                   </div>
+                  <br>
                   <div class="mb-3">
-                    <label for="Vehiculo" class="form-label">Vehiculo:</label>
+                    <label for="Vehiculo" class="form-label">Vehiculo:</label> <a href="{{route('vehiculo.form')}}" class="btn btn-light btn-sm">+</a>
                     <select name="Vehiculo" id="Vehiculo" class="form-control">
                         <option value="" selected>...</option>
                         @foreach($vehiculo as $vehiculo)
                               <option value="{{ $vehiculo['id'] }}" >
-                              {{ $vehiculo['id'] }}
+                              {{ $vehiculo['placa'] }}
                               </option>
                         @endforeach
                     </select>
                 </div>
+                <br>
                 <div class="mb-3">
-                  <label for="parqueadero" class="form-label">Parqueadero:</label>
-                  <select name="parqueadero" id="parqueadero" class="form-control">
-                      <option value="" selected>...</option>
-                      @foreach($parqueadero as $parqueadero)
-                            <option value="{{ $parqueadero['id'] }}" >
-                            {{ $parqueadero['id'] }}
-                            </option>
-                      @endforeach
-                  </select>
+
+                  <br>
+              <input type="hidden"  name="parqueadero" id="parqueadero" class="form-control"  style="background-color: white"    value="{{$parking->id}}">
               </div>
-                   
+                   <br>
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion</label>
                         <div class="col-sm-10">
@@ -91,6 +88,7 @@ $ocupado=$parking->OCUPADO;
                   
                         <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">
+                            
                             <button type="submit" class="btn btn-secondary">Guardar</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
                   

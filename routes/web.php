@@ -6,12 +6,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResidenteController;
 use App\Http\Controllers\NumeroAptoController;
 use App\Http\Controllers\BloqueController;
+use App\Http\Controllers\datosController;
 use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\tipo_parqueadero_vehiculoController;
 use App\Http\Controllers\Detalle_asignacionController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\ParqueaderoVisitaController;
+use App\Http\Controllers\VisitaController;
 use App\Http\Controllers\VisitanteController;
 use App\Models\Parqueadero;
 use App\Models\parqueadero_visita;
@@ -30,6 +32,7 @@ use Illuminate\Support\Facades\Route;
   |
  */
 
+Route::get('/Datos', [datosController::class, 'admin'])->name('admin');
  /* Rutas Usuario */
 Route::get('Usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 route::get('Usuarioform', [UsuarioController::class, 'formcreate'])->name('usuario.formcreate');
@@ -79,9 +82,9 @@ route::get('/parqueaderoVform{id?}', [ParqueaderoVisitaController::class, 'form'
 route::post('/parqueaderoV/save', [ParqueaderoVisitaController::class, 'save'])->name('parqueaderoV.save');
 
 //visita
-Route::get('/visita', [visita::class, 'show'])->name('visita.show');
-route::get('/visitaform{id?}', [visita::class, 'form'])->name('visita.form');
-route::post('/visita/save', [visita::class, 'save'])->name('visita.save');
+Route::get('/visita', [VisitaController::class, 'show'])->name('visita.show');
+route::get('/visitaform{id?}', [VisitaController::class, 'form'])->name('visita.form');
+route::post('/visita/save', [VisitaController::class, 'save'])->name('visita.save');
 
 //consultar
 Route::get('/parqueadero', [ParqueaderoController::class, 'show'])->name('parqueadero.show');

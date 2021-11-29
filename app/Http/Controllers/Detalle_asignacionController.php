@@ -54,6 +54,7 @@ class Detalle_asignacionController extends Controller
             $asignacion->apartamento_id=$request->NUMERO_APTO;
             $asignacion->vehiculo_id=$request->Vehiculo;
             $asignacion->parqueadero_id=$request->parqueadero;
+            $nom=DB::update('update parqueaderos set OCUPADO = 1 where id ='.$asignacion->parqueadero_id);
             $asignacion->inicio=$request->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO;
             $asignacion->fin=$request->FECHA_FIN_DE_ASIGNACION_PARQUEADERO;
             $asignacion->save();

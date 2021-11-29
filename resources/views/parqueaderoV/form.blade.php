@@ -47,7 +47,7 @@
   <input type="hidden" name="id" value="{{old('id')? old('id'):$parqueaderoV->id}}">
   <div class="mb-3">
   <label for="tipo" class="form-label">Tipo de vehiculo: <span class="text-danger">*</span></label>
-  <select name="tipo" id="tipo" class="form-control">
+  <select name="tipo" id="tipo" class="form-control" required>
       <option value="" selected>...</option>
       @foreach($tipo as $tipo)
       <option value="{{$tipo->ID_TIPO_PARQUEADERO_VEHICULO}}"
@@ -62,14 +62,14 @@
 <div class="mb-3">
       <label class="form-label" for="TAMAÑO">Tamaño <span class="text-danger">*</span></label>
       <br>
-      <input type="text" class="form-control" name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueaderoV->TAMAÑO}}">
+      <input type="text" class="form-control" required name="TAMAÑO" id="TAMAÑO" value="{{old('TAMAÑO')? old('TAMAÑO'):$parqueaderoV->TAMAÑO}}">
 </div>
       <!-- end: tamaño -->
 <!-- start:descripcion -->
 <div class="mb-3">
       <label class="form-label" for="DESCRIPCION">Descripción <span class="text-danger">*</span></label>
       <br>
-      <input type="text" class="form-control" name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueaderoV->DESCRIPCION}}">
+      <input type="text" class="form-control" required name="DESCRIPCION" id="DESCRIPCION" value="{{old('DESCRIPCION')? old('DESCRIPCION'):$parqueaderoV->DESCRIPCION}}">
 </div>
       <!-- end: descripcion -->
 <!-- start:estado -->

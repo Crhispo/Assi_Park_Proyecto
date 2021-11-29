@@ -62,29 +62,16 @@
       </li>
 
 
-
+      
 
 
       <li class="ripple">
-        <a class="tree-toggle nav-header">
+        <a  href="/Datos">
           <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas
           <span class="fa-angle-right fa right-arrow text-right"></span>
         </a>
-        <ul class="nav nav-list tree">
-          <li><a href="chartjs.html">ChartJs</a></li>
-
-        </ul>
       </li>
-      <li class="ripple"><a class="tree-toggle nav-header"><span class="icon-note icons" style="font-size:1em;"></span>Reportes <span class="fa-angle-right fa right-arrow text-right"></span> </a>
-        <ul class="nav nav-list tree">
-        <li><a href="invoice-v1.html">Usuarios</a></li>
-        <li><a href="invoice-v1.html">Vehículos</a></li>
-        <li><a href="invoice-v1.html">Parqueadero</a></li>
-          <li><a href="invoice-v1.html">Apartamentos</a></li>
-          
-          
-        </ul>
-      </li>
+      
 
 
     </ul>

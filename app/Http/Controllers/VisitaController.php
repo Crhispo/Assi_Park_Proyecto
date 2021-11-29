@@ -6,6 +6,7 @@ use App\Models\Apartamento;
 use App\Models\parqueadero_visita;
 use App\Models\Vehiculo;
 use App\Models\visita;
+use App\Models\Visitante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,7 +20,7 @@ class VisitaController extends Controller
     function show(){
 
 
-        $visita=DB::select('select visita.ID_APARTAMENTO, visita.ID_VISITANTE, visita.ID_VEHICULO, visita.NUMERO_PARQUEADERO, visita.USUARIO_NUMERO_IDENTIFICACION, visita.FECHA_HORA_INICIO_VISITA,visita.FECHA_HORA_FIN_VISITA
+        $visita=DB::select('select id, visita.ID_APARTAMENTO, visita.ID_VISITANTE, visita.ID_VEHICULO, visita.NUMERO_PARQUEADERO, visita.USUARIO_NUMERO_IDENTIFICACION, visita.FECHA_HORA_INICIO_VISITA,visita.FECHA_HORA_FIN_VISITA
         from visita 
         inner join apartamento on visita.ID_APARTAMENTO =apartamento.ID_APARTAMENTO
         inner join visitante on visita.ID_VISITANTE =visitante.ID_VISITANTE
@@ -29,7 +30,7 @@ class VisitaController extends Controller
 
     );
 
-        return view('visita/lista', compact('visita'));
+        return view('visita/Visita', compact('visita'));
     }
     //eliminar 
     function delete($id){
@@ -41,6 +42,7 @@ class VisitaController extends Controller
     function form($id=null){
                 $NumeroApto=Apartamento::all();
                 $vehiculo=Vehiculo::all();
+                $vis=Visitante::all();
                 $parqueaderoV=parqueadero_visita::all();
                 if($id==null){
                     $visita=new visita();
@@ -48,7 +50,7 @@ class VisitaController extends Controller
                     $visita=visita::findOrFail($id);
                  }
 
-                return view('visita/Visita', compact('vehiculo','parqueaderoV','NumeroApto','visita'));
+                return view('visita/Visita', compact('vehiculo','parqueaderoV','NumeroApto','visita','vis'));
             }
             function save(Request $request){
                 $visita=new visita();
@@ -56,12 +58,12 @@ class VisitaController extends Controller
                     $visita=visita::findOrFail($request->id);
                 }
             $visita->ID_APARTAMENTO=$request->NUMERO_APTO;
-            $visita->ID_VISITANTE=$request->Vehiculo;
-            $visita->ID_VEHICULO=$request->parqueadero;
-            $visita->NUMERO_PARQUEADERO=$request->f;
-            $visita->USUARIO_NUMERO_IDENTIFICACION=$request->d;
-            $visita->FECHA_HORA_INICIO_VISITA=$request->t;
-            $visita->FECHA_HORA_FIN_VISITA=$request->e;
+            $visita->ID_VISITANTE=$request->Visitante;
+            $visita->ID_VEHICULO=$request->Vehiculo;
+            $visita->NUMERO_PARQUEADERO=$request->parqueadero2;
+            $nom=DB::update('update parqueadero_visitas set OCUPADO = 1 where id ='.$visita->NUMERO_PARQUEADERO);
+            $visita->FECHA_HORA_INICIO_VISITA=$request->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO;
+            $visita->FECHA_HORA_FIN_VISITA=$request->FECHA_FIN_DE_ASIGNACION_PARQUEADERO;
             $visita->save();
                 return redirect('/admin');
             }

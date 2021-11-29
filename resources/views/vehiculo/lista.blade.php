@@ -63,8 +63,14 @@
 
                                     @foreach($vehiculoList as $vehiculo)
                                     <tr>
+<td>
+@if (is_null($vehiculo->NUMERO_IDENTIFICACION))
+Vehiculo visitante
+@else
+{{$vehiculo->NUMERO_IDENTIFICACION}}
+@endif
 
-                                        <td>{{$vehiculo->NUMERO_IDENTIFICACION}}</td>
+                                        </td>
                                         <td>{{$vehiculo->MARCA}}</td>
                                         <td>{{$vehiculo->COLOR}}</td>
                                         <td>{{$vehiculo->TIPO_PARQUEADERO_VEHICULO}}</td>
@@ -181,3 +187,12 @@
 </div>
 @endsection
 @endsection
+
+
+
+<!--
+1 cargar datos
+2 quitar cosa extra
+3 servidor
+
+-->

@@ -49,7 +49,7 @@ class ParqueaderoVisitaController extends Controller
         $parqueaderoV->TAMAÑO = $request->TAMAÑO;
         $parqueaderoV->DESCRIPCION = $request->DESCRIPCION;
         $parqueaderoV->ESTADO_PARQUEADERO = $request->Estado;
-        $parqueaderoV->OCUPADO=$request->Esta;
+
         $parqueaderoV->save();
         return redirect('/parqueaderoV');
     }

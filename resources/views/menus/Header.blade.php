@@ -49,23 +49,23 @@
               
                <img src="{{'https://ui-avatars.com/api/?background=random&name='.Auth::user()->NOMBRE.'+'.Auth::user()->APELLIDO}}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                <ul class="dropdown-menu user-dropdown">
-                 <li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
-                 <li><a href="/admin#h"><span class="fa fa-calendar"></span> My Calendar</a></li>
+                 <li><a href="/admin"><span class="icon-home icons" style="font-size:1em;"></span>pagina principal</a></li>
+                 <li><a href="/admin#h"><span class="fa fa-calendar"></span> Calendario</a></li>
                  <li role="separator" class="divider"></li>
                  <li class="more">
                   <ul>
-                    <li><a href=""><span class="fa fa-cogs"></span></a></li>
-                    <li><a href=""><span class="fa fa-lock"></span></a></li>
+                    
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();"><span class="fa fa-power-off ">
+                      document.getElementById('logout-form').submit();"><span class="fa fa-power-off "  style="position: relative;left: 50px;">
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      
                       @csrf
                   </form></span></a></li>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li ><a href="#" class="opener-right-menu"><span class="fa fa-coffee"></span></a></li>
+            
           </ul>
       </div>
     </div>
