@@ -20,10 +20,10 @@ class VehiculoController extends Controller
     function show()
     {
         $vehiculoList = DB::select('select id,residente.NUMERO_IDENTIFICACION,Marca.MARCA, Color.COLOR, tipo_de_parqueadero_vehiculo.TIPO_PARQUEADERO_VEHICULO, placa,ESTADO_VEHICULO
-       from vehiculos inner join Marca on vehiculos.marca_id=Marca.ID_MARCA
-       inner join residente on vehiculos.NUMERO_IDENTIFICACION=residente.NUMERO_IDENTIFICACION
-       inner join Color on vehiculos.color_id=Color.ID_COLOR
-       inner join tipo_de_parqueadero_vehiculo on vehiculos.tipo_parqueadero_id=tipo_de_parqueadero_vehiculo.ID_TIPO_PARQUEADERO_VEHICULO');
+        from vehiculos INNER join Marca on vehiculos.marca_id=Marca.ID_MARCA
+        LEFT join residente on vehiculos.NUMERO_IDENTIFICACION=residente.NUMERO_IDENTIFICACION
+        inner join Color on vehiculos.color_id=Color.ID_COLOR
+        inner join tipo_de_parqueadero_vehiculo on vehiculos.tipo_parqueadero_id=tipo_de_parqueadero_vehiculo.ID_TIPO_PARQUEADERO_VEHICULO');
         return view('vehiculo/lista', compact('vehiculoList'));
     }
     //eliminar

@@ -36,7 +36,7 @@ $ocupado=$parking->OCUPADO;
             <div class="modal-content">
                 <div class="modal-header">
 
-                    <h4 class="modal-title" id="deleteModalLabel"> Cuadro de confirmación </h4>
+                    <h4 class="modal-title" id="deleteModalLabel"> Asignación </h4>
                 </div>
                 <div class="modal-body">
                   <form class="form-horizontal" method="POST" action="{{route('asignacion.save')}}">
@@ -47,9 +47,10 @@ $ocupado=$parking->OCUPADO;
                       <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
                           <option value="" selected>...</option>
                           @foreach($NumeroApto as $NumeroApto)
-                                <option value="{{ $NumeroApto['ID_APARTAMENTO'] }}" >
-                                {{ $NumeroApto['NUMERO_APTO'] }} ,"BLOQUE"  
-                                {{ $NumeroApto['BLOQUE'] }}   
+                                <option value="{{ $NumeroApto->ID_APARTAMENTO }}" >
+                                  Apartamento:
+                                {{ $NumeroApto ->NUMERO_APTO }} , Bloque: 
+                                {{ $NumeroApto->BLOQUE }}   
                                 </option>
                           @endforeach
                       </select>
@@ -61,16 +62,16 @@ $ocupado=$parking->OCUPADO;
                         <option value="" selected>...</option>
                         @foreach($vehiculo as $vehiculo)
                               <option value="{{ $vehiculo['id'] }}" >
-                              {{ $vehiculo['id'] }}
+                              {{ $vehiculo['placa'] }}
                               </option>
                         @endforeach
                     </select>
                 </div>
                 <br>
                 <div class="mb-3">
-                  <label for="parqueadero" class="form-label">Parqueadero:</label>
+
                   <br>
-              <input type="text" name="parqueadero" id="parqueadero" class="form-control"  style="background-color: white" placeholder="{{$parking->id}}"  value="{{old('parqueadero')? old('parqueadero'):$asignacion->parqueadero}}">
+              <input type="hidden"  name="parqueadero" id="parqueadero" class="form-control"  style="background-color: white"    value="{{$parking->id}}">
               </div>
                    <br>
                       <div class="form-group">
@@ -87,12 +88,7 @@ $ocupado=$parking->OCUPADO;
                   
                         <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">
-                            @php
-                            $ya=$parking->id;
-                                DB::table('parqueaderos')
-            ->where('id',$ya)
-            ->update(['OCUPADO' => 1]);
-                            @endphp
+                            
                             <button type="submit" class="btn btn-secondary">Guardar</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
                   

@@ -5,14 +5,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 @php
-    $estado=$parkingV->ESTADO_PARQUEADERO;
-$ocupado=$parkingV->OCUPADO;
+    $estado1=$parkingV->ESTADO_PARQUEADERO;
+$ocupado1=$parkingV->OCUPADO;
 @endphp
 
-@if ($estado == 1)                              
-       @if ($ocupado == 1)
-       <button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px; background-color:#27C24C; color:white" data-toggle="modal" data-target="{{'#ocupado'. $parkingV->{'id'} }}"> <i class="fa fa-car"></i></button>
-       <div id="{{'ocupado'. $parkingV->{'id'} }}"class="modal">
+@if ($estado1 == 1)                              
+       @if ($ocupado1 == 1)
+       <button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px; background-color:#27C24C; color:white" data-toggle="modal" data-target="{{'#ocupado1'. $parkingV->{'id'} }}"> <i class="fa fa-car"></i></button>
+       <div id="{{'ocupado1'. $parkingV->{'id'} }}"class="modal">
         <div class="modal-contenido" style="background-color:#2196f3; color:white;
         width:400px;
         padding: 10px 20px;
@@ -24,9 +24,9 @@ $ocupado=$parkingV->OCUPADO;
         </div>  
       </div>
        @else
-       <button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px; background-color:#27C24C; color:white" data-toggle="modal" data-target="{{'#deleteModal'. $parkingV->{'id'} }}">  {{ $parkingV->{'id'} }}</button>
+       <button type="button" value="Botón" style="margin-top: -4px;  width:100%;height:150px; background-color:#27C24C; color:white" data-toggle="modal" data-target="{{'#deleteModal1'. $parkingV->{'id'} }}">  {{ $parkingV->{'id'} }}</button>
            
-      <div class="modal fade" id="{{'deleteModal'. $parkingV->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+      <div class="modal fade" id="{{'deleteModal1'. $parkingV->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -34,43 +34,50 @@ $ocupado=$parkingV->OCUPADO;
                     <h4 class="modal-title" id="deleteModalLabel"> Visita </h4>
                 </div>
                 <div class="modal-body">
-                  <form class="form-horizontal" method="POST" action="{{route('asignacion.save')}}">
+                  <form class="form-horizontal" method="POST" action="{{route('visita.save')}}">
                     @csrf  
-                    <input type="hidden" name="id" value="{{old('id')? old('id'):$asignacion->id}}">
+                    <input type="hidden" name="id" value="{{old('id')? old('id'):$vista->id}}">
                     <div class="mb-3">
                       <label for="NUMERO_APTO" class="form-label">Numero apartamento: <span class="text-danger">*</span></label>
                       <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
                           <option value="" selected>...</option>
                           @foreach($NumeroApto as $NumeroApto)
-                                <option value="{{ $NumeroApto['ID_APARTAMENTO'] }}" >
-                                {{ $NumeroApto['NUMERO_APTO'] }} ,"BLOQUE"  
-                                {{ $NumeroApto['BLOQUE'] }}   
+                          <option value="{{ $NumeroApto->ID_APARTAMENTO }}" >
+                            Apartamento:
+                          {{ $NumeroApto ->NUMERO_APTO }} , Bloque: 
+                          {{ $NumeroApto->BLOQUE }}   
                                 </option>
                           @endforeach
                       </select>
                   </div>
+
+                  <div class="mb-3">
+                    <label for="Visitante" class="form-label">Visitante: <span class="text-danger">*</span></label>
+                    <select name="Visitante" id="Visitante" class="form-control">
+                        <option value="" selected>...</option>
+                        @foreach($vis as $vis)
+                              <option value="{{ $vis->ID_VISITANTE }}" >
+                              {{ $vis->NUMERO_DOCUMENTO }}
+                              {{$vis->NOMBRE}}
+                              {{$vis->APELLIDO}}
+                              </option>
+                        @endforeach
+                    </select>
+                </div>
+
                   <div class="mb-3">
                     <label for="Vehiculo" class="form-label">Vehiculo: <span class="text-danger">*</span></label>
                     <select name="Vehiculo" id="Vehiculo" class="form-control">
                         <option value="" selected>...</option>
                         @foreach($vehiculo as $vehiculo)
                               <option value="{{ $vehiculo['id'] }}" >
-                              {{ $vehiculo['id'] }}
+                              {{ $vehiculo['placa'] }}
                               </option>
                         @endforeach
                     </select>
                 </div>
-                <div class="mb-3">
-                  <label for="parqueadero" class="form-label">Visita: <span class="text-danger">*</span></label>
-                  <select name="parqueadero" id="parqueadero" class="form-control">
-                      <option value="" selected>...</option>
-                      @foreach($parqueadero as $parqueadero)
-                            <option value="{{ $parqueadero['id'] }}" >
-                            {{ $parqueadero['id'] }}
-                            </option>
-                      @endforeach
-                  </select>
-              </div>
+                <input type="hidden"  name="parqueadero2" id="parqueadero2" class="form-control"  style="background-color: white"    value="{{$parkingV->id}}">
+
               
                    
                       <div class="form-group">

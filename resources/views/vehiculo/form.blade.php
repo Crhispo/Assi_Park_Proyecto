@@ -60,7 +60,7 @@
                 <input type="hidden" name="id" value="{{old('id')? old('id'):$vehiculo->id}}">
 
                 <label for="NUMERO_IDENTIFICACION" class="form-label">Numero Identificación Propietario <span class="text-danger">*</span></label>
-                <select name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION" class="form-control" required>
+                <select name="NUMERO_IDENTIFICACION" id="NUMERO_IDENTIFICACION" class="form-control" >
                     <option value="" selected>...</option>
                     @foreach($residente as $residente)
                     <option value="{{$residente->NUMERO_IDENTIFICACION}}" {{$vehiculo->NUMERO_IDENTIFICACION === $residente->NUMERO_IDENTIFICACION ? 'selected' : ''}}>

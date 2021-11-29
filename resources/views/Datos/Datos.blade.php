@@ -141,6 +141,12 @@
                             </div>
                             </div>
                         </div>
+                        <ul class="nav nav-list tree">
+                          <li><a href="{{route('descargarPDFUsuario')}}" target="_blank">Reporte Usuarios</a></li>
+                          <li><a href="{{route('descargarPDFVisitantes')}}" target="_blank">Reporte Visitantes</a></li>
+                          <li><a href="{{route('descargarPDFVehiculo')}}" target="_blank">Reporte Vehículos</a></li>
+                            <li><a href="{{route('descargarPDFApartamentos')}}" target="_blank">Reporte Apartamentos</a></li>
+                            
                         <!--residentes fin-->
                                 </div>
                         </div>
