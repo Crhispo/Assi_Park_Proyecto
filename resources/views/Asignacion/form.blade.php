@@ -19,7 +19,22 @@ $ocupado=$parking->OCUPADO;
         padding: 10px 20px;
         margin: 20% auto;
         position: relative">
-          <h2>Este espacio del parqueadero esta ocupado</h2>
+          @foreach($asignacionList as $asignacion)
+
+   
+    {{$asignacion->apartamento_id}}
+    {{$asignacion->vehiculo_id}}
+    {{$asignacion->parqueadero_id}}
+    {{$asignacion->inicio}}
+
+    
+        <a href="{{route('asignacion.form',['id'=>$asignacion->parqueadero_id])}}" class="btn btn-warning">Editar</a>
+    
+    
+        <a href="{{route('eliminarasignacion',['id'=>$asignacion->parqueadero_id])}}" class="btn btn-danger">Eliminar</a>
+    
+
+@endforeach 
           
           <CEnter><button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button></CEnter>
         </div>  
@@ -41,7 +56,7 @@ $ocupado=$parking->OCUPADO;
                 <div class="modal-body">
                   <form class="form-horizontal" method="POST" action="{{route('asignacion.save')}}">
                     @csrf  
-                    <input type="hidden" name="id" value="{{old('id')? old('id'):$asignacion->id}}">
+                    <input type="hidden" name="id" value="{{old('id')? old('id'):$asignacion->parqueadero_id}}">
                     <div class="mb-3">
                       <label for="NUMERO_APTO" class="form-label">Numero apartamento:</label>
                       <select name="NUMERO_APTO" id="NUMERO_APTO" class="form-control">
@@ -77,13 +92,13 @@ $ocupado=$parking->OCUPADO;
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Inicio asignacion</label>
                         <div class="col-sm-10">
-                          <input type="datetime-local" class="form-control" name="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" id="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" value="{{old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO')? old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO'):$asignacion->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO}}">
+                          <input type="datetime-local" class="form-control" name="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" id="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO" value="{{old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO')? old('FECHA_INICIO_DE_ASIGNACION_PARQUEADERO'):$asignacion->inicio}}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="FECHA_INICIO_DE_ASIGNACION_PARQUEADERO">Finalizacio de asignacion</label>
                         <div class="col-sm-10">
-                          <input type="datetime-local" class="form-control" name="FECHA_FIN_DE_ASIGNACION_PARQUEADERO" id="FECHA_FIN_DE_ASIGNACION_PARQUEADERO" value="{{old('FECHA_FIN_DE_ASIGNACION_PARQUEADERO')? old('FECHA_FIN_DE_ASIGNACION_PARQUEADERO'):$asignacion->FECHA_FIN_DE_ASIGNACION_PARQUEADERO}}">
+                          <input type="datetime-local" class="form-control" name="FECHA_FIN_DE_ASIGNACION_PARQUEADERO" id="FECHA_FIN_DE_ASIGNACION_PARQUEADERO" value="{{old('FECHA_FIN_DE_ASIGNACION_PARQUEADERO')? old('FECHA_FIN_DE_ASIGNACION_PARQUEADERO'):$asignacion->fin}}">
                         </div>
                   
                         <div class="form-group">
