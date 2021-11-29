@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Reporte de Vehiculos</title>
+
+    <title>Reporte de Parqueaderos Disponibles</title>
 </head>
+
 <body>
 <style>
  .clearfix:after {
@@ -137,39 +139,90 @@
   </style>
 
 
- 
+    <!-- <img class="anulada" src="public\Img\LOGO_FINAL_ASSIPARK.png" alt="Anulada"> -->
     <div id="page_pdf">
-	<table id="factura_head">
+    <table id="factura_head">
       <tr>
     
-        <h1>REPORTE DE VEHÍCULOS</h1>
+        <h1>REPORTE PARQUEADEROS DISPONIBLES  RESID.</h1>
 
       </tr>
     </table>
 
 
-    <table  id="factura_detalle">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col" class="textleft">Identificación</th>
-      <th scope="col" class="textleft">Marca</th>
-      <th scope="col" class="textleft">Placa</th>
-    </tr>
-  </thead>
-  <tbody>
-      @foreach($vehicl as $Vehiculo)
-    <tr>
-      <th scope="row">{{$Vehiculo->id }}</th>
-      <td>{{$Vehiculo->NUMERO_IDENTIFICACION}}</td>
-      <td>{{$Vehiculo->marca_id}}</td>
-      <td>{{$Vehiculo->placa}}</td>
-    </tr>
-    @endforeach
-   
-  </tbody>
-</table>
+
+        <table id="factura_detalle">
+            <thead>
+                <tr>
+                    <th scope="col">ID Parqueadero</th>
+                    <th scope="col" class="textleft">Tipo de Parqueadero</th>
+                    <th scope="col" class="textleft">Tamaño</th>
+                    <th scope="col" class="textleft">Descripcion</th>
+                    <th scope="col" class="textleft">Disponibilidad</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($parqdero as $parqueaderos)
+                <tr>
+                    <th scope="row">{{$parqueaderos->id}}</th>
+                    <td>{{$parqueaderos->TIPO_PARQUEADERO_VEHICULO}}</td>
+                    <td>{{$parqueaderos->TAMAÑO}}</td>
+                    <td>{{$parqueaderos->DESCRIPCION}}</td>
+                    <td>{{$parqueaderos->OCUPADO}}</td>
+
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+
+
+
     </div>
+
+
+    <div id="page_pdf">
+    <table id="factura_head">
+      <tr>
     
+        <h1>REPORTE PARQUEADEROS DISPONIBLES VISITANTE</h1>
+
+      </tr>
+    </table>
+
+
+
+        <table id="factura_detalle">
+            <thead>
+                <tr>
+                    <th scope="col">ID Parqueadero</th>
+                    <th scope="col" class="textleft">Tipo de Parqueadero</th>
+                    <th scope="col" class="textleft">Tamaño</th>
+                    <th scope="col" class="textleft">Descripcion</th>
+                    <th scope="col" class="textleft">Disponibilidad</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($parqdero2 as $parqueaderos)
+                <tr>
+                    <th scope="row">{{$parqueaderos->id}}</th>
+                    <td>{{$parqueaderos->TIPO_PARQUEADERO_VEHICULO}}</td>
+                    <td>{{$parqueaderos->TAMAÑO}}</td>
+                    <td>{{$parqueaderos->DESCRIPCION }}</td>
+                    <td>{{$parqueaderos->OCUPADO}}</td>
+
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
 </body>
+
 </html>

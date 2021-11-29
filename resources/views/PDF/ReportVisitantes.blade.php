@@ -8,146 +8,144 @@
     <title>Reporte de Visitantes</title>
 </head>
 <body>
-  <style>
- 
- 
-  body{
-    font-family: "Poppins", sans-serif;
-  }
+<style>
+ .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-.h2{
 
-	text-align: center;
-	font-size: 25pt;
-	margin-left:-419px;
-	color: #3e6ccf;
-	font-weight: bold;
-}
-.h1{
-	
-	text-align: center;
-	font-size: 16pt;
-	margin-left:-419px;
-}
-.h3{
+    body {
+      /* position: relative;
+      width: 21cm;
+      height: 29.7cm; */
+      margin: 0 auto;
+      /* margin-left: 55px; */
+      color:  #5D6975;
+      background: #FFFFFF;
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      
+    }
 
-	font-size: 12pt;
-	display: block;
-	background: #0a4661;
-	color: #FFF;
-	text-align: center;
-	padding: 3px;
-	margin-bottom: 5px;
-}
-#page_pdf{
-	width: 95%;
-	margin: 15px auto 10px auto;
-}
+    header {
+      padding: 10px 0;
+      margin-bottom: 30px;
+    }
 
-#factura_head, #factura_cliente, #factura_detalle{
-	width: 100%;
-	margin-bottom: 10px;
-}
-.logo_factura{
-	width: 25%;
-}
-.info_empresa{
-	width: 50%;
-	text-align: center;
-}
-.info_factura{
-	width: 25%;
-}
-.info_cliente{
-	width: 100%;
-}
-.datos_cliente{
-	width: 100%;
-}
-.datos_cliente tr td{
-	width: 50%;
-}
-.datos_cliente{
-	padding: 10px 10px 0 10px;
-}
-.datos_cliente label{
-	width: 75px;
-	display: inline-block;
-}
-.datos_cliente p{
-	display: inline-block;
-}
+    
 
-.textright{
-	text-align: right;
-}
-.textleft{
-	text-align: left;
-}
-.textcenter{
-	text-align: center;
-}
-.round{
-	border-radius: 10px;
-	border: 1px solid #0a4661;
-	overflow: hidden;
-	padding-bottom: 15px;
-}
-.round p{
-	padding: 0 15px;
-}
+     h1 {
+      /* width: 970px; */
+      border-top: 5px solid #3e6ccf;
+      border-bottom: 5px solid #3e6ccf;
+      color:  #FFFFFF;
+      font-size: 2 em;
+      line-height: 1.4em;
+      font-style: strong;
+      text-align: center;
+      /* margin-right: -120px; */
+      border-radius: 1px;
+      background-color: #3e6ccf;
+    }
 
-#factura_detalle{
-	border-collapse: collapse;
-}
-#factura_detalle thead th{
-	background: #2196F3;
-	color: #FFF;
-	padding: 5px;
-}
-#detalle_productos tr:nth-child(even) {
-    background: #ededed;
-}
-#detalle_totales span{
-	font-family: 'BrixSansBlack';
-}
-.nota{
-	font-size: 8pt;
-}
-.label_gracias{
-	font-family: verdana;
-	font-weight: bold;
-	font-style: italic;
-	text-align: center;
-	margin-top: 20px;
-}
-.anulada{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
-}
+    #project {
+      float: left;
+    }
 
+    #project span {
+      color:  #3e6ccf;
+      text-align: right;
+      width: 52px;
+      margin-right: 10px;
+      display: inline-block;
+      font-size: 0.8em;
+    } 
+
+     #company {
+      float: right;
+      text-align: right;
+    }
+
+    #project div,
+    #company div {
+      white-space: nowrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-bottom: 20px;
+    } 
+
+     table tr:nth-child(2n-1) td {
+      background: #F5F5F5;
+    }
+
+    table th,
+    table td {
+      text-align: center;
+    }
+
+    table th {
+      padding: 5px 20px;
+      color: #3e6ccf;
+      border-bottom: 1px solid #C1CED9;
+      white-space: nowrap;
+      font-weight: normal;
+    }
+
+    table .service,
+    table .desc {
+      text-align: left;
+    }
+
+    table td {
+      padding: 20px;
+      text-align: right;
+    }
+
+    table td.service,
+    table td.desc {
+      vertical-align: top;
+    }
+
+    table td.unit,
+    table td.qty,
+    table td.total {
+      font-size: 1.2em;
+    }
+
+    table td.grand {
+      border-top: 1px solid #3e6ccf;
+     
+    }
+
+   
+    footer {
+      color: #5D6975;
+      width: 100%;
+      height: 30px;
+      position: absolute;
+      bottom: 0;
+      border-top: 1px solid #C1CED9;
+      padding: 8px 0;
+      text-align: center;
+    }
   </style>
 
-  <!-- <img class="anulada" src="public\Img\LOGO_FINAL_ASSIPARK.png" alt="Anulada"> -->
-    <div id="page_pdf">
+  
+<div id="page_pdf">
     <table id="factura_head">
-		<tr>
-			<td class="logo_factura">
-				<div>
-					<!-- <img src="public\Img\LOGO_FINAL_ASSIPARK.png" type="image/png"> -->
-				</div>
-			</td>
-			<td class="info_empresa">
-				<div>
-					<span class="h2">REPORTE DE VISITANTES</span><br>
-					
-				</div>
-			</td>
-	
-		</tr>
-	</table>
+      <tr>
+    
+        <h1>REPORTE DE VISITANTES</h1>
+
+      </tr>
+    </table>
+
 
 
     <table  id="factura_detalle">

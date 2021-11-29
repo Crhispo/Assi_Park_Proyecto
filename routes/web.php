@@ -125,10 +125,24 @@ Route::get('/guarda', [HomeController::class, 'guarda'])->name('guarda');
 // Route::get('/pdf','PDFController@PDF')->name('descargarPDF');
 Route::get('/pdfUsuario','App\Http\Controllers\PDFController@PDFusuarios')->name('descargarPDFUsuario');
 Route::get('/pdfVisitante','App\Http\Controllers\PDFController@PDFusuariosVisitantes')->name('descargarPDFVisitantes');
+Route::get('/pdfResidente','App\Http\Controllers\PDFController@PDFResidentes')->name('descargarPDFResidentes');
 
 Route::get('/pdfVehiculo','App\Http\Controllers\PDFController@PDFVehiculos')->name('descargarPDFVehiculo');
+Route::get('/pdfVehiculoResidente','App\Http\Controllers\PDFController@PDFVehiculoResidente')->name('descargarPDFVehiculoResidente');
+Route::get('/pdfVehiculoVisitante','App\Http\Controllers\PDFController@PDFVehiculoVisitante')->name('descargarPDFVehiculoVisitante');
+
+Route::get('/pdfParqueaderosLibres','App\Http\Controllers\PDFController@PDFParqueaderosLibres')->name('descargarPDFParqueaderosLibres');
+Route::get('/pdfParqueaderosOcupados','App\Http\Controllers\PDFController@PDFParqueaderosOcupados')->name('descargarPDFParqueaderosOcupados');
+
 Route::get('/pdfApartamentos','App\Http\Controllers\PDFController@PDFapartamentos')->name('descargarPDFApartamentos');
 Auth::routes();
+
+
+
+
+
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

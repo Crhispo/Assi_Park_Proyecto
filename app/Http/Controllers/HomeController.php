@@ -36,6 +36,12 @@ class HomeController extends Controller
 
     public function admin($id=null)
     {
+        $asignacionList=DB::select('select detalle_asignaciones.apartamento_id, detalle_asignaciones.vehiculo_id, detalle_asignaciones.parqueadero_id, detalle_asignaciones.inicio, detalle_asignaciones.fin
+        from detalle_asignaciones 
+        inner join apartamento on detalle_asignaciones.apartamento_id =apartamento.ID_APARTAMENTO
+        inner join vehiculos on detalle_asignaciones.vehiculo_id=vehiculos.id
+        inner join parqueaderos on detalle_asignaciones.parqueadero_id=parqueaderos.id');
+        
         $parqueadero=Parqueadero::all();
         $cantidadres=DB::select('select ResidentesTotales() as residente');
         $cantidadveh=DB::select('select VehiculosTotales() as vehiculos');
@@ -55,7 +61,7 @@ class HomeController extends Controller
          }else{
             $asignacion=Detalle_asignacion::findOrFail($id);
          }
-        return view('Dashboards.Dashboard_admin', compact('cantidadveh','vista','cantidadres','parqueadero','parqueaderoV','vehiculo','NumeroApto','asignacion','vis'));
+        return view('Dashboards.Dashboard_admin', compact('cantidadveh','vista','cantidadres','parqueadero','parqueaderoV','vehiculo','NumeroApto','asignacion','vis','asignacionList'));
 
     }
 
