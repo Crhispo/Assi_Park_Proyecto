@@ -96,7 +96,7 @@ Route::get('/asignacion', [Detalle_asignacionController::class, 'show'])->name('
 route::get('/vehiculo/delete/{id}', [VehiculoController::class, 'delete'])->name('eliminarvehiculo');
 route::get('/parqueadero/delete/{id}', [ParqueaderoController::class, 'delete'])->name('eliminarparqueadero');
 route::get('/tipo/delete/{id}', [tipo_parqueadero_vehiculoController::class, 'delete'])->name('eliminartipo');
-route::get('/asignacion/delete/{id}', [Detalle_asignacionController::class, 'delete'])->name('eliminarasignacion');
+route::get('/asignacion/delete/{id}', [HomeController::class, 'delete'])->name('eliminarasignacion');
 Route::delete('Parqueaderodisable{id}', [ParqueaderoController::class, 'Disable'])->name('Parqueadero.Disable');
 Route::delete('Vehiculodisable{id}', [VehiculoController::class, 'Disable'])->name('Usuario.Disable');
 //ver la vista para crear vehiculos

@@ -67,8 +67,7 @@
 
       <li class="ripple">
         <a  href="/Datos">
-          <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas
-          <span class="fa-angle-right fa right-arrow text-right"></span>
+          <span class="icon-chart icons" style="font-size:1em;"></span> Reportes<span class="fa-angle-right fa right-arrow text-right"></span>
         </a>
       </li>
       
