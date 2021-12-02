@@ -17,7 +17,7 @@ for ($i = 0; $i < 9; $i++) { $cad .=substr($charset, rand(0, 62), 1); }
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Formulario de usuario</h3>
                         <p class="animated fadeInDown">
-                          Admin <span class="fa-angle-right fa"></span> Registar usuarios
+                        Administrador <span class="fa-angle-right fa"></span> Registar usuarios
                         </p>
                     </div>
                   </div>

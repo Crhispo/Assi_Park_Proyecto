@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <h3 class="animated fadeInLeft">Formulario de usuario</h3>
                 <p class="animated fadeInDown">
-                    Admin <span class="fa-angle-right fa"></span> Modificar usuarios
+                Administrador <span class="fa-angle-right fa"></span> Modificar usuarios
                 </p>
             </div>
         </div>

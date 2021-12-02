@@ -236,7 +236,7 @@ var baseURL= {!! json_encode(url('/')) !!}
 
             <div class="col-md-12 padding-0">
              
-                <div class="panel-footer bg-white border-none">
+                <!-- <div class="panel-footer bg-white border-none">
                   <center>
                     <a href="{{route('descargarPDFUsuario')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Usuarios</a><br>
                     <a href="{{route('descargarPDFVisitantes')}}" target="_blank" class="btn btn-danger box-shadow-none">Reporte Visitantes</a>
@@ -263,7 +263,7 @@ var baseURL= {!! json_encode(url('/')) !!}
 
 
 
-                </div>
+                </div> -->
               </div>
             </div>
 

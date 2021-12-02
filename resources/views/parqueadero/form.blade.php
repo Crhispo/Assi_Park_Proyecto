@@ -23,7 +23,7 @@
          
 
           <p class="animated fadeInDown">
-              Admin <span class="fa-angle-right fa"></span> parqueaderos
+          Administrador <span class="fa-angle-right fa"></span> Parqueaderos
           </p>
       </div>
   </div>

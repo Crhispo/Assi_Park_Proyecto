@@ -13,7 +13,7 @@
 
 
                     <p class="animated fadeInDown">
-                        Admin <span class="fa-angle-right fa"></span> Visitantes
+                    Administrador <span class="fa-angle-right fa"></span> Visitantes
                     </p>
                 </div>
             </div>
@@ -30,14 +30,14 @@
                             <table id="Tabla_consulta" class="table table-striped table-bordered" width="100%" cellspacing="0">
                                 <thead class="bg-primary text-white">
                                     <tr style="background-color:#2196f3">
-                                        <th>Documento de identidad</th>
+                                        <th>N° Identificación</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
-                                        <th>Telefono</th>
-                                        <th>celular</th>
+                                        <th>Teléfono</th>
+                                        <th>Celular</th>
                                         <th>Celular secundario</th>
                                         <th>Estado</th>
-                                        <th>Modificar</th>
+                                        <th>Editar</th>
                                         <th>Inhabilitar</th>
                                     </tr>
                                 </thead>
@@ -69,12 +69,12 @@
 
                                         <td>
 
-                                            <a class="btn btn-outline-warning p-md-2" href="{{url('Visitanteedit'.$_Visitante->{'ID_VISITANTE'})}}"><i class="icon ion-md-create"></i></a>
+                                            <a class="btn btn-info" href="{{url('Visitanteedit'.$_Visitante->{'ID_VISITANTE'})}}"><i class="icon-note"></i></a>
 
                                         </td>
                                         <td>
 
-                                            <button type="button" style="margin: 0px" class="btn btn-outline-warning p-md-2" data-toggle="modal" data-target="{{'#deleteModal'. $_Visitante->{'ID_VISITANTE'} }}"><i class="icon ion-md-remove"></i></button>
+                                            <button type="button" style="margin: 0px" class="btn btn-danger" data-toggle="modal" data-target="{{'#deleteModal'. $_Visitante->{'ID_VISITANTE'} }}"><i class=" icon-user-unfollow"></i></button>
                                             <div class="modal fade" id="{{'deleteModal'. $_Visitante->{'ID_VISITANTE'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">

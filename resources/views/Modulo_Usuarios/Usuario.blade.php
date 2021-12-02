@@ -1,7 +1,7 @@
 @extends('Modulo_Usuarios.plantillaUsu')
 
 @section('Contenido')
-
+<link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css" />
 <div class="container-fluid mimin-wrapper">
 
     <!-- start: Content -->
@@ -13,7 +13,7 @@
 
 
                     <p class="animated fadeInDown">
-                        Admin <span class="fa-angle-right fa"></span> Usuarios
+                        Administrador <span class="fa-angle-right fa"></span> Usuarios
                     </p>
                 </div>
             </div>
@@ -23,23 +23,23 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <h3>Usuarios</h3>
-                        <a href="/Usuarioform" class="btn btn-outline-success p-md-2">Registrar Usuarios</a>
+                        <a href="/Usuarioform" class="btn btn-outline-success p-md-2">Registrar Usuario</a>
                     </div>
                     <div class="panel-body">
                         <div class="responsive-table">
                             <table id="Tabla_consulta" class="table table-striped table-bordered" width="100%" cellspacing="0">
                                 <thead class="bg-primary text-white">
                                     <tr style="background-color:#2196f3">
-                                        <th>documento de identidad</th>
+                                        <th>N° Identificación</th>
                                         <th>Tipo de usuario</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
                                         <th>Dirección</th>
-                                        <th>Telefono</th>
-                                        <th>celular</th>
-                                        <th>Correo</th>
+                                        <th>Teléfono</th>
+                                        <th>Celular</th>
+                                        <th>Correo electronico</th>
                                         <th>Estado</th>
-                                        <th>Modificar</th>
+                                        <th>Editar</th>
                                         <th>Inhabilitar</th>
                                     </tr>
                                 </thead>
@@ -73,12 +73,12 @@
 
                                         <td>
 
-                                            <a class="btn btn-outline-warning p-md-2" href="{{url('Usuarioedit'.$_Usuario->{'NUMERO_IDENTIFICACION'})}}"><i class="icon ion-md-create"></i></a>
+                                            <a class="btn btn-info" href="{{url('Usuarioedit'.$_Usuario->{'NUMERO_IDENTIFICACION'})}}"><i class=" icon-note"></i></a>
 
                                         </td>
                                         <td>
 
-                                            <button type="button" style="margin: 0px" class="btn btn-outline-warning p-md-2" data-toggle="modal" data-target="{{'#deleteModal'. $_Usuario->{'NUMERO_IDENTIFICACION'} }}"><i class="icon ion-md-remove"></i></button>
+                                            <button type="button" style="margin: 0px" class="btn btn-danger" data-toggle="modal" data-target="{{'#deleteModal'. $_Usuario->{'NUMERO_IDENTIFICACION'} }}"><i class=" icon-user-unfollow"></i></button>
                                             <div class="modal fade" id="{{'deleteModal'. $_Usuario->{'NUMERO_IDENTIFICACION'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">

@@ -23,7 +23,7 @@
 
 
                 <p class="animated fadeInDown">
-                    Admin <span class="fa-angle-right fa"></span> Vehiculos
+                    Administrador <span class="fa-angle-right fa"></span> Vehiculos
                 </p>
             </div>
         </div>

@@ -8,7 +8,7 @@
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Formulario de Apartamento</h3>
                         <p class="animated fadeInDown">
-                          Admin <span class="fa-angle-right fa"></span> Editar Apartamento
+                        Administrador <span class="fa-angle-right fa"></span> Editar Apartamento
                         </p>
                     </div>
                   </div>

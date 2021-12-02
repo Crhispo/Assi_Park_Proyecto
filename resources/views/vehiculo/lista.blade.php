@@ -1,6 +1,6 @@
 @extends('plantilla')
-@section('title','vehiculo')
-@section('Encabezado','Vehiculo')
+@section('title','Vehículo')
+@section('Encabezado','Vehículo')
 @section('content')
 <br>
 
@@ -29,7 +29,7 @@
 
 
                     <p class="animated fadeInDown">
-                        Admin <span class="fa-angle-right fa"></span> Vehiculos
+                        Administrador <span class="fa-angle-right fa"></span> Vehículos
                     </p>
                 </div>
             </div>
@@ -39,17 +39,17 @@
             <div class="col-md-12">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3>Vehiculos</h3>
+                        <h3>Vehículos</h3>
 
                     </div>
 
                     <div class="panel-body">
                         <div class="responsive-table">
-                            <table id="vehiculo" class="table table-striped shadow-lg mt-4" >
+                            <table id="vehiculo" class="table table-striped shadow-lg mt-4">
                                 <thead class="bg-primary text-white">
                                     <tr style="background-color:#2196f3">
 
-                                        <th>Numero de identificación propetario</th>
+                                        <th>N° identificación propetario</th>
                                         <th>Marca</th>
                                         <th>Color</th>
                                         <th>Tipo parqueadero</th>
@@ -63,12 +63,12 @@
 
                                     @foreach($vehiculoList as $vehiculo)
                                     <tr>
-<td>
-@if (is_null($vehiculo->NUMERO_IDENTIFICACION))
-Vehiculo visitante
-@else
-{{$vehiculo->NUMERO_IDENTIFICACION}}
-@endif
+                                        <td>
+                                            @if (is_null($vehiculo->NUMERO_IDENTIFICACION))
+                                            Vehiculo visitante
+                                            @else
+                                            {{$vehiculo->NUMERO_IDENTIFICACION}}
+                                            @endif
 
                                         </td>
                                         <td>{{$vehiculo->MARCA}}</td>
@@ -89,16 +89,16 @@ Vehiculo visitante
                                             Erros
                                             @endswitch</td>
                                         <td>
-                                            <a href="{{route('vehiculo.form',['id'=>$vehiculo->id])}}" class="btn btn-info" style="margin-top: 8px;">Editar</a>
+                                            <a href="{{route('vehiculo.form',['id'=>$vehiculo->id])}}" class="btn btn-info" style="margin-top: 8px;"><i class="icon-note"></i></a>
                                         </td>
                                         <td>
 
-                                            <button type="button" class="btn btn-danger" style="margin-top: 8px;"   data-toggle="modal" data-target="{{'#deleteModal'. $vehiculo->{'id'} }}">Inhabilitar</button>
+                                            <button type="button" class="btn btn-danger" style="margin-top: 8px;" data-toggle="modal" data-target="{{'#deleteModal'. $vehiculo->{'id'} }}"><i class="fa fa-car"></i> <i class="icon-close"></i></button>
                                             <div class="modal fade" id="{{'deleteModal'. $vehiculo->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                    
+
                                                             <h4 class="modal-title" id="deleteModalLabel"> Cuadro de confirmación </h4>
                                                         </div>
                                                         <div class="modal-body">
@@ -108,7 +108,7 @@ Vehiculo visitante
                                                                 <div class="form-group">
                                                                     <label class="control-label"> ¿Está seguro de que desea inhabilitar? </label>
                                                                 </div>
-                                    
+
                                                                 @php
                                                                 $CheckA = '';
                                                                 $CheckI = '';
@@ -121,10 +121,10 @@ Vehiculo visitante
                                                                 break;
                                                                 }
                                                                 @endphp
-                                    
+
                                                                 <input type="radio" name="ESTADO_VEHICULO" value="1" id="Activo" {{ $CheckA }} /><label for="Activo">Activar</label>
                                                                 <input type="radio" name="ESTADO_VEHICULO" value="0" id="Inactivo" {{ $CheckI }} /><label for="Inactivo">Inhabilitar</label>
-                                    
+
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>

@@ -49,21 +49,14 @@
 
         <ul class="nav navbar-nav search-nav">
           <li>
-             <div class="search">
-              <span class="fa fa-search icon-search" style="font-size:23px;"></span>
-              <div class="form-group form-animate-text">
-                <input type="text" class="form-text" required>
-                <span class="bar"></span>
-                <label class="label-search">Escriba aquí para <b>Buscar</b> </label>
-              </div>
-            </div>
+            
           </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right user-nav">
-          <li class="user-name"><span>Juan Moreno | Admin</span></li>
+          <li class="user-name"><span>Juan Moreno | Guarda Seguridad</span></li>
             <li class="dropdown avatar-dropdown">
-             <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+            <img src="{{'https://ui-avatars.com/api/?background=random&name='.Auth::user()->NOMBRE.'+'.Auth::user()->APELLIDO}}" class="img-responsive" />
              <ul class="dropdown-menu user-dropdown">
                <li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
                <li><a href="#"><span class="fa fa-calendar"></span> My Calendar</a></li>
@@ -92,8 +85,8 @@
           <ul class="nav nav-list">
               <li><div class="left-bg"></div></li>
               <li class="time">
-                <h1 class="animated fadeInLeft">21:00</h1>
-                <p class="animated fadeInRight">Sat,October 1st 2029</p>
+                <h1 class="animated fadeInLeft"></h1>
+                <p class="animated fadeInRight"></p>
               </li>
               <li class="active ripple">
                 <a class="tree-toggle nav-header"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
@@ -179,42 +172,10 @@
                   <div class="col-md-8 padding-0">
                       <div class="col-md-12 padding-0">
                           <div class="col-md-6">
-                              <div class="panel box-v1">
-                                <div class="panel-heading bg-white border-none">
-                                  <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Numero de Vehiculos</h4>
-                                  </div>
-                                  <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                     <h4>
-                                     <span class="icon-user icons icon text-right"></span>
-                                     </h4>
-                                  </div>
-                                </div>
-                                <div class="panel-body text-center">
-                                  <h1>120</h1>
-                                  <p></p>
-                                  <hr/>
-                                </div>
-                              </div>
+                              
                           </div>
                           <div class="col-md-6">
-                              <div class="panel box-v1">
-                                <div class="panel-heading bg-white border-none">
-                                  <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Total Residentes</h4>
-                                  </div>
-                                  <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                     <h4>
-                                     <span class="icon-basket-loaded icons icon text-right"></span>
-                                     </h4>
-                                  </div>
-                                </div>
-                                <div class="panel-body text-center">
-                                  <h1>511</h1>
-                                  <p></p>
-                                  <hr/>
-                                </div>
-                              </div>
+                             
                           </div>
                       </div>
 
@@ -232,7 +193,7 @@
                             </div>
                         </div>
                     </div>
-                        <iframe src="/Organization" frameborder="0" allowfullscreen style="width: 908px; height:478px;margin-left: -230px;overflow-x:hidden;"></iframe>
+                       
 
                       <div class="col-md-12">
                           <div class="panel box-v4">
@@ -258,118 +219,19 @@
                       <div class="col-md-12 padding-0">
                         <div class="panel box-v2">
                             <div class="panel-heading padding-0">
-                              <img src="asset/img/bg2.jpg" class="box-v2-cover img-responsive"/>
+                            <img src="img\FONDO_PERFIL.png" class="box-v2-cover img-responsive" />
                               <div class="box-v2-detail">
-                                <img src="asset/img/avatar.jpg" class="img-responsive"/>
-                                <h4>Juan Moreno</h4>
+                              <img src="{{'https://ui-avatars.com/api/?background=random&name='.Auth::user()->NOMBRE.'+'.Auth::user()->APELLIDO}}" class="img-responsive" />
+                                
                               </div>
                             </div>
 
                         </div>
                       </div>
 
-                      <div class="col-md-12 padding-0">
-                        <div class="panel box-v3">
-                          <div class="panel-heading bg-white border-none">
-                            <h4>Reporte</h4>
-                          </div>
-                          <div class="panel-body">
+                     
 
-                            <div class="media">
-                              <div class="media-left">
-                                  <span class="icon-folder icons" style="font-size:2em;"></span>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="media-heading">Apartamentos con Vehiculo</h5>
-                                  <div class="progress progress-mini">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                                      <span class="sr-only">20% Complete</span>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-
-                            <div class="media">
-                              <div class="media-left">
-                                  <span class="icon-pie-chart icons" style="font-size:2em;"></span>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="media-heading">Numero de apartamentos vacios</h5>
-                                  <div class="progress progress-mini">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100" style="width: 19%;">
-                                      <span class="sr-only">60% Complete</span>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-
-                            <div class="media">
-                              <div class="media-left">
-                                  <span class="icon-energy icons" style="font-size:2em;"></span>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="media-heading">Visitantes durante cada mes</h5>
-                                  <div class="progress progress-mini">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
-                                      <span class="sr-only">60% Complete</span>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-
-                            <div class="media">
-                              <div class="media-left">
-                                  <span class="icon-user icons" style="font-size:2em;"></span>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="media-heading">Residentes sin parqueadero</h5>
-                                  <div class="progress progress-mini">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%;">
-                                      <span class="sr-only">60% Complete</span>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-
-                             <div class="media">
-                              <div class="media-left">
-                                  <span class="icon-fire icons" style="font-size:2em;"></span>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="media-heading">Parqueaderos Asignados</h5>
-                                  <div class="progress progress-mini">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                      <span class="sr-only">60% Complete</span>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel-footer bg-white border-none">
-                              <center>
-                                <input type="button" value="Descargar como PDF" class="btn btn-danger box-shadow-none"/>
-                              </center>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-12 padding-0">
-                        <div class="panel bg-light-blue">
-                          <div class="panel-body text-white">
-                             <p class="animated fadeInUp quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit Ut wisi..."</p>
-                              <div class="col-md-12 padding-0">
-                                <div class="text-left col-md-7 col-xs-12 col-sm-7 padding-0">
-                                  <span class="fa fa-twitter fa-2x"></span>
-                                  <span>22 May, 2015 via mobile</span>
-                                </div>
-                                <div style="padding-top:8px;" class="text-right col-md-5 col-xs-12 col-sm-5 padding-0">
-                                  <span class="fa fa-retweet"></span> 2000
-                                  <span class="fa fa-star"></span> 3000
-                                </div>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
+                     
                   </div>
               </div>
 

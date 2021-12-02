@@ -23,7 +23,7 @@
             <div class="col-md-12">
                 <h3 class="animated fadeInLeft">Bienvenido Administrador</h3>
                 <p class="animated fadeInDown">
-                    Admin <span class="fa-angle-right fa"></span> parqueadero Visitante
+                Administrador <span class="fa-angle-right fa"></span> Parqueadero Visitante
                 </p>
             </div>
         </div>
@@ -45,14 +45,14 @@
                         <table id="parqueadero" class="table table-striped shadow-lg mt-4" >
                             <thead class="bg-primary text-white">
                                 <tr style="background-color:#2196f3">
-    <th>Numero de parqueadero</th>
+    <th>N° parqueadero</th>
     <th >Tipo de Parqueadero</th>
     <th>Tamaño</th>
     <th>Descripción</th>
     <th>Estado</th>
     <th>Disponible</th>
     <th>Editar</th>
-    <th>Inactivar</th>
+    <th>Inhabilitar</th>
 </tr>
 </thead>
 <tbody>
@@ -88,11 +88,11 @@
             Erros
             @endswitch</td>
     <td>
-        <a href="{{route('parqueaderoV.form',['id'=>$parqueaderoV->id])}}" class="btn btn-info" style="margin-top: 8px;">Editar</a>
+        <a href="{{route('parqueaderoV.form',['id'=>$parqueaderoV->id])}}" class="btn btn-info" style="margin-top: 8px;"><i class="icon-note"></i></a> 
     </td>
     <td>
 
-        <button type="button" class="btn btn-danger" style="margin-top: 8px;"   data-toggle="modal" data-target="{{'#deleteModal'. $parqueaderoV->{'id'} }}">Inhabilitar</button>
+        <button type="button" class="btn btn-danger" style="margin-top: 8px;"   data-toggle="modal" data-target="{{'#deleteModal'. $parqueaderoV->{'id'} }}"><i class="las la-parking" style="font-size:23px;"></i><i class="icon-close" style="font-size:17px;"></i></button>
         <div class="modal fade" id="{{'deleteModal'. $parqueaderoV->{'id'} }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
