@@ -73,7 +73,6 @@
 
           <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas
        
-          <span class="icon-chart icons" style="font-size:1em;"></span> Reportes<span class="fa-angle-right fa right-arrow text-right"></span>
         </a>
       </li>
       
@@ -97,10 +96,7 @@
       <li class="active ripple">
         <a href="/admin"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
           <span class="fa-angle-right fa right-arrow text-right"></span>
-<<<<<<< HEAD
-=======
->>>>>>> 9d14c04ff17f67de1a128d58b0ac21f1eb96f455
->>>>>>> 04ed57ed8af3222ceb3586ab573f279b19898ad4
+
         </a>
         <ul class="nav nav-list tree">
         </ul>

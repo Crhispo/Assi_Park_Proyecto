@@ -54,7 +54,6 @@
             
           </ul>
         </li>
-        <li><span class=" icon-options-vertical" style="font-size:1em; margin-top:25px; margin-right:25px"></span></li>
       </ul>
     </div>
   </div>
