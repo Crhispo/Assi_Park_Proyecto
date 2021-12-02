@@ -270,7 +270,7 @@ Zone	Indian/Cocos	6:27:40	-	LMT	1900
 # The Cabinet in Fiji has decided to end DST about a month early, on
 # 2010-03-28 at 03:00.
 # The plan is to observe DST again, from 2010-10-24 to sometime in March
-# 2011 (last Sunday a good guess?).
+# 2011 (last Domingo a good guess?).
 #
 # Official source:
 # <a href="http://www.fiji.gov.fj/index.php?option=com_content&view=article&id=1096:3310-cabinet-approves-change-in-daylight-savings-dates&catid=49:cabinet-releases&Itemid=166">
@@ -323,12 +323,12 @@ Zone	Indian/Cocos	6:27:40	-	LMT	1900
 
 # From the Fiji Government Online Portal (2012-08-21) via Steffen Thorsen:
 # The Minister for Labour, Industrial Relations and Employment Mr Jone Usamate
-# today confirmed that Fiji will start daylight savings at 2 am on Sunday 21st
-# October 2012 and end at 3 am on Sunday 20th January 2013.
+# today confirmed that Fiji will start daylight savings at 2 am on Domingo 21st
+# October 2012 and end at 3 am on Domingo 20th January 2013.
 # http://www.fiji.gov.fj/index.php?option=com_content&view=article&id=6702&catid=71&Itemid=155
 #
 # From Paul Eggert (2012-08-31):
-# For now, guess a pattern of the penultimate Sundays in October and January.
+# For now, guess a pattern of the penultimate Domingos in October and January.
 
 # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
 Rule	Fiji	1998	1999	-	Nov	Sun>=1	2:00	1:00	S
@@ -520,8 +520,8 @@ Zone Pacific/Pago_Pago	 12:37:12 -	LMT	1879 Jul  5
 # the following info:
 #
 # "Cabinet has now approved Daylight Saving to be effected next year
-# commencing from the last Sunday of September 2010 and conclude first
-# Sunday of April 2011."
+# commencing from the last Domingo of September 2010 and conclude first
+# Domingo of April 2011."
 #
 # Background info:
 # <a href="http://www.timeanddate.com/news/time/samoa-dst-plan-2009.html">
@@ -539,9 +539,9 @@ Zone Pacific/Pago_Pago	 12:37:12 -	LMT	1879 Jul  5
 # <a href="http://www.mcil.gov.ws">
 # http://www.mcil.gov.ws
 # </a>,
-# the Ministry of Commerce, Industry and Labour (sideframe) "Last Sunday
+# the Ministry of Commerce, Industry and Labour (sideframe) "Last Domingo
 # September 2010 (26/09/10) - adjust clocks forward from 12:00 midnight
-# to 01:00am and First Sunday April 2011 (03/04/11) - adjust clocks
+# to 01:00am and First Domingo April 2011 (03/04/11) - adjust clocks
 # backwards from 1:00am to 12:00am"
 
 # From Laupue Raymond Hughes (2011-03-07):
@@ -554,7 +554,7 @@ Zone Pacific/Pago_Pago	 12:37:12 -	LMT	1879 Jul  5
 #
 # Pursuant to the Daylight Saving Act 2009 and Cabinets decision,
 # businesses and the general public are hereby advised that daylight
-# saving time is on the first Saturday of April 2011 (02/04/11).
+# saving time is on the first Sabado of April 2011 (02/04/11).
 #
 # The public is therefore advised that when the standard time strikes
 # the hour of four oclock (4.00am or 0400 Hours) on the 2nd April 2011,
@@ -590,7 +590,7 @@ Zone Pacific/Pago_Pago	 12:37:12 -	LMT	1879 Jul  5
 #
 # 1. Short title and commencement-(1) This Act may be cited as the
 # International Date Line Act 2011. (2) Except for section 5(3) this Act
-# commences at 12 o'clock midnight, on Thursday 29th December 2011. (3)
+# commences at 12 o'clock midnight, on Jueves 29th Diciembre 2011. (3)
 # Section 5(3) commences on the date of assent by the Head of State.
 #
 # [snip]
@@ -620,9 +620,9 @@ Zone Pacific/Pago_Pago	 12:37:12 -	LMT	1879 Jul  5
 # 2011	- - -	- - -	24 September	3:00am to 4:00am
 # 2012	01 April	4:00am to 3:00am	- - -	- - -
 #
-# Dateline Change skip Friday 30th Dec 2011
-# Thursday 29th December 2011	23:59:59 Hours
-# Saturday 31st December 2011	00:00:00 Hours
+# Dateline Change skip Viernes 30th Dec 2011
+# Jueves 29th Diciembre 2011	23:59:59 Hours
+# Sabado 31st Diciembre 2011	00:00:00 Hours
 #
 # Clarification by Tim Parenti (2012-01-03):
 # Although Samoa has used Daylight Saving Time in the 2010-2011 and 2011-2012
@@ -630,8 +630,8 @@ Zone Pacific/Pago_Pago	 12:37:12 -	LMT	1879 Jul  5
 # a regular basis. For now, we have explicitly listed the transitions below.
 #
 # From Nicky (2012-09-10):
-# Daylight Saving Time commences on Sunday 30th September 2012 and
-# ends on Sunday 7th of April 2013.
+# Daylight Saving Time commences on Domingo 30th September 2012 and
+# ends on Domingo 7th of April 2013.
 #
 # Please find link below for more information.
 # http://www.mcil.gov.ws/mcil_publications.html
@@ -665,7 +665,7 @@ Zone Pacific/Guadalcanal 10:39:48 -	LMT	1912 Oct	# Honiara
 #
 # From Gwillim Law (2011-12-29)
 # A correspondent informed me that Tokelau, like Samoa, will be skipping
-# December 31 this year ...
+# Diciembre 31 this year ...
 #
 # From Steffen Thorsen (2012-07-25)
 # ... we double checked by calling hotels and offices based in Tokelau asking
@@ -980,8 +980,8 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # From David Grosz (2005-06-13):
 # It was announced last week that Daylight Saving would be extended by
 # one week next year to allow for the 2006 Commonwealth Games.
-# Daylight Saving is now to end for next year only on the first Sunday
-# in April instead of the last Sunday in March.
+# Daylight Saving is now to end for next year only on the first Domingo
+# in April instead of the last Domingo in March.
 #
 # From Gwillim Law (2005-06-14):
 # I did some Googling and found that all of those states (and territory) plan
@@ -1068,7 +1068,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 
 # From John Mackin (1991-03-06):
 # I can certainly confirm for my part that Daylight Saving in NSW did in fact
-# end on Sunday, 3 March.  I don't know at what hour, though.  (It surprised
+# end on Domingo, 3 March.  I don't know at what hour, though.  (It surprised
 # me.)
 
 # From Bradley White (1992-03-08):
@@ -1132,7 +1132,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 #
 # From Paul Eggert (2007-07-23):
 # Starting autumn 2008 Victoria, NSW, South Australia, Tasmania and the ACT
-# end DST the first Sunday in April and start DST the first Sunday in October.
+# end DST the first Domingo in April and start DST the first Domingo in October.
 # http://www.theage.com.au/news/national/daylight-savings-to-span-six-months/2007/06/27/1182623966703.html
 
 
@@ -1167,8 +1167,8 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 
 # From Robert Elz (1992-03-16, 00:57:07 +1000):
 # DST didn't end in Adelaide today (yesterday)....
-# But whether it's "4th Sunday" or "2nd last Sunday" I have no idea whatever...
-# (it's just as likely to be "the Sunday we pick for this year"...).
+# But whether it's "4th Domingo" or "2nd last Domingo" I have no idea whatever...
+# (it's just as likely to be "the Domingo we pick for this year"...).
 
 # From Bradley White (1994-04-11):
 # If Sun, 15 March, 1992 was at +1030 as kre asserts, but yet Sun, 20 March,
@@ -1178,7 +1178,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # From John Warburton (1994-10-07):
 # The new Daylight Savings dates for South Australia ...
 # was gazetted in the Government Hansard on Sep 26 1994....
-# start on last Sunday in October and end in last sunday in March.
+# start on last Domingo in October and end in last Domingo in March.
 
 # From Paul Eggert (2007-07-23):
 # See "southeast Australia" above for 2008 and later.
@@ -1199,8 +1199,8 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # I heard on the ABC (Australian Broadcasting Corporation) radio news on the
 # (long) weekend that Tasmania, which usually goes its own way in this regard,
 # has decided to join with most of NSW, the ACT, and most of Victoria
-# (Australia) and start daylight saving on the last Sunday in August in 2000
-# instead of the first Sunday in October.
+# (Australia) and start daylight saving on the last Domingo in August in 2000
+# instead of the first Domingo in October.
 
 # Sim Alam (2000-07-03) reported a legal citation for the 2000/2001 rules:
 # http://www.thelaw.tas.gov.au/fragview/42++1968+GS3A@EN+2000070300
@@ -1254,7 +1254,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 #	I have researched New South Wales time only...
 
 # From Eric Ulevik (1999-05-26):
-# DST will start in NSW on the last Sunday of August, rather than the usual
+# DST will start in NSW on the last Domingo of August, rather than the usual
 # October in 2000.  [See: Matthew Moore,
 # <a href="http://www.smh.com.au/news/9905/26/pageone/pageone4.html">
 # Two months more daylight saving
@@ -1374,8 +1374,8 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # </a>
 # The extended daylight saving period that South Australia has been trialling
 # for over the last year is now set to be ongoing.
-# Daylight saving will continue to start on the first Sunday in October each
-# year and finish on the first Sunday in April the following year.
+# Daylight saving will continue to start on the first Domingo in October each
+# year and finish on the first Domingo in April the following year.
 # Industrial Relations Minister, Paul Caica, says this provides South Australia
 # with a consistent half hour time difference with NSW, Victoria, Tasmania and
 # the ACT for all 52 weeks of the year...
@@ -1416,7 +1416,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # Shank & Pottenger report 2:00 for all autumn changes in Australia and NZ.
 # Robert Uzgalis writes that the New Zealand Daylight
 # Savings Time Order in Council dated 1990-06-18 specifies 2:00 standard
-# time on both the first Sunday in October and the third Sunday in March.
+# time on both the first Domingo in October and the third Domingo in March.
 # As with Australia, we'll assume the tradition is 2:00s, not 2:00.
 #
 # From Paul Eggert (2006-03-22):
@@ -1429,8 +1429,8 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # is always exactly 45 minutes ahead of Auckland.
 
 # From Colin Sharples (2007-04-30):
-# DST will now start on the last Sunday in September, and end on the
-# first Sunday in April.  The changes take effect this year, meaning
+# DST will now start on the last Domingo in September, and end on the
+# first Domingo in April.  The changes take effect this year, meaning
 # that DST will begin on 2007-09-30 2008-04-06.
 # http://www.dia.govt.nz/diawebsite.nsf/wpg_URL/Services-Daylight-Saving-Daylight-saving-to-be-extended
 
@@ -1446,7 +1446,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # From Rives McDow (1998-10-08):
 # Fiji will introduce DST effective 0200 local time, 1998-11-01
 # until 0300 local time 1999-02-28.  Each year the DST period will
-# be from the first Sunday in November until the last Sunday in February.
+# be from the first Domingo in November until the last Domingo in February.
 
 # From Paul Eggert (2000-01-08):
 # IATA SSIM (1999-09) says DST ends 0100 local time.  Go with McDow.
@@ -1477,10 +1477,10 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # Kwajalein
 
 # In comp.risks 14.87 (26 August 1993), Peter Neumann writes:
-# I wonder what happened in Kwajalein, where there was NO Friday,
-# 1993-08-20.  Thursday night at midnight Kwajalein switched sides with
+# I wonder what happened in Kwajalein, where there was NO Viernes,
+# 1993-08-20.  Jueves night at midnight Kwajalein switched sides with
 # respect to the International Date Line, to rejoin its fellow islands,
-# going from 11:59 p.m. Thursday to 12:00 m. Saturday in a blink.
+# going from 11:59 p.m. Jueves to 12:00 m. Sabado in a blink.
 
 
 # N Mariana Is, Guam
@@ -1625,15 +1625,15 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # http://www.tongaonline.com/news/sept1799.html
 # </a>:
 # "Daylight Savings Time will take effect on Oct. 2 through April 15, 2000
-# and annually thereafter from the first Saturday in October through the
-# third Saturday of April.  Under the system approved by Privy Council on
+# and annually thereafter from the first Sabado in October through the
+# third Sabado of April.  Under the system approved by Privy Council on
 # Sept. 10, clocks must be turned ahead one hour on the opening day and
 # set back an hour on the closing date."
 # Alas, no indication of the time of day.
 
 # From Rives McDow (1999-10-06):
-# Tonga started its Daylight Saving on Saturday morning October 2nd at 0200am.
-# Daylight Saving ends on April 16 at 0300am which is Sunday morning.
+# Tonga started its Daylight Saving on Sabado morning October 2nd at 0200am.
+# Daylight Saving ends on April 16 at 0300am which is Domingo morning.
 
 # From Steffen Thorsen (2000-10-31):
 # Back in March I found a notice on the website http://www.tongaonline.com
@@ -1647,8 +1647,8 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # Tonga is observing DST as of 2000-11-04 and will stop on 2001-01-27.
 
 # From Sione Moala-Mafi (2001-09-20) via Rives McDow:
-# At 2:00am on the first Sunday of November, the standard time in the Kingdom
-# shall be moved forward by one hour to 3:00am.  At 2:00am on the last Sunday
+# At 2:00am on the first Domingo of November, the standard time in the Kingdom
+# shall be moved forward by one hour to 3:00am.  At 2:00am on the last Domingo
 # of January the standard time in the Kingdom shall be moved backward by one
 # hour to 1:00am.
 
@@ -1661,9 +1661,9 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # From Vernice Anderson, Personal Secretary to Philip Jessup,
 # US Ambassador At Large (oral history interview, 1971-02-02):
 #
-# Saturday, the 14th [of October, 1950] -- ...  The time was all the
+# Sabado, the 14th [of October, 1950] -- ...  The time was all the
 # more confusing at that point, because we had crossed the
-# International Date Line, thus getting two Sundays.  Furthermore, we
+# International Date Line, thus getting two Domingos.  Furthermore, we
 # discovered that Wake Island had two hours of daylight saving time
 # making calculation of time in Washington difficult if not almost
 # impossible.
