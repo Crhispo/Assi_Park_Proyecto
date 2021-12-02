@@ -38,7 +38,7 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <center>
-                        <h3>Cantidades</h3>
+                        <h3>Estadisticas</h3>
 </center>
                     </div>
 
@@ -53,7 +53,7 @@
                                       </div>
                                       <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                         <h4>
-                                          <span class="icon-basket-loaded icons icon text-right"></span>
+                                          <span class="las la-car-side icons icon text-right"></span>
                                         </h4>
                                       </div>
                                     </div>
@@ -141,18 +141,224 @@
                             </div>
                             </div>
                         </div>
-                        <ul class="nav nav-list tree">
-                          <li><a href="{{route('descargarPDFUsuario')}}" target="_blank">Reporte Usuarios</a></li>
-                          <li><a href="{{route('descargarPDFVisitantes')}}" target="_blank">Reporte Visitantes</a></li>
-                          <li><a href="{{route('descargarPDFVehiculo')}}" target="_blank">Reporte Vehículos</a></li>
-                            <li><a href="{{route('descargarPDFApartamentos')}}" target="_blank">Reporte Apartamentos</a></li>
-                            
-                        <!--residentes fin-->
+                        
                                 </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+              <div class="panel">
+                  <div class="panel-heading">
+                      <center>
+                      <h3>Reportes</h3>
+</center>
+                  </div>
+
+                  <div class="panel-body">
+                      <div class="responsive-table">
+                          <div class="col-md-12 padding-0">
+                              <div class="col-md-6">
+                                <div class="panel box-v1">
+                                  <div class="panel-heading bg-white border-none">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                      <h4 class="text-left">Reporte Usuarios</h4>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                      <h4>
+                                        <span class="icon-user icons icon text-right"></span>
+                                      </h4>
+                                    </div>
+                                  </div>
+                                  <div class="panel-body text-center">
+                                    <h1>
+                
+                                      <a href="{{route('descargarPDFUsuario')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Usuarios</a>
+                                    </h1>
+                                    <p></p>
+                                    <hr />
+                                  </div>
+                                </div>
+                              </div>
+                              <!--residentes inicio-->
+                              <div class="col-md-6">
+                                <div class="panel box-v1">
+                                  <div class="panel-heading bg-white border-none">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                      <h4 class="text-left">Reporte Visitantes</h4>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                      <h4>
+                                        <span class="icon-user icons icon text-right"></span>
+                                      </h4>
+                                    </div>
+                                  </div>
+                                  <div class="panel-body text-center">
+                                    <h1>
+                
+                                      <a href="{{route('descargarPDFVisitantes')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Visitantes</a>
+                                    </h1>
+                                    </h1>
+                                    <p></p>
+                                    <hr />
+                                  </div>
+                                </div>
+                              </div>
+                              <!--residentes fin-->
+                              <!--residentes inicio-->
+                              <div class="col-md-6">
+                                  <div class="panel box-v1">
+                                    <div class="panel-heading bg-white border-none">
+                                      <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                        <h4 class="text-left">Reporte Residentes</h4>
+                                      </div>
+                                      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                        <h4>
+                                          <span class="icon-user icons icon text-right"></span>
+                                        </h4>
+                                      </div>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                      <h1>
+                  
+                                        <a href="{{route('descargarPDFResidentes')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Residentes</a>
+                                      </h1>
+                                      </h1>
+                                      <p></p>
+                                      <hr />
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--residentes fin-->
+                          <!--residentes inicio-->
+                          <div class="col-md-6">
+                              <div class="panel box-v1">
+                              <div class="panel-heading bg-white border-none">
+                                  <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                  <h4 class="text-left">Reporte Vehículos</h4>
+                                  </div>
+                                  <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                  <h4>
+                                  <span class="las la-car-side icons icon text-right"></span>
+                              </h4>
+                              </div>
+                          </div>
+                          <div class="panel-body text-center">
+                              <h1>
+
+                                <a href="{{route('descargarPDFVehiculo')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Vehículos</a><br>
+                              </h1>
+                              </h1>
+                              <p></p>
+                              <hr />
+                          </div>
+                          </div>
+                      </div>
+                      
+                      <!--fin-->
+                      <div class="col-md-6">
+                        <div class="panel box-v1">
+                        <div class="panel-heading bg-white border-none">
+                            <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <h4 class="text-left">Reporte Vehículos de Residentes</h4>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                            <h4>
+                            <span class="icon-user icons icon text-right"> </span><span class="las la-car-side icons icon text-right" style="font-size:23px;"></span>
+                        </h4>
+                        </div>
+                    </div>
+                    <div class="panel-body text-center">
+                        <h1>
+
+                          <a href="{{route('descargarPDFVehiculoResidente')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Vehículos de Residentes</a><br>
+                        </h1>
+                        </h1>
+                        <p></p>
+                        <hr />
+                    </div>
+                    </div>
+                </div>
+                
+                <!--fin--> <div class="col-md-6">
+                  <div class="panel box-v1">
+                    <div class="panel-heading bg-white border-none">
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                        <h4 class="text-left">Reporte Vehículos de Visitantes</h4>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                        <h4>
+                          <span class="icon-user icons icon text-right"> </span><span class="las la-car-side icons icon text-right" style="font-size:23px;"></span>
+                    </h4>
+                    </div>
+                </div>
+                <div class="panel-body text-center">
+                    <h1>
+
+                      <a href="{{route('descargarPDFVehiculoVisitante')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Vehículos de Visitantes</a><br>
+
+                    </h1>
+                    </h1>
+                    <p></p>
+                    <hr />
+                </div>
+                </div>
+            </div>
+            
+            <!--fin--> <div class="col-md-6">
+              <div class="panel box-v1">
+                <div class="panel-heading bg-white border-none">
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                    <h4 class="text-left">Reporte Parqueaderos Libres</h4>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <h4>
+                    <span class="las la-parking" style="font-size:23px;"></span>
+                </h4>
+                </div>
+            </div>
+            <div class="panel-body text-center">
+                <h1>
+
+                  <a href="{{route('descargarPDFParqueaderosLibres')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Parqueaderos Libres</a>
+                </h1>
+                </h1>
+                <p></p>
+                <hr />
+            </div>
+            </div>
+        </div>
+        
+        <!--fin--> <div class="col-md-6">
+          <div class="panel box-v1">
+            <div class="panel-heading bg-white border-none">
+                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                <h4 class="text-left">Reporte Parqueaderos Ocupados</h4>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                <h4>
+                <span class="las la-parking" style="font-size:23px;"></span>
+            </h4>
+            </div>
+        </div>
+        <div class="panel-body text-center">
+            <h1>
+
+              <a href="{{route('descargarPDFParqueaderosOcupados')}}" target="_blank" class="btn btn-info box-shadow-none btn-lg">Reporte Parqueaderos Ocupados</a>
+            </h1>
+            </h1>
+            <p></p>
+            <hr />
+        </div>
+        </div>
+    </div>
+    
+    <!--fin-->
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
     <!-- end: content -->

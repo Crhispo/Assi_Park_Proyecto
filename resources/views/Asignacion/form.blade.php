@@ -21,22 +21,26 @@ $ocupado=$parking->OCUPADO;
         position: relative">
           @foreach($asignacionList as $asignacion)
 
-   
-    {{$asignacion->apartamento_id}}
-    {{$asignacion->vehiculo_id}}
+   <center>
+    Apartamento:
+    {{ $asignacion ->NUMERO_APTO }} , Bloque: 
+    {{ $asignacion->BLOQUE }} 
+    <br>
+    Vehiculo con placa:
+    {{$asignacion->placa}}
+    <br>
+    En el parqueadero:
     {{$asignacion->parqueadero_id}}
+    <br>
     {{$asignacion->inicio}}
-
-    
-        <a href="{{route('asignacion.form',['id'=>$asignacion->parqueadero_id])}}" class="btn btn-warning">Editar</a>
-    
-    
+    <br>
         <a href="{{route('eliminarasignacion',['id'=>$asignacion->parqueadero_id])}}" class="btn btn-danger">Eliminar</a>
-    
+      
 
 @endforeach 
           
-          <CEnter><button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button></CEnter>
+          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
+        </center>
         </div>  
       </div>
        @else

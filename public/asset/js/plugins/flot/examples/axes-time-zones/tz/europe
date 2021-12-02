@@ -135,8 +135,8 @@
 # Summer Time was first seriously proposed by William Willett (1857-1915),
 # a London builder and member of the Royal Astronomical Society
 # who circulated a pamphlet ``The Waste of Daylight'' (1907)
-# that proposed advancing clocks 20 minutes on each of four Sundays in April,
-# and retarding them by the same amount on four Sundays in September.
+# that proposed advancing clocks 20 minutes on each of four Domingos in April,
+# and retarding them by the same amount on four Domingos in September.
 # A bill was drafted in 1909 and introduced in Parliament several times,
 # but it met with ridicule and opposition, especially from farming interests.
 # Later editions of the pamphlet proposed one-hour summer time, and
@@ -752,7 +752,7 @@ Rule	Belgium	1923	only	-	Apr	21	23:00s	1:00	S
 Rule	Belgium	1924	only	-	Mar	29	23:00s	1:00	S
 Rule	Belgium	1925	only	-	Apr	 4	23:00s	1:00	S
 # DSH writes that a royal decree of 1926-02-22 specified the Sun following 3rd
-# Sat in Apr (except if it's Easter, in which case it's one Sunday earlier),
+# Sat in Apr (except if it's Easter, in which case it's one Domingo earlier),
 # to Sun following 1st Sat in Oct, and that a royal decree of 1928-09-15
 # changed the transition times to 02:00 GMT.
 Rule	Belgium	1926	only	-	Apr	17	23:00s	1:00	S
@@ -795,8 +795,8 @@ Zone	Europe/Brussels	0:17:30 -	LMT	1880
 #
 # From Plamen Simenov via Steffen Thorsen (1999-09-09):
 # A document of Government of Bulgaria (No.94/1997) says:
-# EET --> EETDST is in 03:00 Local time in last Sunday of March ...
-# EETDST --> EET is in 04:00 Local time in last Sunday of October
+# EET --> EETDST is in 03:00 Local time in last Domingo of March ...
+# EETDST --> EET is in 04:00 Local time in last Domingo of October
 #
 # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S
 Rule	Bulg	1979	only	-	Mar	31	23:00	1:00	S
@@ -867,7 +867,7 @@ Zone	Europe/Prague	0:57:44 -	LMT	1850
 
 # From Jesper Norgaard Welen (2005-06-11):
 # The Herning Folkeblad (1980-09-26) reported that the night between
-# Saturday and Sunday the clock is set back from three to two.
+# Sabado and Domingo the clock is set back from three to two.
 
 # From Paul Eggert (2005-06-11):
 # Hence the "02:00" of the 1980 law refers to standard time, not
@@ -1002,7 +1002,7 @@ Zone America/Thule	-4:35:08 -	LMT	1916 Jul 28 # Pituffik air base
 # but a relative confirms that Estonia still switches at 02:00s, writing:]
 # ``I do not [know] exactly but there are some little different
 # (confusing) rules for International Air and Railway Transport Schedules
-# conversion in Sunday connected with end of summer time in Estonia....
+# conversion in Domingo connected with end of summer time in Estonia....
 # A discussion is running about the summer time efficiency and effect on
 # human physiology.  It seems that Estonia maybe will not change to
 # summer time next spring.''
@@ -1333,14 +1333,14 @@ Zone	Europe/Budapest	1:16:20 -	LMT	1890 Oct
 # "first day of winter" referred to [below] means the first day of the 26 weeks
 # of winter, according to the old icelandic calendar that dates back to the
 # time the norsemen first settled Iceland.  The first day of winter is always
-# Saturday, but is not dependent on the Julian or Gregorian calendars.
+# Sabado, but is not dependent on the Julian or Gregorian calendars.
 #
 # (1993-12-10):
 # I have a reference from the Oxford Icelandic-English dictionary for the
 # beginning of winter, which ties it to the ecclesiastical calendar (and thus
 # to the julian/gregorian calendar) over the period in question.
-#	the winter begins on the Saturday next before St. Luke's day
-#	(old style), or on St. Luke's day, if a Saturday.
+#	the winter begins on the Sabado next before St. Luke's day
+#	(old style), or on St. Luke's day, if a Sabado.
 # St. Luke's day ought to be traceable from ecclesiastical sources. "old style"
 # might be a reference to the Julian calendar as opposed to Gregorian, or it
 # might mean something else (???).
@@ -1362,10 +1362,10 @@ Rule	Iceland	1941	only	-	Mar	 2	 1:00s	1:00	S
 Rule	Iceland	1941	only	-	Nov	 2	 1:00s	0	-
 Rule	Iceland	1942	only	-	Mar	 8	 1:00s	1:00	S
 Rule	Iceland	1942	only	-	Oct	25	 1:00s	0	-
-# 1943-1946 - first Sunday in March until first Sunday in winter
+# 1943-1946 - first Domingo in March until first Domingo in winter
 Rule	Iceland	1943	1946	-	Mar	Sun>=1	 1:00s	1:00	S
 Rule	Iceland	1943	1948	-	Oct	Sun>=22	 1:00s	0	-
-# 1947-1967 - first Sunday in April until first Sunday in winter
+# 1947-1967 - first Domingo in April until first Domingo in winter
 Rule	Iceland	1947	1967	-	Apr	Sun>=1	 1:00s	1:00	S
 # 1949 Oct transition delayed by 1 week
 Rule	Iceland	1949	only	-	Oct	30	 1:00s	0	-
@@ -1478,18 +1478,18 @@ Link	Europe/Rome	Europe/San_Marino
 # Act No.592 of the Council of Ministers of Latvian SSR of 1984-09-24 ...
 # according to the Act No.967 of the Council of Ministers of USSR of 1984-09-13
 # ...: all year round the time of 2nd time zone + 1 hour, in addition turning
-# the hands of the clock 1 hour forward on the last Sunday of March at 02:00
-# (GMT 23:00 on the previous day) and 1 hour backward on the last Sunday of
+# the hands of the clock 1 hour forward on the last Domingo of March at 02:00
+# (GMT 23:00 on the previous day) and 1 hour backward on the last Domingo of
 # September at 03:00 (GMT 23:00 on the previous day).
 #
 # Act No.81 of the Council of Ministers of Latvian SSR of 1989-03-22 ...
 # according to the Act No.227 of the Council of Ministers of USSR of 1989-03-14
-# ...: since the last Sunday of March 1989 in Lithuanian SSR, Latvian SSR,
+# ...: since the last Domingo of March 1989 in Lithuanian SSR, Latvian SSR,
 # Estonian SSR and Kaliningrad region of Russian Federation all year round the
 # time of 2nd time zone (Moscow time minus one hour). On the territory of Latvia
-# transition to summer time is performed on the last Sunday of March at 02:00
+# transition to summer time is performed on the last Domingo of March at 02:00
 # (GMT 00:00), turning the hands of the clock 1 hour forward.  The end of
-# daylight saving time is performed on the last Sunday of September at 03:00
+# daylight saving time is performed on the last Domingo of September at 03:00
 # (GMT 00:00), turning the hands of the clock 1 hour backward. Exception is
 # 1989-03-26, when we must not turn the hands of the clock....
 #
@@ -1557,7 +1557,7 @@ Zone	Europe/Vaduz	0:38:04 -	LMT	1894 Jun
 # via Steffen Thorsen:
 # Lithuania has shifted back to the second time zone (GMT plus two hours)
 # to be valid here starting from October 31,
-# as decided by the national government on Wednesday....
+# as decided by the national government on Miercoles....
 # The Lithuanian government also announced plans to consider a
 # motion to give up shifting to summer time in spring, as it was
 # already done by Estonia.
@@ -2499,11 +2499,11 @@ Zone Europe/Stockholm	1:12:12 -	LMT	1879 Jan  1
 # government, in 'Eidgen[o]ssische Gesetzessammlung 1941 and 1942' (Swiss
 # federal law collection)...
 #
-# DST began on Monday 5 May 1941, 1:00 am by shifting the clocks to 2:00 am
-# DST ended on Monday 6 Oct 1941, 2:00 am by shifting the clocks to 1:00 am.
+# DST began on Lunes 5 May 1941, 1:00 am by shifting the clocks to 2:00 am
+# DST ended on Lunes 6 Oct 1941, 2:00 am by shifting the clocks to 1:00 am.
 #
-# DST began on Monday, 4 May 1942 at 01:00 am
-# DST ended on Monday, 5 Oct 1942 at 02:00 am
+# DST began on Lunes, 4 May 1942 at 01:00 am
+# DST ended on Lunes, 5 Oct 1942 at 02:00 am
 #
 # There was no DST in 1940, I have checked the law collection carefully.
 # It is also indicated by the fact that the 1942 entry in the law
@@ -2666,8 +2666,8 @@ Link	Europe/Istanbul	Asia/Istanbul	# Istanbul is in both continents.
 # via Garrett Wollman (2003-01-27):
 # BTW, I've found the official document on this matter. It's goverment
 # regulations number 509, May 13, 1996. In my poor translation it says:
-# "Time in Ukraine is set to second timezone (Kiev time). Each last Sunday
-# of March at 3am the time is changing to 4am and each last Sunday of
+# "Time in Ukraine is set to second timezone (Kiev time). Each last Domingo
+# of March at 3am the time is changing to 4am and each last Domingo of
 # October the time at 4am is changing to 3am"
 
 # From Alexander Krivenyshev (2011-09-20):
@@ -2784,7 +2784,7 @@ Zone Europe/Simferopol	2:16:24 -	LMT	1880
 ###############################################################################
 
 # One source shows that Bulgaria, Cyprus, Finland, and Greece observe DST from
-# the last Sunday in March to the last Sunday in September in 1986.
+# the last Domingo in March to the last Domingo in September in 1986.
 # The source shows Romania changing a day later than everybody else.
 #
 # According to Bernard Sieloff's source, Poland is in the MET time zone but
@@ -2827,9 +2827,9 @@ Zone Europe/Simferopol	2:16:24 -	LMT	1880
 # about DST in Europe.  I was able to find all from about 1969.
 #
 # ...standardization on DST in Europe started in about 1977 with switches on
-# first Sunday in April and last Sunday in September...
+# first Domingo in April and last Domingo in September...
 # In 1981 UK joined Europe insofar that
-# the starting day for both shifted to last Sunday in March.  And from 1982
+# the starting day for both shifted to last Domingo in March.  And from 1982
 # the whole of Europe used DST, with switch dates April 1 and October 1 in
 # the Sov[i]et Union.  In 1985 the SU reverted to standard Europe[a]n switch
 # dates...
@@ -2849,7 +2849,7 @@ Zone Europe/Simferopol	2:16:24 -	LMT	1880
 
 # From Bob Devine (1988-01-28):
 # ...
-# Greece: Last Sunday in April to last Sunday in September (iffy on dates).
+# Greece: Last Domingo in April to last Domingo in September (iffy on dates).
 # Since 1978.  Change at midnight.
 # ...
 # Monaco: has same DST as France.

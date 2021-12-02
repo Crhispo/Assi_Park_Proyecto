@@ -55,7 +55,11 @@
     , fleegix = root.fleegix
   // Declare constant list of days and months. Unfortunately this doesn't leave room for i18n due to the Olson data being in English itself
     , DAYS = timezoneJS.Days = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
+<<<<<<< HEAD
     , MONTHS = timezoneJS.Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+=======
+    , MONTHS = timezoneJS.Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'Diciembre']
+>>>>>>> 9d14c04ff17f67de1a128d58b0ac21f1eb96f455
     , SHORT_MONTHS = {}
     , SHORT_DAYS = {}
     , EXACT_DATE_TIME = {}
