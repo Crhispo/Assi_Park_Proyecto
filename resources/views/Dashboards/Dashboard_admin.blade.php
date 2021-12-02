@@ -139,10 +139,13 @@ var baseURL= {!! json_encode(url('/')) !!}
                 </div>
               </div>
             </div>
+ 
+           
 
-            <div class="col-md-12">
-              <div class="panel box-v4">
-                <div class="panel-heading bg-white border-none">
+@if (Auth::user()->ID_TIPO_USUARIO == 1 || Auth::user()->ID_TIPO_USUARIO == 2)
+<div class="col-md-12">
+  <div class="panel box-v4">
+    <div class="panel-heading bg-white border-none">
                   <h4><span class="icon-notebook icons"></span> Agenda</h4>
                 </div>
                 <div class="panel-body padding-0" id="h">
@@ -152,10 +155,20 @@ var baseURL= {!! json_encode(url('/')) !!}
                     <b><span class="icon-clock icons"></span> Hoy a las 15:00</b>
                     <br>
                     <br>
+<div id="agenda">
 
-                    <div id="agenda">
+</div>
+@else
+<div class="col-md-12">
+  <div class="panel box-v4">
+    <div class="panel-heading bg-white border-none">
 
-                    </div>
+    </div>
+    <div class="panel-body padding-0" id="h">
+      <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
+@endif
+
+                    
 
                     
 

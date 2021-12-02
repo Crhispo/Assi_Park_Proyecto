@@ -83,9 +83,9 @@ class HomeController extends Controller
         if (auth()->user()->ID_TIPO_USUARIO  == 1) {
             return redirect('/admin');
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 2) {
-            return redirect('/secretatia');
+            return redirect('/admin');
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 3) {
-            return redirect('/guarda');
+            return redirect('/admin');
         } else {
             return redirect('/');
         }
