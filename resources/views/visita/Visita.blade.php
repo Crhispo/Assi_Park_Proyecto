@@ -18,9 +18,33 @@ $ocupado1=$parkingV->OCUPADO;
         padding: 10px 20px;
         margin: 20% auto;
         position: relative">
-          <h2>Este espacio del parqueadero esta ocupado</h2>
-          
-          <CEnter><button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button></CEnter>
+          @foreach($visita as $visita)
+
+          <center>
+           Apartamento:
+           {{ $visita ->NUMERO_APTO }} , Bloque: 
+           {{ $visita->BLOQUE }} 
+           <br>
+           Vehiculo con placa:
+           {{$visita->placa}}
+           <br>
+           El visitante:con numero de identficacion:
+           {{$visita->NUMERO_DOCUMENTO}}
+           <br>
+           Nombre:{{$visita->NOMBRE}} {{$visita->APELLIDO}}
+           <br>
+           Celular:{{$visita->CELULAR1}}
+           <br>
+           Parqueadero:{{$visita->NUMERO_PARQUEADERO}}
+           <br>
+           Fecha de inicio:{{$visita->FECHA_HORA_INICIO_VISITA}}
+           <br>
+           Fecha de finalización:{{$visita->FECHA_HORA_INICIO_VISITA}}
+           <br>
+               <a href="{{route('eliminarasignacionvisita',['id'=>$visita->NUMERO_PARQUEADERO])}}" class="btn btn-danger">Eliminar</a>
+            
+       @endforeach 
+          <button type="button" style="margin-top: 0px;" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
         </div>  
       </div>
        @else

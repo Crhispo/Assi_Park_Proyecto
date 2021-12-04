@@ -36,7 +36,7 @@ class VisitaController extends Controller
     function delete($id){
         $visita=visita::find($id);
         $visita->delete();
-        return redirect('/admin');
+        return redirect('/Dashboard');
             }
             //crear
     function form($id=null){
@@ -65,6 +65,6 @@ class VisitaController extends Controller
             $visita->FECHA_HORA_INICIO_VISITA=$request->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO;
             $visita->FECHA_HORA_FIN_VISITA=$request->FECHA_FIN_DE_ASIGNACION_PARQUEADERO;
             $visita->save();
-                return redirect('/admin');
+                return redirect('/Dashboard');
             }
 }

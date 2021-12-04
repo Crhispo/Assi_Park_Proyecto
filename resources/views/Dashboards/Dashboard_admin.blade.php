@@ -26,10 +26,10 @@
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script>
 
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
 var baseURL= {!! json_encode(url('/')) !!}
 
-</script> -->
+</script> 
 </head>
 
 <body id="mimin" class="dashboard">
@@ -139,10 +139,6 @@ var baseURL= {!! json_encode(url('/')) !!}
                 </div>
               </div>
             </div>
- 
-           
-
-@if (Auth::user()->ID_TIPO_USUARIO == 1 || Auth::user()->ID_TIPO_USUARIO == 2)
 <div class="col-md-12">
   <div class="panel box-v4">
     <div class="panel-heading bg-white border-none">
@@ -158,20 +154,6 @@ var baseURL= {!! json_encode(url('/')) !!}
 <div id="agenda">
 
 </div>
-@else
-<div class="col-md-12">
-  <div class="panel box-v4">
-    <div class="panel-heading bg-white border-none">
-
-    </div>
-    <div class="panel-body padding-0" id="h">
-      <div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert">
-@endif
-
-                    
-
-                    
-
                     <!-- Button trigger modal -->
 
 
@@ -240,7 +222,7 @@ var baseURL= {!! json_encode(url('/')) !!}
                   <img src="img\FONDO_PERFIL.png" class="box-v2-cover img-responsive" />
                   <div class="box-v2-detail">
                     <img src="{{'https://ui-avatars.com/api/?background=random&name='.Auth::user()->NOMBRE.'+'.Auth::user()->APELLIDO}}" class="img-responsive" />
-                    <!--<h4>{/*{ Auth::user()->NOMBRE }*/} {/*{ Auth::user()->APELLIDO }*/}</h4>-->
+                   
                   </div>
                 </div>
 

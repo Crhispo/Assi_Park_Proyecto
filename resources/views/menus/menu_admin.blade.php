@@ -15,7 +15,7 @@
         <p class="animated fadeInRight"></p>
       </li>
       <li class="active ripple">
-        <a href="/admin"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
+        <a href="/Dashboard"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
         
         </a>
         <ul class="nav nav-list tree">
@@ -71,7 +71,7 @@
       <li class="ripple">
         <a  href="/Datos">
 
-          <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas
+          <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas<span class="fa-angle-right fa right-arrow text-right"></span>
        
         </a>
       </li>
@@ -94,7 +94,7 @@
         <p class="animated fadeInRight">Sat,October 1st 2029</p>
       </li>
       <li class="active ripple">
-        <a href="/admin"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
+        <a href="/Dashboard"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
           <span class="fa-angle-right fa right-arrow text-right"></span>
 
         </a>
@@ -145,7 +145,7 @@
 
       <li class="ripple">
         <a  href="/Datos">
-          <span class="icon-chart icons" style="font-size:1em;"></span> Reportes<span class="fa-angle-right fa right-arrow text-right"></span>
+          <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas<span class="fa-angle-right fa right-arrow text-right"></span>
         </a>
       </li>
       
@@ -167,7 +167,7 @@
         <p class="animated fadeInRight">Sat,October 1st 2029</p>
       </li>
       <li class="active ripple">
-        <a href="/admin"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
+        <a href="/Dashboard"><span class="icon-home icons" style="font-size:1em;"></span> Inicio
           <span class="fa-angle-right fa right-arrow text-right"></span>
         </a>
         <ul class="nav nav-list tree">
@@ -211,7 +211,7 @@
 
       <li class="ripple">
         <a  href="/Datos">
-          <span class="icon-chart icons" style="font-size:1em;"></span> Reportes<span class="fa-angle-right fa right-arrow text-right"></span>
+          <span class="icon-chart icons" style="font-size:1em;"></span> Estadísticas<span class="fa-angle-right fa right-arrow text-right"></span>
         </a>
       </li>
       

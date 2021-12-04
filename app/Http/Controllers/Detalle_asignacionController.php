@@ -58,6 +58,6 @@ class Detalle_asignacionController extends Controller
             $asignacion->inicio=$request->FECHA_INICIO_DE_ASIGNACION_PARQUEADERO;
             $asignacion->fin=$request->FECHA_FIN_DE_ASIGNACION_PARQUEADERO;
             $asignacion->save();
-                return redirect('/admin');
+                return redirect('/Dashboard');
             }
 }

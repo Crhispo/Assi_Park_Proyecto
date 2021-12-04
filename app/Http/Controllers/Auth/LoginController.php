@@ -43,11 +43,11 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         if (auth()->user()->ID_TIPO_USUARIO  == 1) {
-            return '/admin';
+            return '/Dashboard';
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 2) {
-            return '/secretatia';
+            return '/Dashboard';
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 3) {
-            return '/guarda';
+            return '/Dashboard';
         } else {
             return '/';
         }

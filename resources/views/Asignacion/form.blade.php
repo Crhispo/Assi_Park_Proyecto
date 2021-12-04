@@ -32,14 +32,16 @@ $ocupado=$parking->OCUPADO;
     En el parqueadero:
     {{$asignacion->parqueadero_id}}
     <br>
-    {{$asignacion->inicio}}
+    Fecha de inicio:{{$asignacion->inicio}}
     <br>
-        <a href="{{route('eliminarasignacion',['id'=>$asignacion->parqueadero_id])}}" class="btn btn-danger">Eliminar</a>
+    Fecha de finalización:{{$asignacion->fin}}
+    <br>
+        <a style="margin-top: 0px;" href="{{route('eliminarasignacion',['id'=>$asignacion->parqueadero_id])}}" class="btn btn-danger">Eliminar</a>
       
 
 @endforeach 
           
-          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
+          <button style="margin-top: 0px;" type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Atrás</span></button>
         </center>
         </div>  
       </div>

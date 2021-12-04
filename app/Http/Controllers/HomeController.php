@@ -44,7 +44,16 @@ class HomeController extends Controller
                 inner join  bloque ON apartamento.BLOQUE=bloque.id
                 INNER JOIN numeroapartamento ON apartamento.NUMERO_APTO=numeroapartamento.id
         WHERE parqueadero_id=parqueadero_id');
+        $visita=DB::select('select  visita.ID_APARTAMENTO,BLOQUE.BLOQUE,numeroapartamento.NUMERO_APTO, visitante.NUMERO_DOCUMENTO, visitante.NOMBRE,visitante.APELLIDO,visitante.CELULAR1,visita.ID_VEHICULO,vehiculos.placa, visita.NUMERO_PARQUEADERO, visita.FECHA_HORA_INICIO_VISITA,visita.FECHA_HORA_FIN_VISITA
+        from visita 
+        inner join apartamento on visita.ID_APARTAMENTO =apartamento.ID_APARTAMENTO
+        inner join visitante on visita.ID_VISITANTE =visitante.ID_VISITANTE
+        inner join vehiculos on visita.ID_VEHICULO=vehiculos.id
+        inner join parqueadero_visitas on visita.NUMERO_PARQUEADERO=parqueadero_visitas.id
         
+        inner join  bloque ON apartamento.BLOQUE=bloque.id
+                INNER JOIN numeroapartamento ON apartamento.NUMERO_APTO=numeroapartamento.id ');
+
         $parqueadero=Parqueadero::all();
         $cantidadres=DB::select('select ResidentesTotales() as residente');
         $cantidadveh=DB::select('select VehiculosTotales() as vehiculos');
@@ -64,7 +73,7 @@ class HomeController extends Controller
          }else{
             $asignacion=Detalle_asignacion::findOrFail($id);
          }
-        return view('Dashboards.Dashboard_admin', compact('cantidadveh','vista','cantidadres','asignacion','parqueadero','parqueaderoV','vehiculo','NumeroApto','asignacion','vis','asignacionList'));
+        return view('Dashboards.Dashboard_admin', compact('visita','cantidadveh','vista','cantidadres','asignacion','parqueadero','parqueaderoV','vehiculo','NumeroApto','asignacion','vis','asignacionList'));
 
     }
 
@@ -81,11 +90,11 @@ class HomeController extends Controller
     public function redirecion()
     {
         if (auth()->user()->ID_TIPO_USUARIO  == 1) {
-            return redirect('/admin');
+            return redirect('/Dashboard');
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 2) {
-            return redirect('/admin');
+            return redirect('/Dashboard');
         } elseif (auth()->user()->ID_TIPO_USUARIO  == 3) {
-            return redirect('/admin');
+            return redirect('/Dashboard');
         } else {
             return redirect('/');
         }
@@ -94,7 +103,14 @@ class HomeController extends Controller
     {
         DB::delete('delete from detalle_asignaciones where parqueadero_id='.$parqueadero_id);
         DB::update('update parqueaderos set OCUPADO = 0 where id='.$parqueadero_id);
-        return redirect('/admin');
+        return redirect('/Dashboard');
+    }
+
+    public function deleteV(Request $request, $NUMERO_PARQUEADERO)
+    {
+        DB::delete('delete from visita where NUMERO_PARQUEADERO='.$NUMERO_PARQUEADERO);
+        DB::update('update parqueadero_visitas set OCUPADO = 0 where id='.$NUMERO_PARQUEADERO);
+        return redirect('/Dashboard');
     }
     
 

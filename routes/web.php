@@ -97,6 +97,7 @@ route::get('/vehiculo/delete/{id}', [VehiculoController::class, 'delete'])->name
 route::get('/parqueadero/delete/{id}', [ParqueaderoController::class, 'delete'])->name('eliminarparqueadero');
 route::get('/tipo/delete/{id}', [tipo_parqueadero_vehiculoController::class, 'delete'])->name('eliminartipo');
 route::get('/asignacion/delete/{id}', [HomeController::class, 'delete'])->name('eliminarasignacion');
+route::get('/asignacionV/delete/{id}', [HomeController::class, 'deleteV'])->name('eliminarasignacionvisita');
 Route::delete('Parqueaderodisable{id}', [ParqueaderoController::class, 'Disable'])->name('Parqueadero.Disable');
 Route::delete('Vehiculodisable{id}', [VehiculoController::class, 'Disable'])->name('Usuario.Disable');
 //ver la vista para crear vehiculos
@@ -113,7 +114,7 @@ route::post('/asignacion/save', [Detalle_asignacionController::class, 'save'])->
 
 
 //ruta de la vista administrador
-Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
+Route::get('/Dashboard', [HomeController::class, 'admin'])->name('admin');
 
 //ruta de la vista residente
 Route::get('/secretaria', [HomeController::class, 'secretaria'])->name('residente');
